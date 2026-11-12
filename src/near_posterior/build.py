@@ -8,7 +8,8 @@ import csv
 import io
 import json
 
-from near_posterior import audit, backtest, coverage, out, refclass, site, speccurve, thesis
+from near_posterior import (audit, backtest, coverage, out, readme, refclass, site, speccurve,
+                            thesis)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -68,6 +69,10 @@ def compute(previous_history: str = "") -> dict:
     files["site/index.html"] = site.render(res)
     files["history.csv"] = history_text(previous_history, res["headline"])
     files["_headline"] = thesis.headline_line(res)
+    files["_fetched_at"] = res["headline"]["fetched_at"]
+    files["_readme_blocks"] = readme.blocks(res)
+    files["README.md"] = readme.fill(readme.README.read_text(encoding="ascii"),
+                                     files["_readme_blocks"])
     return files
 
 
@@ -75,10 +80,10 @@ def main() -> None:
     """Write every generated file and print the headline line."""
     previous = HISTORY.read_text(encoding="ascii") if HISTORY.exists() else ""
     files = compute(previous)
-    headline = files.pop("_headline")
     for rel, text in files.items():
-        out.write_text(out.ROOT / rel, text)
-    print(headline)
+        if not rel.startswith("_"):
+            out.write_text(out.ROOT / rel, text)
+    print(files["_headline"])
 
 
 if __name__ == "__main__":

@@ -58,6 +58,14 @@ def interval(iv) -> str:
     return f"{f(iv[0])} to {f(iv[1])}"
 
 
+def limits(res: dict) -> list[str]:
+    """Return the limits of SPEC 7 section 8, the market-cycle span read from the results."""
+    years = sorted(res["headline"]["B0"]["by_year"])
+    return LIMITS + [f"Few independent market cycles: the class {res['headline']['class']} "
+                     f"origins at h = 24 run from {years[0]} to {years[-1]}, and one market "
+                     f"regime can dominate the class."]
+
+
 def headline_line(res: dict) -> str:
     """Return the one-line headline printed by build and repeated in the README."""
     h = res["headline"]
@@ -293,10 +301,7 @@ def render(res: dict) -> str:
               f"{y}: {f(v['P'])} ({v['entities']} entities, {v['moments']} moments)"
               for y, v in sorted(h["B0"]["by_year"].items())) + ".",
           "", "## 8. What this cannot tell you", ""]
-    L += [f"- {t}" for t in LIMITS]
-    years = sorted(h["B0"]["by_year"])
-    L.append(f"- Few independent market cycles: the class R origins at h = 24 run from {years[0]} "
-             f"to {years[-1]}, and one market regime can dominate the class.")
+    L += [f"- {t}" for t in limits(res)]
     L += ["", "## 9. Deviations from the pre-registration", ""]
     L.append(dev if dev and dev != "None so far." else "None.")
     L += ["", "Stop rules (PREREG 9): reference panel missing share "
