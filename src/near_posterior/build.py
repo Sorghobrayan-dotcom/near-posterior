@@ -10,9 +10,9 @@ import json
 
 import numpy as np
 
-from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, multiverse,
-                            out, readme, refclass, resolve, rpc_check, site, speccurve, thesis,
-                            validation, within)
+from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
+                            multiverse, out, readme, refclass, resolve, rpc_check, site,
+                            speccurve, thesis, validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -103,6 +103,8 @@ def compute(previous_history: str = "") -> dict:
     files["THESIS.md"] = thesis.render(res)
     files["site/index.html"] = site.render(res)
     files.update(site.standalone(res))
+    files["docs/DEMO_SCRIPT.md"] = material.demo_script(res)
+    files["docs/X_POST.md"] = material.x_post(res)
     files["history.csv"] = history_text(previous_history, res["headline"])
     files["_headline"] = thesis.headline_line(res)
     files["_fetched_at"] = res["headline"]["fetched_at"]
