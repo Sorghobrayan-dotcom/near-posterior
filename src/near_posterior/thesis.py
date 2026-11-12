@@ -32,6 +32,8 @@ def load_results(root=out.ROOT) -> dict:
         res[name] = json.loads((root / "results" / f"{name}.json").read_text(encoding="ascii"))
     text = (root / "results" / "audit.csv").read_text(encoding="ascii")
     res["audit_rows"] = list(csv.DictReader(io.StringIO(text)))
+    text = (root / "results" / "speccurve.csv").read_text(encoding="ascii")
+    res["speccurve_rows"] = list(csv.DictReader(io.StringIO(text)))
     res["deviations"] = (root / "DEVIATIONS.md").read_text(encoding="ascii")
     return res
 

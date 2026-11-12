@@ -8,7 +8,7 @@ import csv
 import io
 import json
 
-from near_posterior import audit, backtest, coverage, out, refclass, speccurve, thesis
+from near_posterior import audit, backtest, coverage, out, refclass, site, speccurve, thesis
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -62,8 +62,10 @@ def compute(previous_history: str = "") -> dict:
     res = {name: json.loads(files[f"results/{name}.json"]) for name in
            ("coverage", "refclass_counts", "backtest", "audit", "speccurve", "headline")}
     res["audit_rows"] = list(csv.DictReader(io.StringIO(files["results/audit.csv"])))
+    res["speccurve_rows"] = list(csv.DictReader(io.StringIO(files["results/speccurve.csv"])))
     res["deviations"] = (out.ROOT / "DEVIATIONS.md").read_text(encoding="ascii")
     files["THESIS.md"] = thesis.render(res)
+    files["site/index.html"] = site.render(res)
     files["history.csv"] = history_text(previous_history, res["headline"])
     files["_headline"] = thesis.headline_line(res)
     return files

@@ -199,3 +199,20 @@ P(buybacks cover NEAR net issuance within 24 months) = 0.053 (90% interval 0.022
 > uv run pytest -q
 75 passed in 8.72s
 ```
+
+## T8 - Static page (done)
+
+- `svg.py`: inline SVG line, bar (with error bars and per-bar colours), dot and strip charts drawn
+  in Python. `site.py`: `render` writes the seven blocks of SPEC 8 from `results/` only
+  (coverage over time, k* by window, 24-month growth distribution in class R with k* marked,
+  specification curve, backtest scores, table of the 30 nearest analogs, other theses against
+  ours), each with its title, the chart, "Query:" and one sentence. `build.py` writes the page.
+- Checked in the built-in browser (file URL): seven blocks render. No script, no external
+  request (only a relative link to `../THESIS.md`). ASCII. Rebuild is byte-identical (`cmp`).
+
+```
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance within 24 months) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance within 24 months
+> uv run pytest -q
+78 passed in 8.62s
+```
