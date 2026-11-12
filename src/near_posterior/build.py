@@ -106,6 +106,7 @@ def compute(previous_history: str = "") -> dict:
     files["history.csv"] = history_text(previous_history, res["headline"])
     files["_headline"] = thesis.headline_line(res)
     files["_fetched_at"] = res["headline"]["fetched_at"]
+    files["_t0"] = res["headline"]["t0"]
     files["_readme_blocks"] = readme.blocks(res)
     files["README.md"] = readme.fill(readme.README.read_text(encoding="ascii"),
                                      files["_readme_blocks"])
