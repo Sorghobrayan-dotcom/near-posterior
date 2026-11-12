@@ -501,12 +501,6 @@ recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEV
   `exceedance` adds P at k = 1, 2, 5, 10 to `results/growth_quantiles.json` for section 3.
 - `uv run python -m near_posterior.verify`: 36 PASS, 0 FAIL. `uv run pytest -q`: 102 passed.
 
-## Left (session stopped at the usage limit, 2026-11-12)
-
-- U9 (page with explorer and new charts), U10 (README first screen, `VERIFICATION.md`,
-  `verify --write`), U12 (`pages.yml`, demo script, X post), U13 (optional), and a clean-clone
-  check of the second pass. Not done.
-
 ## U9 - The page (done)
 
 - `svg.py` rewritten: a `Frame` with linear or log axes, one accent colour and a neutral scale,
@@ -581,3 +575,26 @@ recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEV
 
 Optional, cut first by the task order. Not attempted: reading the buyback accounts from the
 DefiLlama adapter source and their on-chain NEAR balance changes needs more than the time left.
+
+## Clean-clone check of the second pass
+
+Fresh `git clone` of commit 7b1c112 into a new directory, with `UV_OFFLINE=1`:
+
+```
+> uv sync && uv run pytest -q
+103 passed in 29.46s
+> uv run python -m near_posterior.verify
+43 lines, all PASS, exit=0
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark
+> git status --short
+(empty)
+> uv run python -m near_posterior.ask
+... Registered headline: P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 ...
+> uv run python -m near_posterior.resolve
+... h = 36: P = 0.061, resolves on 2029-11-11: pending
+```
+
+Second pass status: U1 to U12 committed; U13 (optional) not done. Not verified: CI on Linux
+and macOS, GitHub Pages (nothing pushed), the page in browsers other than Edge and the built-in
+browser.
