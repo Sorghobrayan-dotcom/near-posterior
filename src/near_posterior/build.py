@@ -97,13 +97,9 @@ def compute(previous_history: str = "") -> dict:
     if rpc_check.RPC_FILE.exists():
         rpc = json.loads(rpc_check.RPC_FILE.read_text(encoding="ascii"))
         files["results/rpc_supply.json"] = out.json_text(rpc_check.compare(snap, rpc))
-    res = {name: json.loads(files[f"results/{name}.json"]) for name in
-           ("coverage", "refclass_counts", "backtest", "audit", "speccurve", "headline")}
-    res["audit_rows"] = list(csv.DictReader(io.StringIO(files["results/audit.csv"])))
-    res["speccurve_rows"] = list(csv.DictReader(io.StringIO(files["results/speccurve.csv"])))
+    res = thesis.parse({rel[len("results/"):]: text for rel, text in files.items()
+                        if rel.startswith("results/")})
     res["deviations"] = (out.ROOT / "DEVIATIONS.md").read_text(encoding="ascii")
-    if "results/rpc_supply.json" in files:
-        res["rpc_supply"] = json.loads(files["results/rpc_supply.json"])
     files["THESIS.md"] = thesis.render(res)
     files["site/index.html"] = site.render(res)
     files["history.csv"] = history_text(previous_history, res["headline"])

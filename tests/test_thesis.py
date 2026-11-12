@@ -2,10 +2,13 @@ import csv
 
 from near_posterior import build, out, thesis
 
-SECTIONS = ["## 1. The claim", "## 2. Evidence for", "## 3. Evidence against",
-            "## 4. What would change our mind", "## 5. How other theses measure the same thing",
-            "## 6. Backtest", "## 7. Specification curve", "## 8. What this cannot tell you",
-            "## 9. Deviations from the pre-registration"]
+SECTIONS = ["## 1. Summary", "## 2. The question", "## 3. The outside view",
+            "## 4. Does NEAR Intents' own momentum change this?",
+            "## 5. At month 24, and at any point within 24 months", "## 6. What NEAR controls",
+            "## 7. How we know the method works", "## 8. Robustness",
+            "## 9. How other theses measure the same thing, and what they need to be true",
+            "## 10. What would change our mind", "## 11. What this cannot tell you",
+            "## 12. Pre-registration, addendum, deviations, resolution"]
 
 
 def test_thesis_regenerates_byte_identically_from_results():
@@ -14,7 +17,7 @@ def test_thesis_regenerates_byte_identically_from_results():
     assert "\r" not in text
 
 
-def test_thesis_has_the_nine_sections_in_order():
+def test_thesis_has_the_twelve_sections_in_order():
     text = (out.ROOT / "THESIS.md").read_text(encoding="ascii")
     positions = [text.index(s) for s in SECTIONS]
     assert positions == sorted(positions)

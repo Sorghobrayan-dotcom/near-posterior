@@ -491,3 +491,18 @@ recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEV
   moment with the S1 construction; `parent#` may be omitted; a class below 20 entities is
   flagged. Example: `uv run python -m near_posterior.ask --slug aave --h 24` (8 entities,
   flagged).
+
+## U8 - The thesis as an essay (done)
+
+- `thesis.py` rewritten: twelve sections in the order of TASKS_V2 U8, five-sentence summary,
+  every number read from `results/` (generic loader `parse` / `load_results` for every
+  results file), sentences chosen from the numbers (direction, even odds, calibration),
+  secondary analyses labelled "[secondary (specified after the primary results)]".
+  `exceedance` adds P at k = 1, 2, 5, 10 to `results/growth_quantiles.json` for section 3.
+- `uv run python -m near_posterior.verify`: 36 PASS, 0 FAIL. `uv run pytest -q`: 102 passed.
+
+## Left (session stopped at the usage limit, 2026-11-12)
+
+- U9 (page with explorer and new charts), U10 (README first screen, `VERIFICATION.md`,
+  `verify --write`), U12 (`pages.yml`, demo script, X post), U13 (optional), and a clean-clone
+  check of the second pass. Not done.

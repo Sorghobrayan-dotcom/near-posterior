@@ -91,6 +91,10 @@ def compute(panel: dict, cov: dict, moms: dict, curve_rows: list[dict], cls: str
         exc += curve(sample, h)
         ent += entity_rows(panel, sample, k, h)
         growth[str(h)] = growth_quantiles(sample)
+        growth[str(h)]["P_at"] = {}
+        for kk in (1.0, 2.0, 5.0, 10.0):
+            b0 = forecast.b0(sample["Y"], sample["e"], kk)
+            growth[str(h)]["P_at"][f"{kk:g}"] = {"P": b0["P"], "interval": list(b0["interval"])}
         covq[str(h)] = coverage_quantiles(sample, C0, cov["r"], h)
     return {"exceedance": exc, "entities": ent,
             "growth": {"class": cls, "k_star": kstar, "by_h": growth},
