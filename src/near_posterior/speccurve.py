@@ -53,7 +53,7 @@ def summarise(rows: list[dict], primary_class: str) -> dict:
 def verdict(P: float) -> str:
     """Return the verdict words of PREREG 8 for probability P."""
     if P < 0.10:
-        return "buybacks are unlikely to cover issuance within 24 months"
+        return "buybacks are unlikely to cover issuance at the 24-month mark"
     if P <= 0.50:
         return "conditional"
     return "supported"

@@ -148,13 +148,15 @@ def render(res: dict) -> str:
         "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<title>NEAR buybacks vs issuance</title>", f"<style>{CSS}</style>", "</head>", "<body>",
-        "<h1>Will NEAR buybacks cover net issuance within 24 months?</h1>",
+        "<h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>",
         f'<p class="head">{svg.esc(thesis.headline_line(res))}</p>',
         f"<p>Snapshot fetched {svg.esc(res['coverage']['fetched_at'])}. Rules fixed in "
         "<code>PREREG.md</code> before the reference panel was downloaded. Full argument: "
         '<a href="../THESIS.md">THESIS.md</a>. Rebuild: <code>uv run python -m '
         "near_posterior.build</code>. Not financial advice.</p>",
         *blocks,
+        "<section>\n<h2>What this cannot tell you</h2>\n<ul>\n"
+        + "\n".join(f"<li>{svg.esc(t)}</li>" for t in thesis.limits(res)) + "\n</ul>\n</section>",
         "<p class=\"q\">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of "
         f"{res['refclass_counts']['entities']} reference entities), NearBlocks (supply, price). "
         "Generated from results/ only.</p>",

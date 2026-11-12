@@ -12,8 +12,8 @@ td:first-child,th:first-child{text-align:left}.q{font-size:.85em;color:#333}
 .head{border:1px solid #999;padding:8px;background:#fafafa}</style>
 </head>
 <body>
-<h1>Will NEAR buybacks cover net issuance within 24 months?</h1>
-<p class="head">P(buybacks cover NEAR net issuance within 24 months) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance within 24 months</p>
+<h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>
+<p class="head">P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark</p>
 <p>Snapshot fetched 2026-11-12T10:17:09+00:00. Rules fixed in <code>PREREG.md</code> before the reference panel was downloaded. Full argument: <a href="../THESIS.md">THESIS.md</a>. Rebuild: <code>uv run python -m near_posterior.build</code>. Not financial advice.</p>
 <section>
 <h2>Coverage of net issuance by buybacks, since 2026-02-23</h2>
@@ -1136,6 +1136,22 @@ td:first-child,th:first-child{text-align:left}.q{font-size:.85em;color:#333}
 </svg>
 <p class="q">Query: <code>near_posterior.audit.run -&gt; results/audit.csv: ln_y_over_r0</code></p>
 <p>Each dot is one published value; 0 means equal to our primary value at 2026-11-11. Interquartile range of ln y: M1 0.103 (n = 7); M2 0.203 (n = 5); M3 0.121 (n = 6); M4 0.027 (n = 8); M5 0.006 (n = 6).</p>
+</section>
+<section>
+<h2>What this cannot tell you</h2>
+<ul>
+<li>No price forecast. Price enters only as a scenario factor G_P (0.5, 1, 2).</li>
+<li>Frequencies are not mechanisms. A base rate says how often fee growth of this size happened to comparable protocols, not why, and not whether NEAR Intents is like them.</li>
+<li>DefiLlama lists what it lists. Protocols it does not track, or tracks late, are absent; the panel is what survived to be listed.</li>
+<li>&quot;Fees&quot; differ across protocols: each DefiLlama adapter defines its own fees.</li>
+<li>Capture and issuance are governance decisions. G_kappa and G_I are scenarios, not forecasts.</li>
+<li>Aggregator data, not an on-chain rebuild: buybacks are DefiLlama holders revenue, supply and price are NearBlocks charts.</li>
+<li>Age is the age in DefiLlama&#x27;s data (days since the first day with fees &gt; 0 in the panel), not the age since launch.</li>
+<li>Dead fill uses the panel end D: an entity silent for more than 30 days before D is filled with zeros, so a backtest pool outcome can use knowledge of D rather than of its tau.</li>
+<li>Class R selects protocols at a high point of their fees (scale band around NEAR Intents&#x27; current fees), so part of the typical decline in the class is regression to the mean.</li>
+<li>Few independent market cycles: the class R origins at h = 24 run from 2020 to 2024, and one market regime can dominate the class.</li>
+<li>Class R mixes fee types (trading fees, interest, staking yield). Restricted to trading-type categories (R_trading, 38 entities) the primary probability is 0.049 (0.009 to 0.098), against 0.053 for R.</li>
+</ul>
 </section>
 <p class="q">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of 797 reference entities), NearBlocks (supply, price). Generated from results/ only.</p>
 </body>

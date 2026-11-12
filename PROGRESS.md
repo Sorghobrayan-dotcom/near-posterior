@@ -310,3 +310,26 @@ new issuance parameter would apply, which I did not do. What the registered resu
 say: P is non-increasing in k*, and k* is proportional to G_I, so any issuance cut smaller than
 the registered "half" row gives a P at most that row's P (`results/speccurve.csv`), below 0.50;
 the break-even issuance cut is in `results/headline.json` (`what_would_change.G_I_cut_needed`).
+
+# Second pass (PREREG_2.md, docs/TASKS_V2.md)
+
+## U1 - Wording, limits and unverified claims (done)
+
+- Event wording: "within 24 months" replaced by "at the 24-month mark" in the headline line,
+  verdict words (history.csv included), THESIS, README and page. Recorded in `DEVIATIONS.md`
+  (wording only; event, thresholds and numbers unchanged).
+- Audit status "not reproduced" is now "not reproduced by us", with the sentence that the
+  status compares their figure with our recomputation under our reading of their definition.
+- Limits added (THESIS, README, page): age in DefiLlama's data; class R mixes fee types, with
+  the R_trading primary probability shown next to R (read from `results/speccurve.csv`); dead
+  fill uses `D`; regression to the mean in a class selected at a high point.
+- README: "Windows: run locally. Linux and macOS: not yet run". `check.yml` adds macos-latest.
+
+```
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark
+> uv run python -m near_posterior.verify
+21 lines, all PASS
+> uv run pytest -q
+83 passed
+```

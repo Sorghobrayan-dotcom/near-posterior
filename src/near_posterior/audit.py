@@ -117,7 +117,7 @@ def run(snap: dict, claims: list[dict]) -> tuple[list[list], dict]:
         else:
             rc = canonical(r, c)
             d = decompose(yc, rc, r0)
-            status = "reproduced" if d["reproduced"] else "not reproduced"
+            status = "reproduced" if d["reproduced"] else "not reproduced by us"
         rows.append([c["thesis"], c["repo_url"], c["commit"], c["file"], int(c["line"]),
                      c["metric"], c["value"], c["unit"], c["window_start"], c["window_end"],
                      c["recompute"], r, yc, rc, r0,
@@ -127,7 +127,7 @@ def run(snap: dict, claims: list[dict]) -> tuple[list[list], dict]:
         "t0": snap["t0"].isoformat(), "tolerance_ln": TOLERANCE, "metrics": METRICS, "r0": r0s,
         "theses": len({c["thesis"] for c in claims}), "claims": len(claims),
         "status_counts": {s: sum(1 for r in rows if r[18] == s)
-                          for s in ("reproduced", "not reproduced", "not recomputed")},
+                          for s in ("reproduced", "not reproduced by us", "not recomputed")},
         "dispersion": {m: dispersion(list(v.values())) for m, v in sorted(by_metric.items())},
     }
     return rows, summary

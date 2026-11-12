@@ -13,7 +13,7 @@ def test_page_regenerates_byte_identically_and_is_ascii():
 
 def test_seven_charts_each_with_query_and_sentence():
     text = PAGE.read_text(encoding="ascii")
-    sections = re.findall(r"<section>(.*?)</section>", text, re.S)
+    sections = [s for s in re.findall(r"<section>(.*?)</section>", text, re.S) if "Query:" in s]
     assert len(sections) == 7
     for s in sections:
         assert "<h2>" in s and ("<svg" in s or "<table>" in s)

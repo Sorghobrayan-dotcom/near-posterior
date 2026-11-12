@@ -928,7 +928,7 @@
   "model": "B0",
   "stop_rule_R_below_30": false,
   "t0": "2026-11-11",
-  "verdict": "buybacks are unlikely to cover issuance within 24 months",
+  "verdict": "buybacks are unlikely to cover issuance at the 24-month mark",
   "what_would_change": {
     "G_I_cut_needed": 0.967601337147,
     "G_I_needed": 0.0340271082013,
