@@ -1,0 +1,20 @@
+{
+  "proposal": "HSP-029: Establish a 24-Month Issuance Ramp to a 1.6% Target Rate Of NEAR Token Emissions",
+  "url": "https://gov.near.org/t/hsp-029-establish-a-24-month-issuance-ramp-to-a-1-6-target-rate-of-near-token-emissions/42644",
+  "raw_url": "https://gov.near.org/raw/42644/1",
+  "source_kind": "NEAR governance forum, first post of the proposal thread (the proposal text)",
+  "date_read": "2026-11-12",
+  "raw_sha256": "160dd14225d88010e5512a4526b79369789df15f4622322df66f9c01c3b179d0",
+  "quotes": [
+    {"line": 9, "text": "Status: Succeeded"},
+    {"line": 93, "text": "Maximum annual issuance declines linearly from 2.5% to 1.6% over 24 months, applied per epoch at roughly 3.75 basis points per month"},
+    {"line": 273, "text": "cap(t) = 2.5% - 0.9% x min(t, 24)/24 (minus and times signs transliterated to ASCII)"},
+    {"line": 276, "text": "where t is months elapsed from activation, interpolated per epoch. Activation occurs one full quarter after ratification."}
+  ],
+  "parameters": {"cap_start_percent": 2.5, "cap_target_percent": 1.6, "ramp_months": 24},
+  "not_in_source": "The ratification date. The scenario rows assume an activation month and say so.",
+  "scenarios": [
+    {"label": "HSP-029, activation at t0 (assumed; earliest bound)", "activation_month": 0},
+    {"label": "HSP-029, activation at t0 + 3 months (assumed ratification at t0)", "activation_month": 3}
+  ]
+}

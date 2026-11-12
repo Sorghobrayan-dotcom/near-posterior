@@ -369,3 +369,34 @@ Secondary (specified after the primary results).
   h = 24: within 0.138 (0.084 to 0.199) vs at month 24 0.053 (0.022 to 0.091);
   h = 36: within 0.167 (0.081 to 0.259) vs at month 36 0.061 (0.014 to 0.120).
 - Test: a synthetic entity crosses the threshold at month 10 and falls back by month 24.
+
+## U4 - Method validation (S1, S2): STOPPED, not committed
+
+Counts computed without reading outcomes, against the expected counts of `docs/TASKS_V2.md`:
+- candidates match: h = 12: 2730, h = 24: 1390. S2 matches: 92 targets from 31 entities.
+- scored differ: h = 12: 1659 targets, 188 entities, origins 2023 102 / 2024 494 / 2025 1063
+  (expected 1636, 187, 97 / 488 / 1051); h = 24: 201 targets, 51 entities, all 2024
+  (expected 194, 50).
+- My class: pool moments with an outcome (status ok or floor), other entity, `t' + h <= tau`
+  (months), `F/3 <= F' <= 3F`, `a*270/550 <= a' <= a*1095/550`; scored if >= 20 entities.
+- Variants tried, none reproduces both counts: "> 20" entities; strict band edges; excluded
+  moments in the pool; `t' + h < tau`; pool status ok only; pool momentum defined; pool age
+  >= 270; pool F >= 1M; and the 32 combinations of the last four with ">= 20" and "> 20".
+- Question sent to the session that computed the expected counts; U4 waits for its answer.
+  U5 to U7 do not depend on S1 and go on.
+
+## U5 - Lever table and governance scenario (S6, S10) (done)
+
+Secondary (specified after the primary results).
+- S10 primary source: the HSP-029 proposal text, first post of its thread on the NEAR
+  governance forum (`data/governance.json`: URL, raw URL, date read 2026-11-12, sha256 of the
+  raw text, quoted lines). Quoted parameter: `cap(t) = 2.5% - 0.9% x min(t, 24)/24`, t in
+  months from activation; "Activation occurs one full quarter after ratification"; frontmatter
+  "Status: Succeeded". The ratification date is not in the source, so the scenario rows state
+  their assumed activation month: at t0 (earliest bound) and at t0 + 3 months.
+- Scenario factor on the constant-rate path: trailing-year issuance at month 24 = mean cap over
+  months 12..24 after t0, divided by 2.5 percent: 0.73 (activation at t0), 0.775 (t0 + 3).
+- `levers.py`, `results/levers.csv`: 60 registered cells (capture kappa_90, 0.34, 0.50, 0.75,
+  1.00 x issuance factor 1, 0.75, 0.50, 0.25 x G_P 0.5, 1, 2) + 2 x 15 labelled HSP-029 rows.
+  Highest P of the table: 0.492 (0.401 to 0.580) at capture 1.00, issuance x 0.25, G_P 0.5;
+  no cell has P > 0.50. Primary cell = registered headline (test).
