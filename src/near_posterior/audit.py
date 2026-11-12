@@ -57,6 +57,8 @@ def replicate(claim: dict, snap: dict) -> float | None:
         return coverage.rate(S, end) * a
     if rule == "coverage":
         return window_sum(b, end, W) * a / (coverage.issuance(S, end) * p[end])
+    if rule == "coverage_param":
+        return window_sum(b, end, W) * a / (float(claim["param"]) * S[end] * p[end])
     if rule == "multiple_param":
         return float(claim["param"]) * S[end] * p[end] / (window_sum(b, end, W) * a)
     raise ValueError(f"unknown recompute rule {rule}")

@@ -413,3 +413,20 @@ Secondary (specified after the primary results).
 - Cohorts (`results/cohorts.json`): leave-one-origin-year-out P: without 2020 0.040, 2021
   0.057, 2022 0.049, 2023 0.039, 2024 0.101. Two-stage bootstrap over (entity, origin year)
   blocks, indicative only: mean block share 0.048, interval 0.014 to 0.118.
+
+## U7 - Forward requirements of other theses (S9) and a wider audit (done)
+
+- `data/claims.csv` now holds 43 values from 17 theses (added, from files already pinned in T6:
+  Apihpih96 `FINDINGS.md`, tobadaniel `THESIS.md`, EmekaManuel `THESIS.md`, Alberto
+  `THESIS.md`, bomanaps `THESIS.md`, soldanoandrea `thesis/NUMBERS.md`). The first 32 rows are
+  byte-identical to T6. Markdown lines are found by an exact substring; quotes are transliterated
+  to ASCII (x for the multiplication sign, - for dashes, ~ for "approximately") and cut around
+  the value when longer than 300 characters. New recompute rule `coverage_param`
+  (buybacks / (parameter x supply x price)). `uv run python -m near_posterior.audit`:
+  17 theses, 43 claims: 26 reproduced, 8 not reproduced by us, 9 not recomputed.
+- `data/forward_claims.csv`: 12 forward requirements from 9 theses (break-even and net-zero
+  multiples of volume, revenue or buybacks, a yield target), each with commit, file, line,
+  condition and quote. None states a horizon, so all three horizons are reported.
+- `forward.py`, `results/forward_claims.csv` (36 rows): P_B0(k, h) of class R with its
+  interval. At h = 24 the requirements of 3.1x to 7.2x map to P between 0.034 and 0.076; the
+  1.6x requirement (conditional on a 5 bps contract take) maps to 0.147 (0.092 to 0.209).

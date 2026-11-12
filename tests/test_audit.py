@@ -14,7 +14,7 @@ JUDGEMENT = re.compile(r"\b(wrong|bad|poor|sloppy|mistaken?|incorrect|flawed|car
 
 def test_claims_cover_ten_theses_with_provenance():
     claims = audit.load_claims()
-    assert len({c["thesis"] for c in claims}) >= 10
+    assert len({c["thesis"] for c in claims}) >= 15
     for c in claims:
         for key in REQUIRED:
             assert c[key], (c["thesis"], key)
@@ -65,6 +65,7 @@ def snapshot():
     ("kappa_rev", "1", "", 0.3),
     ("coverage", str(365 / 30), "", 300 * 365 / 30 / (365 * 2.0)),
     ("multiple_param", "12", "0.025", 0.025 * 1399.0 * 2.0 / (300 * 12)),
+    ("coverage_param", "12", "0.025", (300 * 12) / (0.025 * 1399.0 * 2.0)),
 ])
 def test_replicate_rules(rule, ann, param, expected):
     end = dt.date(2025, 1, 1) + dt.timedelta(days=399)

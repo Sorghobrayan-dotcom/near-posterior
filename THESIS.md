@@ -37,9 +37,9 @@ We would also change our mind if a sufficient 24-month backtest showed the class
 
 ## 5. How other theses measure the same thing
 
-32 published values from 11 public NEAR theses, each read at a fixed commit (file and line in `data/claims.csv`). For each value: y = the published value, r = ours under their window, end date and definition, r0 = ours under our primary definition at 2026-11-11; e = ln(y/r) (reproduced if |e| <= ln 1.02), s = ln(r/r0), and ln(y/r0) = s + e. Values are in a common unit per metric (multiples inverted to coverage).
+43 published values from 17 public NEAR theses, each read at a fixed commit (file and line in `data/claims.csv`). For each value: y = the published value, r = ours under their window, end date and definition, r0 = ours under our primary definition at 2026-11-11; e = ln(y/r) (reproduced if |e| <= ln 1.02), s = ln(r/r0), and ln(y/r0) = s + e. Values are in a common unit per metric (multiples inverted to coverage).
 
-Reproduced: 20; not reproduced by us: 6; not recomputed (definition needs data we do not have, or window not stated): 6. The status compares their figure with our recomputation under our reading of their definition, to 2 percent; it does not say their figure is wrong. DefiLlama can revise its history, so a replication gap can come from a revision.
+Reproduced: 26; not reproduced by us: 8; not recomputed (definition needs data we do not have, or window not stated): 9. The status compares their figure with our recomputation under our reading of their definition, to 2 percent; it does not say their figure is wrong. DefiLlama can revise its history, so a replication gap can come from a revision.
 
 | Thesis | Metric | y | r | r0 | e | s | Status |
 |---|---|---|---|---|---|---|---|
@@ -75,8 +75,19 @@ Reproduced: 20; not reproduced by us: 6; not recomputed (definition needs data w
 | HATWHY4041/near-intents-thesis | M2 | 0.2706 | 0.2707 | 0.2734 | -0.0005 | -0.0100 | reproduced |
 | HATWHY4041/near-intents-thesis | M5 | 0.0248 | 0.0248 | 0.0248 | 0.0000 | -0.0007 | reproduced |
 | HATWHY4041/near-intents-thesis | M3 | 0.1725 | 0.1790 | 0.1823 | -0.0368 | -0.0180 | not reproduced by us |
+| Apihpih96/near-intents-thesis | M2 | 0.3690 | 0.3427 | 0.2734 | 0.0741 | 0.2257 | not reproduced by us |
+| Apihpih96/near-intents-thesis | M1 | $25.8M | $25.8M | $20.8M | 0.0011 | 0.2166 | reproduced |
+| Apihpih96/near-intents-thesis | M4 | $3,860.0M | $3,860.6M | $3,731.4M | -0.0002 | 0.0341 | reproduced |
+| Apihpih96/near-intents-thesis | M3 | 0.1800 | 0.1835 | 0.1823 | -0.0191 | 0.0066 | reproduced |
+| tobadaniel/NEAR-Thesis | M1 | $24.5M | $24.5M | $20.8M | -0.0002 | 0.1672 | reproduced |
+| tobadaniel/NEAR-Thesis | M3 | 0.2100 | 0.2046 | 0.1823 | 0.0262 | 0.1155 | not reproduced by us |
+| EmekaManuel/nearquery | M2 | 0.3400 |  | 0.2734 |  |  | not recomputed |
+| Alberto-Campos-de-la-Torre/near-settlement-thesis | M2 | 0.1720 | 0.1720 | 0.2734 | 0.0000 | -0.4636 | reproduced |
+| Alberto-Campos-de-la-Torre/near-settlement-thesis | M4 | $3,871.0M | $3,857.1M | $3,731.4M | 0.0036 | 0.0331 | reproduced |
+| bomanaps/-near-intents-thesis | M3 | 0.2000 |  | 0.1823 |  |  | not recomputed |
+| soldanoandrea/near-thesis | M2 | 0.2733 |  | 0.2734 |  |  | not recomputed |
 
-Dispersion of ln y across theses (interquartile range, only when n >= 5): M1 annualised buybacks or captured revenue (USD per year): n = 7, IQR = 0.103; M2 capture rate (buybacks / gross fees): n = 5, IQR = 0.203; M3 coverage of net issuance (required multiples inverted): n = 6, IQR = 0.121; M4 30-day NEAR Intents volume (USD): n = 8, IQR = 0.027; M5 net inflation rate (per year): n = 6, IQR = 0.006.
+Dispersion of ln y across theses (interquartile range, only when n >= 5): M1 annualised buybacks or captured revenue (USD per year): n = 9, IQR = 0.167; M2 capture rate (buybacks / gross fees): n = 9, IQR = 0.218; M3 coverage of net issuance (required multiples inverted): n = 9, IQR = 0.113; M4 30-day NEAR Intents volume (USD): n = 10, IQR = 0.033; M5 net inflation rate (per year): n = 6, IQR = 0.006.
 
 ## 6. Backtest
 

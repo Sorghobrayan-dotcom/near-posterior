@@ -10,8 +10,8 @@ import json
 
 import numpy as np
 
-from near_posterior import (audit, backtest, coverage, exceedance, levers, multiverse, out,
-                            readme, refclass, rpc_check, site, speccurve, thesis, within)
+from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, multiverse,
+                            out, readme, refclass, rpc_check, site, speccurve, thesis, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -57,6 +57,8 @@ def compute(previous_history: str = "") -> dict:
     mv = multiverse.run(panel, moms[24], F_near, head["k_star"])
     years24 = np.array([refclass.month_start(int(m)).year for m in sample24["month"]])
     coh = multiverse.cohorts(sample24["Y"], sample24["e"], years24, head["k_star"])
+    fwd = forward.run(forward.load(), {h: exceedance.class_sample(panel, moms[h], F_near)
+                                       for h in forward.HORIZONS})
     files = {
         "results/coverage.json": out.json_text(cov),
         "results/refclass_counts.json": out.json_text(counts),
@@ -78,6 +80,7 @@ def compute(previous_history: str = "") -> dict:
         "results/levers.csv": out.csv_text(levers.HEADER, lev),
         "results/class_multiverse.csv": out.csv_text(multiverse.HEADER, mv),
         "results/class_multiverse.json": out.json_text(multiverse.summary(mv)),
+        "results/forward_claims.csv": out.csv_text(forward.HEADER, fwd),
         "results/cohorts.json": out.json_text(dict(coh, k_star=head["k_star"], h=24,
                                                    label="secondary (specified after the "
                                                          "primary results)")),
