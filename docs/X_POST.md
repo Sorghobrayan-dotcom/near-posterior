@@ -2,9 +2,9 @@
 
 Generated from `results/` by `uv run python -m near_posterior.build`. Lead with the problem, one complete moment, what NEAR's public data made possible, a link, a real question. The Pages link works once the repository is public and Pages is enabled.
 
-Post 1 (257 characters):
+Post 1 (270 characters):
 
-> NEAR buys back its token with NEAR Intents revenue. Does that offset new supply? Today it covers 18% of net issuance. To reach 100% in 24 months, fees must grow 5.8x. Of 75 DeFi protocols that were the same size and age, 5% did. @NEARProtocol #NEARHackathon
+> Built at NEAR HACKATHON: NEAR buys back its token with Intents revenue. Does that offset new supply? Today it covers 18% of net issuance. To reach 100% in 24 months, fees must grow 5.8x. Of 75 DeFi protocols of the same size and age, 5% did. @NEARProtocol #NEARHackathon
 
 Post 2 (reply):
 

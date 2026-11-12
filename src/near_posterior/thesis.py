@@ -107,11 +107,18 @@ def lever(res: dict, label: str, capture: str, factor: float, g_p: float) -> dic
                 and abs(float(r["issuance_factor"]) - factor) < 1e-9 and float(r["G_P"]) == g_p)
 
 
-def calibration_line(table: list[dict], name: str, event: str) -> str:
-    """Return one sentence per non-empty reliability bin: mean forecast against observed."""
-    parts = [f"forecast {f(b['mean_forecast'], 2)} vs observed {f(b['observed'], 2)} "
-             f"({b['targets']} targets)" for b in table if b["targets"]]
-    return f"{name}, event {event}: " + "; ".join(parts) + "."
+def calibration_table(rel: dict) -> list[str]:
+    """Return a markdown table of the non-empty reliability bins of C0 and B2, both events."""
+    L = ["| Model | Event | Forecast bin | Targets | Mean forecast | Observed |",
+         "|---|---|---|---|---|---|"]
+    for name in ("C0", "B2"):
+        for key, event in (("Y_ge_ln2", "fees at least doubled"), ("Y_ge_ln5", "fees at least 5x")):
+            for b in rel[name][key]:
+                if b["targets"]:
+                    L.append(f"| {name} | {event} | {f(b['bin'][0], 2)} to {f(b['bin'][1], 2)} | "
+                             f"{b['targets']} | {f(b['mean_forecast'], 3)} | "
+                             f"{f(b['observed'], 3)} |")
+    return L
 
 
 def largest_bin(val: dict, h: str) -> dict:
@@ -120,7 +127,7 @@ def largest_bin(val: dict, h: str) -> dict:
 
 
 def summary(res: dict) -> list[str]:
-    """Return the five summary sentences."""
+    """Return the summary sentences."""
     h, c = res["headline"], res["coverage"]
     w90 = next(w for w in c["windows"] if w["window"] == "90")
     reg = res["registered_forecast"]["forecasts"]["24"]
@@ -165,7 +172,29 @@ def summary(res: dict) -> list[str]:
            f"24-month bin)" if over else "")
         + ", and its weakest point is that the 24-month check rests on origins in "
         + " and ".join(years24) + " only.",
-    ]
+    ] + investor(res)
+
+
+def investor(res: dict) -> list[str]:
+    """Return one or two sentences on what the result means for an investor (no advice, no
+    price view), chosen from the verdict and the lever table."""
+    P = res["headline"]["P"]
+    cap1 = lever(res, "lever grid", "1.0", 1.0, 1.0)
+    iss = lever(res, "lever grid", "kappa_90", 0.25, 1.0)
+    both = lever(res, "lever grid", "1.0", 0.25, 1.0)
+    if P < 0.10:
+        first = ("For an investor, this means that on base rates the buyback does not offset "
+                 "dilution by the 24-month mark: net supply growth stays the base case.")
+    elif P <= 0.50:
+        first = ("For an investor, this means that on base rates offsetting dilution by the "
+                 "24-month mark is possible but not the base case.")
+    else:
+        first = ("For an investor, this means that on base rates the buyback offsets dilution "
+                 "by the 24-month mark in most comparable cases.")
+    return [first,
+            f"The levers that move these odds most are governance ones: spending all fees on "
+            f"buybacks gives P = {f(cap1['P'])}, cutting issuance to a quarter of its path "
+            f"{f(iss['P'])}, and both together {f(both['P'])}, at today's price."]
 
 
 def section_question(res: dict) -> list[str]:
@@ -355,10 +384,10 @@ def section_method(res: dict) -> list[str]:
                    "The class forecast C0 does not beat trend extrapolation B2 at this "
                    "horizon."), ""]
         rel = a["reliability"]
-        L += ["Calibration (reliability, by forecast bin): "
-              + calibration_line(rel["C0"]["Y_ge_ln2"], "C0", "fees at least doubled") + " "
-              + calibration_line(rel["C0"]["Y_ge_ln5"], "C0", "fees at least 5x") + " "
-              + calibration_line(rel["B2"]["Y_ge_ln2"], "B2", "fees at least doubled"), ""]
+        L += [f"Calibration at h = {h} months (reliability by forecast bin; a calibrated forecast "
+              f"has observed close to mean forecast):", ""]
+        L += calibration_table(rel)
+        L += [""]
     b = largest_bin(val, "24")
     if b["mean_forecast"] > b["observed"]:
         L += [f"Reading: the class forecast scores better than trend extrapolation, which "

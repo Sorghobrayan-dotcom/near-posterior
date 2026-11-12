@@ -5,7 +5,7 @@ funded by NEAR Intents revenue cover NEAR's net issuance at the 24-month mark?**
 advice.
 
 <!-- BEGIN GENERATED finding -->
-**Finding:** on the snapshot of 2026-11-11, buybacks cover 0.182 of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.76x in 24 months. Among 75 comparable DefiLlama protocols, the share that did so is 0.053 (90% interval 0.022 to 0.091): buybacks are unlikely to cover issuance at the 24-month mark.
+**Finding:** on the snapshot of 2026-11-11, buybacks cover 18.2% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.76x in 24 months. Among 75 comparable DefiLlama protocols, the share that did so is **5.3%** (90% interval 2.2% to 9.1%): buybacks are unlikely to cover issuance at the 24-month mark.
 <!-- END GENERATED finding -->
 
 ![How often comparable protocols grew fees k-fold in 24 months](site/img/exceedance.svg)
@@ -99,6 +99,7 @@ reference panel is not refetched; `uv run python -m near_posterior.refclass_fetc
     data/rpc/        NEAR RPC block headers (second route for total supply)
     results/         everything computed (json, csv)
     site/index.html  static page, inline SVG, inline script only for the explorer
+    index.html       redirect to site/ for GitHub Pages (generated)
     site/img/        three charts as standalone SVG files (used in this README)
     history.csv      headline probability, one row per snapshot
     src/near_posterior/  code; tests/ tests (tests/fixtures/near_20261112 = registered snapshot)

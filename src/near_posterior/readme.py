@@ -11,11 +11,13 @@ def blocks(res: dict) -> dict:
     """Return the text of each generated README block."""
     h, c = res["headline"], res["coverage"]
     w90 = next(w for w in c["windows"] if w["window"] == "90")
-    finding = (f"**Finding:** on the snapshot of {h['t0']}, buybacks cover {thesis.f(w90['C'])} "
-               f"of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must "
-               f"grow {thesis.f(h['k_star'], 2)}x in 24 months. Among {h['entities']} comparable "
-               f"DefiLlama protocols, the share that did so is {thesis.f(h['P'])} (90% interval "
-               f"{thesis.interval(h['interval'])}): {h['verdict']}.")
+    def pc(x):
+        return f"{100 * float(x):.1f}%"
+    finding = (f"**Finding:** on the snapshot of {h['t0']}, buybacks cover {pc(w90['C'])} of "
+               f"NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow "
+               f"{thesis.f(h['k_star'], 2)}x in 24 months. Among {h['entities']} comparable "
+               f"DefiLlama protocols, the share that did so is **{pc(h['P'])}** (90% interval "
+               f"{pc(h['interval'][0])} to {pc(h['interval'][1])}): {h['verdict']}.")
     return {
         "finding": finding,
         "headline": "```\n" + thesis.headline_line(res) + "\n```",

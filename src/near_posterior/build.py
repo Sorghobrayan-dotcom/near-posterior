@@ -103,6 +103,7 @@ def compute(previous_history: str = "") -> dict:
     files["THESIS.md"] = thesis.render(res)
     files["site/index.html"] = site.render(res)
     files.update(site.standalone(res))
+    files["index.html"] = site.root_index()
     files["docs/DEMO_SCRIPT.md"] = material.demo_script(res)
     files["docs/X_POST.md"] = material.x_post(res)
     files["history.csv"] = history_text(previous_history, res["headline"])

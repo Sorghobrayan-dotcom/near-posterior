@@ -61,10 +61,10 @@ def x_post(res: dict) -> str:
     """Return docs/X_POST.md: a draft post for the author to edit and send."""
     h, c = res["headline"], res["coverage"]
     w90 = next(w for w in c["windows"] if w["window"] == "90")
-    main = (f"NEAR buys back its token with NEAR Intents revenue. Does that offset new supply? "
-            f"Today it covers {round(100 * w90['C'])}% of net issuance. To reach 100% in 24 "
-            f"months, fees must grow {f(h['k_star'], 1)}x. Of {h['entities']} DeFi protocols "
-            f"that were the same size and age, {round(100 * h['P'])}% did. "
+    main = (f"Built at NEAR HACKATHON: NEAR buys back its token with Intents revenue. Does that "
+            f"offset new supply? Today it covers {round(100 * w90['C'])}% of net issuance. To "
+            f"reach 100% in 24 months, fees must grow {f(h['k_star'], 1)}x. Of {h['entities']} "
+            f"DeFi protocols of the same size and age, {round(100 * h['P'])}% did. "
             f"@NEARProtocol #NEARHackathon")
     second = (f"Rules were committed before the data was fetched; the number is rebuilt offline "
               f"from DefiLlama and NearBlocks and checked by one command. Explorer for any growth "

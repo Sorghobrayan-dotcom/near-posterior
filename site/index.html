@@ -12,7 +12,9 @@ h1{font-size:1.45em;line-height:1.25;margin:.2em 0}h2{font-size:1.1em;margin:2.2
 color:var(--accent);margin:.1em 0}.head{font-family:Consolas,monospace;font-size:.8em;
 background:#f9fafb;border:1px solid var(--line);padding:8px;overflow-wrap:anywhere}
 code{font-size:.85em;background:#f3f4f6;padding:1px 3px;overflow-wrap:anywhere}
-.q{font-size:.85em;color:var(--mid)}.wrap{overflow-x:auto}
+.q{font-size:.85em;color:var(--mid)}
+.tag{font-size:.65em;font-weight:normal;color:#fff;background:var(--mid);border-radius:3px;
+padding:1px 6px;vertical-align:middle;white-space:nowrap}.wrap{overflow-x:auto}
 table{border-collapse:collapse;font-size:.8em;width:100%}
 td,th{border-bottom:1px solid var(--line);padding:3px 5px;text-align:right;vertical-align:top}
 td:first-child,th:first-child{text-align:left}.left{text-align:left}
@@ -24,14 +26,15 @@ border-left:3px solid var(--accent)}</style>
 <header>
 <p class="kicker">NEAR Hackathon - thesis track - not financial advice</p>
 <h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>
-<p class="big">0.053</p>
-<p><strong>90% interval 0.022 to 0.091</strong> - share of 75 comparable DefiLlama protocols that grew fees enough - snapshot t0 = 2026-11-11 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
-<p>Method: buybacks cover 0.182 of net issuance today, so NEAR Intents fees must grow 5.76x in 24 months; the number above is how often protocols of the same size and age did that.</p>
+<p class="big">5.3%</p>
+<p><strong>90% interval 2.2% to 9.1%</strong> - share of 75 comparable DefiLlama protocols that grew fees enough - snapshot t0 = 2026-11-11 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
+<p>Method: buybacks cover 18.2% of net issuance today, so NEAR Intents fees must grow 5.76x in 24 months; the number above is how often protocols of the same size and age did that.</p>
 <p><a href="../THESIS.md">THESIS.md</a> (the argument) - <a href="../PREREG.md">PREREG.md</a> (rules fixed before the data) - <a href="../PREREG_2.md">PREREG_2.md</a> (secondary analyses)</p>
+<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; they are reported whatever they show. The number above follows PREREG.md.</p>
 <p class="head">P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark</p>
 </header>
 <section id="explorer">
-<h2>Explorer: how often did comparable protocols grow fees by k? [secondary (specified after the primary results)]</h2>
+<h2>Explorer: how often did comparable protocols grow fees by k? <span class="tag">secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-label="Exceedance curve" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Exceedance curve</title>
 <rect x="0" y="0" width="480" height="280" fill="#ffffff"/>
@@ -118,7 +121,7 @@ border-left:3px solid var(--accent)}</style>
 <p>Over the 90 days to 2026-11-11 buybacks equal 0.182 of the dollar value of net issuance; at 1 they would offset it.</p>
 </section>
 <section>
-<h2>Coverage at 12, 24 and 36 months if NEAR Intents grows like class R [secondary (specified after the primary results)]</h2>
+<h2>Coverage at 12, 24 and 36 months if NEAR Intents grows like class R <span class="tag">secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-label="Coverage distribution" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Coverage distribution</title>
 <rect x="0" y="0" width="480" height="280" fill="#ffffff"/>
@@ -159,7 +162,7 @@ border-left:3px solid var(--accent)}</style>
 <p>Boxes: middle half of class R outcomes; lines: 5th to 95th percentile. At 24 months the median coverage would be 0.032 and the 95th percentile 1.06.</p>
 </section>
 <section>
-<h2>What NEAR controls: the lever table [secondary (specified after the primary results)]</h2>
+<h2>What NEAR controls: the lever table <span class="tag">secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Lever table" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Lever table</title>
 <rect x="0" y="0" width="480" height="300" fill="#ffffff"/>
@@ -230,7 +233,7 @@ border-left:3px solid var(--accent)}</style>
 <p>Each cell is P at the 24-month mark for a capture rate and an issuance path at today&#x27;s price; the highest cell in the full table (all prices) is 0.492, so no combination reaches even odds.</p>
 </section>
 <section>
-<h2>Calibration: forecast against observed, event &#x27;fees at least doubled&#x27; [secondary (specified after the primary results)]</h2>
+<h2>Calibration: forecast against observed, event &#x27;fees at least doubled&#x27; <span class="tag">secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-label="Calibration" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Calibration</title>
 <rect x="0" y="0" width="480" height="280" fill="#ffffff"/>
@@ -247,7 +250,7 @@ border-left:3px solid var(--accent)}</style>
 <text x="131.0" y="274.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">forecast</text>
 <text x="12" y="132.0" font-size="11" fill="#6b7280" text-anchor="middle" transform="rotate(-90 12 132.0)">observed</text>
 <polyline fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3 3" points="44.0,238.0 218.0,26.0"/>
-<text x="44.0" y="16.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="bold">12 months [secondary]</text>
+<text x="44.0" y="16.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="bold">12 months</text>
 <circle cx="46.3" cy="204.8" r="5.9" fill="#6b7280" fill-opacity="0.85"/>
 <circle cx="57.1" cy="198.7" r="5.3" fill="#6b7280" fill-opacity="0.85"/>
 <circle cx="70.6" cy="219.3" r="6.0" fill="#6b7280" fill-opacity="0.85"/>
@@ -271,7 +274,7 @@ border-left:3px solid var(--accent)}</style>
 <line x1="262" y1="238" x2="464" y2="238" stroke="#d1d5db"/>
 <text x="363.0" y="274.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">forecast</text>
 <polyline fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3 3" points="262.0,238.0 464.0,26.0"/>
-<text x="262.0" y="16.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="bold">24 months [secondary]</text>
+<text x="262.0" y="16.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="bold">24 months</text>
 <circle cx="264.1" cy="238.0" r="4.4" fill="#6b7280" fill-opacity="0.85"/>
 <circle cx="279.3" cy="238.0" r="3.4" fill="#6b7280" fill-opacity="0.85"/>
 <circle cx="299.3" cy="238.0" r="3.2" fill="#6b7280" fill-opacity="0.85"/>
@@ -286,7 +289,7 @@ border-left:3px solid var(--accent)}</style>
 <p>Dots on the diagonal would be calibrated. The class forecast C0 sits closer to it than trend extrapolation B2 but still above the observed share: at 24 months its largest bin forecast 0.25 and saw 0.03 (201 targets, origins 2024).</p>
 </section>
 <section>
-<h2>Backtest scores</h2>
+<h2>Backtest scores <span class="tag">partly secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" aria-label="Backtest scores" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Backtest scores</title>
 <rect x="0" y="0" width="480" height="340" fill="#ffffff"/>
@@ -351,7 +354,7 @@ border-left:3px solid var(--accent)}</style>
 <p>Bars: mean CRPS, lines: 90 percent intervals. The class forecast (accent) scores better than trend extrapolation (B2) in every backtest shown.</p>
 </section>
 <section>
-<h2>Robustness: specification curve, class multiverse, cohorts [secondary (specified after the primary results) for the last two]</h2>
+<h2>Robustness: specification curve, class multiverse, cohorts <span class="tag">partly secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" role="img" aria-label="Robustness" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Robustness</title>
 <rect x="0" y="0" width="480" height="200" fill="#ffffff"/>
@@ -1308,10 +1311,10 @@ border-left:3px solid var(--accent)}</style>
 <text x="204.6" y="20.0" font-size="11" text-anchor="start" fill="#c2410c" font-weight="normal">headline 0.053</text>
 </svg>
 <p class="q">Query: <code>results/speccurve.csv, results/class_multiverse.csv, results/cohorts.json</code></p>
-<p>Every registered and secondary specification gives P at or below 0.294; the headline is 0.053.</p>
+<p>Every registered and secondary specification gives P at or below 0.294; the headline is 0.053. The multiverse and the leave-one-year-out rows are secondary.</p>
 </section>
 <section>
-<h2>Cohorts: P with one origin year left out [secondary (specified after the primary results)]</h2>
+<h2>Cohorts: P with one origin year left out <span class="tag">secondary</span></h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 230" role="img" aria-label="Cohorts" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
 <title>Cohorts</title>
 <rect x="0" y="0" width="480" height="230" fill="#ffffff"/>
@@ -1449,7 +1452,7 @@ border-left:3px solid var(--accent)}</style>
 <p>43 values from 17 theses: 26 reproduced within 2 percent under our reading of their definition; the status does not say a figure is wrong.</p>
 </section>
 <section>
-<h2>Other theses: what they need to be true [secondary (specified after the primary results)]</h2>
+<h2>Other theses: what they need to be true <span class="tag">secondary</span></h2>
 <div class="wrap"><table>
 <tr><th class="left">Thesis</th><th class="left">Required multiple</th><th class="left">Condition</th><th>P at 24 months</th></tr>
 <tr><td class="left">0xrard/near-investment-thesis</td><td class="left">5.10x</td><td class="left">2.5 percent issuance, 16 bps gross take, 32.6 percent capture</td><td>0.064 (0.029 to 0.105)</td></tr>

@@ -9,7 +9,7 @@ import math
 
 from near_posterior import out, svg, thesis
 from near_posterior.svg import ACCENT, ACCENT_LIGHT, INK, LIGHT, MID, Frame
-from near_posterior.thesis import SECONDARY, f, interval, usd
+from near_posterior.thesis import f, interval, usd
 
 CSS = """:root{--ink:#1f2933;--mid:#6b7280;--accent:#c2410c;--line:#e5e7eb}
 body{font-family:Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:16px;
@@ -19,7 +19,9 @@ h1{font-size:1.45em;line-height:1.25;margin:.2em 0}h2{font-size:1.1em;margin:2.2
 color:var(--accent);margin:.1em 0}.head{font-family:Consolas,monospace;font-size:.8em;
 background:#f9fafb;border:1px solid var(--line);padding:8px;overflow-wrap:anywhere}
 code{font-size:.85em;background:#f3f4f6;padding:1px 3px;overflow-wrap:anywhere}
-.q{font-size:.85em;color:var(--mid)}.wrap{overflow-x:auto}
+.q{font-size:.85em;color:var(--mid)}
+.tag{font-size:.65em;font-weight:normal;color:#fff;background:var(--mid);border-radius:3px;
+padding:1px 6px;vertical-align:middle;white-space:nowrap}.wrap{overflow-x:auto}
 table{border-collapse:collapse;font-size:.8em;width:100%}
 td,th{border-bottom:1px solid var(--line);padding:3px 5px;text-align:right;vertical-align:top}
 td:first-child,th:first-child{text-align:left}.left{text-align:left}
@@ -28,10 +30,13 @@ td:first-child,th:first-child{text-align:left}.left{text-align:left}
 border-left:3px solid var(--accent)}"""
 
 
-def chart(title: str, body: str, query: str, sentence: str, anchor: str = "") -> str:
-    """Return one chart block: title, the chart, the query behind it and one plain sentence."""
+def chart(title: str, body: str, query: str, sentence: str, anchor: str = "",
+          tag: str = "") -> str:
+    """Return one chart block: title (with an optional short tag), the chart, the query behind
+    it and one plain sentence."""
     ident = f' id="{anchor}"' if anchor else ""
-    return (f"<section{ident}>\n<h2>{svg.esc(title)}</h2>\n{body}\n"
+    label = f' <span class="tag">{svg.esc(tag)}</span>' if tag else ""
+    return (f"<section{ident}>\n<h2>{svg.esc(title)}{label}</h2>\n{body}\n"
             f'<p class="q">Query: <code>{svg.esc(query)}</code></p>\n'
             f"<p>{svg.esc(sentence)}</p>\n</section>")
 
@@ -172,7 +177,7 @@ def calibration_fig(res: dict) -> Frame:
         panel.axes([0, 0.5, 1], [0, 0.5, 1], xlabel="forecast", ylabel="observed" if
                    panel is fr else "")
         panel.line([(0, 0), (1, 1)], colour=LIGHT, width=1, dash="3 3")
-        panel.text(panel.left, 16, f"{h} months [{SECONDARY.split(' ')[0]}]", size=11,
+        panel.text(panel.left, 16, f"{h} months", size=11,
                    weight="bold")
         rel = res["validation"]["S1"][h]["reliability"]
         for name, colour in (("B2", MID), ("C0", ACCENT)):
@@ -291,7 +296,7 @@ def explorer(res: dict) -> str:
             + f'<input id="ex-k" type="range" min="0" max="{len(ks) - 1}" step="1" '
               f'value="{start}" aria-label="required fee growth k"></form>\n'
             f'<p id="ex-out">{svg.esc(static)}</p>\n<script>{js}</script>')
-    return chart(f"Explorer: how often did comparable protocols grow fees by k? [{SECONDARY}]",
+    return chart("Explorer: how often did comparable protocols grow fees by k?",
                  body, "near_posterior.exceedance.compute -> results/exceedance.csv, "
                        "results/entities_R.csv; uv run python -m near_posterior.ask --k K --h H",
                  f"Move the slider: the share of class R protocols whose fees grew at least k-fold "
@@ -299,7 +304,7 @@ def explorer(res: dict) -> str:
                  f"{f(float([r for r in rows if r['h'] == '24'][-1]['P']))} at k = 100 (24 months);"
                  f" ticks at the bottom mark k* for the 30-day, 180-day and since "
                  f"{res['coverage']['buyback_start']} windows.",
-                 "explorer")
+                 "explorer", "secondary")
 
 
 def tables(res: dict) -> list[str]:
@@ -339,12 +344,22 @@ def tables(res: dict) -> list[str]:
               f"{a['claims']} values from {a['theses']} theses: {a['status_counts']['reproduced']} "
               f"reproduced within 2 percent under our reading of their definition; the status "
               f"does not say a figure is wrong."),
-        chart(f"Other theses: what they need to be true [{SECONDARY}]", fwd,
+        chart("Other theses: what they need to be true", fwd,
               "near_posterior.forward.run -> results/forward_claims.csv",
               "Growth multiples stated by other theses, placed on the class R base rate at 24 "
               "months; applying a fee base rate to revenue or volume assumes a constant take "
-              "rate."),
+              "rate.", tag="secondary"),
     ]
+
+
+def root_index() -> str:
+    """Return the root index.html: a redirect to site/ with a plain link, for GitHub Pages."""
+    return "\n".join([
+        "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
+        '<meta http-equiv="refresh" content="0; url=site/">',
+        "<title>near-posterior</title>", "</head>", "<body>",
+        '<p>The page is at <a href="site/">site/</a>. The argument is in '
+        '<a href="THESIS.md">THESIS.md</a>.</p>', "</body>", "</html>", ""])
 
 
 def standalone(res: dict) -> dict:
@@ -377,61 +392,70 @@ def render(res: dict) -> str:
               "near_posterior.coverage.summary -> results/coverage.json: daily[]",
               f"Over the 90 days to {c['t0']} buybacks equal {f(w90['C'])} of the dollar value of "
               f"net issuance; at 1 they would offset it."),
-        chart(f"Coverage at 12, 24 and 36 months if NEAR Intents grows like class R "
-              f"[{SECONDARY}]", coverage_dist_fig(res).svg("Coverage distribution"),
+        chart("Coverage at 12, 24 and 36 months if NEAR Intents grows like class R",
+              coverage_dist_fig(res).svg("Coverage distribution"),
               "near_posterior.exceedance.coverage_quantiles -> results/coverage_quantiles.json",
               f"Boxes: middle half of class R outcomes; lines: 5th to 95th percentile. At 24 "
               f"months the median coverage would be {f(q24['0.5'], 3)} and the 95th percentile "
-              f"{f(q24['0.95'], 2)}."),
-        chart(f"What NEAR controls: the lever table [{SECONDARY}]",
+              f"{f(q24['0.95'], 2)}.", tag="secondary"),
+        chart("What NEAR controls: the lever table",
               levers_fig(res).svg("Lever table"),
               "near_posterior.levers.compute -> results/levers.csv",
               f"Each cell is P at the 24-month mark for a capture rate and an issuance path at "
               f"today's price; the highest cell in the full table (all prices) is "
               f"{f(best['P'])}, so no combination reaches even odds."
               if float(best["P"]) <= 0.5 else
-              f"Each cell is P at the 24-month mark; at least one combination passes 0.50."),
-        chart(f"Calibration: forecast against observed, event 'fees at least doubled' "
-              f"[{SECONDARY}]", calibration_fig(res).svg("Calibration"),
+              f"Each cell is P at the 24-month mark; at least one combination passes 0.50.",
+              tag="secondary"),
+        chart("Calibration: forecast against observed, event 'fees at least doubled'",
+              calibration_fig(res).svg("Calibration"),
               "near_posterior.validation.compute -> results/validation.json: S1.*.reliability",
               f"Dots on the diagonal would be calibrated. The class forecast C0 sits closer to it "
               f"than trend extrapolation B2 but still above the observed share: at 24 months its "
               f"largest bin forecast {f(b['mean_forecast'], 2)} and saw {f(b['observed'], 2)} "
               f"({val['24']['scored']} targets, origins "
-              + ", ".join(val["24"]["origins_by_year"]) + ")."),
+              + ", ".join(val["24"]["origins_by_year"]) + ").", tag="secondary"),
         chart("Backtest scores", backtest_fig(res).svg("Backtest scores"),
               "results/backtest.json (registered), results/validation.json (S1)",
               "Bars: mean CRPS, lines: 90 percent intervals. The class forecast (accent) "
               + ("scores better than trend extrapolation (B2) in every backtest shown."
                  if beats_all else
-                 "does not score better than trend extrapolation (B2) in every backtest.")),
-        chart(f"Robustness: specification curve, class multiverse, cohorts [{SECONDARY} for "
-              f"the last two]", robustness_fig(res).svg("Robustness"),
+                 "does not score better than trend extrapolation (B2) in every backtest."),
+              tag="partly secondary"),
+        chart("Robustness: specification curve, class multiverse, cohorts",
+              robustness_fig(res).svg("Robustness"),
               "results/speccurve.csv, results/class_multiverse.csv, results/cohorts.json",
               f"Every registered and secondary specification gives P at or below "
-              f"{f(top_p)}; the headline is {f(h['P'])}."),
-        chart(f"Cohorts: P with one origin year left out [{SECONDARY}]",
+              f"{f(top_p)}; the headline is {f(h['P'])}. The multiverse and the "
+              f"leave-one-year-out rows are secondary.", tag="partly secondary"),
+        chart("Cohorts: P with one origin year left out",
               cohorts_fig(res).svg("Cohorts"), "near_posterior.multiverse.cohorts -> "
               "results/cohorts.json",
               f"Leaving out the {loo_max} origins changes P the most (to "
               f"{f(res['cohorts']['leave_one_year_out'][loo_max]['P'])}); the result leans on "
-              f"few market cycles."),
+              f"few market cycles.", tag="secondary"),
     ] + tables(res)
     links = ('<a href="../THESIS.md">THESIS.md</a> (the argument) - <a href="../PREREG.md">'
              'PREREG.md</a> (rules fixed before the data) - <a href="../PREREG_2.md">PREREG_2.md'
              '</a> (secondary analyses)')
+    def pc(x):
+        return f"{100 * float(x):.1f}%"
     top = [
         "<header>",
         '<p class="kicker">NEAR Hackathon - thesis track - not financial advice</p>',
         "<h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>",
-        f'<p class="big">{f(h["P"])}</p>',
-        f"<p><strong>90% interval {svg.esc(interval(h['interval']))}</strong> - share of "
+        f'<p class="big">{pc(h["P"])}</p>',
+        f"<p><strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong> - "
+        f"share of "
         f"{h['entities']} comparable DefiLlama protocols that grew fees enough - snapshot "
         f"t0 = {h['t0']} - verdict: {svg.esc(h['verdict'])}.</p>",
-        f"<p>Method: buybacks cover {f(w90['C'])} of net issuance today, so NEAR Intents fees "
+        f"<p>Method: buybacks cover {pc(w90['C'])} of net issuance today, so NEAR Intents fees "
         f"must grow {f(h['k_star'], 2)}x in 24 months; the number above is how often protocols "
         f"of the same size and age did that.</p>",
         f"<p>{links}</p>",
+        '<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses '
+        'specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; '
+        "they are reported whatever they show. The number above follows PREREG.md.</p>",
         f'<p class="head">{svg.esc(thesis.headline_line(res))}</p>',
         "</header>",
     ]

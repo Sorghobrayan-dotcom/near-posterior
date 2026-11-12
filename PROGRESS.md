@@ -598,3 +598,30 @@ P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0
 Second pass status: U1 to U12 committed; U13 (optional) not done. Not verified: CI on Linux
 and macOS, GitHub Pages (nothing pushed), the page in browsers other than Edge and the built-in
 browser.
+
+## U14 - Form fixes after review (done)
+
+The reviewer recomputed the second pass independently and found no calculation error. Five form
+fixes, no number, rule or result file changed (`git diff -- results/ history.csv` is empty):
+1. `docs/X_POST.md`: post 1 now starts with "Built at NEAR HACKATHON", keeps `@NEARProtocol` and
+   `#NEARHackathon`, 270 characters (test: <= 280).
+2. Page top and README finding show the headline as a percentage (5.3%, interval 2.2% to 9.1%;
+   coverage 18.2%); the exact headline line with 0.053 is unchanged below it (verify and ask
+   compare that line).
+3. Page: the long bracket label is replaced by a short tag "secondary" (or "partly secondary"
+   for the backtest and robustness blocks) next to the heading, explained once near the top with
+   a link to `PREREG_2.md`. `THESIS.md` keeps the full label.
+4. Generated root `index.html` (meta refresh to `site/` plus a plain link), written by `build`
+   and checked by `verify`.
+5. `THESIS.md` summary: two sentences on what the result means for an investor, chosen from the
+   verdict and the lever table (no advice wording, no price view); section 7 calibration as
+   tables (model, event, forecast bin, targets, mean forecast, observed).
+
+```
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), ...
+> uv run python -m near_posterior.verify --write
+44 lines, all PASS, exit=0
+> uv run pytest -q
+108 passed
+```
