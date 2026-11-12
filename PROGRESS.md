@@ -97,3 +97,39 @@ excluded moments: 467
 > uv run pytest -q tests/test_forecast_scoring.py
 14 passed
 ```
+
+## T5 - Backtest and model choice (done)
+
+- `backtest.py`: `targets` (class R moments with an outcome and valid F at tau - 3, 6, 9, 12
+  months), `pools` (other entities only, `t' + h <= tau`, outcome known), B0 (pool moments in
+  R, weight 1/n_j'), B1 and B2 (Normal from the entity's own consecutive quarterly log changes
+  of F before tau, 4 to 8 of them), A_30/A_60/A_120 (analog pool of PREREG 5 within the
+  backtest pool); Brier (k = 1, 2, 5), CRPS on max(Y, ln 0.01) (pool samples floored too),
+  coverage of central 50/90 percent intervals, mid-PIT; plain means, cluster bootstrap over
+  target entities for each mean and each difference to B0; scores by year of tau;
+  `select_model` as PREREG 6. Per-target scores in `results/backtest_targets.csv`.
+- Tests (`tests/test_backtest.py`, synthetic 150-entity panel): no pool moment with
+  `t' + h > tau`, never the target's own entity, every pool moment resolved; targets have valid
+  lags; dropped targets are counted and are exactly the ones below 20 B0 / 120 analog entities;
+  the model-choice rule on constructed score tables.
+- Result on the real panel (`results/backtest.json`):
+  - h = 24: 335 candidate targets, 0 scored, 335 dropped. The largest analog pool any h = 24
+    target sees has 39 entities (the rule needs 120). Not sufficient.
+  - h = 12: 606 candidates, 158 scored from 40 entities, 448 dropped (all 448 have fewer than
+    120 analog entities; 149 also fewer than 20 B0 entities). Sufficient (>= 100 targets,
+    >= 30 entities). Every scored target has tau in 2025 (the analog pool reaches 120 entities
+    only then), so "by year" has one year.
+  - Model choice: h = 12 backtest used; lowest mean CRPS among {B0, A_30, A_60, A_120} is
+    A_60; the 90 percent interval of CRPS(A_60) - CRPS(B0) contains 0, so the headline model
+    is B0. B1 and B2 (trend extrapolation) score worse than B0 and their difference intervals
+    exclude 0.
+- Known limit, not a deviation: dead fill is defined on the whole panel (PREREG 2.2), so a pool
+  outcome window that ends within 30 days after an entity's last report is filled with zeros
+  using knowledge of `D`, not of tau.
+
+```
+> uv run python -m near_posterior.backtest
+h=12: scored=158 entities=40 dropped=448 sufficient=True crps={'B0': 0.7693, 'B1': 1.0291, 'B2': 1.8874, 'A_30': 0.7837, 'A_60': 0.7666, 'A_120': 0.7749}
+h=24: scored=0 entities=0 dropped=335 sufficient=False crps={}
+choice: {'horizon': 12, 'lowest_crps': 'A_60', 'model': 'B0', 'difference_interval': [-0.02291261865088892, 0.019007761152790126], 'reason': 'A_60 has the lowest mean CRPS but the 90 percent interval of its CRPS minus B0 contains 0'}
+```

@@ -1,0 +1,5120 @@
+{
+  "F_near": 75897110.4444,
+  "choice": {
+    "difference_interval": [
+      -0.0229126186509,
+      0.0190077611528
+    ],
+    "horizon": 12,
+    "lowest_crps": "A_60",
+    "model": "B0",
+    "reason": "A_60 has the lowest mean CRPS but the 90 percent interval of its CRPS minus B0 contains 0"
+  },
+  "dropped_targets": {
+    "12": [
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "banana-gun",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 68,
+        "b0_entities": 38,
+        "entity": "banana-gun",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "banana-gun",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "banana-gun",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "banana-gun",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "banana-gun",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 51,
+        "entity": "banana-gun",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 52,
+        "entity": "banana-gun",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 53,
+        "entity": "banana-gun",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 54,
+        "b0_entities": 36,
+        "entity": "binance-staked-eth",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "binance-staked-eth",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 68,
+        "b0_entities": 38,
+        "entity": "binance-staked-eth",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "binance-staked-eth",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "binance-staked-eth",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "binance-staked-eth",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 46,
+        "entity": "binance-staked-eth",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 50,
+        "entity": "binance-staked-eth",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 52,
+        "entity": "binance-staked-eth",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 53,
+        "entity": "binance-staked-eth",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "bloxroute",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "convex-finance",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "convex-finance",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "convex-finance",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "convex-finance",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "convex-finance",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 20,
+        "entity": "convex-finance",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 21,
+        "entity": "convex-finance",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "convex-finance",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "convex-finance",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "convex-finance",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 29,
+        "entity": "convex-finance",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 29,
+        "entity": "convex-finance",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "convex-finance",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "convex-finance",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "convex-finance",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "convex-finance",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "convex-finance",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "convex-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 33,
+        "entity": "convex-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "cowswap",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "cowswap",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 36,
+        "entity": "debridge",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "ens",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "ens",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 4,
+        "entity": "ens",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 5,
+        "entity": "ens",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 6,
+        "entity": "ens",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 6,
+        "entity": "ens",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "ens",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 8,
+        "entity": "ens",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 8,
+        "entity": "ens",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 9,
+        "entity": "ens",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 11,
+        "entity": "ens",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 19,
+        "b0_entities": 13,
+        "entity": "ens",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "gains-network",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "gains-network",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 33,
+        "entity": "gains-network",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "gamma",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 68,
+        "b0_entities": 38,
+        "entity": "gamma",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "gamma",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "gamma",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "gamma",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 50,
+        "entity": "gamma",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "gmgn",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "gmgn",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 37,
+        "b0_entities": 29,
+        "entity": "maestro",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 40,
+        "b0_entities": 32,
+        "entity": "maestro",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 32,
+        "entity": "maestro",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 43,
+        "b0_entities": 32,
+        "entity": "maestro",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 46,
+        "b0_entities": 32,
+        "entity": "maestro",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "maestro",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 33,
+        "entity": "maestro",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 34,
+        "entity": "maestro",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "maestro",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "maestro",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "maestro",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 59,
+        "b0_entities": 36,
+        "entity": "maestro",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 67,
+        "b0_entities": 37,
+        "entity": "maestro",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 69,
+        "b0_entities": 37,
+        "entity": "maestro",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 71,
+        "b0_entities": 38,
+        "entity": "maestro",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 41,
+        "entity": "maestro",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 46,
+        "entity": "maestro",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 50,
+        "entity": "maestro",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 52,
+        "entity": "maestro",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 53,
+        "entity": "maestro",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "metaplex",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "metaplex",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 51,
+        "entity": "metaplex",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 53,
+        "entity": "metaplex",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "meth-protocol",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "meth-protocol",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "meth-protocol",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "meth-protocol",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "meth-protocol",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "nouns",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "nouns",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 43,
+        "b0_entities": 32,
+        "entity": "osmosis-dex",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 32,
+        "entity": "osmosis-dex",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 32,
+        "entity": "osmosis-dex",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 33,
+        "entity": "osmosis-dex",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 34,
+        "entity": "osmosis-dex",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "osmosis-dex",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#aave",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#aave",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 8,
+        "entity": "parent#aave",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 9,
+        "entity": "parent#aave",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 12,
+        "entity": "parent#aave",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 19,
+        "b0_entities": 14,
+        "entity": "parent#aave",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 15,
+        "entity": "parent#aave",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 25,
+        "b0_entities": 17,
+        "entity": "parent#aave",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "parent#aave",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "parent#aave",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#aave",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 24,
+        "entity": "parent#aave",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#aave",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#aave",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#aave",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#aave",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#aave",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "parent#aave",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 67,
+        "b0_entities": 38,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 53,
+        "entity": "parent#aero-protocol",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2021-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2021-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 3,
+        "entity": "parent#balancer",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 4,
+        "entity": "parent#balancer",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#balancer",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#balancer",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 5,
+        "entity": "parent#balancer",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 7,
+        "entity": "parent#balancer",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 7,
+        "entity": "parent#balancer",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 8,
+        "entity": "parent#balancer",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 11,
+        "entity": "parent#balancer",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 19,
+        "b0_entities": 13,
+        "entity": "parent#balancer",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#balancer",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 25,
+        "b0_entities": 16,
+        "entity": "parent#balancer",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 18,
+        "entity": "parent#balancer",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#bancor",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 34,
+        "entity": "parent#benqi",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#benqi",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 42,
+        "entity": "parent#benqi",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 47,
+        "entity": "parent#benqi",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#bluefin",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#blur",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#blur",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "parent#bonkfun",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#bonkfun",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#bonkfun",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#bonkfun",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#bonkfun",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 46,
+        "b0_entities": 32,
+        "entity": "parent#camelot",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "parent#camelot",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#camelot",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#camelot",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#camelot",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 36,
+        "entity": "parent#camelot",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 42,
+        "entity": "parent#camelot",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#cetus",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#cetus",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-09-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-10-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-02-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 3,
+        "entity": "parent#compound-finance",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 4,
+        "entity": "parent#compound-finance",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#compound-finance",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#curve-finance",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#curve-finance",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#curve-finance",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#curve-finance",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#curve-finance",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#curve-finance",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 7,
+        "entity": "parent#curve-finance",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 7,
+        "entity": "parent#curve-finance",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 8,
+        "entity": "parent#curve-finance",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 11,
+        "entity": "parent#curve-finance",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 18,
+        "entity": "parent#curve-finance",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "parent#curve-finance",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#curve-finance",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#curve-finance",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#curve-finance",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#curve-finance",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#curve-finance",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#curve-finance",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#desk",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "parent#dodo",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 53,
+        "entity": "parent#dodo",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 54,
+        "entity": "parent#dodo",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#dydx",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#ethena",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#fluid",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 36,
+        "entity": "parent#fluid",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 54,
+        "b0_entities": 36,
+        "entity": "parent#fluid",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "parent#fluid",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#fluid",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#fluid",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#fluid",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 53,
+        "entity": "parent#fluid",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 54,
+        "entity": "parent#fluid",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 32,
+        "entity": "parent#frax-finance",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 33,
+        "entity": "parent#frax-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 34,
+        "entity": "parent#frax-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#frax-finance",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 36,
+        "entity": "parent#frax-finance",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#gmx",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#gmx",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#gmx",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#gmx",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#gmx",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#gmx",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 24,
+        "entity": "parent#gmx",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#gmx",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#gmx",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#gmx",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#gmx",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#gmx",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "parent#gmx",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "parent#gmx",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "parent#gmx",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "parent#gmx",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "parent#gmx",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 33,
+        "entity": "parent#gmx",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#gmx",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#gmx",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#gmx",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 59,
+        "b0_entities": 36,
+        "entity": "parent#gmx",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "parent#jito",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#kamino-finance",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#kamino-finance",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#kamino-finance",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#kamino-finance",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#kamino-finance",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "parent#ktx.finance",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "parent#ktx.finance",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#ktx.finance",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#ktx.finance",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 46,
+        "b0_entities": 32,
+        "entity": "parent#layerzero",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "parent#layerzero",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#layerzero",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#layerzero",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#layerzero",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 36,
+        "entity": "parent#layerzero",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 47,
+        "entity": "parent#lifinity",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#liquity",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#liquity",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#liquity",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "parent#liquity",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#liquity",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2021-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2021-10-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 3,
+        "entity": "parent#maker",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 3,
+        "entity": "parent#maker",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 3,
+        "entity": "parent#maker",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 4,
+        "entity": "parent#maker",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#maker",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#maker",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 5,
+        "entity": "parent#maker",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 7,
+        "entity": "parent#maker",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 41,
+        "entity": "parent#maple-finance",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#metamask",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#metamask",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "parent#metamask",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 54,
+        "b0_entities": 36,
+        "entity": "parent#metamask",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "parent#metamask",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 46,
+        "b0_entities": 32,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 48,
+        "b0_entities": 32,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 34,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#opensea",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 67,
+        "b0_entities": 37,
+        "entity": "parent#optimism-foundation",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 69,
+        "b0_entities": 37,
+        "entity": "parent#optimism-foundation",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 71,
+        "b0_entities": 38,
+        "entity": "parent#optimism-foundation",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 41,
+        "entity": "parent#optimism-foundation",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 46,
+        "entity": "parent#optimism-foundation",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 50,
+        "entity": "parent#optimism-foundation",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 52,
+        "entity": "parent#optimism-foundation",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 25,
+        "b0_entities": 17,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 20,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 21,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#paxos",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#paxos",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#paxos",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#paxos",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#paxos",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#paxos",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#pendle",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#pendle",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#pendle",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#pharaoh-exchange",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#pharaoh-exchange",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#quickswap",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#quickswap",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#quickswap",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#quickswap",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#quickswap",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#quickswap",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#quickswap",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 7,
+        "entity": "parent#quickswap",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 7,
+        "entity": "parent#quickswap",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 46,
+        "b0_entities": 32,
+        "entity": "parent#raydium",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "parent#sanctum",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "parent#sanctum",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#sanctum",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#sanctum",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#sanctum",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#sanctum",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#sanctum",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#spookyswap",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#sun",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#sun",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#sushi",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#sushi",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#sushi",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 8,
+        "entity": "parent#sushi",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 8,
+        "entity": "parent#sushi",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 9,
+        "entity": "parent#sushi",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#synthetix",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#synthetix",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 27,
+        "entity": "parent#synthetix",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 27,
+        "entity": "parent#synthetix",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#synthetix",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#synthetix",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#synthetix",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "parent#synthetix",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "parent#synthetix",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "parent#synthetix",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "parent#synthetix",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "parent#synthetix",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 33,
+        "entity": "parent#synthetix",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#synthetix",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 47,
+        "entity": "parent#thena",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#trader-joe",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#trader-joe",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#trader-joe",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#trader-joe",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#trader-joe",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "parent#trader-joe",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "parent#trader-joe",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "parent#trader-joe",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "parent#trader-joe",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "parent#trader-joe",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 51,
+        "b0_entities": 33,
+        "entity": "parent#trader-joe",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "parent#trader-joe",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 35,
+        "entity": "parent#trader-joe",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#trust-wallet",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#trust-wallet",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#trust-wallet",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#trust-wallet",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#uniswap",
+        "tau": "2020-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#uniswap",
+        "tau": "2020-09-01"
+      },
+      {
+        "analog_entities": 70,
+        "b0_entities": 38,
+        "entity": "parent#venus-finance",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "parent#venus-finance",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "parent#venus-finance",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "parent#venus-finance",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "parent#venus-finance",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "parent#venus-finance",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "parent#venus-finance",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#yearn",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#yearn",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#yearn",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#yearn",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#yearn",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#yearn",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 8,
+        "b0_entities": 5,
+        "entity": "parent#yearn",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "photon",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 33,
+        "entity": "rocket-pool",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 52,
+        "b0_entities": 34,
+        "entity": "rocket-pool",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 35,
+        "entity": "rocket-pool",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 53,
+        "b0_entities": 36,
+        "entity": "rocket-pool",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 54,
+        "b0_entities": 36,
+        "entity": "rocket-pool",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 60,
+        "b0_entities": 37,
+        "entity": "rocket-pool",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 67,
+        "b0_entities": 37,
+        "entity": "rocket-pool",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 69,
+        "b0_entities": 37,
+        "entity": "rocket-pool",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 71,
+        "b0_entities": 38,
+        "entity": "rocket-pool",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 75,
+        "b0_entities": 41,
+        "entity": "rocket-pool",
+        "tau": "2025-01-01"
+      },
+      {
+        "analog_entities": 82,
+        "b0_entities": 46,
+        "entity": "rocket-pool",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 94,
+        "b0_entities": 50,
+        "entity": "rocket-pool",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 102,
+        "b0_entities": 52,
+        "entity": "rocket-pool",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 110,
+        "b0_entities": 53,
+        "entity": "rocket-pool",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "soltradingbot",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "soltradingbot",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "thorchain-dex",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 41,
+        "b0_entities": 31,
+        "entity": "thorchain-dex",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 42,
+        "b0_entities": 31,
+        "entity": "thorchain-dex",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 45,
+        "b0_entities": 31,
+        "entity": "thorchain-dex",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 47,
+        "b0_entities": 31,
+        "entity": "thorchain-dex",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 49,
+        "b0_entities": 32,
+        "entity": "thorchain-dex",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "trojan",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "trojan",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 83,
+        "b0_entities": 47,
+        "entity": "uniswap-labs",
+        "tau": "2025-02-01"
+      },
+      {
+        "analog_entities": 95,
+        "b0_entities": 51,
+        "entity": "uniswap-labs",
+        "tau": "2025-03-01"
+      },
+      {
+        "analog_entities": 103,
+        "b0_entities": 53,
+        "entity": "uniswap-labs",
+        "tau": "2025-04-01"
+      },
+      {
+        "analog_entities": 111,
+        "b0_entities": 54,
+        "entity": "uniswap-labs",
+        "tau": "2025-05-01"
+      },
+      {
+        "analog_entities": 72,
+        "b0_entities": 39,
+        "entity": "wigoswap",
+        "tau": "2024-12-01"
+      },
+      {
+        "analog_entities": 76,
+        "b0_entities": 42,
+        "entity": "wigoswap",
+        "tau": "2025-01-01"
+      }
+    ],
+    "24": [
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "banana-gun",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "banana-gun",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "banana-gun",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "binance-staked-eth",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "binance-staked-eth",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "binance-staked-eth",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "binance-staked-eth",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "convex-finance",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "convex-finance",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "convex-finance",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "convex-finance",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "convex-finance",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "convex-finance",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "convex-finance",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "convex-finance",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "convex-finance",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "convex-finance",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "convex-finance",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "convex-finance",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "convex-finance",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "convex-finance",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "convex-finance",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "convex-finance",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "convex-finance",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 20,
+        "entity": "convex-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 21,
+        "entity": "convex-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "debridge",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "ens",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "ens",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "gains-network",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "gains-network",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "gains-network",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "gamma",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "gamma",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "maestro",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "maestro",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "maestro",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "maestro",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "maestro",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "maestro",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "maestro",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "maestro",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "maestro",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "maestro",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "maestro",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "maestro",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "maestro",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "maestro",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "nouns",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "nouns",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "osmosis-dex",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "osmosis-dex",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "osmosis-dex",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "osmosis-dex",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "osmosis-dex",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "osmosis-dex",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#aave",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#aave",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#aave",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#aave",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#aave",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#aave",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#aave",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#aave",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#aave",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#aave",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#aave",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#aave",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#aave",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#aave",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#aave",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 8,
+        "entity": "parent#aave",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 9,
+        "entity": "parent#aave",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 12,
+        "entity": "parent#aave",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 19,
+        "b0_entities": 14,
+        "entity": "parent#aave",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-09-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-10-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#balancer",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#balancer",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 5,
+        "b0_entities": 3,
+        "entity": "parent#balancer",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#bancor",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#benqi",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#benqi",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#blur",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#blur",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#camelot",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#camelot",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#camelot",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#camelot",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#camelot",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#camelot",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-09-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-10-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2020-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#curve-finance",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#curve-finance",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#curve-finance",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#curve-finance",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#curve-finance",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#curve-finance",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#curve-finance",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#curve-finance",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#curve-finance",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 11,
+        "b0_entities": 7,
+        "entity": "parent#curve-finance",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 7,
+        "entity": "parent#curve-finance",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 16,
+        "b0_entities": 8,
+        "entity": "parent#curve-finance",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 11,
+        "entity": "parent#curve-finance",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#desk",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#dodo",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#fjord-foundry",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#fluid",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#fluid",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#fluid",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#fluid",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#frax-finance",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#frax-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#frax-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#frax-finance",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#frax-finance",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#gmx",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#gmx",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#gmx",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#gmx",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#gmx",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#gmx",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#gmx",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#gmx",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#gmx",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#gmx",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "parent#gmx",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#gmx",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#gmx",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#gmx",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#gmx",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#gmx",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#gmx",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#gmx",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 24,
+        "entity": "parent#gmx",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#gmx",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#gmx",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#gmx",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#jito",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#ktx.finance",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#layerzero",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#layerzero",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#layerzero",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#layerzero",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#layerzero",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#layerzero",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#liquity",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#liquity",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#liquity",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#liquity",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#liquity",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-03-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-04-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-05-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-06-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-09-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-10-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#maker",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#maker",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#metamask",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#metamask",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#metamask",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "parent#metamask",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#metamask",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#mux-protocol",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-04-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-05-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-06-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#opensea",
+        "tau": "2021-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "parent#optimism-foundation",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#optimism-foundation",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#pancakeswap",
+        "tau": "2022-12-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-01-01"
+      },
+      {
+        "analog_entities": 4,
+        "b0_entities": 3,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-02-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 4,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-03-01"
+      },
+      {
+        "analog_entities": 6,
+        "b0_entities": 5,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-04-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#pancakeswap",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 25,
+        "b0_entities": 17,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 20,
+        "entity": "parent#pancakeswap",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#paxos",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#paxos",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#paxos",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#paxos",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#paxos",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 8,
+        "entity": "parent#paxos",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#quickswap",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#quickswap",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#quickswap",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#raydium",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#sanctum",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#spookyswap",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#stargate-finance",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#sushi",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#sushi",
+        "tau": "2022-06-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "parent#sushi",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#sushi",
+        "tau": "2022-08-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#sushi",
+        "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "parent#sushi",
+        "tau": "2022-10-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#synthetix",
+        "tau": "2023-05-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#synthetix",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#synthetix",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#synthetix",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#synthetix",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 17,
+        "b0_entities": 9,
+        "entity": "parent#synthetix",
+        "tau": "2023-10-01"
+      },
+      {
+        "analog_entities": 18,
+        "b0_entities": 12,
+        "entity": "parent#synthetix",
+        "tau": "2023-11-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#synthetix",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#synthetix",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#synthetix",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#synthetix",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#synthetix",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#synthetix",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "parent#synthetix",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 3,
+        "b0_entities": 2,
+        "entity": "parent#trader-joe",
+        "tau": "2022-11-01"
+      },
+      {
+        "analog_entities": 9,
+        "b0_entities": 6,
+        "entity": "parent#trader-joe",
+        "tau": "2023-06-01"
+      },
+      {
+        "analog_entities": 10,
+        "b0_entities": 6,
+        "entity": "parent#trader-joe",
+        "tau": "2023-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#trader-joe",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 14,
+        "b0_entities": 8,
+        "entity": "parent#trader-joe",
+        "tau": "2023-09-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "parent#trader-joe",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "parent#trader-joe",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 26,
+        "b0_entities": 17,
+        "entity": "parent#trader-joe",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 19,
+        "entity": "parent#trader-joe",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#trader-joe",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "parent#trader-joe",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#trader-joe",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 34,
+        "b0_entities": 25,
+        "entity": "parent#trader-joe",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#uniswap",
+        "tau": "2020-08-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#uniswap",
+        "tau": "2020-09-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "parent#venus-finance",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2021-11-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2021-12-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2022-01-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2022-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2022-03-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2022-04-01"
+      },
+      {
+        "analog_entities": 1,
+        "b0_entities": 0,
+        "entity": "parent#yearn",
+        "tau": "2022-05-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "rocket-pool",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 29,
+        "b0_entities": 21,
+        "entity": "rocket-pool",
+        "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 25,
+        "entity": "rocket-pool",
+        "tau": "2024-06-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "rocket-pool",
+        "tau": "2024-07-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 26,
+        "entity": "rocket-pool",
+        "tau": "2024-08-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "rocket-pool",
+        "tau": "2024-09-01"
+      },
+      {
+        "analog_entities": 36,
+        "b0_entities": 28,
+        "entity": "rocket-pool",
+        "tau": "2024-10-01"
+      },
+      {
+        "analog_entities": 39,
+        "b0_entities": 31,
+        "entity": "rocket-pool",
+        "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 0,
+        "entity": "thorchain-dex",
+        "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 20,
+        "b0_entities": 14,
+        "entity": "thorchain-dex",
+        "tau": "2023-12-01"
+      },
+      {
+        "analog_entities": 21,
+        "b0_entities": 15,
+        "entity": "thorchain-dex",
+        "tau": "2024-01-01"
+      },
+      {
+        "analog_entities": 25,
+        "b0_entities": 17,
+        "entity": "thorchain-dex",
+        "tau": "2024-02-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 19,
+        "entity": "thorchain-dex",
+        "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 27,
+        "b0_entities": 20,
+        "entity": "thorchain-dex",
+        "tau": "2024-04-01"
+      }
+    ]
+  },
+  "scores": {
+    "12": {
+      "candidates": 606,
+      "dropped": 448,
+      "entities": 40,
+      "h": 12,
+      "models": {
+        "A_120": {
+          "brier_1": 0.153492440225,
+          "brier_1_interval": [
+            0.112058884023,
+            0.202098608248
+          ],
+          "brier_1_minus_B0": 0.0034874734353,
+          "brier_1_minus_B0_interval": [
+            -0.00414245564443,
+            0.0120944744548
+          ],
+          "brier_2": 0.0428353551336,
+          "brier_2_interval": [
+            0.0195117535635,
+            0.0725805205415
+          ],
+          "brier_2_minus_B0": -0.0120721110645,
+          "brier_2_minus_B0_interval": [
+            -0.0159394284005,
+            -0.00721317284621
+          ],
+          "brier_5": 0.00845683895921,
+          "brier_5_interval": [
+            0.00248178558243,
+            0.0191834806397
+          ],
+          "brier_5_minus_B0": -0.00914511591715,
+          "brier_5_minus_B0_interval": [
+            -0.0102538522697,
+            -0.00766664787599
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.0428353551336,
+              "crps": 0.774928896874,
+              "n": 158
+            }
+          },
+          "cov_50": 0.613924050633,
+          "cov_90": 0.987341772152,
+          "crps": 0.774928896874,
+          "crps_interval": [
+            0.649463639262,
+            0.940422579098
+          ],
+          "crps_minus_B0": 0.00559196811637,
+          "crps_minus_B0_interval": [
+            -0.0195950720065,
+            0.0305686641979
+          ],
+          "pit": {
+            "histogram": [
+              8,
+              14,
+              25,
+              19,
+              26,
+              22,
+              13,
+              13,
+              16,
+              2
+            ],
+            "ks": 0.144198312236,
+            "n": 158
+          }
+        },
+        "A_30": {
+          "brier_1": 0.155105485232,
+          "brier_1_interval": [
+            0.115416522719,
+            0.201349684499
+          ],
+          "brier_1_minus_B0": 0.00510051844233,
+          "brier_1_minus_B0_interval": [
+            -0.00264924316646,
+            0.0132935691501
+          ],
+          "brier_2": 0.0483614627286,
+          "brier_2_interval": [
+            0.0251386180779,
+            0.0771135253635
+          ],
+          "brier_2_minus_B0": -0.0065460034696,
+          "brier_2_minus_B0_interval": [
+            -0.0105482786972,
+            -0.00210728559028
+          ],
+          "brier_5": 0.00888888888889,
+          "brier_5_interval": [
+            0.00277762084118,
+            0.0190162959655
+          ],
+          "brier_5_minus_B0": -0.00871306598747,
+          "brier_5_minus_B0_interval": [
+            -0.0100218398865,
+            -0.00724144397613
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.0483614627286,
+              "crps": 0.783689452701,
+              "n": 158
+            }
+          },
+          "cov_50": 0.569620253165,
+          "cov_90": 0.924050632911,
+          "crps": 0.783689452701,
+          "crps_interval": [
+            0.627041491667,
+            0.987381836384
+          ],
+          "crps_minus_B0": 0.014352523944,
+          "crps_minus_B0_interval": [
+            -0.0157619277478,
+            0.0480404835054
+          ],
+          "pit": {
+            "histogram": [
+              19,
+              27,
+              14,
+              24,
+              22,
+              15,
+              9,
+              11,
+              11,
+              6
+            ],
+            "ks": 0.194514767932,
+            "n": 158
+          }
+        },
+        "A_60": {
+          "brier_1": 0.150126582278,
+          "brier_1_interval": [
+            0.107475485274,
+            0.200115025253
+          ],
+          "brier_1_minus_B0": 0.000121615488744,
+          "brier_1_minus_B0_interval": [
+            -0.00927710905363,
+            0.0109034873873
+          ],
+          "brier_2": 0.0446202531646,
+          "brier_2_interval": [
+            0.0209195384959,
+            0.0744524053808
+          ],
+          "brier_2_minus_B0": -0.0102872130336,
+          "brier_2_minus_B0_interval": [
+            -0.0144282422623,
+            -0.00523852698116
+          ],
+          "brier_5": 0.00815576652602,
+          "brier_5_interval": [
+            0.00190747521022,
+            0.0191985695723
+          ],
+          "brier_5_minus_B0": -0.00944618835034,
+          "brier_5_minus_B0_interval": [
+            -0.0108498187628,
+            -0.00756997753221
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.0446202531646,
+              "crps": 0.766555166379,
+              "n": 158
+            }
+          },
+          "cov_50": 0.575949367089,
+          "cov_90": 0.96835443038,
+          "crps": 0.766555166379,
+          "crps_interval": [
+            0.630251415678,
+            0.942721133255
+          ],
+          "crps_minus_B0": -0.00278176237838,
+          "crps_minus_B0_interval": [
+            -0.0229126186509,
+            0.0190077611528
+          ],
+          "pit": {
+            "histogram": [
+              14,
+              23,
+              12,
+              15,
+              31,
+              19,
+              14,
+              14,
+              11,
+              5
+            ],
+            "ks": 0.15253164557,
+            "n": 158
+          }
+        },
+        "B0": {
+          "brier_1": 0.15000496679,
+          "brier_1_interval": [
+            0.114296690265,
+            0.191577653072
+          ],
+          "brier_2": 0.0549074661981,
+          "brier_2_interval": [
+            0.0350403721349,
+            0.0804047937027
+          ],
+          "brier_5": 0.0176019548764,
+          "brier_5_interval": [
+            0.0126451255203,
+            0.026876258395
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.0549074661981,
+              "crps": 0.769336928757,
+              "n": 158
+            }
+          },
+          "cov_50": 0.658227848101,
+          "cov_90": 0.949367088608,
+          "crps": 0.769336928757,
+          "crps_interval": [
+            0.636947729863,
+            0.941727019979
+          ],
+          "pit": {
+            "histogram": [
+              12,
+              23,
+              14,
+              20,
+              21,
+              25,
+              15,
+              21,
+              7,
+              0
+            ],
+            "ks": 0.171622817055,
+            "n": 158
+          }
+        },
+        "B1": {
+          "brier_1": 0.25,
+          "brier_1_interval": [
+            0.25,
+            0.25
+          ],
+          "brier_1_minus_B0": 0.0999950332103,
+          "brier_1_minus_B0_interval": [
+            0.0584223469282,
+            0.135703309735
+          ],
+          "brier_2": 0.126878376212,
+          "brier_2_interval": [
+            0.112792634988,
+            0.142112238409
+          ],
+          "brier_2_minus_B0": 0.0719709100136,
+          "brier_2_minus_B0_interval": [
+            0.0569718009747,
+            0.0856473443382
+          ],
+          "brier_5": 0.0414225812832,
+          "brier_5_interval": [
+            0.0314055244575,
+            0.0522916279421
+          ],
+          "brier_5_minus_B0": 0.0238206264069,
+          "brier_5_minus_B0_interval": [
+            0.0159672887117,
+            0.032164220843
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.126878376212,
+              "crps": 1.02908102128,
+              "n": 158
+            }
+          },
+          "cov_50": 0.462025316456,
+          "cov_90": 0.905063291139,
+          "crps": 1.02908102128,
+          "crps_interval": [
+            0.831061430331,
+            1.26228841434
+          ],
+          "crps_minus_B0": 0.259744092526,
+          "crps_minus_B0_interval": [
+            0.159289861401,
+            0.36016284133
+          ],
+          "pit": {
+            "histogram": [
+              30,
+              35,
+              30,
+              20,
+              18,
+              19,
+              2,
+              3,
+              1,
+              0
+            ],
+            "ks": 0.365452306688,
+            "n": 158
+          }
+        },
+        "B2": {
+          "brier_1": 0.456288606216,
+          "brier_1_interval": [
+            0.390974874307,
+            0.528562939339
+          ],
+          "brier_1_minus_B0": 0.306283639426,
+          "brier_1_minus_B0_interval": [
+            0.20792390718,
+            0.402113001105
+          ],
+          "brier_2": 0.376840833969,
+          "brier_2_interval": [
+            0.315626112951,
+            0.445037353691
+          ],
+          "brier_2_minus_B0": 0.321933367771,
+          "brier_2_minus_B0_interval": [
+            0.259005123739,
+            0.39484057665
+          ],
+          "brier_5": 0.21414010349,
+          "brier_5_interval": [
+            0.159851552981,
+            0.275794355829
+          ],
+          "brier_5_minus_B0": 0.196538148614,
+          "brier_5_minus_B0_interval": [
+            0.14494678619,
+            0.255755979691
+          ],
+          "by_year": {
+            "2025": {
+              "brier_2": 0.376840833969,
+              "crps": 1.88738795401,
+              "n": 158
+            }
+          },
+          "cov_50": 0.132911392405,
+          "cov_90": 0.683544303797,
+          "crps": 1.88738795401,
+          "crps_interval": [
+            1.58195657469,
+            2.23437139907
+          ],
+          "crps_minus_B0": 1.11805102525,
+          "crps_minus_B0_interval": [
+            0.862032630459,
+            1.40641721743
+          ],
+          "pit": {
+            "histogram": [
+              87,
+              40,
+              15,
+              8,
+              2,
+              2,
+              1,
+              3,
+              0,
+              0
+            ],
+            "ks": 0.613767205996,
+            "n": 158
+          }
+        }
+      },
+      "scored": 158,
+      "sufficient": true
+    },
+    "24": {
+      "candidates": 335,
+      "dropped": 335,
+      "entities": 0,
+      "h": 24,
+      "models": {},
+      "scored": 0,
+      "sufficient": false
+    }
+  }
+}
