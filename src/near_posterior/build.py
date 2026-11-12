@@ -8,8 +8,10 @@ import csv
 import io
 import json
 
-from near_posterior import (audit, backtest, coverage, exceedance, levers, out, readme,
-                            refclass, rpc_check, site, speccurve, thesis, within)
+import numpy as np
+
+from near_posterior import (audit, backtest, coverage, exceedance, levers, multiverse, out,
+                            readme, refclass, rpc_check, site, speccurve, thesis, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -50,8 +52,11 @@ def compute(previous_history: str = "") -> dict:
     primary = {r["h"]: r for r in curve if r["cls"] == "R" and r["window"] == "90"
                and r["capture"] == "constant" and r["issuance"] == "constant" and r["G_P"] == 1.0}
     wit = within.compute(panel, cov, moms, ov, primary)
-    lev = levers.compute(exceedance.class_sample(panel, moms[24], F_near), cov,
-                         levers.load_governance())
+    sample24 = exceedance.class_sample(panel, moms[24], F_near)
+    lev = levers.compute(sample24, cov, levers.load_governance())
+    mv = multiverse.run(panel, moms[24], F_near, head["k_star"])
+    years24 = np.array([refclass.month_start(int(m)).year for m in sample24["month"]])
+    coh = multiverse.cohorts(sample24["Y"], sample24["e"], years24, head["k_star"])
     files = {
         "results/coverage.json": out.json_text(cov),
         "results/refclass_counts.json": out.json_text(counts),
@@ -71,6 +76,11 @@ def compute(previous_history: str = "") -> dict:
         "results/entities_R.csv": out.csv_text(exceedance.ENTITY_HEADER, exc["entities"]),
         "results/within.json": out.json_text(wit),
         "results/levers.csv": out.csv_text(levers.HEADER, lev),
+        "results/class_multiverse.csv": out.csv_text(multiverse.HEADER, mv),
+        "results/class_multiverse.json": out.json_text(multiverse.summary(mv)),
+        "results/cohorts.json": out.json_text(dict(coh, k_star=head["k_star"], h=24,
+                                                   label="secondary (specified after the "
+                                                         "primary results)")),
     }
     if rpc_check.RPC_FILE.exists():
         rpc = json.loads(rpc_check.RPC_FILE.read_text(encoding="ascii"))

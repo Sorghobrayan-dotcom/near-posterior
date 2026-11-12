@@ -400,3 +400,16 @@ Secondary (specified after the primary results).
   1.00 x issuance factor 1, 0.75, 0.50, 0.25 x G_P 0.5, 1, 2) + 2 x 15 labelled HSP-029 rows.
   Highest P of the table: 0.492 (0.401 to 0.580) at capture 1.00, issuance x 0.25, G_P 0.5;
   no cell has P > 0.50. Primary cell = registered headline (test).
+
+## U6 - Class multiverse and cohorts (S7, S8) (done)
+
+Secondary (specified after the primary results).
+- `multiverse.py`: 72 specifications at h = 24 and the primary k* (scale q 2, 3, 5 x age band
+  [270, 1095], [180, 730], [365, 1460], [270, inf) x entity-equal or moment-equal weighting x
+  all / trading / all except the yield-type list). Moment-equal: plain share with a cluster
+  bootstrap over entities. `results/class_multiverse.csv` and `.json`: median 0.032, minimum
+  0.009, maximum 0.063; 8 specifications have fewer than 30 entities (flagged, kept). The
+  primary specification reproduces the headline (test).
+- Cohorts (`results/cohorts.json`): leave-one-origin-year-out P: without 2020 0.040, 2021
+  0.057, 2022 0.049, 2023 0.039, 2024 0.101. Two-stage bootstrap over (entity, origin year)
+  blocks, indicative only: mean block share 0.048, interval 0.014 to 0.118.
