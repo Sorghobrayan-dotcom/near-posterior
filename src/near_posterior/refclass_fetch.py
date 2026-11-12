@@ -129,8 +129,19 @@ def write_merged(entries: list[dict], raw_rows: list[list[str]]) -> dict:
         "panel.csv.gz": gz_csv(["entity_id", "date", "fees"], panel_rows),
     }
     for name, data in files.items():
-        (REF / name).write_bytes(data)
+        path = REF / name
+        if path.exists() and same_content(name, path.read_bytes(), data):
+            continue
+        path.write_bytes(data)
     return files
+
+
+def same_content(name: str, old: bytes, new: bytes) -> bool:
+    """True if two versions of a file hold the same content; gzip files are compared after
+    decompression, because compressed bytes depend on the platform's zlib build."""
+    if name.endswith(".gz"):
+        return gzip.decompress(old) == gzip.decompress(new)
+    return old == new
 
 
 def sha256(data: bytes) -> str:

@@ -47,7 +47,10 @@ def test_panel_matches_entities_and_raw_entries():
     entries = [e for e in rf.universe(overview) if e["slug"] not in missing]
     raw = rf.read_gz_csv((REF / "raw_entries.csv.gz").read_bytes())
     entity_rows, panel_rows = rf.merge_entities(entries, raw)
-    assert rf.gz_csv(["entity_id", "date", "fees"], panel_rows) == (REF / "panel.csv.gz").read_bytes()
+    rebuilt = rf.gz_csv(["entity_id", "date", "fees"], panel_rows)
+    # compressed bytes depend on the platform's zlib build; the content must be identical
+    assert rf.gzip.decompress(rebuilt) == rf.gzip.decompress((REF / "panel.csv.gz").read_bytes())
+    assert rf.same_content("panel.csv.gz", (REF / "panel.csv.gz").read_bytes(), rebuilt)
     assert [r[0] for r in entity_rows] == [r["entity_id"] for r in ents]
 
 
@@ -66,5 +69,7 @@ def test_merge_by_parent():
                      ["parent#x", "2024-01-02", "3.0"]]
 
 
-def test_gzip_is_reproducible():
-    assert rf.gz_csv(["x"], [[1]]) == rf.gz_csv(["x"], [[1]])
+def test_gzip_content_is_reproducible():
+    a, b = rf.gz_csv(["x"], [[1]]), rf.gz_csv(["x"], [[1]])
+    assert rf.gzip.decompress(a) == rf.gzip.decompress(b) == b"x\n1\n"
+    assert rf.same_content("t.gz", a, b) and not rf.same_content("t.gz", a, rf.gz_csv(["x"], [[2]]))

@@ -625,3 +625,31 @@ P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0
 > uv run pytest -q
 108 passed
 ```
+
+## U15 - CI fixes after the first CI run (done)
+
+The reviewer pushed a3ffaad: CI passed on Linux and Windows; on macOS one test failed
+(`tests/test_refclass_fetch.py::test_panel_matches_entities_and_raw_entries`, 1 failed,
+107 passed), because it compared freshly gzip-compressed bytes with the committed ones and
+compressed bytes depend on the platform's zlib build.
+1. The test now compares the decompressed content. `refclass_fetch.write_merged` (used by
+   `refclass_fetch --merge`) keeps a committed file when its content is unchanged
+   (`same_content`: gzip files compared after decompression), so a re-merge on another
+   platform does not rewrite `panel.csv.gz` or its manifest hash. The sha256 manifest check of
+   the committed files is unchanged; no other place re-hashes freshly compressed bytes (`build`
+   and `verify` write or compare no gzip file). Checked here: `uv run python -m
+   near_posterior.refclass_fetch --merge` leaves `data/` unchanged (`git status` empty).
+   Not checked: the macOS run itself (I cannot see CI).
+2. `pages.yml`: the deploy job runs only `if: ${{ vars.PAGES_ENABLED == 'true' }}`. The author
+   sets the repository variable `PAGES_ENABLED` to `true` (Settings > Secrets and variables >
+   Actions > Variables) after enabling GitHub Pages with source "GitHub Actions".
+3. README: `check` workflow badge at the top; the OS line says "Linux, Windows and macOS: run by
+   CI on every push", with the result left to the badge. `VERIFICATION.md` says the CI result is
+   not a verify check.
+
+```
+> uv run python -m near_posterior.verify --write
+44 lines, all PASS, exit=0
+> uv run pytest -q
+108 passed
+```

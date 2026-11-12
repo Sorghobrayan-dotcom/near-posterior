@@ -1,9 +1,12 @@
 name: pages
 
 # Publish the static page on every push to main. Works once the repository is public and
-# GitHub Pages is set to "GitHub Actions". The whole repository is published so that the
-# relative links of site/index.html (../THESIS.md, ../PREREG.md) resolve; the page is at
-# /near-posterior/site/.
+# GitHub Pages is set to "GitHub Actions". The deploy job runs only when the repository
+# variable PAGES_ENABLED is "true": the author sets it (Settings > Secrets and variables >
+# Actions > Variables) after enabling Pages, so a private repository gets no red mark.
+# The whole repository is published so that the relative links of site/index.html
+# (../THESIS.md, ../PREREG.md) resolve; the page is at /near-posterior/site/ and the root
+# index.html redirects there.
 on:
   push:
     branches: [main]
@@ -20,6 +23,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ vars.PAGES_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

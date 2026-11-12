@@ -1,5 +1,7 @@
 # near-posterior
 
+[![check](https://github.com/Sorghobrayan-dotcom/near-posterior/actions/workflows/check.yml/badge.svg)](https://github.com/Sorghobrayan-dotcom/near-posterior/actions/workflows/check.yml)
+
 An investment thesis for NEAR HACKATHON (track `thesis`) on one question: **will NEAR buybacks
 funded by NEAR Intents revenue cover NEAR's net issuance at the 24-month mark?** Not financial
 advice.
@@ -13,8 +15,8 @@ advice.
 ## Do X, see Y
 
 Everything below runs offline from the committed data with Python 3.11+ and
-[uv](https://docs.astral.sh/uv/). Windows: run locally. Linux and macOS: not yet run (the CI
-workflow `check.yml` runs them once the repository is pushed).
+[uv](https://docs.astral.sh/uv/). Windows: run locally. Linux, Windows and macOS: run by CI on
+every push (`check.yml`: `uv sync`, `pytest -q`, `verify`); the result is the badge above.
 
 | Do | See |
 |---|---|

@@ -195,8 +195,9 @@ def verification_text(checks: list[tuple[bool, str]], t0: str) -> str:
     L += ["", "## README claims and the checks that cover them", "",
           "| README claim | Covered by |", "|---|---|"]
     L += [f"| {claim} | {cover} |" for claim, cover in CLAIMS]
-    L += ["", "Not covered by `verify`: that the CI workflows pass on Linux and macOS (not yet "
-          "run), and what a reader concludes from the numbers.", ""]
+    L += ["", "Not covered by `verify`: the result of the CI workflow on Linux, Windows and "
+          "macOS (shown by the badge at the top of the README), and what a reader concludes "
+          "from the numbers.", ""]
     return "\n".join(L)
 
 
