@@ -1,0 +1,57 @@
+{
+  "claims": 32,
+  "dispersion": {
+    "M1": {
+      "iqr_ln": 0.103439419773,
+      "n": 7,
+      "q25_ln": 16.8442910188,
+      "q75_ln": 16.9477304386
+    },
+    "M2": {
+      "iqr_ln": 0.203419571887,
+      "n": 5,
+      "q25_ln": -1.29674585613,
+      "q75_ln": -1.09332628424
+    },
+    "M3": {
+      "iqr_ln": 0.120889548746,
+      "n": 6,
+      "q25_ln": -1.74258491607,
+      "q75_ln": -1.62169536733
+    },
+    "M4": {
+      "iqr_ln": 0.0267735927237,
+      "n": 8,
+      "q25_ln": 22.0390710765,
+      "q75_ln": 22.0658446692
+    },
+    "M5": {
+      "iqr_ln": 0.00588054207289,
+      "n": 6,
+      "q25_ln": -3.69672017688,
+      "q75_ln": -3.6908396348
+    }
+  },
+  "metrics": {
+    "M1": "annualised buybacks or captured revenue (USD per year)",
+    "M2": "capture rate (buybacks / gross fees)",
+    "M3": "coverage of net issuance (required multiples inverted)",
+    "M4": "30-day NEAR Intents volume (USD)",
+    "M5": "net inflation rate (per year)"
+  },
+  "r0": {
+    "M1": 20751795.1667,
+    "M2": 0.273420095247,
+    "M3": 0.182264333929,
+    "M4": 3731354987.0,
+    "M5": 0.0248232692636
+  },
+  "status_counts": {
+    "not recomputed": 6,
+    "not reproduced": 6,
+    "reproduced": 20
+  },
+  "t0": "2026-11-11",
+  "theses": 11,
+  "tolerance_ln": 0.0198026272962
+}

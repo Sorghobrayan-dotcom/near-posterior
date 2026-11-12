@@ -133,3 +133,36 @@ h=12: scored=158 entities=40 dropped=448 sufficient=True crps={'B0': 0.7693, 'B1
 h=24: scored=0 entities=0 dropped=335 sufficient=False crps={}
 choice: {'horizon': 12, 'lowest_crps': 'A_60', 'model': 'B0', 'difference_interval': [-0.02291261865088892, 0.019007761152790126], 'reason': 'A_60 has the lowest mean CRPS but the 90 percent interval of its CRPS minus B0 contains 0'}
 ```
+
+## T6 - Many-analysts audit (done)
+
+- Commits pinned with `git ls-remote <url> HEAD` for the 20 candidates of `docs/THESES.md`
+  (2026-11-12). File lists read from a blobless shallow clone at that commit (tree only);
+  every cited file downloaded from `https://raw.githubusercontent.com/<owner>/<repo>/<sha>/<path>`
+  (all HTTP 200). Line numbers and the quoted line in `data/claims.csv` come from those bytes.
+- `data/claims.csv`: 32 values from 11 theses (0xrard, AbdeldjalilChougui, ErfanMoheb,
+  Lvalentine16, Raindess69, Topeseun, rajeshmullippa-collab, ervhint, semilla1lab, tenxagent,
+  HATWHY4041), each with URL, commit, file, line, value, unit, window, end date, stated source,
+  definition, the recompute rule, the conversion to a common unit, and the quoted line.
+  Not used: repositories whose files at the pinned commit hold none of M1-M5 with a stated end
+  date (Alamutu1, daniels-martins, minorCoder, tobadaniel, bomanaps, EmekaManuel, Alberto,
+  Apihpih96, soldanoandrea: window end of its capture share not found in the file read).
+- `audit.py`: `replicate` (our value under their window, end date and definition), `canonical`
+  (common unit; required multiples inverted to coverage), `decompose` (e, s, ln(y/r0) = s + e),
+  `dispersion` (IQR of ln y, only if n >= 5), `run`, `main`. Values whose definition needs data
+  we do not have (gross minted NEAR, burns, a protocol parameter) or whose window is not stated
+  are "not recomputed", with the reason in `note`.
+- Since 2026-02-23 DefiLlama revenue equals holders revenue on every day of our snapshot
+  (checked: 0 differing days), so revenue- and buyback-based rules agree on those windows.
+
+```
+> uv run python -m near_posterior.audit
+11 theses, 32 claims: {'reproduced': 20, 'not reproduced': 6, 'not recomputed': 6}
+M1 {'n': 7, 'iqr_ln': 0.10343941977268045, 'q25_ln': 16.844291018835538, 'q75_ln': 16.947730438608218}
+M2 {'n': 5, 'iqr_ln': 0.2034195718865235, 'q25_ln': -1.2967458561253957, 'q75_ln': -1.0933262842388722}
+M3 {'n': 6, 'iqr_ln': 0.1208895487457089, 'q25_ln': -1.7425849160730262, 'q75_ln': -1.6216953673273173}
+M4 {'n': 8, 'iqr_ln': 0.026773592723714046, 'q25_ln': 22.03907107650529, 'q75_ln': 22.065844669229005}
+M5 {'n': 6, 'iqr_ln': 0.005880542072888684, 'q25_ln': -3.696720176877785, 'q75_ln': -3.690839634804896}
+> uv run pytest -q tests/test_audit.py
+13 passed
+```
