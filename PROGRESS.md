@@ -487,3 +487,7 @@ recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEV
 - Tests: no pool moment with `t' + h > tau`, never the target's entity, a target with NEAR's
   scale and age gets exactly class R, the registered counts.
 - Build time is now about 21 s.
+- `ask --slug <entity_id>` (U2, after U4): the class is centred on that entity's latest valid
+  moment with the S1 construction; `parent#` may be omitted; a class below 20 entities is
+  flagged. Example: `uv run python -m near_posterior.ask --slug aave --h 24` (8 entities,
+  flagged).

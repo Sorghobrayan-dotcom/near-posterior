@@ -38,3 +38,13 @@ def test_weighted_quantiles_lower_and_entity_weights():
     assert w.sum() == pytest.approx(1.0) and w[3] == pytest.approx(0.5)
     q = exceedance.weighted_quantiles(x, w, (0.1, 0.5, 0.51))
     assert q == {"0.1": 1.0, "0.5": 3.0, "0.51": 4.0}
+
+
+def test_ask_slug_class_excludes_the_entity_itself():
+    panel = refclass.load_panel()
+    ov = refclass.origin_values(panel)
+    mom = refclass.moments(panel, 12, ov)
+    entity = panel["ids"][0]
+    sample, target = ask.centred_sample(panel, mom, ov, entity, 12)
+    assert target["entity"] == entity and target["F"] > 0
+    assert panel["ids"].index(entity) not in set(sample["e"].tolist())
