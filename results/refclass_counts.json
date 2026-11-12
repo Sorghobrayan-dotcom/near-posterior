@@ -84,5 +84,11 @@
       "valid": 18707
     }
   },
+  "panel": {
+    "fetched_at": "2026-11-12T10:36:46+00:00",
+    "missing": 0,
+    "missing_share": 0.0,
+    "universe": 981
+  },
   "stop_rule_R_below_30_at_h24": false
 }

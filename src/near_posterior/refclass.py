@@ -8,6 +8,7 @@ import csv
 import datetime as dt
 import gzip
 import io
+import json
 import math
 import pathlib
 
@@ -198,13 +199,26 @@ def counts(panel: dict, F_near: float) -> tuple[dict, list[list]]:
     return res, excluded
 
 
+def panel_meta(ref: pathlib.Path = REF) -> dict:
+    """Return the fetch facts of the frozen panel (universe, missing entries) from its manifest."""
+    man = json.loads((ref / "manifest.json").read_text(encoding="ascii"))
+    return {k: man[k] for k in ("fetched_at", "universe", "missing", "missing_share")}
+
+
+def summary(panel: dict, F_near: float) -> tuple[dict, list[list]]:
+    """Return the class counts with the panel facts and the stop-rule flag, and excluded rows."""
+    res, excluded = counts(panel, F_near)
+    res["panel"] = panel_meta()
+    res["stop_rule_R_below_30_at_h24"] = res["classes"]["R"]["24"]["entities"] < 30
+    return res, excluded
+
+
 def main() -> None:
     """Write results/refclass_counts.json and data/refclass/excluded.csv; apply the stop rule."""
     panel = load_panel()
     F_near = coverage.summary(coverage.load())["F_near"]
-    res, excluded = counts(panel, F_near)
+    res, excluded = summary(panel, F_near)
     n_r = res["classes"]["R"]["24"]["entities"]
-    res["stop_rule_R_below_30_at_h24"] = n_r < 30
     out.write_text(out.RESULTS / "refclass_counts.json", out.json_text(res))
     out.write_text(REF / "excluded.csv", out.csv_text(
         ["h", "entity_id", "origin", "present_days_in_outcome_window"], excluded))

@@ -144,9 +144,11 @@ choice: {'horizon': 12, 'lowest_crps': 'A_60', 'model': 'B0', 'difference_interv
   Lvalentine16, Raindess69, Topeseun, rajeshmullippa-collab, ervhint, semilla1lab, tenxagent,
   HATWHY4041), each with URL, commit, file, line, value, unit, window, end date, stated source,
   definition, the recompute rule, the conversion to a common unit, and the quoted line.
-  Not used: repositories whose files at the pinned commit hold none of M1-M5 with a stated end
-  date (Alamutu1, daniels-martins, minorCoder, tobadaniel, bomanaps, EmekaManuel, Alberto,
-  Apihpih96, soldanoandrea: window end of its capture share not found in the file read).
+  Not recorded (9 candidates): Alamutu1 and daniels-martins (no result file in the tree);
+  minorCoder and Apihpih96 (the result file read has no M1-M5 key); soldanoandrea (the end date
+  of its capture share is not in the file read); tobadaniel, bomanaps, EmekaManuel and Alberto
+  (not read in detail: 11 theses already met the >= 10 requirement). Their absence says nothing
+  about their content.
 - `audit.py`: `replicate` (our value under their window, end date and definition), `canonical`
   (common unit; required multiples inverted to coverage), `decompose` (e, s, ln(y/r0) = s + e),
   `dispersion` (IQR of ln y, only if n >= 5), `run`, `main`. Values whose definition needs data
@@ -165,4 +167,35 @@ M4 {'n': 8, 'iqr_ln': 0.026773592723714046, 'q25_ln': 22.03907107650529, 'q75_ln
 M5 {'n': 6, 'iqr_ln': 0.005880542072888684, 'q25_ln': -3.696720176877785, 'q75_ln': -3.690839634804896}
 > uv run pytest -q tests/test_audit.py
 13 passed
+```
+
+## T7 - Specification curve, headline, thesis (done)
+
+- `speccurve.py`: `grid` (864 rows = 4 classes x the 216 scenarios of `coverage.scenario_grid`),
+  `run` (P_B0(k*) and its bootstrap interval per row), `summarise`, `verdict` (PREREG 8),
+  `break_even`, `what_would_change`, `headline`.
+- `thesis.py`: `render` builds the nine sections of SPEC 7 from `results/` and `DEVIATIONS.md`
+  only. Facts are sorted into "for" and "against" by their direction relative to the verdict,
+  computed from the data, so the text follows the numbers when the snapshot changes.
+- `build.py`: `compute` (every generated file in memory, in order), `history_text` (one row per
+  snapshot, keyed by `fetched_at`, replaced on rebuild), `main` (writes and prints the headline).
+- `refclass.summary` adds the panel fetch facts (universe, missing) and the stop-rule flag to
+  `results/refclass_counts.json`.
+- Reading of PREREG 8 used (not a deviation): P of the headline model is a step function of k;
+  `k50` is the largest k with P > 0.50. The capture, issuance and price factors that move P
+  across 0.50 on their own are the ones that bring k* to `k50`; the single-factor rows of the
+  registered grid are also listed with their P and whether they cross.
+- Result (`results/headline.json`): model B0 (rule of PREREG 6 on the h = 12 backtest), class R,
+  75 entities. Primary k* = 5.762. P = 0.053, 90 percent interval 0.022 to 0.091 (cluster
+  bootstrap). Verdict: "buybacks are unlikely to cover issuance within 24 months". `k50` = 0.187:
+  capture alone would need a capture rate of 8.44 (above 1), issuance a cut of 96.8 percent, or
+  the price a factor of 0.032. No single-factor grid row crosses 0.50. Specification curve:
+  median 0.074, min 0.000, max 0.294.
+- Rebuild twice: `THESIS.md` and every `results/` file byte-identical (`cmp`). ASCII checked.
+
+```
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance within 24 months) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance within 24 months
+> uv run pytest -q
+75 passed in 8.72s
 ```
