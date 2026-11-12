@@ -448,3 +448,14 @@ h = 12: P = 0.054, resolves on 2027-11-11: pending
 h = 24: P = 0.053, resolves on 2028-11-11: pending
 h = 36: P = 0.061, resolves on 2029-11-11: pending
 ```
+
+## U4 - still stopped (further checks, counts only)
+
+More variants tried for the S1 class, none gives 1636 / 194: pool restricted to moments with
+F valid at t' - 3..12 (1574 / 48), at t' - 12 (1582 / 48), at t' - 3, 6 (1653 / 192), at
+t' - 3 (1658 / 201); age-band bounds floored, ceiled, rounded or truncated (1657 to 1662 /
+199 to 205); target F from the window ending on tau itself, as for NEAR at t0 (1658 / 199);
+F as 365 x (90-day sum) / 90 instead of 365 x mean of present days (1658 / 200).
+The S1 and S2 code (`src/near_posterior/validation.py`, and the `backtest.aggregate` change it
+needs) is in the working tree, not committed. Waiting for the definition used for the
+expected counts. Done meanwhile: U5, U6, U7, U11. Left: U4, then U8, U9, U10, U12, U13.
