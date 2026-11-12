@@ -50,9 +50,10 @@ Test on a synthetic entity that crosses the threshold at month 10 and falls back
 - `results/validation.json`, `results/validation_targets.csv`, reliability tables included.
 - Tests: no pool moment with `t' + h > tau`; the target's entity never in its class; for a
   synthetic target with the scale and age of NEAR Intents the class equals class R.
-- Expected counts (computed without reading outcomes): h = 12: 2730 candidates, 1636 scored,
-  187 entities, origins 2023 (97), 2024 (488), 2025 (1051); h = 24: 1390 candidates, 194 scored,
-  50 entities, origins 2024. If your counts differ, stop and say why before going on.
+- Expected counts (computed without reading outcomes, corrected 2026-11-12, see the erratum in
+  `DEVIATIONS.md`): h = 12: 2730 candidates, 1659 scored, 188 entities, origins 2023 (102),
+  2024 (494), 2025 (1063); h = 24: 1390 candidates, 201 scored, 51 entities, origins 2024.
+  If your counts differ, stop and say why before going on.
 
 ## U5 - Lever table and governance scenario (S6, S10)
 

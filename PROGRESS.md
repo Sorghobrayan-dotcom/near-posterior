@@ -459,3 +459,31 @@ F as 365 x (90-day sum) / 90 instead of 365 x mean of present days (1658 / 200).
 The S1 and S2 code (`src/near_posterior/validation.py`, and the `backtest.aggregate` change it
 needs) is in the working tree, not committed. Waiting for the definition used for the
 expected counts. Done meanwhile: U5, U6, U7, U11. Left: U4, then U8, U9, U10, U12, U13.
+
+## U4 - Method validation (S1, S2) (done)
+
+Secondary (specified after the primary results). Unblocked by the reviewer: the expected counts
+had been computed with an age band of [a/2, 2a]; under the registered S1 rule the reviewer
+recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEVIATIONS.md`;
+`docs/TASKS_V2.md` U4 counts corrected. `PREREG_2.md` unchanged.
+- `validation.py`: S1 targets (outcome, 90-day fees >= 1M USD, age >= 270, valid lags), class
+  centred on each target (other entities, `t' + h <= tau`, scale x/3..3x, age
+  a*270/550..a*1095/550, >= 20 entities), models C0 (class sample, weight 1/n_j'), B1, B2;
+  scores, intervals, by year, reliability tables; S2 = class R with B0, B1, B2 and only the
+  B0-pool condition. `backtest.aggregate` takes the model list and the base model;
+  `sample_scores` / `normal_scores` also return the event probabilities.
+- `results/validation.json`, `results/validation_targets.csv`:
+  - S1 h = 12: 2730 candidates, 1659 scored, 188 entities (origins 2023 102, 2024 494,
+    2025 1063), sufficient. Mean CRPS: C0 0.995 (0.916 to 1.079), B1 1.117, B2 1.774;
+    B1 - C0: 0.086 to 0.160, B2 - C0: 0.654 to 0.909 (C0 beats both).
+  - S1 h = 24: 1390 candidates, 201 scored, 51 entities (origins 2024 only), sufficient.
+    C0 1.410 (1.200 to 1.640), B1 1.898, B2 4.528; B1 - C0: 0.381 to 0.596,
+    B2 - C0: 2.384 to 3.858.
+  - Calibration: C0 forecasts more growth than happened. Event "fees at least doubled", bin
+    [0.20, 0.40): mean forecast 0.279, observed 0.108 at h = 12 (1328 targets); 0.253 vs
+    0.031 at h = 24 (127 targets). Event "at least 5x", bin [0.10, 1]: 0.158 vs 0.022 at
+    h = 12; 0.168 vs 0.019 at h = 24.
+  - S2 (h = 24): 335 candidates, 92 scored from 31 entities, not sufficient (as expected).
+- Tests: no pool moment with `t' + h > tau`, never the target's entity, a target with NEAR's
+  scale and age gets exactly class R, the registered counts.
+- Build time is now about 21 s.

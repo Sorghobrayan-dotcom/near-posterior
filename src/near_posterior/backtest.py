@@ -65,8 +65,9 @@ def quarterly_changes(ov: dict, e: int, k: int) -> list[float]:
 def sample_scores(z: np.ndarray, w: np.ndarray, Y: float) -> dict:
     """Return Brier, CRPS, interval coverage and PIT of a weighted sample forecast."""
     y = max(Y, refclass.FLOOR)
-    res = {f"brier_{k:g}": scoring.brier(float(np.sum(w[z >= math.log(k)])), float(Y >= math.log(k)))
-           for k in EVENTS}
+    res = {f"prob_{k:g}": float(np.sum(w[z >= math.log(k)])) for k in EVENTS}
+    res.update({f"brier_{k:g}": scoring.brier(res[f"prob_{k:g}"], float(Y >= math.log(k)))
+                for k in EVENTS})
     res["crps"] = scoring.crps_sample(z, w, y)
     for level, (a, b) in (("50", (0.25, 0.75)), ("90", (0.05, 0.95))):
         res[f"cov_{level}"] = float(scoring.interval_coverage(
@@ -78,8 +79,9 @@ def sample_scores(z: np.ndarray, w: np.ndarray, Y: float) -> dict:
 def normal_scores(mu: float, s: float, Y: float) -> dict:
     """Return Brier, CRPS, interval coverage and PIT of a Normal(mu, s^2) forecast."""
     y = max(Y, refclass.FLOOR)
-    res = {f"brier_{k:g}": scoring.brier(1.0 - scoring.Phi((math.log(k) - mu) / s),
-                                         float(Y >= math.log(k))) for k in EVENTS}
+    res = {f"prob_{k:g}": 1.0 - scoring.Phi((math.log(k) - mu) / s) for k in EVENTS}
+    res.update({f"brier_{k:g}": scoring.brier(res[f"prob_{k:g}"], float(Y >= math.log(k)))
+                for k in EVENTS})
     res["crps"] = scoring.crps_normal(mu, s, y)
     for level, q in (("50", 0.75), ("90", 0.95)):
         half = scoring.normal_quantile(q) * s
@@ -138,8 +140,9 @@ def rolling_origin(panel: dict, h: int, F_near: float, ov: dict | None = None) -
     return {"h": h, "rows": rows, "dropped": dropped, "candidates": int(len(rows) + len(dropped))}
 
 
-def aggregate(run: dict) -> dict:
-    """Return mean scores, intervals, differences to B0, coverage, PIT and scores by year."""
+def aggregate(run: dict, names: tuple = MODELS, base: str = "B0") -> dict:
+    """Return mean scores, intervals, differences to the base model, coverage, PIT and scores
+    by year, for the models `names`."""
     rows = run["rows"]
     res = {"h": run["h"], "scored": len(rows), "dropped": len(run["dropped"]),
            "candidates": run["candidates"],
@@ -151,17 +154,17 @@ def aggregate(run: dict) -> dict:
     groups = np.array([r["entity"] for r in rows])
     metrics = [f"brier_{k:g}" for k in EVENTS] + ["crps", "cov_50", "cov_90"]
     models = {}
-    for name in MODELS:
+    for name in names:
         m = {}
         for metric in metrics:
             v = np.array([r[name][metric] for r in rows])
             m[metric] = float(v.mean())
             if metric.startswith(("brier", "crps")):
                 m[f"{metric}_interval"] = cluster_interval(v, groups)
-                if name != "B0":
-                    d = v - np.array([r["B0"][metric] for r in rows])
-                    m[f"{metric}_minus_B0"] = float(d.mean())
-                    m[f"{metric}_minus_B0_interval"] = cluster_interval(d, groups)
+                if name != base:
+                    d = v - np.array([r[base][metric] for r in rows])
+                    m[f"{metric}_minus_{base}"] = float(d.mean())
+                    m[f"{metric}_minus_{base}_interval"] = cluster_interval(d, groups)
         m["pit"] = scoring.pit([r[name]["pit"] for r in rows])
         years = sorted({r["year"] for r in rows})
         m["by_year"] = {str(y): {"n": sum(1 for r in rows if r["year"] == y),
