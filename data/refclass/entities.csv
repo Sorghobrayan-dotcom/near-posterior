@@ -1,0 +1,798 @@
+entity_id,name,category,slugs,first_day,last_day,n_days
+40-acres,40 Acres,Lending,40-acres,2025-02-14,2026-11-12,637
+aark-digital,Aark Digital,Derivatives,aark-digital,2024-11-04,2026-11-12,739
+aave-labs,Aave Labs,Developer Tools,aave-labs,2025-06-03,2026-10-08,493
+accountable,Accountable,Uncollateralized Lending,accountable,2025-11-27,2026-11-12,351
+across,Across,Cross Chain Bridge,across,2023-05-01,2026-11-12,1292
+aden,ADEN,Interface,aden,2025-07-22,2026-11-11,478
+adrena-protocol,Adrena Protocol,Derivatives,adrena-protocol,2024-11-19,2026-08-25,630
+aethir,Aethir,Developer Tools,aethir,2024-10-31,2026-11-12,743
+agni-finance,Agni Finance,Dexs,agni-finance,2023-07-21,2026-11-12,1209
+aimbot,Aimbot,Telegram Bot,aimbot,2023-08-11,2025-05-28,657
+alkimi,Alkimi,Services,alkimi,2024-12-24,2026-08-11,596
+almanak,Almanak,Onchain Capital Allocator,almanak,2025-08-20,2026-11-12,450
+alphaping,AlphaPing,Risk Curators,alphaping,2025-03-11,2026-11-12,612
+alphaticks-hype-staking,AlphaTicks HYPE Staking,Staking Pool,alphaticks-hype-staking,2026-04-15,2026-11-11,211
+ambient,Ambient,Dexs,ambient,2023-06-05,2026-11-12,1257
+amnis-finance,Amnis Finance,Liquid Staking,amnis-finance,2024-10-02,2026-11-11,771
+anchorage-by-figment-hype-staking,Anchorage By Figment HYPE Staking,Staking Pool,anchorage-by-figment-hype-staking,2026-04-15,2026-11-11,211
+angle,Angle,CDP,angle,2021-11-05,2024-06-25,928
+angstrom,Angstrom,Dexs,angstrom,2025-07-24,2026-11-12,477
+ankr,Ankr,Liquid Staking,ankr,2022-05-05,2026-11-12,1652
+ansem.io,Ansem.io,Launchpad,ansem.io,2026-08-16,2026-11-12,89
+antarctic,Antarctic,Derivatives,antarctic,2025-05-11,2026-11-11,543
+ape-church,Ape Church,Luck Games,ape-church,2025-09-12,2026-11-12,426
+ape.store,Ape.Store,Launchpad,ape.store,2025-01-06,2026-11-12,676
+api3,Api3,Risk Curators,api3,2025-12-30,2026-11-12,318
+apostro,Apostro,Risk Curators,apostro,2024-09-05,2026-11-12,799
+apyx-protocol,Apyx Protocol,RWA,apyx-protocol,2026-02-24,2026-11-12,262
+aquarius-stellar,Aquarius Stellar,Dexs,aquarius-stellar,2025-08-28,2026-11-11,441
+argus-world,Argus World,Launchpad,argus-world,2026-09-07,2026-11-12,67
+armitage-by-wintermute,Armitage by Wintermute,Risk Curators,armitage-by-wintermute,2026-04-24,2026-11-12,203
+aspecta-buildkey,Aspecta BuildKey,SoFi,aspecta-buildkey,2024-10-11,2026-11-12,763
+asxn-hype-staking,ASXN HYPE Staking,Staking Pool,asxn-hype-staking,2026-04-15,2026-11-11,211
+aura,Aura,Yield,aura,2022-12-01,2026-11-12,1443
+autofinance,AUTOfinance,Yield,autofinance,2024-12-21,2026-11-12,692
+autopilot,Autopilot,Yield Aggregator,autopilot,2025-07-31,2026-09-06,403
+ave.ai,Ave.ai,Trading App,ave.ai,2025-07-04,2026-11-11,485
+axie-infinity,Axie Infinity,Gaming,axie-infinity,2018-03-26,2026-11-11,3153
+azuro,Azuro,Prediction Market,azuro,2022-06-10,2026-11-10,1615
+b-harvest-hype-staking,B-Harvest HYPE Staking,Staking Pool,b-harvest-hype-staking,2026-04-15,2026-11-11,211
+b.protocol-curator,B.Protocol Curator,Risk Curators,b.protocol-curator,2024-09-25,2026-11-12,779
+b14g,b14g,Restaking,b14g,2025-05-12,2026-11-12,550
+b402,b402,Payments,b402,2026-02-26,2026-11-12,260
+bags,Bags,Launchpad,bags,2025-05-11,2026-11-11,550
+banana-gun,Banana Gun,Telegram Bot,banana-gun,2023-06-02,2026-11-11,1258
+bank-ai,Bank AI,Services,bank-ai,2023-12-24,2026-11-12,1044
+bankr,Bankr,Interface,bankr,2025-08-12,2026-11-11,457
+base-app,Base App,Wallets,base-app,2024-09-25,2026-11-10,777
+basepaint,BasePaint,Services,basepaint,2023-08-10,2026-11-12,1191
+bear-vs-bull,Bear Vs Bull,Prediction Market,bear-vs-bull,2023-08-13,2026-11-12,1153
+beaverbuild,BeaverBuild,Block Builders,beaverbuild,2025-02-14,2026-11-12,636
+beefy,Beefy,Yield Aggregator,beefy,2023-08-25,2026-11-12,1175
+beezie,Beezie,Physical TCG,beezie,2026-01-15,2026-11-11,301
+beraborrow,Beraborrow,CDP,beraborrow,2025-02-17,2026-11-12,634
+berachain-incentive-buys,Berachain Incentive Buys,Chain,berachain-incentive-buys,2025-03-20,2026-11-11,602
+beradrome,Beradrome,Yield,beradrome,2025-02-09,2026-11-12,642
+betswirl,BetSwirl,Prediction Market,betswirl,2022-07-28,2026-09-17,1507
+bex,BEX,Dexs,bex,2025-02-06,2026-11-12,645
+bidgrid,BidGrid,Gamified Mining,bidgrid,2026-08-16,2026-11-11,88
+binance-alpha,Binance Alpha,Launchpad,binance-alpha,2025-06-23,2026-11-12,508
+binance-staked-eth,Binance staked ETH,Liquid Staking,binance-staked-eth,2023-05-01,2026-11-12,1292
+binance-staked-sol,Binance Staked SOL,Liquid Staking,binance-staked-sol,2024-09-23,2026-11-11,780
+binaryx-platform,Binaryx Platform,RWA,binaryx-platform,2025-05-21,2026-11-12,541
+bitget-sol,Bitget SOL,Liquid Staking,bitget-sol,2025-02-24,2026-11-11,626
+bitway-earn,Bitway Earn,Basis Trading,bitway-earn,2026-01-01,2026-10-31,304
+bitwise-hype-staking,Bitwise HYPE Staking,Staking Pool,bitwise-hype-staking,2026-04-15,2026-11-11,211
+blazestake,BlazeStake,Liquid Staking,blazestake,2024-09-01,2026-11-11,802
+blazingapp,BlazingApp,Trading App,blazingapp,2024-04-14,2026-11-12,943
+block-analitica,Block Analitica,Risk Curators,block-analitica,2024-09-24,2026-11-12,780
+bloom-trading-bot,Bloom Trading Bot,Gaming,bloom-trading-bot,2024-10-18,2026-11-10,742
+bloxroute,bloXroute,MEV,bloxroute,2024-02-05,2026-11-11,1011
+boop.fun,boop.fun,Launchpad,boop.fun,2025-05-02,2026-11-11,559
+brix,Brix,RWA,brix,2026-04-28,2026-11-12,199
+buffer-finance,Buffer Finance,Options,buffer-finance,2023-01-30,2025-07-16,898
+bullx,BullX,Telegram Bot,bullx,2024-04-07,2026-11-11,924
+bybit-staked-sol,Bybit Staked SOL,Liquid Staking,bybit-staked-sol,2024-09-08,2026-11-11,795
+byreal,Byreal,Dexs,byreal,2025-07-01,2026-11-09,497
+cap,cap,Lending,cap,2025-08-03,2026-11-12,467
+capricorn,Capricorn,Dexs,capricorn,2025-11-24,2026-11-12,354
+cardz.game,CARDZ.GAME,Physical TCG,cardz.game,2026-01-01,2026-11-12,316
+catapult-trade,Catapult Trade,Derivatives,catapult-trade,2025-08-29,2026-11-11,440
+catfee,CatFee,Developer Tools,catfee,2024-12-27,2026-11-12,686
+cellana-finance,Cellana Finance,Dexs,cellana-finance,2024-03-12,2026-11-11,974
+cellula,Cellula,Gaming,cellula,2024-04-15,2026-11-12,942
+central-city,Central City,AI Agents,central-city,2026-10-14,2026-11-12,30
+chapool,Chapool,Physical TCG,chapool,2025-12-09,2026-11-12,339
+chopcorp,CHOPCORP,Gamified Mining,chopcorp,2026-01-01,2026-09-06,245
+chutes,Chutes,Decentralized AI,chutes,2025-12-26,2026-09-06,255
+clearstar,Clearstar,Risk Curators,clearstar,2025-03-19,2026-11-12,604
+clever,CLever,Yield,clever,2023-04-20,2026-11-11,743
+clipper,Clipper,Dexs,clipper,2022-04-20,2026-11-12,1667
+clusters,Clusters,Domains,clusters,2024-02-03,2026-11-12,1014
+cmi-hype-staking,CMI HYPE Staking,Staking Pool,cmi-hype-staking,2026-04-15,2026-11-11,211
+coinbase-commerce,Coinbase Commerce,Payments,coinbase-commerce,2023-11-17,2026-11-12,1092
+coinbase-wrapped-staked-eth,Coinbase Wrapped Staked ETH,Liquid Staking,coinbase-wrapped-staked-eth,2024-12-16,2026-11-12,697
+colend-protocol,Colend Protocol,Lending,colend-protocol,2024-09-01,2026-11-12,803
+collector-crypt,Collector Crypt,Physical TCG,collector-crypt,2025-06-05,2026-11-12,526
+colony,Colony,Yield,colony,2024-06-03,2026-01-31,595
+concrete,Concrete,Onchain Capital Allocator,concrete,2024-12-29,2026-11-12,684
+convex-finance,Convex Finance,Yield,convex-finance,2021-05-18,2026-11-12,2005
+courtyard,Courtyard,Physical TCG,courtyard,2023-11-29,2026-11-12,1080
+cowswap,CoWSwap,DEX Aggregator,cowswap,2023-02-03,2026-11-11,1378
+creator-bid,Creator Bid,AI Agents,creator-bid,2024-10-18,2026-11-12,756
+crypto.com-liquid-staking,Crypto.com Liquid Staking,Liquid Staking,crypto.com-liquid-staking,2024-05-22,2026-11-11,900
+curvance,Curvance,Lending,curvance,2025-11-26,2026-11-12,352
+d2-finance,D2 Finance,Onchain Capital Allocator,d2-finance,2024-07-26,2026-11-12,840
+dappos-intentex,dappOS IntentEX,Dexs,dappos-intentex,2025-01-02,2025-09-24,266
+death.fun,death.fun,Luck Games,death.fun,2025-05-24,2026-11-12,538
+debank-cloud,DeBank Cloud,Developer Tools,debank-cloud,2023-01-02,2026-11-12,1411
+debridge,deBridge,Bridge,debridge,2023-04-01,2026-11-11,1321
+decibel,Decibel,Derivatives,decibel,2026-02-27,2026-11-12,259
+dedust,DeDust,Dexs,dedust,2024-08-01,2026-11-12,797
+defi-swap,Defi Swap,Dexs,defi-swap,2021-09-22,2026-11-12,1878
+definitive,Definitive,DEX Aggregator,definitive,2024-12-25,2026-11-11,683
+definity-staked-sol,Definity Staked SOL,Liquid Staking,definity-staked-sol,2025-02-06,2026-11-11,644
+dex-screener,DEX Screener,Coins Tracker,dex-screener,2024-04-13,2026-11-12,944
+dextools,DEXTools,Coins Tracker,dextools,2024-08-02,2026-11-12,833
+dfdvsol,dfdvSOL,Liquid Staking,dfdvsol,2025-05-28,2026-11-11,533
+dolomite,Dolomite,Lending,dolomite,2024-12-04,2026-11-12,703
+doppler-finance,Doppler Finance,CeDeFi,doppler-finance,2025-06-05,2026-11-11,525
+doubleup,DoubleUp,Luck Games,doubleup,2024-06-02,2026-09-23,843
+dtrade,DTrade,Telegram Bot,dtrade,2025-06-03,2026-11-12,528
+dyli,DYLI,Physical TCG,dyli,2025-10-08,2026-11-12,381
+easya-kickstart,EasyA Kickstart,Launchpad,easya-kickstart,2026-03-08,2026-11-11,249
+echelon-market,Echelon Market,Lending,echelon-market,2024-03-27,2026-11-11,960
+echo.xyz,Echo.xyz,Private Investment Platform,echo.xyz,2024-10-07,2026-11-12,767
+eden-relay,Eden Relay,MEV,eden-relay,2022-09-30,2025-05-29,626
+edgevana,Edgevana,Liquid Staking,edgevana,2024-02-17,2026-11-11,999
+eggs-finance,Eggs Finance,Reserve Currency,eggs-finance,2025-02-15,2026-11-12,636
+eigencloud,EigenCloud,Restaking,eigencloud,2024-09-25,2026-11-12,779
+elixir,Elixir,Yield,elixir,2024-10-30,2025-11-01,368
+elk,Elk,Dexs,elk,2021-03-30,2026-11-12,1720
+ember,Ember,RWA,ember,2025-09-19,2026-11-11,419
+ens,ENS,Domains,ens,2019-12-31,2026-11-12,2509
+equilibria,Equilibria,Yield,equilibria,2024-09-25,2026-09-07,713
+ethereal-dex,Ethereal DEX,Derivatives,ethereal-dex,2025-10-22,2026-09-13,327
+ethervista,Ethervista,Dexs,ethervista,2024-09-01,2026-11-12,803
+euler-dao,Euler DAO,Risk Curators,euler-dao,2024-09-23,2026-05-20,605
+fables,Fables,Dexs,fables,2026-08-18,2026-11-12,86
+falcon-finance,Falcon Finance,Basis Trading,falcon-finance,2025-10-06,2026-11-12,403
+fantasy.top,fantasy.top,SoFi,fantasy.top,2024-05-02,2026-10-29,911
+fastlane,Fastlane,MEV,fastlane,2022-12-16,2026-11-12,1423
+fidelity-crypto-fund,Fidelity Crypto Fund,CeDeFi,fidelity-crypto-fund,2026-05-13,2026-11-12,184
+fidelity-digital-interest-token,Fidelity Digital Interest Token,RWA,fidelity-digital-interest-token,2025-08-07,2026-11-11,462
+flap-sh,Flap sh,Launchpad,flap-sh,2024-07-01,2026-11-12,865
+flashbots,Flashbots,MEV,flashbots,2022-12-04,2026-11-10,1438
+flashtrade,FlashTrade,Derivatives,flashtrade,2023-12-30,2026-09-14,987
+flaunch,flaunch,Launchpad,flaunch,2025-01-10,2026-11-12,672
+flock.io,FLock.io,Decentralized AI,flock.io,2025-05-29,2026-11-12,533
+flowdex-hype-staking,FlowDex HYPE Staking,Staking Pool,flowdex-hype-staking,2026-04-15,2026-11-11,211
+flux-finance,Flux Finance,Lending,flux-finance,2024-09-01,2026-11-12,803
+fluxion-network,Fluxion Network,Dexs,fluxion-network,2025-12-17,2026-11-12,331
+forward-industries-sol,Forward Industries SOL,Liquid Staking,forward-industries-sol,2025-11-15,2026-11-11,362
+foundation,Foundation,NFT Marketplace,foundation,2021-02-04,2026-11-12,2108
+four.meme,four.meme,Launchpad,four.meme,2024-09-24,2026-11-12,780
+fragment,Fragment,NFT Marketplace,fragment,2024-11-01,2026-11-10,740
+fragmetric,Fragmetric,Liquid Restaking,fragmetric,2025-01-31,2026-11-11,650
+frankencoin,Frankencoin,CDP,frankencoin,2024-11-04,2026-11-12,739
+frax-fpi,Frax FPI,Algo-Stables,frax-fpi,2022-05-31,2026-11-11,1626
+full-sail,Full Sail,Dexs,full-sail,2025-06-05,2026-11-12,526
+fx-protocol,fx Protocol,Dual-Token Stablecoin,fx-protocol,2023-09-21,2026-11-11,1148
+gaib,GAIB,RWA,gaib,2024-01-25,2026-11-12,381
+gains-network,Gains Network,Derivatives,gains-network,2022-08-01,2026-11-10,1563
+gala-swap,Gala Swap,Dexs,gala-swap,2025-09-04,2026-11-11,434
+galaxy-curation,Galaxy Curation,Risk Curators,galaxy-curation,2026-04-07,2026-11-12,220
+gamma,Gamma,Liquidity Manager,gamma,2023-05-16,2026-11-11,1276
+garden,Garden,Cross Chain Bridge,garden,2023-09-13,2026-11-12,1153
+gauntlet,Gauntlet,Risk Curators,gauntlet,2024-03-14,2026-11-11,973
+gearbox,Gearbox,Lending,gearbox,2024-01-01,2026-11-12,1047
+geckoterminal,GeckoTerminal,Interface,geckoterminal,2025-04-09,2026-11-12,583
+geist-finance,Geist Finance,Lending,geist-finance,2021-10-06,2023-06-21,579
+gemint,Gemint,Physical TCG,gemint,2026-06-08,2026-11-12,158
+geodnet,Geodnet,Oracle,geodnet,2024-03-15,2026-11-12,973
+geth,GETH,Liquid Staking,geth,2021-10-24,2026-11-12,1846
+glif,GLIF,Liquid Staking,glif,2025-12-11,2026-11-12,332
+gmgn,GMGN,Trading App,gmgn,2023-12-31,2026-11-11,1047
+gnd-protocol,GND Protocol,Yield,gnd-protocol,2023-04-27,2026-11-12,1294
+godl-protocol,GODL protocol,Gamified Mining,godl-protocol,2025-11-18,2026-11-11,359
+goldfinch,Goldfinch,Uncollateralized Lending,goldfinch,2021-08-19,2026-11-12,1912
+grafun,GraFun,Launchpad,grafun,2024-10-14,2026-11-12,749
+graphite-protocol,Graphite Protocol,Launchpad,graphite-protocol,2025-08-18,2026-11-12,452
+grayscale,Grayscale,RWA,grayscale,2025-12-13,2026-11-12,334
+grove-finance,Grove Finance,Onchain Capital Allocator,grove-finance,2025-07-28,2026-11-12,473
+hakutora,Hakutora,Risk Curators,hakutora,2025-01-18,2026-11-12,664
+harmonic,Harmonic,MEV,harmonic,2026-01-01,2026-11-11,315
+hashcats,HASHCATS,Gamified Mining,hashcats,2026-09-11,2026-11-12,63
+hastra,Hastra,RWA,hastra,2025-11-24,2026-11-12,354
+hawkfi,HawkFi,Liquidity Manager,hawkfi,2024-02-06,2026-11-12,1011
+heaven,Heaven,Dexs,heaven,2025-08-14,2026-11-11,446
+hegic,Hegic,Options,hegic,2022-10-25,2026-11-12,1480
+helio,Helio,Payments,helio,2024-08-06,2026-11-12,829
+helium-network,Helium Network,DePIN,helium-network,2025-10-21,2026-11-11,387
+helius-staked-sol,Helius Staked SOL,Liquid Staking,helius-staked-sol,2024-08-03,2026-11-11,831
+honeyswap,Honeyswap,Dexs,honeyswap,2020-09-13,2026-11-12,2156
+hop-protocol,Hop Protocol,Cross Chain Bridge,hop-protocol,2024-09-01,2026-11-12,803
+houdini-swap,Houdini Swap,DEX Aggregator,houdini-swap,2023-01-16,2026-11-12,1396
+huma,Huma,RWA,huma,2025-08-02,2026-11-11,467
+humidifi,HumidiFi,Dexs,humidifi,2026-01-01,2026-11-11,315
+hydration-dex,Hydration DEX,Dexs,hydration-dex,2024-04-29,2026-11-11,923
+hydration-lending,Hydration Lending,Lending,hydration-lending,2025-02-27,2026-11-11,623
+hyper-foundation-hype-staking,Hyper Foundation HYPE Staking,Staking Pool,hyper-foundation-hype-staking,2026-04-15,2026-11-11,211
+hyperbeat-p2p-hypio-hype-staking,Hyperbeat-P2P-Hypio HYPE Staking,Staking Pool,hyperbeat-p2p-hypio-hype-staking,2026-04-15,2026-11-11,211
+hyperion,Hyperion,Dexs,hyperion,2025-02-18,2026-11-11,632
+hyperithm,Hyperithm,Risk Curators,hyperithm,2025-03-20,2026-11-12,603
+hyperlane,Hyperlane,Cross Chain Bridge,hyperlane,2025-05-15,2026-11-11,546
+hyperliquid-strategies-hype-staking,Hyperliquid Strategies HYPE Staking,Staking Pool,hyperliquid-strategies-hype-staking,2026-05-16,2026-11-11,180
+hypernova,Hypernova,Trading App,hypernova,2026-03-25,2026-11-12,233
+hyperstake-hype-staking,HyperStake HYPE Staking,Staking Pool,hyperstake-hype-staking,2026-04-15,2026-11-11,211
+hyperwave,HyperWave,Yield,hyperwave,2025-06-18,2026-11-12,513
+hypurrcorea-hype-staking,HypurrCorea HYPE Staking,Staking Pool,hypurrcorea-hype-staking,2026-04-15,2026-11-11,211
+hypurrscan-hype-staking,HypurrScan HYPE Staking,Staking Pool,hypurrscan-hype-staking,2026-04-15,2026-11-11,211
+illuvium,Illuvium,Gaming,illuvium,2024-07-24,2026-11-12,842
+immutable-orderbook,Immutable Orderbook,NFT Marketplace,immutable-orderbook,2024-02-23,2026-11-12,994
+imperator.co-hype-staking,Imperator.co HYPE Staking,Staking Pool,imperator.co-hype-staking,2026-04-15,2026-11-11,211
+indigo,Indigo,CDP,indigo,2024-09-23,2026-11-12,722
+infinifi,infiniFi,Yield,infinifi,2025-07-15,2026-11-12,486
+infinite-field-hype-staking,Infinite Field HYPE Staking,Staking Pool,infinite-field-hype-staking,2026-04-15,2026-11-11,211
+infrared-finance,Infrared Finance,Liquid Staking,infrared-finance,2025-02-08,2026-11-12,643
+initiadex,InitiaDEX,Dexs,initiadex,2025-05-06,2026-11-10,551
+insilico-terminal,Insilico Terminal,Interface,insilico-terminal,2024-11-27,2026-11-11,560
+integral,Integral,Dexs,integral,2023-12-22,2026-11-12,989
+intentx,IntentX,Derivatives,intentx,2023-11-04,2026-03-19,578
+invo-perps,Invo Perps,Interface,invo-perps,2025-12-11,2026-11-11,336
+jagpool-staked-sol,JagPool Staked SOL,Liquid Staking,jagpool-staked-sol,2025-01-29,2026-11-11,652
+jojo,JOJO,Derivatives,jojo,2024-04-13,2026-11-12,944
+jpool,JPool,Liquid Staking,jpool,2024-12-10,2026-11-11,702
+junoswap,Junoswap,Dexs,junoswap,2022-03-10,2023-01-19,308
+k3-capital,K3 Capital,Risk Curators,k3-capital,2025-02-27,2026-11-12,624
+kasu,Kasu,Uncollateralized Lending,kasu,2025-04-17,2026-11-12,574
+katana-perps,Katana Perps,Derivatives,katana-perps,2026-01-15,2026-11-12,302
+kiloex,KiloEx,Derivatives,kiloex,2023-06-12,2026-11-11,1188
+kinetic,Kinetic,Lending,kinetic,2025-09-24,2026-11-12,415
+kpk,KPK,Risk Curators,kpk,2025-10-03,2026-11-12,406
+kraken-bitcoin-vault,Kraken Bitcoin Vault,Yield,kraken-bitcoin-vault,2026-04-20,2026-11-12,207
+kumbaya,Kumbaya,Dexs,kumbaya,2026-01-30,2026-11-12,287
+kwenta,Kwenta,Perps Aggregator,kwenta,2023-04-22,2024-12-29,583
+kyros,Kyros,Liquid Restaking,kyros,2025-01-11,2026-11-11,670
+lab-terminal,LAB Terminal,Trading App,lab-terminal,2025-06-30,2026-11-11,500
+lagoon,Lagoon,Onchain Capital Allocator,lagoon,2025-01-02,2026-11-12,680
+laine-sol,Laine SOL,Liquid Staking,laine-sol,2024-12-19,2026-11-11,693
+land-bid,Land Bid,Gamified Mining,land-bid,2026-05-06,2026-07-19,75
+launch-coin-on-believe,Launch Coin on Believe,Launchpad,launch-coin-on-believe,2025-04-28,2026-11-11,563
+lava,Lava,Lending,lava,2025-02-25,2026-11-12,626
+lavarage,Lavarage,Derivatives,lavarage,2024-11-13,2026-11-11,729
+layer3,Layer3,Foundation,layer3,2024-11-13,2026-11-12,729
+lens-protocol,Lens Protocol,SoFi,lens-protocol,2024-02-26,2026-11-12,991
+letscash,LetsCash,Launchpad,letscash,2026-07-10,2026-11-12,126
+level,Level,CDP,level,2024-12-27,2026-11-12,686
+leverup,LeverUp,Derivatives,leverup,2025-11-23,2026-11-12,355
+lido,Lido,Liquid Staking,lido,2021-04-30,2026-11-12,2023
+limitless-exchange,Limitless Exchange,Prediction Market,limitless-exchange,2024-10-12,2026-11-12,759
+liquid-collective,Liquid Collective,Liquid Staking,liquid-collective,2024-01-01,2026-11-12,1047
+liquidspirit-hydromancer-rektgang-hype-staking,LiquidSpirit-Hydromancer-RektGang HYPE Staking,Staking Pool,liquidspirit-hydromancer-rektgang-hype-staking,2026-04-15,2026-11-11,211
+liqwid,Liqwid,Lending,liqwid,2026-01-02,2026-11-11,314
+livepeer,Livepeer,Video Infrastructure,livepeer,2024-08-14,2026-11-12,820
+looksrare,LooksRare,NFT Marketplace,looksrare,2022-01-05,2026-11-12,1773
+looter,Looter,Trading App,looter,2024-05-06,2026-11-12,921
+lp-agent,LP Agent,Liquidity Automation,lp-agent,2025-08-30,2026-11-12,440
+lulo,Lulo,Yield Aggregator,lulo,2025-08-16,2026-11-11,453
+lunar-lander,Lunar Lander,Transaction Execution,lunar-lander,2025-12-12,2026-11-12,336
+m0,M0,Stablecoin Issuer,m0,2024-08-29,2026-11-12,806
+macaron.bid,Macaron.bid,Gamified Mining,macaron.bid,2025-12-09,2026-09-06,272
+maestro,Maestro,Telegram Bot,maestro,2022-07-01,2026-11-11,1592
+magma,Magma,Dexs,magma,2025-02-15,2026-11-11,606
+mainstreet,Mainstreet,Yield,mainstreet,2025-12-10,2026-11-12,338
+makina,Makina,Onchain Capital Allocator,makina,2025-10-27,2026-11-12,382
+mamo,Mamo,Yield Aggregator,mamo,2025-10-07,2026-11-12,402
+manifold.xyz,manifold.xyz,NFT Launchpad,manifold.xyz,2024-01-02,2026-11-11,1045
+mantle-restaking,Mantle Restaking,Liquid Restaking,mantle-restaking,2024-11-02,2026-11-12,741
+mass,Mass,Interface,mass,2025-06-30,2026-11-11,500
+matcha,Matcha,Trading App,matcha,2023-05-23,2026-11-12,1270
+maxbid,Maxbid,Trading App,maxbid,2025-01-13,2026-11-11,668
+maya-protocol,Maya Protocol,Cross Chain Bridge,maya-protocol,2025-08-18,2026-11-11,451
+mememax,MemeMax,Interface,mememax,2026-04-09,2026-11-11,217
+meria-hype-staking,Meria HYPE Staking,Staking Pool,meria-hype-staking,2026-05-31,2026-11-11,165
+merkle-trade,Merkle Trade,Derivatives,merkle-trade,2025-01-09,2026-04-16,463
+meso-finance,Meso Finance,Lending,meso-finance,2024-09-29,2026-07-28,668
+metaplex,Metaplex,Launchpad,metaplex,2023-06-01,2026-11-11,1260
+meth-protocol,mETH Protocol,Liquid Staking,meth-protocol,2023-10-12,2026-11-12,1128
+mev-capital,MEV Capital,Risk Curators,mev-capital,2024-09-23,2026-11-12,781
+mevx,MEVX,Telegram Bot,mevx,2024-07-28,2026-11-12,838
+midas-rwa,Midas RWA,RWA,midas-rwa,2025-05-19,2026-11-12,543
+minara-ai-perps,Minara AI Perps,Interface,minara-ai-perps,2025-12-22,2026-11-11,325
+miracle,Miracle,Interface,miracle,2026-01-28,2026-11-12,289
+mojitoswap,MojitoSwap,Dexs,mojitoswap,2021-10-15,2026-11-12,1834
+momentum,Momentum,Dexs,momentum,2025-03-11,2026-11-12,612
+monster,Monster,Physical TCG,monster,2026-04-27,2026-11-12,200
+montra,Montra,Launchpad,montra,2026-11-05,2026-11-12,8
+moon.it,moon.it,Launchpad,moon.it,2024-06-23,2026-11-12,873
+mooniswap,MooniSwap,Dexs,mooniswap,2021-01-07,2026-11-12,2027
+moonlander,Moonlander,Derivatives,moonlander,2024-12-18,2026-11-12,478
+moonwell-apollo,Moonwell Apollo,Lending,moonwell-apollo,2022-02-25,2026-07-31,1491
+morpheusai,MorpheusAI,AI Agents,morpheusai,2024-02-09,2026-11-12,1008
+multipli.fi,Multipli.fi,Yield,multipli.fi,2025-08-15,2026-08-03,354
+mummy-finance,Mummy Finance,Derivatives,mummy-finance,2022-12-21,2025-07-08,799
+nansen-hypurrcollective-hype-staking,Nansen-HypurrCollective HYPE Staking,Staking Pool,nansen-hypurrcollective-hype-staking,2026-04-15,2026-11-11,211
+neverland,Neverland,Lending,neverland,2025-11-24,2026-11-12,354
+nodedao,NodeDAO,Liquid Staking,nodedao,2024-03-27,2026-11-12,961
+nomiswap,Nomiswap,Dexs,nomiswap,2021-12-30,2026-11-12,1346
+noon,Noon,Yield,noon,2025-04-18,2026-11-12,574
+nouns,Nouns,Services,nouns,2021-08-10,2026-11-12,1921
+nozomi,Nozomi,Developer Tools,nozomi,2025-03-08,2026-11-11,614
+ntm.ai,NTM.ai,SoFi,ntm.ai,2024-01-07,2026-11-11,1040
+nullmask,Nullmask,Privacy,nullmask,2026-09-23,2026-11-12,51
+odinbot,OdinBot,Trading App,odinbot,2024-05-08,2026-07-29,813
+odos,ODOS,DEX Aggregator,odos,2023-07-15,2026-08-08,1109
+olympus-dao,Olympus DAO,Reserve Currency,olympus-dao,2025-02-12,2026-11-12,639
+onre,OnRe,RWA,onre,2025-06-05,2026-11-11,523
+opentrade,OpenTrade,RWA,opentrade,2025-05-08,2026-11-12,554
+opinion,OPINION,Prediction Market,opinion,2025-10-23,2026-11-12,386
+ore-protocol,ORE Protocol,Gamified Mining,ore-protocol,2025-10-19,2026-11-11,389
+orynth,Orynth,Launchpad,orynth,2025-11-21,2026-11-11,356
+osmosis-dex,Osmosis DEX,Dexs,osmosis-dex,2022-04-16,2026-11-11,1663
+ostium,Ostium,Derivatives,ostium,2024-08-27,2026-11-11,807
+otc,OTC,Launchpad,otc,2026-08-27,2026-11-12,78
+overtime,Overtime,Prediction Market,overtime,2024-12-12,2026-11-12,701
+paal-ai,PAAL AI,Telegram Bot,paal-ai,2023-07-23,2026-11-12,1203
+pac-finance,Pac Finance,Lending,pac-finance,2024-09-23,2026-10-29,767
+padre,Padre,Telegram Bot,padre,2024-07-30,2025-10-24,446
+pagcrypto,PagCrypto,Payments,pagcrypto,2025-06-22,2026-11-12,509
+papertrade,Papertrade,Derivatives,papertrade,2026-10-10,2026-11-12,34
+parent#Edge,Edge,Derivatives,blitz-perps;vertex-perps,2023-08-13,2025-07-18,704
+parent#aave,aave,Lending,aave-v2;aave-v3;aave-v4,2020-12-04,2026-11-12,2170
+parent#aborean-finance,aborean-finance,Dexs,aborean-cl,2025-10-06,2026-11-12,403
+parent#abracadabra,abracadabra,CDP,abracadabra-spell,2021-09-02,2026-11-12,1721
+parent#aegis,aegis,Basis Trading,aegis-yusd,2025-04-02,2026-11-12,590
+parent#aera,aera,Onchain Capital Allocator,aera-v3,2025-06-06,2026-11-12,525
+parent#aero-protocol,aero-protocol,Dexs,aero-slipstream;aerodrome-slipstream;aerodrome-v1;velodrome-v1;velodrome-v2;velodrome-v3,2022-06-01,2026-11-12,1626
+parent#alchemix,alchemix,Synthetics,alchemix-v2;alchemix-v3,2022-12-09,2026-11-12,1435
+parent#alien-base,alien-base,Dexs,alien-base-v2,2024-03-15,2026-11-12,973
+parent#allbridge,allbridge,Bridge,allbridge-core,2023-05-31,2026-11-12,1262
+parent#alphafi,alphafi,Liquid Staking,alphafi-lending;alphafi-stsui,2025-10-11,2026-11-12,398
+parent#alphasec,alphasec,Dexs,alphasec-spot,2025-12-03,2026-11-11,344
+parent#apeswap,apeswap,Dexs,apeswap-amm,2021-02-17,2026-11-12,2095
+parent#apex-protocol,apex-protocol,Derivatives,apex-omni;apex-pro,2023-08-31,2026-11-11,1167
+parent#arbitrum-foundation,arbitrum-foundation,MEV,arbitrum-nitro;arbitrum-timeboost,2025-04-17,2026-11-12,575
+parent#arcadia-finance,arcadia-finance,Liquidity Manager,arcadia-v2,2024-03-22,2026-11-12,966
+parent#arcus,arcus,Derivatives,arcus-perps,2026-07-01,2026-11-11,134
+parent#arrakis-finance,arrakis-finance,Liquidity Manager,arrakis-modular;arrakis-v2,2024-07-02,2026-11-12,864
+parent#astherus,astherus,Derivatives,aster-perps,2023-07-18,2026-11-12,1210
+parent#avalon-labs,avalon-labs,CDP,avalon-finance;avalon-usda,2024-11-29,2026-11-12,714
+parent#avant-protocol,avant-protocol,Onchain Capital Allocator,avant-avbtc;avant-avusd,2025-01-13,2026-11-12,669
+parent#axiom,axiom,Trading App,axiom;axiom-perps,2025-01-20,2026-11-11,661
+parent#azverse,azverse,Derivatives,azverse-perps,2025-12-31,2026-11-11,316
+parent#babydogecoin,babydogecoin,Dexs,babydogeswap,2022-10-04,2026-11-12,1501
+parent#balancer,balancer,Dexs,balancer-v1;balancer-v2;balancer-v3,2020-03-23,2026-11-12,2426
+parent#bancor,bancor,Dexs,bancor-v2.1;bancor-v3,2020-12-14,2026-11-12,2136
+parent#based,based,Interface,basedapp-perps;basedapp-spot;hyena,2025-07-09,2026-11-11,491
+parent#baseswap,baseswap,Dexs,baseswap-v2,2023-08-03,2026-11-12,1198
+parent#bdex,bdex,Dexs,bdex-v3,2026-03-06,2026-11-12,251
+parent#beamswap,beamswap,Dexs,beamswap-classic;beamswap-v3,2022-01-18,2026-08-15,1517
+parent#bedrock,bedrock,Liquid Restaking,bedrock-unieth,2025-05-06,2026-11-12,556
+parent#beethoven-x,beethoven-x,Liquid Staking,beets-dex;beets-lst,2023-01-01,2026-11-12,1298
+parent#benddao,benddao,NFT Lending,benddao-lending-v1,2025-05-15,2026-11-12,547
+parent#benqi,benqi,Liquid Staking,benqi-lending;benqi-staked-avax,2022-02-14,2026-11-12,1733
+parent#bifrost-protocol,bifrost-protocol,Liquid Staking,bifrost-liquid-staking,2023-02-15,2026-11-11,1364
+parent#biswap,biswap,Dexs,biswap-v2,2021-10-01,2026-11-12,1556
+parent#bitfi,bitfi,Anchor BTC,bitfi-btc,2025-05-08,2026-11-12,554
+parent#blackhole,blackhole,Dexs,blackhole-amm;blackhole-clmm,2025-07-10,2026-11-12,491
+parent#blend,blend,Lending,blend-backstop-v2;blend-pools-v2,2025-05-13,2026-11-11,548
+parent#bluefin,bluefin,Dexs,alphalend;bluefin-legacy;bluefin-pro;bluefin-spot,2023-12-19,2026-11-12,1060
+parent#blur,blur,NFT Marketplace,blur-bids,2023-01-03,2026-11-12,1408
+parent#bmx,bmx,Derivatives,bmx-classic-perps,2023-09-11,2026-01-05,835
+parent#bonkfun,bonkfun,Telegram Bot,bonk-staked-sol;bonk.fun-launchpad;bonkbot,2023-08-23,2026-11-12,1178
+parent#bracket-protocol,bracket-protocol,Liquid Staking,bracket-lst;bracket-vaults,2025-01-22,2026-11-12,660
+parent#bucket-protocol,bucket-protocol,CDP,bucket-cdp,2024-09-23,2025-10-08,381
+parent#bungee,bungee,Bridge Aggregator,bungee-bridge-aggregator,2024-10-03,2026-11-12,743
+parent#camelot,camelot,Dexs,camelot-v2;camelot-v3,2022-11-13,2026-11-12,1461
+parent#centrifuge,centrifuge,RWA,centrifuge-protocol,2025-07-25,2026-11-12,476
+parent#cetus,cetus,Dexs,cetus-clmm,2024-01-02,2026-11-12,1046
+parent#chainflip,chainflip,Dexs,chainflip-amm,2024-01-04,2026-11-12,1044
+parent#chainlink,chainlink,Services,chainlink-requests;chainlink-staking,2023-08-07,2026-11-12,1067
+parent#cian-protocol,cian-protocol,Yield Aggregator,cian-yield-layer,2024-09-23,2026-11-12,781
+parent#circle,circle,Stablecoin Issuer,circle-cctp;circle-usdc;circle-usyc,2022-05-28,2026-11-11,1629
+parent#clearpool,clearpool,RWA,clearpool-tpool,2025-06-03,2026-11-12,527
+parent#compound-finance,compound-finance,Lending,compound-v2;compound-v3,2019-05-08,2026-11-12,2746
+parent#contango,contango,Derivatives,contango-v2,2024-11-06,2026-11-12,737
+parent#curve-finance,curve-finance,Dexs,crvusd;curve-dex;curve-llamalend,2020-11-01,2026-11-12,2203
+parent#defi-saver,defi-saver,CDP Manager,defi-saver-asset-management,2022-01-01,2026-11-12,1777
+parent#defituna,defituna,Dexs,defituna-amm;defituna-liquidity,2024-12-04,2026-11-12,709
+parent#desk,desk,Derivatives,hmx,2022-11-17,2025-12-08,1109
+parent#dhedge,dhedge,Yield,chamber-vaults;toros,2021-07-30,2026-11-12,1932
+parent#dodo,dodo,Dexs,dodo-amm,2022-12-02,2026-11-12,1436
+parent#doublezero,doublezero,Liquid Staking,doublezero-network;doublezero-staked-sol,2025-07-27,2026-11-11,473
+parent#dragon-swap,dragon-swap,Dexs,saphyre-v3,2024-10-02,2026-11-11,771
+parent#dragonswap,dragonswap,Dexs,dragonswap-v3-kaia,2024-02-14,2026-11-12,867
+parent#dreamcash,dreamcash,Interface,dreamcash-interface;dreamcash-markets,2025-06-23,2026-11-11,506
+parent#drift,drift,Derivatives,drift-staked-sol;drift-trade,2024-05-31,2026-11-11,895
+parent#dydx,dydx,Derivatives,dydx-v3;dydx-v4,2023-11-14,2026-11-11,1085
+parent#ede,ede,Derivatives,el-dorado-exchange,2022-12-11,2024-04-17,316
+parent#edgex,edgex,Derivatives,edgex-perps;edgex-v2,2025-02-26,2026-11-11,624
+parent#ekubo,ekubo,Dexs,ekubo,2023-09-21,2026-11-11,1148
+parent#enosys,enosys,Dexs,enosys-amm-v3,2025-03-04,2026-11-12,523
+parent#equalizer,equalizer,Dexs,equalizer-exchange,2022-12-09,2026-11-12,1432
+parent#ethena,ethena,Basis Trading,ethena-usde,2023-11-27,2026-11-12,1082
+parent#ether-fi,ether-fi,Liquid Staking,ether.fi-liquid;ether.fi-stake;etherfi-cash-liquid,2024-05-01,2026-11-12,926
+parent#etherex,etherex,Dexs,etherex-cl;etherex-legacy,2025-07-27,2026-11-11,473
+parent#euler,euler,Lending,euler-v2,2024-08-30,2026-11-12,805
+parent#exponent,exponent,Yield,exponent-yield-exchange,2025-02-04,2026-11-12,647
+parent#extended,extended,Derivatives,extended-perps,2025-08-16,2026-11-11,453
+parent#extra-finance,extra-finance,Leveraged Farming,extra-finance-leverage-farming,2023-05-09,2026-11-12,1284
+parent#fake-world-assets,fake-world-assets,Luck Games,fake-world-assets-v1;fake-world-assets-v2,2026-07-20,2026-11-12,116
+parent#farcaster,farcaster,Launchpad,clanker;farcaster-sofi,2024-01-02,2026-11-12,1034
+parent#felix,felix,Onchain Capital Allocator,felix-cdp;felix-vaults,2024-09-24,2026-11-12,780
+parent#fjord-foundry,fjord-foundry,Launchpad,fjord-v1;fjord-v2,2021-09-18,2026-11-11,1880
+parent#fluid,fluid,Lending,fluid-dex;fluid-lending;fluid-lite,2023-02-20,2026-11-12,1362
+parent#flying-tulip,flying-tulip,Services,flying-tulip-yield,2026-01-20,2026-11-12,297
+parent#folks-finance,folks-finance,Liquid Staking,xalgo-liquid-staking,2025-10-03,2026-11-12,406
+parent#fomo,fomo,Trading App,fomo-perps;fomo-wallet,2025-01-31,2026-11-11,650
+parent#frax-finance,frax-finance,Liquid Staking,frax;frax-ether;frax-swap;frax-usd;fraxlend,2021-12-24,2026-11-12,1785
+parent#friend-tech,friend-tech,SoFi,friend.tech-v1,2023-08-10,2026-11-12,1191
+parent#fulcrom,fulcrom,Derivatives,fulcrom-perps,2023-02-28,2026-11-11,1345
+parent#fwx,fwx,Derivatives,fwx-derivatives,2023-12-07,2026-02-24,750
+parent#gacha,gacha,Physical TCG,gacha-markets;gacha-tcg,2025-02-11,2026-11-12,640
+parent#gate-products,gate-products,Liquid Staking,gate-sol,2025-08-29,2026-11-11,440
+parent#genius-terminal,genius-terminal,Launchpad,genius.fun,2026-09-16,2026-11-12,58
+parent#gmx,gmx,Derivatives,gmx-evm;gmx-solana;gmx-v1-evm,2021-09-03,2026-11-12,1897
+parent#gondi,gondi,NFT Lending,gondi-v3,2025-05-14,2026-11-12,548
+parent#goplus-security,goplus-security,Developer Tools,goplus-locker-v2;goplus-security-app,2024-03-07,2026-11-12,981
+parent#guru-network-dao,guru-network-dao,Dexs,2thick;thick,2023-11-27,2026-11-12,825
+parent#haedal,haedal,Liquid Staking,haedal-amm-protocol;haedal-protocol;haedal-vault,2024-12-30,2026-11-12,682
+parent#hercules,hercules,Dexs,hercules-v3,2023-12-27,2026-11-12,1052
+parent#holdstation,holdstation,Derivatives,holdstation-defutures,2023-07-24,2026-11-12,1172
+parent#hybra,hybra,Dexs,hybra-v3;hybra-v4,2025-06-23,2026-11-12,508
+parent#hydrex,hydrex,Dexs,hydrex-integral,2025-09-14,2026-11-12,425
+parent#hylo,hylo,Dual-Token Stablecoin,hylo-lsts;hylo-protocol,2025-04-13,2026-11-11,578
+parent#hyperbeat,hyperbeat,Yield Aggregator,hyperbeat-earn,2025-06-02,2026-11-12,529
+parent#hyperdash,hyperdash,Interface,hyperdash-perps,2025-05-12,2026-11-11,549
+parent#hyperlend,hyperlend,Lending,hyperlend-pooled,2025-03-25,2026-11-12,598
+parent#hyperliquid,hyperliquid,Derivatives,hyperliquid-hlp;hyperliquid-perps;hyperliquid-spot-orderbook,2024-12-23,2026-11-11,685
+parent#hyperswap,hyperswap,Dexs,hyperswap-v2;hyperswap-v3,2025-03-16,2026-11-12,607
+parent#hypurfi,hypurfi,Lending,hypurrfi-pooled,2025-02-21,2026-11-12,630
+parent#impermax-finance,impermax-finance,Lending,impermax-v2,2023-10-24,2026-01-24,813
+parent#infinex,infinex,Interface,infinex-perp,2025-08-19,2026-11-11,450
+parent#inverse-finance,inverse-finance,CDP,inverse-finance-firm,2023-05-08,2026-11-12,1285
+parent#ipor,ipor,Onchain Capital Allocator,ipor-fusion,2025-04-02,2026-11-12,590
+parent#izumi-finance,izumi-finance,Dexs,iziswap,2024-09-27,2026-11-12,774
+parent#jito,jito,MEV,jito-dao;jito-liquid-staking;jito-mev-tips,2022-11-21,2026-11-12,1453
+parent#jupiter,jupiter,Derivatives,ape-jupiter;jupiter-aggregator;jupiter-dca;jupiter-lend;jupiter-limit;jupiter-native-staking;jupiter-perpetual-exchange;jupiter-prediction;jupiter-staked-sol;jupiter-studio;jupiterz;jupusd,2022-12-16,2026-11-11,1427
+parent#justlend,justlend,Lending,justlend-v1,2023-11-20,2026-11-12,1089
+parent#kaito,kaito,Launchpad,kaito-capital-launchpad,2025-08-06,2026-11-11,463
+parent#kamino-finance,kamino-finance,Lending,kamino-lend;kamino-liquidity,2023-10-13,2026-11-11,1126
+parent#katana-ronin-dex,katana-ronin-dex,Dexs,katana-dex;katana-dex-v3,2024-12-02,2026-11-12,711
+parent#kelp-dao,kelp-dao,Liquid Restaking,kelp,2024-11-20,2026-11-12,723
+parent#kinetiq,kinetiq,Liquid Staking,kinetiq-earn;kinetiq-khype,2025-07-18,2026-11-12,483
+parent#kinetix,kinetix,Derivatives,kinetix-derivatives,2025-01-23,2026-07-02,526
+parent#kittenswap,kittenswap,Dexs,kittenswap-algebra;kittenswap-cl,2025-04-05,2026-11-12,587
+parent#kodiak,kodiak,Dexs,kodiak-v3,2025-02-06,2026-11-12,645
+parent#koi-finance,koi-finance,Dexs,koi-finance-amm,2023-11-03,2026-11-12,1106
+parent#ktx.finance,ktx.finance,Derivatives,ktx-perps,2023-06-06,2026-04-07,1025
+parent#kyberswap,kyberswap,DEX Aggregator,kyberswap-aggregator;kyberswap-elastic,2022-06-11,2026-11-12,1483
+parent#layerzero,layerzero,Bridge,layerzero-v1;layerzero-v2,2022-11-09,2026-11-12,1454
+parent#level-finance,level-finance,Derivatives,level-perps,2022-12-27,2025-04-25,813
+parent#levvy-finance,levvy-finance,Lending,levvy-for-tokens,2024-09-23,2025-10-02,375
+parent#li.fi,li.fi,Bridge Aggregator,li.fi-bridge-aggregator,2024-08-01,2026-11-12,834
+parent#lifinity,lifinity,Dexs,lifinity-v1,2022-10-20,2025-12-17,1110
+parent#lighter,lighter,Derivatives,lighter-perps;lighter-robinhood-perps;lighter-spot,2025-10-12,2026-11-11,396
+parent#liquid,liquid,Interface,liquid-perps,2025-06-16,2026-11-11,514
+parent#liquity,liquity,CDP,liquity-v1;liquity-v2,2021-04-05,2026-11-12,2047
+parent#lista-dao,lista-dao,Lending,lista-cdp;lista-lending;lista-liquid-staking,2023-08-31,2026-11-12,1170
+parent#ln-exchange,ln-exchange,Derivatives,ln-exchange-perps,2024-10-25,2026-08-08,653
+parent#lombard-finance,lombard-finance,Restaked BTC,lombard-lbtc;lombard-vaults,2024-09-04,2026-11-12,800
+parent#loopscale,loopscale,Lending,loopscale-lending,2026-05-05,2026-11-12,192
+parent#lorenzo-protocol,lorenzo-protocol,Yield,lorenzo-susd1+,2025-08-07,2026-11-12,463
+parent#lynex,lynex,Dexs,lynex-v2,2023-08-16,2026-11-11,1184
+parent#lyra,lyra,Derivatives,derive-options;derive-v1;derive-v2,2022-06-29,2026-10-05,1559
+parent#magpie-ecosystem,magpie-ecosystem,Yield,cakepie;penpie;wompie,2024-02-24,2026-11-12,993
+parent#maker,maker,CDP,sky-lending;sky-money,2019-11-18,2026-11-12,2552
+parent#maple-finance,maple-finance,Lending,maple,2022-01-18,2026-11-11,1759
+parent#marginfi,marginfi,Liquid Staking,marginfi-lst,2024-12-19,2026-11-11,693
+parent#marinade-finance,marinade-finance,Liquid Staking,marinade-liquid-staking;marinade-native;marinade-select,2024-02-20,2026-11-12,997
+parent#matrixdock,matrixdock,RWA,matrixdock-stbt,2025-09-01,2026-11-12,438
+parent#maverick-protocol,maverick-protocol,Dexs,maverick-v1,2023-02-21,2026-11-12,1352
+parent#mayan-finance,mayan-finance,DEX Aggregator,mayan-dex-aggregator,2025-03-20,2026-11-12,603
+parent#mellow-protocol,mellow-protocol,Liquid Restaking,mellow-restaking,2025-02-20,2026-11-12,628
+parent#merchant-moe,merchant-moe,Dexs,merchant-moe-liquidity-book,2024-04-03,2026-11-12,954
+parent#metadao,metadao,Dexs,futarchy-amm,2025-10-10,2026-11-11,398
+parent#metamask,metamask,Wallets,metamask-perps;metamask-predictions;metamask-usd;metamask-wallet,2023-01-01,2026-11-12,1360
+parent#metavault,metavault,Derivatives,metavault.trade,2022-06-22,2024-12-19,809
+parent#meteora,meteora,Dexs,meteora-damm-v1;meteora-damm-v2;meteora-dlmm;meteora-dynamic-bonding-curve,2025-01-20,2026-11-12,662
+parent#metronome,metronome,Synthetics,metronome-synth,2022-12-28,2026-11-12,1380
+parent#metropolis-exchange,metropolis-exchange,Dexs,metropolis-dlmm,2024-12-18,2026-11-11,693
+parent#milkyway-protocol,milkyway-protocol,Liquid Staking,milkyway-liquid-staking,2024-05-02,2026-01-15,624
+parent#mimo,mimo,Dexs,mimo-v2,2021-06-30,2026-11-12,1917
+parent#minswap,minswap,Dexs,minswap-dex,2026-01-01,2026-11-12,316
+parent#mm-finance,mm-finance,Dexs,mm-stableswap-polygon,2022-08-03,2026-11-12,1563
+parent#moonshot,moonshot,Trading App,moonshot-create;moonshot.money,2024-07-08,2026-11-11,857
+parent#moonwell,moonwell,Lending,moonwell-lending;moonwell-vaults,2024-06-01,2026-11-12,895
+parent#morphex,morphex,Derivatives,morphex-v2,2023-03-06,2024-10-12,405
+parent#morpho,morpho,Lending,morpho-blue,2024-02-15,2026-11-12,1002
+parent#mux-protocol,mux-protocol,Derivatives,mux-perps,2022-08-01,2026-11-11,1564
+parent#mystic-finance,mystic-finance,Lending,mystic-finance-lending,2025-06-07,2026-11-12,524
+parent#naddotfun,naddotfun,Launchpad,nad.fun-v1,2025-11-24,2026-11-12,353
+parent#nado,nado,Derivatives,nado-perps,2025-11-20,2026-11-11,357
+parent#native,native,Dexs,native-core-clob,2026-08-06,2026-11-12,99
+parent#navi-protocol,navi-protocol,Lending,navi-lending;volo-vault,2024-03-02,2026-11-11,984
+parent#nest,nest,Dexs,nest-cl,2025-11-12,2026-11-11,365
+parent#nexus-mutual,nexus-mutual,Insurance,nexus-mutual-insurance,2020-12-31,2026-11-11,2139
+parent#nile-exchange,nile-exchange,Dexs,nile-cl,2024-03-12,2026-11-12,976
+parent#noxa,noxa,Launchpad,noxa-fun,2025-11-24,2026-11-11,348
+parent#nu11dotfun,nu11dotfun,Gamified Mining,minebean;minepea,2026-02-25,2026-11-12,261
+parent#nuri-exchange,nuri-exchange,Dexs,nuri-cl,2024-05-10,2026-11-12,917
+parent#o1-exchange,o1-exchange,Launchpad,o1-launchpad;o1.exchange-trading-terminal,2025-07-02,2026-11-12,499
+parent#okx-dex,okx-dex,DEX Aggregator,okx-swap,2025-10-21,2026-11-12,388
+parent#ondo-finance,ondo-finance,RWA,ondo-yield-assets,2025-04-11,2026-11-12,575
+parent#onekey,onekey,Interface,onekey-perps,2025-08-21,2026-11-11,448
+parent#openeden,openeden,RWA,openeden-tbill;openeden-usdo,2024-06-03,2026-11-12,893
+parent#opensea,opensea,NFT Marketplace,opensea-seaport;opensea-v1;opensea-v2,2018-08-18,2026-11-12,3002
+parent#optimism-foundation,optimism-foundation,Services,superchain,2022-04-08,2026-11-12,1667
+parent#orca,orca,Dexs,orca-dex,2024-11-12,2026-11-12,729
+parent#orderly-network,orderly-network,Derivatives,orderly-perps,2023-11-02,2026-11-11,1106
+parent#origin-defi,origin-defi,Liquid Staking,origin-dollar;origin-ether,2022-01-01,2026-11-11,1776
+parent#pacifica,pacifica,Derivatives,pacifica-perps,2026-07-18,2026-11-12,118
+parent#pancakeswap,pancakeswap,Dexs,pancakeswap-amm;pancakeswap-amm-v3;pancakeswap-infinity;pancakeswap-prediction;pancakeswap-stableswap,2021-04-24,2026-11-12,2029
+parent#pangolin,pangolin,Dexs,pangolin-v2,2021-02-09,2026-11-12,2099
+parent#paperstrategy,paperstrategy,Onchain Capital Allocator,paperstrategy-pstr,2026-10-07,2026-11-12,37
+parent#paradex,paradex,Derivatives,paradex-perps,2023-09-02,2026-11-11,1167
+parent#parcl,parcl,Derivatives,parcl-v3,2025-01-03,2026-09-02,608
+parent#pareto,pareto,Yield Aggregator,idle,2024-12-26,2026-11-12,687
+parent#paxos,paxos,Stablecoin Issuer,paxos-stablecoin-issuer,2020-09-02,2026-11-11,2258
+parent#pendle,pendle,Yield,pendle-v2,2023-07-07,2026-11-12,1224
+parent#phantom,phantom,Wallets,phantom-perps;phantom-wallet,2024-03-28,2026-11-12,959
+parent#pharaoh-exchange,pharaoh-exchange,Dexs,pharaoh-cl;pharaoh-dlmm;pharaoh-legacy;pharaoh-v3,2023-12-13,2026-11-12,1066
+parent#phase,phase,Liquid Staking,phase-delegation,2025-09-04,2026-11-11,434
+parent#phoenix,phoenix,Dexs,phoenix-perp;phoenix-spot,2023-03-01,2026-11-11,1352
+parent#pocket-universe,pocket-universe,Security Extension,pocket-universe-extension,2024-04-12,2026-11-12,945
+parent#polymarket,polymarket,Prediction Market,polymarket-combos;polymarket-international;polymarket-us,2023-05-04,2026-11-12,1288
+parent#pons,pons,Launchpad,pons-v1;pons-v2,2026-07-13,2026-11-12,123
+parent#pooltogether,pooltogether,Yield Lottery,pooltogether-v5,2024-08-14,2026-11-12,821
+parent#popdex,popdex,Derivatives,popdex-perps,2026-09-30,2026-11-12,44
+parent#potatoswap,potatoswap,Dexs,potatoswap-v2,2025-09-03,2026-11-12,436
+parent#prisma,prisma,CDP,prismalst,2023-09-01,2026-11-12,1169
+parent#puffer-finance,puffer-finance,Liquid Restaking,puffer-stake,2024-05-02,2026-11-12,925
+parent#pulsex,pulsex,Dexs,pulsex-v1;pulsex-v2,2024-05-06,2026-11-12,918
+parent#pump,pump,Launchpad,pump.fun;pump.fun-mobile-app;pumpswap;terminal,2024-03-01,2026-11-11,986
+parent#pvp-trade,pvp-trade,Interface,pvp.trade-perps,2024-10-30,2026-11-11,741
+parent#pyth,pyth,Oracle,pyth-pro,2025-12-02,2026-11-12,346
+parent#quickswap,quickswap,Dexs,quickswap-dex;quickswap-v3,2020-10-09,2026-11-12,2226
+parent#rabby,rabby,Wallets,rabby-perps;rabby-wallet,2024-10-21,2026-11-12,750
+parent#radiant,radiant,Lending,radiant-v2,2023-03-19,2026-11-12,1335
+parent#rainbow,rainbow,Wallets,rainbow-wallet,2023-01-01,2026-11-11,1411
+parent#ramses-exchange-hl,ramses-exchange-hl,Dexs,ramses-cl;ramses-cl-v2,2023-06-01,2026-11-12,1261
+parent#ratex,ratex,Yield,ratex-dex,2024-11-08,2026-10-13,705
+parent#raydium,raydium,Dexs,launchlab;raydium-amm,2022-10-17,2026-11-12,1488
+parent#realt,realt,Lending,realt-rmm-marketplace-v2,2024-09-01,2026-11-12,803
+parent#reservoir-tools,reservoir-tools,Dexs,sakuraswap-amm;sakuraswap-clmm,2024-12-10,2026-11-12,701
+parent#resolv,resolv,Basis Trading,resolv-usr,2024-12-26,2026-09-03,614
+parent#reya,reya,Derivatives,reya-perps,2024-08-11,2026-11-12,824
+parent#rhea-finance,rhea-finance,Dexs,rhea-dex;rhea-lend,2024-09-11,2026-11-12,793
+parent#ring-protocol,ring-protocol,Dexs,ring-swap,2024-07-08,2026-11-12,858
+parent#royco-protocol,royco-protocol,Yield,royco-v1,2024-12-08,2026-09-29,661
+parent#sanctum,sanctum,Liquid Staking,sanctum-infinity;sanctum-reserve;sanctum-validator-lsts,2023-08-02,2026-11-11,1198
+parent#satori-finance,satori-finance,Derivatives,satori-perp,2023-08-10,2026-07-16,1024
+parent#saucerswap,saucerswap,Dexs,saucerswap-v1;saucerswap-v2,2022-10-01,2026-11-12,1504
+parent#save-protocol,save-protocol,Lending,save,2023-01-31,2026-11-11,1381
+parent#scallop,scallop,Lending,scallop-lend,2024-01-01,2026-11-12,1047
+parent#seamless-protocol,seamless-protocol,Onchain Capital Allocator,seamless-v1;seamless-vaults,2024-09-23,2026-11-12,781
+parent#securitize,securitize,RWA,apollo-diversified-credit-securitize-fund;blackrock-buidl;blockchain-capital;mantle-index-four-fund;securitize-tokenized-aaa-clo-fund;vaneck-treasury-fund,2024-03-20,2026-11-12,968
+parent#sentora,sentora,Risk Curators,sentora-curator,2025-09-28,2026-11-12,411
+parent#shadow-exchange,shadow-exchange,Dexs,shadow-exchange-clmm;shadow-exchange-legacy,2024-12-27,2026-11-12,686
+parent#shibaswap,shibaswap,Dexs,shibaswap-v1,2021-07-07,2026-11-12,1833
+parent#silo-finance,silo-finance,Lending,silo-v2,2025-01-09,2026-11-12,673
+parent#solayer,solayer,Restaking,solayer-restaking,2024-11-15,2026-11-11,727
+parent#solidlizard,solidlizard,Dexs,solidlizard-dex,2023-02-01,2026-11-12,1291
+parent#solidly-labs,solidly-labs,Dexs,solidly-v3,2023-10-18,2026-11-12,1122
+parent#solv-protocol,solv-protocol,Bridge,solvbtc,2024-09-16,2026-11-12,788
+parent#sosovalue,sosovalue,Indexes,sodex-perps;sosovalue-indexes,2024-12-18,2026-11-12,695
+parent#spark,spark,Lending,spark-liquidity-layer;sparklend,2024-07-08,2026-11-12,858
+parent#sparkdex,sparkdex,Dexs,sparkdex-v3.1,2024-10-04,2026-11-11,768
+parent#spectra,spectra,Yield,spectra-v2,2024-07-02,2026-11-12,864
+parent#spiritswap,spiritswap,Dexs,spiritswap-amm,2021-05-13,2026-11-12,2010
+parent#spookyswap,spookyswap,Dexs,spookyswap-v2,2021-04-17,2026-11-12,2035
+parent#stake-dao,stake-dao,Yield,stake-dao-yield,2024-06-27,2026-11-12,869
+parent#stake.link,stake.link,Liquid Staking,stake.link-liquid,2022-12-22,2026-11-12,1422
+parent#stakestone,stakestone,Liquid Staking,stakestone-stone,2024-09-23,2026-11-12,781
+parent#stakewise,stakewise,Liquid Staking,stakewise-v3,2022-01-05,2026-11-12,1773
+parent#stargate-finance,stargate-finance,Cross Chain Bridge,stargate-v1;stargate-v2,2022-09-01,2026-11-12,1532
+parent#stellaswap,stellaswap,Dexs,stellaswap-v2,2022-01-13,2026-08-10,1670
+parent#stonkbrokers,stonkbrokers,Token Locker,stonkbrokers-anvil;stonkbrokers-safe-launch;stonkbrokers-safety-deposit-box,2026-07-18,2026-11-12,118
+parent#strata,strata,Yield,strata-markets,2025-10-10,2026-11-12,399
+parent#sudo-finance,sudo-finance,Derivatives,sudo-perps,2024-01-06,2026-11-11,1015
+parent#sudoswap,sudoswap,NFT Marketplace,sudoswap-v1;sudoswap-v2,2023-01-01,2026-11-11,1411
+parent#suilend-protocol,suilend-protocol,Lending,springsui;springsui-ecosystem;steamm;suilend,2024-03-11,2026-11-12,977
+parent#summer.fi,summer.fi,CDP Manager,summer.fi-pro,2024-06-08,2026-11-12,888
+parent#sun,sun,Dexs,sunpump;sunswap-v1;sunswap-v2;sunswap-v3;sunswap-v4,2024-01-06,2026-11-12,1042
+parent#superstate,superstate,RWA,bitwise-uscc;invesco-ustb,2024-10-28,2026-11-12,746
+parent#sushi,sushi,Dexs,sushiswap;sushiswap-agg;sushiswap-v3,2020-09-09,2026-11-12,2256
+parent#swapx,swapx,Dexs,swapx-algebra,2025-01-02,2026-11-12,680
+parent#swell,swell,Liquid Staking,swell-liquid-restaking;swell-liquid-staking,2023-10-15,2026-11-12,1125
+parent#synapse,synapse,Cross Chain Bridge,synapse-cross-chain-bridge,2021-08-21,2026-11-12,1884
+parent#syncswap-protocol,syncswap-protocol,Dexs,syncswap,2025-01-06,2026-11-12,676
+parent#synfutures,synfutures,Derivatives,synfutures-v3,2024-03-02,2026-11-11,985
+parent#synthetix,synthetix,Synthetics,synthetix-v1+v2;synthetix-v3,2021-11-12,2026-11-12,1827
+parent#thala-labs,thala-labs,Dexs,thalaswap;thalaswap-v2,2023-04-06,2026-11-11,1314
+parent#the-arena,the-arena,SoFi,arena-dex;arena-socialfi,2023-12-05,2026-11-12,1074
+parent#the-vault,the-vault,Liquid Staking,the-vault-liquid-staking,2024-09-23,2026-11-11,780
+parent#thena,thena,Dexs,thena-fusion;thena-integral;thena-v1,2023-01-06,2026-11-11,1406
+parent#theo,theo,RWA,theo-network-thbill,2025-08-01,2026-11-12,469
+parent#threshold-network,threshold-network,Decentralized BTC,tbtc,2024-09-23,2026-11-12,781
+parent#thruster,thruster,Dexs,thruster-v3,2024-06-02,2026-10-29,880
+parent#tokenlon,tokenlon,Dexs,tokenlon-amm,2020-12-23,2026-11-12,2151
+parent#tonco,tonco,Dexs,tonco-v1,2024-12-21,2026-11-12,692
+parent#tonstakers,tonstakers,Liquid Staking,tonstakers-lsd,2025-04-02,2026-11-11,589
+parent#trader-joe,trader-joe,Dexs,joe-dex;joe-v2;joe-v2.1;joe-v2.2,2021-08-09,2026-11-12,1922
+parent#trends,trends,Launchpad,trends-legacy,2025-06-09,2026-11-11,521
+parent#tria,tria,Crypto Card Issuer,tria-card,2025-06-06,2026-11-12,525
+parent#trust-wallet,trust-wallet,Wallets,trust-wallet-perps;trust-wallet-wallet,2023-10-15,2026-11-12,1122
+parent#txflow,txflow,Derivatives,txflow-perps,2026-03-26,2026-11-11,231
+parent#typus-finance,typus-finance,Options Vault,typus-dov;typus-perp,2025-01-01,2026-11-12,681
+parent#uncx-network,uncx-network,Token Locker,uncx-network-v2,2023-07-25,2026-11-12,1207
+parent#unidex,unidex,Derivatives,unidex-perp,2023-02-03,2024-11-22,654
+parent#uniswap,uniswap,Dexs,uniswap-v1;uniswap-v2;uniswap-v3;uniswap-v4,2018-11-03,2026-11-12,2931
+parent#unitas,unitas,Basis Trading,unitas-usdu,2025-10-23,2026-11-12,386
+parent#up,up,Dexs,up-v3,2026-07-10,2026-11-12,121
+parent#upheaval-finance,upheaval-finance,Dexs,upheaval-v3,2025-08-18,2026-11-12,452
+parent#usual,usual,RWA,usual-usd0,2024-09-23,2026-11-12,781
+parent#valantis,valantis,Liquid Staking,sthype,2025-05-12,2026-11-12,550
+parent#venus-finance,venus-finance,Lending,venus-core-pool,2023-08-13,2026-11-12,1188
+parent#vfat,vfat,Yield Aggregator,vfat.io,2024-03-22,2026-11-12,966
+parent#vvs-finance,vvs-finance,Dexs,vvs-standard,2022-10-10,2026-11-12,1492
+parent#woofi,woofi,Dexs,woofi-pro-perps;woofi-swap,2021-10-26,2026-11-12,1833
+parent#yearn,yearn,Yield Aggregator,yearn-curating;yearn-finance,2020-07-28,2026-11-12,2276
+parent#yei-finance,yei-finance,Lending,yeilend,2024-10-04,2026-11-12,770
+parent#yield-yak,yield-yak,Yield Aggregator,yield-yak-aggregator,2021-11-14,2026-11-12,1825
+parent#zerion,zerion,Wallets,zerion-wallet,2024-01-21,2026-11-12,1027
+parent#zerolend,zerolend,Lending,zerolend-lending,2024-12-01,2026-11-12,711
+parent#zkswap-finance,zkswap-finance,Dexs,zkswap-v2,2023-10-01,2026-11-12,1138
+parent#zora,zora,Launchpad,zora-coins;zora-marketplace,2022-12-01,2026-11-12,1443
+parent#zyberswap,zyberswap,Dexs,zyberswap-v3,2023-02-27,2026-11-12,1355
+paycash,PayCash,Dexs,paycash,2025-01-06,2026-11-11,675
+peapods-finance,Peapods Finance,Yield,peapods-finance,2025-04-24,2026-11-12,568
+pepeboost,Pepeboost,Telegram Bot,pepeboost,2024-01-07,2026-11-11,1040
+perpetual-protocol,Perpetual Protocol,Derivatives,perpetual-protocol,2023-01-01,2026-11-12,1412
+perpl,Perpl,Derivatives,perpl,2026-05-27,2026-11-12,170
+phame-protocol,PHAME Protocol,Derivatives,phame-protocol,2024-09-23,2026-11-12,781
+phantom-sol,Phantom SOL,Liquid Staking,phantom-sol,2025-04-28,2026-11-11,563
+photon,Photon,Trading App,photon,2024-01-12,2026-11-12,1036
+phygitals,Phygitals,Physical TCG,phygitals,2025-03-22,2026-11-12,598
+pico-staked-sol,Pico Staked SOL,Liquid Staking,pico-staked-sol,2024-12-19,2026-11-11,693
+pier-two-hype-staking,Pier Two HYPE Staking,Staking Pool,pier-two-hype-staking,2026-04-15,2026-11-11,211
+piku-finance,Piku Finance,Basis Trading,piku-finance,2025-09-26,2026-11-12,413
+pingu-exchange,Pingu Exchange,Derivatives,pingu-exchange,2024-01-10,2026-08-19,874
+pinksale,PinkSale,Launchpad,pinksale,2024-09-24,2026-11-12,780
+piteas,Piteas,DEX Aggregator,piteas,2025-06-14,2026-11-12,517
+plasma-saving-vaults,Plasma Saving Vaults,Onchain Capital Allocator,plasma-saving-vaults,2025-09-27,2026-11-12,412
+plume-vaults,Plume Vaults,RWA,plume-vaults,2025-05-19,2026-11-12,542
+polter-finance,Polter Finance,Lending,polter-finance,2024-03-24,2026-06-08,807
+pools,Pools,Launchpad,pools,2026-07-30,2026-11-12,106
+portal,Portal,Bridge,portal,2025-05-05,2026-11-11,556
+posttechsofi,PostTechSoFi,SoFi,posttechsofi,2023-08-31,2026-11-12,1152
+predict-fun,Predict Fun,Prediction Market,predict-fun,2025-11-30,2026-11-12,348
+predictstreet,PredictStreet,Prediction Market,predictstreet,2026-06-02,2026-11-12,164
+privacy-cash,Privacy Cash,Privacy,privacy-cash,2025-08-19,2026-11-11,450
+prizm,PRIZM,Trading App,prizm,2024-01-25,2026-11-12,101
+project-x,Project X,Dexs,project-x,2025-07-13,2026-11-12,488
+propr,Propr,Trading App,propr,2026-04-07,2026-11-11,219
+pull.fun,Pull.fun,Physical TCG,pull.fun,2026-04-21,2026-11-12,206
+purrposeful-hype-staking,Purrposeful HYPE Staking,Staking Pool,purrposeful-hype-staking,2026-04-15,2026-11-11,211
+quasar-builder,Quasar Builder,Block Builders,quasar-builder,2025-03-12,2026-11-12,611
+qubic-idle-compute,Qubic Idle Compute,Mining Pools,qubic-idle-compute,2025-05-16,2026-11-11,545
+quotrons,Quotrons,NftFi,quotrons,2026-08-12,2026-11-12,93
+railgun,Railgun,Privacy,railgun,2022-11-29,2026-11-12,1445
+rain,Rain,Prediction Market,rain,2025-02-18,2026-11-12,630
+rango,Rango,Bridge Aggregator,rango,2026-08-04,2026-11-12,97
+rapid-launch,Rapid Launch,Launchpad,rapid-launch,2025-10-18,2026-11-12,391
+raybot,RayBot,Telegram Bot,raybot,2024-02-11,2026-11-12,1006
+re,Re,RWA,re,2025-05-28,2026-11-12,534
+re7-labs,Re7 Labs,Risk Curators,re7-labs,2024-09-25,2026-11-12,776
+relay,Relay,Cross Chain Bridge,relay,2026-04-24,2026-11-12,203
+relend-network,Relend Network,Risk Curators,relend-network,2024-10-11,2026-11-12,763
+render-network-bme,Render Network BME,DePIN,render-network-bme,2025-06-03,2026-11-12,528
+renzo,Renzo,Liquid Restaking,renzo,2024-09-05,2026-11-11,798
+reserve-protocol,Reserve Protocol,Indexes,reserve-protocol,2023-04-20,2026-11-12,1177
+reservoir-protocol,Reservoir Protocol,CDP,reservoir-protocol,2025-01-30,2026-11-12,652
+resupply,Resupply,Lending,resupply,2025-04-07,2026-11-12,585
+retro,Retro,Dexs,retro,2023-07-28,2026-11-12,1204
+ripple-usd,Ripple USD,Stablecoin Issuer,ripple-usd,2025-06-19,2026-11-11,511
+rise.rich,Rise.rich,Launchpad,rise.rich,2026-04-02,2026-11-11,224
+rockawayx,RockawayX,Risk Curators,rockawayx,2026-02-10,2026-11-12,276
+rocket-pool,Rocket Pool,Liquid Staking,rocket-pool,2023-01-01,2026-11-12,1412
+safe,Safe,Services,safe,2024-07-17,2026-11-12,849
+sailor,Sailor,Dexs,sailor,2025-01-21,2026-11-12,638
+sat-rush,Sat Rush,Gamified Mining,sat-rush,2026-08-02,2026-11-12,103
+saturn,Saturn,Stablecoin Wrapper,saturn,2026-03-23,2026-11-12,235
+scale,Scale,Dexs,scale,2023-09-28,2026-11-12,1140
+sdai,sDAI,Yield,sdai,2024-12-16,2026-11-12,697
+shmonad,ShMonad,Liquid Staking,shmonad,2025-11-24,2026-11-12,354
+shuriken,Shuriken,Services,shuriken,2023-10-18,2026-11-11,1121
+sideshift,SideShift,Cross Chain Bridge,sideshift,2024-06-02,2026-11-12,894
+slvr,SLVR,Gamified Mining,slvr,2026-07-10,2026-11-12,126
+smithii,Smithii,Launchpad,smithii,2024-09-24,2026-11-12,780
+snake-finance,Snake Finance,Algo-Stables,snake-finance,2025-02-16,2026-11-12,635
+snuggle,Snuggle,Liquidity Manager,snuggle,2026-02-18,2026-11-12,268
+socket-protocol,SOCKET Protocol,Bridge Aggregator,socket-protocol,2025-01-30,2026-11-12,650
+solana-name-service,Solana Name Service,Domains,solana-name-service,2022-02-14,2026-11-11,1732
+solarbeam,Solarbeam,Dexs,solarbeam,2021-09-07,2026-08-10,1798
+solstice,Solstice,Basis Trading,solstice,2025-10-05,2026-11-11,403
+soltradingbot,SolTradingBot,Telegram Bot,soltradingbot,2023-12-01,2026-11-11,1077
+sommelier,Sommelier,Onchain Capital Allocator,sommelier,2024-11-19,2026-11-12,724
+sonne-finance,Sonne Finance,Lending,sonne-finance,2023-04-05,2026-11-12,1318
+spiko,Spiko,RWA,spiko,2024-08-13,2026-11-12,822
+splash-protocol,Splash Protocol,Dexs,splash-protocol,2024-08-21,2026-11-12,770
+sport.fun,Sport.fun,Prediction Market,sport.fun,2025-08-12,2026-11-12,458
+ssv-network,SSV Network,Staking Pool,ssv-network,2023-06-21,2026-11-12,1241
+stables-labs-usdx,Stables Labs USDX,Basis Trading,stables-labs-usdx,2024-09-27,2026-09-07,711
+stackingdao,StackingDAO,Liquid Staking,stackingdao,2025-05-15,2026-11-12,547
+stader,Stader,Liquid Staking,stader,2024-12-21,2026-11-11,691
+stakee,Stakee,Liquid Staking,stakee,2024-10-13,2026-11-11,760
+starke-staked-sol,Starke Staked SOL,Liquid Staking,starke-staked-sol,2025-01-29,2026-11-11,652
+steakhouse-financial,Steakhouse Financial,Risk Curators,steakhouse-financial,2024-09-27,2026-11-12,775
+steer-protocol,Steer Protocol,Liquidity Manager,steer-protocol,2025-05-09,2026-11-12,553
+step-finance,Step Finance,Portfolio Tracker,step-finance,2024-09-27,2026-06-27,639
+stkesol-by-sol-strategies,STKESOL by SOL Strategies,Liquid Staking,stkesol-by-sol-strategies,2026-01-09,2026-11-11,307
+stockereum,Stockereum,Launchpad,stockereum,2026-09-03,2026-11-12,71
+stockrip,StockRip,Gamified Mining,stockrip,2026-07-27,2026-11-12,109
+ston.fi,STON.fi,Dexs,ston.fi,2023-11-15,2026-11-12,1094
+stonkfun,StonkFun,Launchpad,stonkfun,2026-07-25,2026-11-10,109
+storm-trade,Storm Trade,Derivatives,storm-trade,2023-12-04,2026-11-12,1065
+streamflow,Streamflow,Payments,streamflow,2025-04-21,2026-11-11,570
+stride,Stride,Liquid Staking,stride,2023-01-30,2026-10-12,1332
+strike,Strike,Lending,strike,2024-09-01,2026-11-12,803
+stronghold-staked-sol,Stronghold Staked SOL,Liquid Staking,stronghold-staked-sol,2024-12-19,2026-11-11,693
+stusdt,stUSDT,RWA,stusdt,2025-05-08,2026-11-12,554
+sui-foundation,Sui Foundation,Canonical Bridge,sui-foundation,2026-03-01,2026-11-11,256
+suite,SUITE,Trading App,suite,2024-09-26,2025-11-09,410
+surf-protocol,Surf Protocol,Derivatives,surf-protocol,2023-12-27,2025-12-04,709
+symbiotic,Symbiotic,Collateral Markets,symbiotic,2025-07-28,2026-11-12,473
+takara-lend,Takara Lend,Lending,takara-lend,2025-05-03,2026-11-12,559
+tectonic,Tectonic,Lending,tectonic,2024-12-15,2026-11-12,698
+telegram-wallet,Telegram Wallet,Interface,telegram-wallet,2026-04-01,2026-11-11,225
+telos-consilium,Telos Consilium,Risk Curators,telos-consilium,2025-09-28,2026-11-12,411
+tether,Tether,Stablecoin Issuer,tether,2021-05-01,2026-11-11,2021
+tether-gold,Tether Gold,RWA,tether-gold,2023-06-12,2026-11-12,1250
+the-graph,The Graph,Developer Tools,the-graph,2022-12-15,2026-11-12,1429
+the-index,The Index,Indexes,the-index,2026-07-03,2026-11-12,133
+the-standard-reserve,The Standard Reserve,Reserve Currency,the-standard-reserve,2026-09-15,2026-11-12,59
+thorchain-dex,THORChain DEX,Dexs,thorchain-dex,2021-04-11,2026-11-11,2041
+thorswap,THORSwap,DEX Aggregator,thorswap,2025-02-21,2026-11-11,626
+titan-builder,Titan Builder,Block Builders,titan-builder,2025-02-11,2026-11-12,640
+tokenworks,TokenWorks,NFT Automated Strategies,tokenworks,2025-09-06,2026-11-12,433
+tornado-cash,Tornado Cash,Privacy,tornado-cash,2023-12-31,2026-11-12,1047
+trade[xyz],trade[XYZ],Interface,trade[xyz],2025-11-01,2026-11-11,376
+tradewiz,TradeWiz,Telegram Bot,tradewiz,2024-11-27,2026-11-12,716
+tree-news,Tree News,SoFi,tree-news,2024-11-02,2026-11-11,740
+treehouse-protocol,Treehouse Protocol,DOR,treehouse-protocol,2024-09-24,2026-11-12,780
+trevee-earn,Trevee Earn,Yield Aggregator,trevee-earn,2025-03-05,2026-11-12,618
+tribe.run,Tribe.run,SoFi,tribe.run,2024-09-28,2026-11-12,776
+trojan,Trojan,Telegram Bot,trojan,2024-01-05,2026-11-11,1042
+tronsave,TRONSAVE,Services,tronsave,2023-07-24,2026-11-12,1208
+tulipa-capital,Tulipa Capital,Risk Curators,tulipa-capital,2025-01-22,2026-11-12,660
+turbos,Turbos,Dexs,turbos,2026-01-25,2026-11-12,292
+tydro,Tydro,Lending,tydro,2025-10-16,2026-11-12,393
+unchain-x,Unchain X,Dexs,unchain-x,2024-12-21,2026-11-12,692
+unibot,Unibot,Telegram Bot,unibot,2023-05-26,2026-11-11,1228
+uniswap-labs,Uniswap Labs,Developer Tools,uniswap-labs,2023-10-14,2026-11-12,1126
+unit,Unit,Bridge,unit,2025-04-01,2026-11-11,590
+upshift,Upshift,Onchain Capital Allocator,upshift,2024-09-16,2026-11-12,788
+usd-ai,USD AI,RWA,usd-ai,2025-05-14,2026-11-12,548
+usdd,USDD,CDP,usdd,2025-05-12,2026-11-12,550
+usdt0-luganodes-hype-staking,USDT0-Luganodes HYPE Staking,Staking Pool,usdt0-luganodes-hype-staking,2026-04-15,2026-11-11,211
+vader-ai,Vader AI,AI Agents,vader-ai,2024-11-01,2026-11-12,742
+valas-finance,Valas Finance,Lending,valas-finance,2022-03-30,2026-11-12,981
+valhalla,Valhalla,Liquidity Automation,valhalla,2025-10-14,2026-11-12,395
+validao-hype-staking,Validao HYPE Staking,Staking Pool,validao-hype-staking,2026-04-15,2026-11-11,211
+vault-bridge,Vault Bridge,Risk Curators,vault-bridge,2025-05-30,2026-11-12,532
+vaulta-ram,Vaulta RAM,Dexs,vaulta-ram,2023-12-29,2026-11-11,1048
+vaultka,Vaultka,Yield,vaultka,2023-08-10,2026-11-12,1191
+vector.fun,VECTOR.FUN,Launchpad,vector.fun,2024-08-01,2026-11-11,833
+veda,Veda,Onchain Capital Allocator,veda,2025-01-31,2026-11-12,650
+vela-exchange,Vela Exchange,Derivatives,vela-exchange,2023-01-30,2024-11-03,549
+velora,Velora,DEX Aggregator,velora,2022-03-23,2026-11-11,1694
+venice,Venice,Farm,venice,2025-12-08,2026-11-12,340
+veno-finance,Veno Finance,Liquid Staking,veno-finance,2024-11-14,2026-11-12,729
+veranta,Veranta,Derivatives,veranta,2024-01-27,2026-11-11,1018
+verio,Verio,Liquid Staking,verio,2025-06-14,2026-11-12,516
+vest-markets,Vest Markets,Derivatives,vest-markets,2025-07-31,2026-11-11,430
+virtuals-protocol,Virtuals Protocol,AI Agents,virtuals-protocol,2024-10-16,2026-11-12,758
+w-dex,W-DEX,Dexs,w-dex,2025-01-15,2026-11-12,667
+wagmi,WAGMI,Dexs,wagmi,2023-04-12,2026-11-12,1311
+waterneuron,WaterNeuron,Liquid Staking,waterneuron,2025-01-20,2026-11-12,618
+wbtc,WBTC,Bridge,wbtc,2019-03-05,2026-11-12,2806
+wigoswap,WigoSwap,Dexs,wigoswap,2022-01-25,2026-11-12,1753
+wildcat-protocol,Wildcat Protocol,Uncollateralized Lending,wildcat-protocol,2024-09-01,2026-11-12,803
+wisdomtree,WisdomTree,RWA,wisdomtree,2024-12-26,2026-11-12,676
+wombat-exchange,Wombat Exchange,Dexs,wombat-exchange,2022-04-25,2026-11-12,1651
+world-liberty-financial,World Liberty Financial,Lending,world-liberty-financial,2025-06-07,2026-11-11,523
+x2y2,X2Y2,NFT Lending,x2y2,2022-12-19,2026-11-12,1425
+xox-perps,XOX Perps,Interface,xox-perps,2025-12-11,2026-11-11,61
+xrpl,XRPL,Chain,xrpl,2024-10-16,2026-11-12,753
+yala,Yala,CDP,yala,2025-05-25,2026-11-12,537
+yeet-bgt-auction,Yeet BGT Auction,Gamified Mining,yeet-bgt-auction,2025-07-15,2026-11-12,486
+yieldfi,YieldFi,Yield Aggregator,yieldfi,2025-05-01,2026-11-12,561
+yo-protocol,YO Protocol,Yield Aggregator,yo-protocol,2025-03-24,2026-11-12,599
+yolo-games,YOLO Games,Gaming,yolo-games,2024-03-02,2026-10-30,973
+yuzu-money,Yuzu Money,Yield,yuzu-money,2025-10-14,2026-11-12,395
+zinc,ZINC,Gamified Mining,zinc,2026-05-26,2026-11-12,171
+zircuit-staking,Zircuit Staking,Farm,zircuit-staking,2025-01-20,2026-11-12,662
+zivoe,Zivoe,RWA,zivoe,2024-11-23,2026-11-12,720

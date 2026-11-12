@@ -24,3 +24,29 @@
 > uv run python -m near_posterior.coverage
 t0=2026-11-11 C_90=0.182264 k*_24=5.762305
 ```
+
+## T2 - Reference panel fetch (done)
+
+- `refclass_fetch.py`: overview `https://api.llama.fi/overview/fees` (dailyFees), universe =
+  `protocolType == "protocol"` and `totalAllTime >= 1e6`, `near-intents` excluded; one history
+  request per slug (`/summary/fees/<slug>?dataType=dailyFees&excludeTotalDataChartBreakdown=true`;
+  the breakdown flag only drops the per-chain breakdown, `totalDataChart` checked identical on
+  `wbtc` before the run), sequential, 0.2 s pause, 3 tries per request.
+- Run once, 2026-11-12T10:36:46Z. Universe 981 entries, 797 entities after parent merge,
+  772925 raw (slug, day) rows, no duplicate (slug, day). Missing: 0 (`missing.txt` is empty).
+  Stop rule (> 5 percent missing): not triggered.
+- Stored: `overview.json.gz` (the overview as fetched), `raw_entries.csv.gz` (per slug),
+  `universe.csv`, `entities.csv`, `panel.csv.gz` (merged), `manifest.json` (sha256 of each
+  file). gzip written with mtime 0. `python -m near_posterior.refclass_fetch --merge` rebuilds
+  the merged files offline; the test checks they rebuild byte-identically.
+- No reference-class fee value or outcome was looked at during or after the fetch; only counts.
+
+```
+> uv run python -m near_posterior.refclass_fetch
+universe: 981 entries
+...
+950/981 fetched, 0 missing
+missing: 0/981 = 0.0000
+> uv run pytest -q tests/test_refclass_fetch.py tests/test_series.py tests/test_coverage.py
+27 passed in 8.43s
+```

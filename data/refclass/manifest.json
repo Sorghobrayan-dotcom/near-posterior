@@ -1,0 +1,18 @@
+{
+  "fetched_at": "2026-11-12T10:36:46+00:00",
+  "files": {
+    "entities.csv": "d296b761932c118c54a8e43bde1463f881729002109a037d356535e73f087802",
+    "missing.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "overview.json.gz": "586fbab4420d71dd89a726028f98e3ad4f25118e15b5f2163426130be1cf73bd",
+    "panel.csv.gz": "7c791baca400ced241f0ec76144727c2a3c307f12aa85a7ee41b9eb73d07fe64",
+    "raw_entries.csv.gz": "1ee5620ad4fa83bc8b349c99096773007b6c73b89702c70d690975879ee60fee",
+    "universe.csv": "b0cfff3fbc6c81171554dddf57a6cbc57ba56c08f3b9f444eaea429323c4a23f"
+  },
+  "history_url": "https://api.llama.fi/summary/fees/{slug}?dataType=dailyFees&excludeTotalDataChartBreakdown=true",
+  "missing": 0,
+  "missing_reasons": {},
+  "missing_share": 0.0,
+  "overview_url": "https://api.llama.fi/overview/fees?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true&dataType=dailyFees",
+  "stop_rule_max_missing": 0.05,
+  "universe": 981
+}

@@ -1,0 +1,982 @@
+slug,name,parent,category,total_all_time,fetched
+2thick,2THICK,parent#guru-network-dao,Dexs,6123206.08,1
+40-acres,40 Acres,,Lending,1971406.08,1
+aark-digital,Aark Digital,,Derivatives,7560764.79,1
+aave-labs,Aave Labs,,Developer Tools,6592713.33,1
+aave-v2,Aave V2,parent#aave,Lending,460924610,1
+aave-v3,Aave V3,parent#aave,Lending,1880570593,1
+aave-v4,Aave V4,parent#aave,Lending,3803576.26,1
+aborean-cl,Aborean CL,parent#aborean-finance,Dexs,1233441.69,1
+abracadabra-spell,Abracadabra Spell,parent#abracadabra,CDP,77761830.8,1
+accountable,Accountable,,Uncollateralized Lending,16850167.96,1
+across,Across,,Cross Chain Bridge,18968957,1
+aden,ADEN,,Interface,7625548,1
+adrena-protocol,Adrena Protocol,,Derivatives,10746539.27,1
+aegis-yusd,Aegis YUSD,parent#aegis,Basis Trading,2466780.79,1
+aera-v3,Aera V3,parent#aera,Onchain Capital Allocator,4961697.22,1
+aero-slipstream,Aero Slipstream,parent#aero-protocol,Dexs,5159554,1
+aerodrome-slipstream,Aerodrome Slipstream,parent#aero-protocol,Dexs,337212054,1
+aerodrome-v1,Aerodrome V1,parent#aero-protocol,Dexs,224648830,1
+aethir,Aethir,,Developer Tools,188899632.27,1
+agni-finance,Agni Finance,,Dexs,6267713,1
+aimbot,Aimbot,,Telegram Bot,2526769,1
+alchemix-v2,Alchemix V2,parent#alchemix,Synthetics,5244217,1
+alchemix-v3,Alchemix V3,parent#alchemix,Synthetics,2151951.89,1
+alien-base-v2,Alien Base V2,parent#alien-base,Dexs,1645084.8,1
+alkimi,Alkimi,,Services,1124538,1
+allbridge-core,Allbridge Core,parent#allbridge,Bridge,7465777.28,1
+almanak,Almanak,,Onchain Capital Allocator,2096877.98,1
+alphafi-lending,AlphaFi Lending,parent#alphafi,Lending,2235797.39,1
+alphafi-stsui,AlphaFi stSUI,parent#alphafi,Liquid Staking,3307492.12,1
+alphalend,AlphaLend,parent#bluefin,Lending,4807950,1
+alphaping,AlphaPing,,Risk Curators,2076404,1
+alphasec-spot,AlphaSec Spot,parent#alphasec,Dexs,1542892,1
+alphaticks-hype-staking,AlphaTicks HYPE Staking,,Staking Pool,4415197,1
+ambient,Ambient,,Dexs,8709692.14,1
+amnis-finance,Amnis Finance,,Liquid Staking,13594432,1
+anchorage-by-figment-hype-staking,Anchorage By Figment HYPE Staking,,Staking Pool,24987329,1
+angle,Angle,,CDP,9993592,1
+angstrom,Angstrom,,Dexs,1207748.97,1
+ankr,Ankr,,Liquid Staking,11069015,1
+ansem.io,Ansem.io,,Launchpad,2071814.27,1
+antarctic,Antarctic,,Derivatives,42147676,1
+ape-church,Ape Church,,Luck Games,1000940,1
+ape-jupiter,Ape Jupiter,parent#jupiter,Launchpad,6097187.09,1
+ape.store,Ape.Store,,Launchpad,1642323.82,1
+apeswap-amm,ApeSwap AMM,parent#apeswap,Dexs,37120092.5,1
+apex-omni,Apex Omni,parent#apex-protocol,Derivatives,29935207,1
+apex-pro,ApeX Pro,parent#apex-protocol,Derivatives,11616999,1
+api3,Api3,,Risk Curators,1365781,1
+apollo-diversified-credit-securitize-fund,Apollo Diversified Credit Securitize Fund,parent#securitize,RWA,11349396,1
+apostro,Apostro,,Risk Curators,2756421.75,1
+apyx-protocol,Apyx Protocol,,RWA,12546908,1
+aquarius-stellar,Aquarius Stellar,,Dexs,1428855,1
+arbitrum-nitro,Arbitrum Nitro,parent#arbitrum-foundation,Foundation,5277573.32,1
+arbitrum-timeboost,Arbitrum Timeboost,parent#arbitrum-foundation,MEV,7735332,1
+arcadia-v2,Arcadia V2,parent#arcadia-finance,Liquidity Manager,1144226.33,1
+arcus-perps,Arcus Perps,parent#arcus,Derivatives,3820490.18,1
+arena-dex,Arena DEX,parent#the-arena,Dexs,1498516.71,1
+arena-socialfi,Arena SocialFi,parent#the-arena,SoFi,3287051.52,1
+argus-world,Argus World,,Launchpad,5094451.88,1
+armitage-by-wintermute,Armitage by Wintermute,,Risk Curators,2008201,1
+arrakis-modular,Arrakis Modular,parent#arrakis-finance,Liquidity Manager,5679928,1
+arrakis-v2,Arrakis V2,parent#arrakis-finance,Liquidity Manager,5308460.85,1
+aspecta-buildkey,Aspecta BuildKey,,SoFi,2259650.55,1
+aster-perps,Aster Perps,parent#astherus,Derivatives,484566379,1
+asxn-hype-staking,ASXN HYPE Staking,,Staking Pool,7305164,1
+aura,Aura,,Yield,38334262,1
+autofinance,AUTOfinance,,Yield,5954126,1
+autopilot,Autopilot,,Yield Aggregator,1922051,1
+avalon-finance,Avalon Finance,parent#avalon-labs,Lending,1148524.71,1
+avalon-usda,Avalon USDa,parent#avalon-labs,CDP,11194953,1
+avant-avbtc,Avant avBTC,parent#avant-protocol,Onchain Capital Allocator,1014029,1
+avant-avusd,Avant avUSD,parent#avant-protocol,Onchain Capital Allocator,16281458,1
+ave.ai,Ave.ai,,Trading App,1476042,1
+axie-infinity,Axie Infinity,,Gaming,1413658161.73,1
+axiom,Axiom,parent#axiom,Trading App,790678416,1
+axiom-perps,Axiom Perps,parent#axiom,Interface,1781935,1
+azuro,Azuro,,Prediction Market,5147883,1
+azverse-perps,AZverse Perps,parent#azverse,Derivatives,9767529,1
+b-harvest-hype-staking,B-Harvest HYPE Staking,,Staking Pool,4449315,1
+b.protocol-curator,B.Protocol Curator,,Risk Curators,8200499,1
+b14g,b14g,,Restaking,2018759,1
+b402,b402,,Payments,1025667,1
+babydogeswap,BabyDogeSwap,parent#babydogecoin,Dexs,2499711.69,1
+bags,Bags,,Launchpad,64804793,1
+balancer-v1,Balancer V1,parent#balancer,Dexs,167424633.56,1
+balancer-v2,Balancer V2,parent#balancer,Dexs,124185488,1
+balancer-v3,Balancer V3,parent#balancer,Dexs,10200485,1
+banana-gun,Banana Gun,,Telegram Bot,87077469.72,1
+bancor-v2.1,Bancor V2.1,parent#bancor,Dexs,60352082.73,1
+bancor-v3,Bancor V3,parent#bancor,Dexs,4614406.94,1
+bank-ai,Bank AI,,Services,1143474,1
+bankr,Bankr,,Interface,40873239,1
+base-app,Base App,,Wallets,129726883,1
+basedapp-perps,BasedApp Perps,parent#based,Interface,15356660,1
+basedapp-spot,BasedApp Spot,parent#based,Interface,6525719.35,1
+basepaint,BasePaint,,Services,2062139,1
+baseswap-v2,BaseSwap V2,parent#baseswap,Dexs,2163444.73,1
+bdex-v3,BDEX V3,parent#bdex,Dexs,1185398.25,1
+beamswap-classic,BeamSwap Classic,parent#beamswap,Dexs,1353909.82,1
+beamswap-v3,BeamSwap V3,parent#beamswap,Dexs,1411848.43,1
+bear-vs-bull,Bear Vs Bull,,Prediction Market,14028648,1
+beaverbuild,BeaverBuild,,Block Builders,74068240.6,1
+bedrock-unieth,Bedrock uniETH,parent#bedrock,Liquid Restaking,1669528.23,1
+beefy,Beefy,,Yield Aggregator,8368311,1
+beets-dex,Beets DEX,parent#beethoven-x,Dexs,2981124.08,1
+beets-lst,Beets LST,parent#beethoven-x,Liquid Staking,3955509,1
+beezie,Beezie,,Physical TCG,13587184,1
+benddao-lending-v1,BendDAO Lending V1,parent#benddao,NFT Lending,1696670.67,1
+benqi-lending,Benqi Lending,parent#benqi,Lending,18321765,1
+benqi-staked-avax,Benqi Staked Avax,parent#benqi,Liquid Staking,56696695,1
+beraborrow,Beraborrow,,CDP,3031262.69,1
+berachain-incentive-buys,Berachain Incentive Buys,,Chain,39195679.99,1
+beradrome,Beradrome,,Yield,1981472.57,1
+betswirl,BetSwirl,,Prediction Market,1658170.02,1
+bex,BEX,,Dexs,5780290.16,1
+bidgrid,BidGrid,,Gamified Mining,1092580,1
+bifrost-liquid-staking,Bifrost Liquid Staking,parent#bifrost-protocol,Liquid Staking,16746492,1
+binance-alpha,Binance Alpha,,Launchpad,22111228,1
+binance-staked-eth,Binance staked ETH,,Liquid Staking,575880186,1
+binance-staked-sol,Binance Staked SOL,,Liquid Staking,177135626.42,1
+binaryx-platform,Binaryx Platform,,RWA,1111678.25,1
+biswap-v2,Biswap V2,parent#biswap,Dexs,87829781.72,1
+bitfi-btc,BitFi BTC,parent#bitfi,Anchor BTC,9831774.1,1
+bitget-sol,Bitget SOL,,Liquid Staking,2165641,1
+bitway-earn,Bitway Earn,,Basis Trading,3348897,1
+bitwise-hype-staking,Bitwise HYPE Staking,,Staking Pool,4673523,1
+bitwise-uscc,Bitwise USCC,parent#superstate,Basis Trading,12569908,1
+blackhole-amm,Blackhole AMM,parent#blackhole,Dexs,1585209.41,1
+blackhole-clmm,Blackhole CLMM,parent#blackhole,Dexs,19023323,1
+blackrock-buidl,BlackRock BUIDL,parent#securitize,RWA,191031371,1
+blazestake,BlazeStake,,Liquid Staking,24031579.94,1
+blazingapp,BlazingApp,,Trading App,1223774.65,1
+blend-backstop-v2,Blend Backstop V2,parent#blend,Insurance,1195587,1
+blend-pools-v2,Blend Pools V2,parent#blend,Lending,5019271,1
+blitz-perps,Blitz Perps,parent#Edge,Derivatives,2908741,1
+block-analitica,Block Analitica,,Risk Curators,4025018,1
+blockchain-capital,Blockchain Capital,parent#securitize,RWA,18022151,1
+bloom-trading-bot,Bloom Trading Bot,,Gaming,63169179,1
+bloxroute,bloXroute,,MEV,261523329,1
+bluefin-legacy,Bluefin Legacy,parent#bluefin,Derivatives,11288325,1
+bluefin-pro,Bluefin Pro,parent#bluefin,Derivatives,3496150,1
+bluefin-spot,Bluefin Spot,parent#bluefin,Dexs,29247895,1
+blur-bids,Blur Bids,parent#blur,NFT Marketplace,70820766.4,1
+bmx-classic-perps,BMX Classic Perps,parent#bmx,Derivatives,2713304,1
+bonk-staked-sol,Bonk Staked SOL,parent#bonkfun,Liquid Staking,3565618.72,1
+bonk.fun-launchpad,BONK.fun Launchpad,parent#bonkfun,Launchpad,80159359,1
+bonkbot,BONKbot,parent#bonkfun,Telegram Bot,95061376,1
+boop.fun,boop.fun,,Launchpad,4482468.1,1
+bracket-lst,Bracket LST,parent#bracket-protocol,Liquid Staking,3961148.58,1
+bracket-vaults,Bracket Vaults,parent#bracket-protocol,Onchain Capital Allocator,1745020.74,1
+brix,Brix,,RWA,1238211,1
+bucket-cdp,Bucket CDP,parent#bucket-protocol,CDP,4581283,1
+buffer-finance,Buffer Finance,,Options,1210550,1
+bullx,BullX,,Telegram Bot,203028397.64,1
+bungee-bridge-aggregator,Bungee Bridge Aggregator,parent#bungee,Bridge Aggregator,3662742.48,1
+bybit-staked-sol,Bybit Staked SOL,,Liquid Staking,27921906.98,1
+byreal,Byreal,,Dexs,5376156,1
+cakepie,Cakepie,parent#magpie-ecosystem,Yield,3733024,1
+camelot-v2,Camelot V2,parent#camelot,Dexs,18343512.9,1
+camelot-v3,Camelot V3,parent#camelot,Dexs,36389882,1
+cap,cap,,Lending,8629196.16,1
+capricorn,Capricorn,,Dexs,1376828.95,1
+cardz.game,CARDZ.GAME,,Physical TCG,1257876.66,1
+catapult-trade,Catapult Trade,,Derivatives,7037323,1
+catfee,CatFee,,Developer Tools,45984388,1
+cellana-finance,Cellana Finance,,Dexs,2586824.23,1
+cellula,Cellula,,Gaming,2678522.67,1
+central-city,Central City,,AI Agents,1527940.94,1
+centrifuge-protocol,Centrifuge Protocol,parent#centrifuge,RWA,73160676,1
+cetus-clmm,Cetus CLMM,parent#cetus,Dexs,102673908,1
+chainflip-amm,Chainflip AMM,parent#chainflip,Dexs,27177631,1
+chainlink-requests,Chainlink Requests,parent#chainlink,Oracle,7803016,1
+chainlink-staking,Chainlink Staking,parent#chainlink,Services,73986646,1
+chamber-vaults,Chamber Vaults,parent#dhedge,Indexes,1966738.16,1
+chapool,Chapool,,Physical TCG,1354603.09,1
+chopcorp,CHOPCORP,,Gamified Mining,5045060,1
+chutes,Chutes,,Decentralized AI,3693238,1
+cian-yield-layer,CIAN Yield Layer,parent#cian-protocol,Yield Aggregator,7482424.46,1
+circle-cctp,Circle CCTP,parent#circle,Bridge,2302989,1
+circle-usdc,Circle USDC,parent#circle,Stablecoin Issuer,7793425826,1
+circle-usyc,Circle USYC,parent#circle,RWA,10468453,1
+clanker,clanker,parent#farcaster,Launchpad,92787153,1
+clearpool-tpool,Clearpool TPOOL,parent#clearpool,RWA,1431076,1
+clearstar,Clearstar,,Risk Curators,3143174,1
+clever,CLever,,Yield,2524385,1
+clipper,Clipper,,Dexs,9573087,1
+clusters,Clusters,,Domains,4223715,1
+cmi-hype-staking,CMI HYPE Staking,,Staking Pool,7247741,1
+coinbase-commerce,Coinbase Commerce,,Payments,3164824,1
+coinbase-wrapped-staked-eth,Coinbase Wrapped Staked ETH,,Liquid Staking,65400815,1
+colend-protocol,Colend Protocol,,Lending,6232293.33,1
+collector-crypt,Collector Crypt,,Physical TCG,123594188,1
+colony,Colony,,Yield,2945711,1
+compound-v2,Compound V2,parent#compound-finance,Lending,522480366,1
+compound-v3,Compound V3,parent#compound-finance,Lending,56776736,1
+concrete,Concrete,,Onchain Capital Allocator,34364063,1
+contango-v2,Contango V2,parent#contango,Derivatives,1347409.88,1
+convex-finance,Convex Finance,,Yield,1058235268,1
+courtyard,Courtyard,,Physical TCG,66351725,1
+cowswap,CoWSwap,,DEX Aggregator,72568833,1
+creator-bid,Creator Bid,,AI Agents,3753411.37,1
+crvusd,crvUSD,parent#curve-finance,CDP,40901111,1
+crypto.com-liquid-staking,Crypto.com Liquid Staking,,Liquid Staking,6110494.41,1
+curvance,Curvance,,Lending,2923246,1
+curve-dex,Curve DEX,parent#curve-finance,Dexs,688867199,1
+curve-llamalend,Curve LlamaLend,parent#curve-finance,Lending,1749712.39,1
+d2-finance,D2 Finance,,Onchain Capital Allocator,3510017,1
+dappos-intentex,dappOS IntentEX,,Dexs,1084510,1
+death.fun,death.fun,,Luck Games,4011831.2,1
+debank-cloud,DeBank Cloud,,Developer Tools,15982637,1
+debridge,deBridge,,Bridge,30131028,1
+decibel,Decibel,,Derivatives,3807309,1
+dedust,DeDust,,Dexs,4813420,1
+defi-saver-asset-management,Defi Saver Asset Management,parent#defi-saver,CDP Manager,21835987.94,1
+defi-swap,Defi Swap,,Dexs,18164450,1
+definitive,Definitive,,DEX Aggregator,6446926,1
+definity-staked-sol,Definity Staked SOL,,Liquid Staking,2649655.7,1
+defituna-amm,DefiTuna AMM,parent#defituna,Dexs,3139230.04,1
+defituna-liquidity,DefiTuna Liquidity,parent#defituna,Liquidity Manager,2304481.46,1
+derive-options,Derive Options,parent#lyra,Options,5828204,1
+derive-v1,Derive V1,parent#lyra,Options,1797745,1
+derive-v2,Derive V2,parent#lyra,Derivatives,7679110,1
+dex-screener,DEX Screener,,Coins Tracker,151281253,1
+dextools,DEXTools,,Coins Tracker,16461218,1
+dfdvsol,dfdvSOL,,Liquid Staking,6023471.48,1
+dodo-amm,DODO AMM,parent#dodo,Dexs,62986779,1
+dolomite,Dolomite,,Lending,21236607,1
+doppler-finance,Doppler Finance,,CeDeFi,3656415,1
+doubleup,DoubleUp,,Luck Games,2532196.69,1
+doublezero-network,DoubleZero Network,parent#doublezero,Developer Tools,1651792,1
+doublezero-staked-sol,DoubleZero Staked SOL,parent#doublezero,Liquid Staking,60950972.71,1
+dragonswap-v3-kaia,DragonSwap V3 Kaia,parent#dragonswap,Dexs,1535461,1
+dreamcash-interface,Dreamcash Interface,parent#dreamcash,Interface,1893246.98,1
+dreamcash-markets,Dreamcash Markets,parent#dreamcash,Interface,1701446,1
+drift-staked-sol,Drift Staked SOL,parent#drift,Liquid Staking,28570224.32,1
+drift-trade,Drift Trade,parent#drift,Derivatives,41099500,1
+dtrade,DTrade,,Telegram Bot,1021214.5,1
+dydx-v3,dYdX V3,parent#dydx,Derivatives,34434573,1
+dydx-v4,dYdX V4,parent#dydx,Derivatives,64546859,1
+dyli,DYLI,,Physical TCG,2602493.1,1
+easya-kickstart,EasyA Kickstart,,Launchpad,1284867.93,1
+echelon-market,Echelon Market,,Lending,17446347,1
+echo.xyz,Echo.xyz,,Private Investment Platform,1669753,1
+eden-relay,Eden Relay,,MEV,1855190,1
+edgevana,Edgevana,,Liquid Staking,12741376.77,1
+edgex-perps,edgeX Perps,parent#edgex,Derivatives,332352567,1
+edgex-v2,edgeX V2,parent#edgex,Derivatives,17318691,1
+eggs-finance,Eggs Finance,,Reserve Currency,1285897.34,1
+eigencloud,EigenCloud,,Restaking,162633224.86,1
+ekubo,Ekubo,parent#ekubo,Dexs,10156133,1
+el-dorado-exchange,El Dorado Exchange,parent#ede,Derivatives,5072661,1
+elixir,Elixir,,Yield,6582759,1
+elk,Elk,,Dexs,1740240.4,1
+ember,Ember,,RWA,6555473,1
+enosys-amm-v3,Enosys AMM V3,parent#enosys,Dexs,2971626,1
+ens,ENS,,Domains,113114994,1
+equalizer-exchange,Equalizer Exchange,parent#equalizer,Dexs,11509736.83,1
+equilibria,Equilibria,,Yield,6838471,1
+ethena-usde,Ethena USDe,parent#ethena,Basis Trading,1078595734.89,1
+ether.fi-liquid,ether.fi Liquid,parent#ether-fi,Onchain Capital Allocator,19444169,1
+ether.fi-stake,ether.fi Stake,parent#ether-fi,Liquid Staking,387354779.16,1
+ethereal-dex,Ethereal DEX,,Derivatives,2947843,1
+etherex-cl,Etherex CL,parent#etherex,Dexs,13083422.23,1
+etherex-legacy,Etherex Legacy,parent#etherex,Dexs,2438991,1
+etherfi-cash-liquid,EtherFi Cash Liquid,parent#ether-fi,Crypto Card Issuer,39095561,1
+ethervista,Ethervista,,Dexs,1062961.03,1
+euler-dao,Euler DAO,,Risk Curators,24181496,1
+euler-v2,Euler V2,parent#euler,Lending,87874552,1
+exponent-yield-exchange,Exponent Yield Exchange,parent#exponent,Yield,3719368.64,1
+extended-perps,Extended Perps,parent#extended,Derivatives,36060633,1
+extra-finance-leverage-farming,Extra Finance Leverage Farming,parent#extra-finance,Leveraged Farming,8791202.09,1
+fables,Fables,,Dexs,7494458.16,1
+fake-world-assets-v1,Fake World Assets V1,parent#fake-world-assets,Luck Games,12284966.34,1
+fake-world-assets-v2,Fake World Assets V2,parent#fake-world-assets,Luck Games,6205718,1
+falcon-finance,Falcon Finance,,Basis Trading,8032743,1
+fantasy.top,fantasy.top,,SoFi,7053188,1
+farcaster-sofi,Farcaster SoFi,parent#farcaster,SoFi,3522712.02,1
+fastlane,Fastlane,,MEV,1521268,1
+felix-cdp,Felix CDP,parent#felix,CDP,6679946,1
+felix-vaults,Felix Vaults,parent#felix,Onchain Capital Allocator,8923534,1
+fidelity-crypto-fund,Fidelity Crypto Fund,,CeDeFi,17773609,1
+fidelity-digital-interest-token,Fidelity Digital Interest Token,,RWA,6840492,1
+fjord-v1,Fjord V1,parent#fjord-foundry,Launchpad,6750148,1
+fjord-v2,Fjord V2,parent#fjord-foundry,Launchpad,13723065,1
+flap-sh,Flap sh,,Launchpad,197851510.07,1
+flashbots,Flashbots,,MEV,1731512799,1
+flashtrade,FlashTrade,,Derivatives,15300007,1
+flaunch,flaunch,,Launchpad,3606908.66,1
+flock.io,FLock.io,,Decentralized AI,1171743.17,1
+flowdex-hype-staking,FlowDex HYPE Staking,,Staking Pool,3764050,1
+fluid-dex,Fluid DEX,parent#fluid,Dexs,31480138,1
+fluid-lending,Fluid Lending,parent#fluid,Lending,110707187,1
+fluid-lite,Fluid Lite,parent#fluid,Yield Aggregator,8046103.91,1
+flux-finance,Flux Finance,,Lending,3467810,1
+fluxion-network,Fluxion Network,,Dexs,1642686,1
+flying-tulip-yield,Flying Tulip Yield,parent#flying-tulip,Services,1559039.25,1
+fomo-perps,fomo Perps,parent#fomo,Interface,4211255,1
+fomo-wallet,fomo Wallet,parent#fomo,Trading App,94575791,1
+forward-industries-sol,Forward Industries SOL,,Liquid Staking,8919803.27,1
+foundation,Foundation,,NFT Marketplace,29725419.43,1
+four.meme,four.meme,,Launchpad,99607850,1
+fragment,Fragment,,NFT Marketplace,755290052.53,1
+fragmetric,Fragmetric,,Liquid Restaking,6113355.87,1
+frankencoin,Frankencoin,,CDP,1951093.58,1
+frax,Frax,parent#frax-finance,Algo-Stables,5660199.77,1
+frax-ether,Frax Ether,parent#frax-finance,Liquid Staking,46360124.43,1
+frax-fpi,Frax FPI,,Algo-Stables,6601639.84,1
+frax-swap,Frax Swap,parent#frax-finance,Dexs,10639933.83,1
+frax-usd,Frax USD,parent#frax-finance,RWA,4527459,1
+fraxlend,Fraxlend,parent#frax-finance,Lending,3942177.1,1
+friend.tech-v1,friend.tech V1,parent#friend-tech,SoFi,64310148.21,1
+fulcrom-perps,Fulcrom Perps,parent#fulcrom,Derivatives,16006763,1
+full-sail,Full Sail,,Dexs,1029395.44,1
+futarchy-amm,Futarchy AMM,parent#metadao,Dexs,3415850,1
+fwx-derivatives,FWX Derivatives,parent#fwx,Derivatives,7648442,1
+fx-protocol,fx Protocol,,Dual-Token Stablecoin,16833398.9,1
+gacha-markets,Gacha Markets,parent#gacha,Prediction Market,2631056.67,1
+gacha-tcg,Gacha TCG,parent#gacha,Physical TCG,17907096,1
+gaib,GAIB,,RWA,2102935.45,1
+gains-network,Gains Network,,Derivatives,63032134,1
+gala-swap,Gala Swap,,Dexs,5091775.59,1
+galaxy-curation,Galaxy Curation,,Risk Curators,1431028,1
+gamma,Gamma,,Liquidity Manager,58173397,1
+garden,Garden,,Cross Chain Bridge,3580121.93,1
+gate-sol,Gate SOL,parent#gate-products,Liquid Staking,4165808.12,1
+gauntlet,Gauntlet,,Risk Curators,63043740,1
+gearbox,Gearbox,,Lending,22794258,1
+geckoterminal,GeckoTerminal,,Interface,1257816,1
+geist-finance,Geist Finance,,Lending,47278805,1
+gemint,Gemint,,Physical TCG,1337952.48,1
+genius.fun,Genius.fun,parent#genius-terminal,Launchpad,4130618.77,1
+geodnet,Geodnet,,Oracle,14796765,1
+geth,GETH,,Liquid Staking,3813204,1
+glif,GLIF,,Liquid Staking,1777924,1
+gmgn,GMGN,,Trading App,348621964.19,1
+gmx-evm,GMX EVM,parent#gmx,Derivatives,165611696,1
+gmx-solana,GMX Solana,parent#gmx,Derivatives,26128322,1
+gmx-v1-evm,GMX V1 EVM,parent#gmx,Derivatives,302586255,1
+gnd-protocol,GND Protocol,,Yield,2826364,1
+godl-protocol,GODL protocol,,Gamified Mining,14651405,1
+goldfinch,Goldfinch,,Uncollateralized Lending,32772128.09,1
+gondi-v3,Gondi V3,parent#gondi,NFT Lending,4504647,1
+goplus-locker-v2,GoPlus Locker V2,parent#goplus-security,Token Locker,1222600.5,1
+goplus-security-app,GoPlus Security App,parent#goplus-security,Developer Tools,3109654,1
+grafun,GraFun,,Launchpad,1409636.48,1
+graphite-protocol,Graphite Protocol,,Launchpad,12526998,1
+grayscale,Grayscale,,RWA,202035073,1
+grove-finance,Grove Finance,,Onchain Capital Allocator,68989733,1
+haedal-amm-protocol,Haedal AMM Protocol,parent#haedal,Dexs,1003118.04,1
+haedal-protocol,Haedal Protocol,parent#haedal,Liquid Staking,2177736,1
+haedal-vault,Haedal Vault,parent#haedal,Farm,2061719,1
+hakutora,Hakutora,,Risk Curators,2680032,1
+harmonic,Harmonic,,MEV,5529427,1
+hashcats,HASHCATS,,Gamified Mining,2104306.08,1
+hastra,Hastra,,RWA,22317757.58,1
+hawkfi,HawkFi,,Liquidity Manager,50628925,1
+heaven,Heaven,,Dexs,4631574.57,1
+hegic,Hegic,,Options,3416611.41,1
+helio,Helio,,Payments,3641046,1
+helium-network,Helium Network,,DePIN,2296688,1
+helius-staked-sol,Helius Staked SOL,,Liquid Staking,11276794.44,1
+hercules-v3,Hercules V3,parent#hercules,Dexs,2307256.99,1
+hmx,HMX,parent#desk,Derivatives,22936879,1
+holdstation-defutures,HoldStation DeFutures,parent#holdstation,Derivatives,4856295.02,1
+honeyswap,Honeyswap,,Dexs,1739042.24,1
+hop-protocol,Hop Protocol,,Cross Chain Bridge,1312243.06,1
+houdini-swap,Houdini Swap,,DEX Aggregator,6517486,1
+huma,Huma,,RWA,20429173,1
+humidifi,HumidiFi,,Dexs,1352137.12,1
+hybra-v3,Hybra V3,parent#hybra,Dexs,6112165.88,1
+hybra-v4,Hybra V4,parent#hybra,Dexs,1235596,1
+hydration-dex,Hydration DEX,,Dexs,3324126,1
+hydration-lending,Hydration Lending,,Lending,2365121,1
+hydrex-integral,Hydrex Integral,parent#hydrex,Dexs,5632446,1
+hyena,HYENA,parent#based,Interface,1898348,1
+hylo-lsts,Hylo LSTs,parent#hylo,Liquid Staking,1620690.99,1
+hylo-protocol,Hylo Protocol,parent#hylo,Dual-Token Stablecoin,5289905.93,1
+hyper-foundation-hype-staking,Hyper Foundation HYPE Staking,,Staking Pool,187699241,1
+hyperbeat-earn,Hyperbeat Earn,parent#hyperbeat,Yield Aggregator,4516477,1
+hyperbeat-p2p-hypio-hype-staking,Hyperbeat-P2P-Hypio HYPE Staking,,Staking Pool,3661337,1
+hyperdash-perps,HyperDash Perps,parent#hyperdash,Interface,1842580,1
+hyperion,Hyperion,,Dexs,6035724,1
+hyperithm,Hyperithm,,Risk Curators,6139815,1
+hyperlane,Hyperlane,,Cross Chain Bridge,1720127,1
+hyperlend-pooled,HyperLend Pooled,parent#hyperlend,Lending,14107119,1
+hyperliquid-hlp,Hyperliquid HLP,parent#hyperliquid,Derivatives,23897984,1
+hyperliquid-perps,Hyperliquid Perps,parent#hyperliquid,Derivatives,1652315986,1
+hyperliquid-spot-orderbook,Hyperliquid Spot Orderbook,parent#hyperliquid,Dexs,69914105,1
+hyperliquid-strategies-hype-staking,Hyperliquid Strategies HYPE Staking,,Staking Pool,21561746,1
+hypernova,Hypernova,,Trading App,3194026,1
+hyperstake-hype-staking,HyperStake HYPE Staking,,Staking Pool,8311295,1
+hyperswap-v2,HyperSwap V2,parent#hyperswap,Dexs,1245791.54,1
+hyperswap-v3,HyperSwap V3,parent#hyperswap,Dexs,15868680.54,1
+hyperwave,HyperWave,,Yield,2634474.63,1
+hypurrcorea-hype-staking,HypurrCorea HYPE Staking,,Staking Pool,6624184,1
+hypurrfi-pooled,HypurrFi Pooled,parent#hypurfi,Lending,3815242.8,1
+hypurrscan-hype-staking,HypurrScan HYPE Staking,,Staking Pool,20233932,1
+idle,Idle,parent#pareto,Yield Aggregator,3358519.88,1
+illuvium,Illuvium,,Gaming,1109581.2,1
+immutable-orderbook,Immutable Orderbook,,NFT Marketplace,15299131,1
+imperator.co-hype-staking,Imperator.co HYPE Staking,,Staking Pool,8050433,1
+impermax-v2,Impermax V2,parent#impermax-finance,Lending,3838183,1
+indigo,Indigo,,CDP,9386538.63,1
+infinex-perp,Infinex Perp,parent#infinex,Interface,2847474,1
+infinifi,infiniFi,,Yield,9435043,1
+infinite-field-hype-staking,Infinite Field HYPE Staking,,Staking Pool,15584842,1
+infrared-finance,Infrared Finance,,Liquid Staking,8489014.03,1
+initiadex,InitiaDEX,,Dexs,1180214,1
+insilico-terminal,Insilico Terminal,,Interface,4415898.53,1
+integral,Integral,,Dexs,1114590,1
+intentx,IntentX,,Derivatives,1544003,1
+inverse-finance-firm,Inverse Finance FiRM,parent#inverse-finance,CDP,13201348,1
+invesco-ustb,Invesco USTB,parent#superstate,RWA,29456201,1
+invo-perps,Invo Perps,,Interface,2142373.43,1
+ipor-fusion,IPOR Fusion,parent#ipor,Onchain Capital Allocator,2461918,1
+iziswap,iZiSwap,parent#izumi-finance,Dexs,1309951.12,1
+jagpool-staked-sol,JagPool Staked SOL,,Liquid Staking,8535083.29,1
+jito-dao,Jito DAO,parent#jito,DAO Service Provider,30278621.07,1
+jito-liquid-staking,Jito Liquid Staking,parent#jito,Liquid Staking,356981605,1
+jito-mev-tips,Jito MEV Tips,parent#jito,MEV,1438305998,1
+joe-dex,Joe DEX,parent#trader-joe,Dexs,252185736,1
+joe-v2,Joe V2,parent#trader-joe,Dexs,301854936.01,1
+joe-v2.1,Joe V2.1,parent#trader-joe,Dexs,45958162.06,1
+joe-v2.2,Joe V2.2,parent#trader-joe,Dexs,17665553,1
+jojo,JOJO,,Derivatives,8543122,1
+jpool,JPool,,Liquid Staking,19253975.83,1
+junoswap,Junoswap,,Dexs,1647639,1
+jupiter-aggregator,Jupiter Aggregator,parent#jupiter,DEX Aggregator,114081940,1
+jupiter-dca,Jupiter DCA,parent#jupiter,DCA Tools,17939004,1
+jupiter-lend,Jupiter Lend,parent#jupiter,Lending,42566886,1
+jupiter-limit,Jupiter Limit,parent#jupiter,DEX Aggregator,3833343.99,1
+jupiter-native-staking,Jupiter Native Staking,parent#jupiter,Staking Pool,4655209,1
+jupiter-perpetual-exchange,Jupiter Perpetual Exchange,parent#jupiter,Derivatives,834443215.54,1
+jupiter-prediction,Jupiter Prediction,parent#jupiter,Interface,1205159.59,1
+jupiter-staked-sol,Jupiter Staked SOL,parent#jupiter,Liquid Staking,114169263.82,1
+jupiter-studio,Jupiter Studio,parent#jupiter,Launchpad,5902189,1
+jupiterz,Jupiterz,parent#jupiter,Dexs,4260220,1
+jupusd,JupUSD,parent#jupiter,Basis Trading,1236246.4,1
+justlend-v1,JustLend V1,parent#justlend,Lending,25111147,1
+k3-capital,K3 Capital,,Risk Curators,12222164,1
+kaito-capital-launchpad,Kaito Capital Launchpad,parent#kaito,Launchpad,2167242,1
+kamino-lend,Kamino Lend,parent#kamino-finance,Lending,219863243,1
+kamino-liquidity,Kamino Liquidity,parent#kamino-finance,Liquidity Manager,38574926,1
+kasu,Kasu,,Uncollateralized Lending,1184799,1
+katana-dex,Katana DEX,parent#katana-ronin-dex,Dexs,3148974,1
+katana-dex-v3,Katana DEX V3,parent#katana-ronin-dex,Dexs,1988979.52,1
+katana-perps,Katana Perps,,Derivatives,1063344,1
+kelp,Kelp,parent#kelp-dao,Liquid Restaking,88927875.85,1
+kiloex,KiloEx,,Derivatives,13798322.41,1
+kinetic,Kinetic,,Lending,1511597,1
+kinetiq-earn,Kinetiq Earn,parent#kinetiq,Yield Aggregator,8598892,1
+kinetiq-khype,Kinetiq kHYPE,parent#kinetiq,Liquid Staking,30516668,1
+kinetix-derivatives,Kinetix Derivatives,parent#kinetix,Derivatives,1020301,1
+kittenswap-algebra,Kittenswap Algebra,parent#kittenswap,Dexs,1759108,1
+kittenswap-cl,Kittenswap CL,parent#kittenswap,Dexs,3571779.15,1
+kodiak-v3,Kodiak V3,parent#kodiak,Dexs,10813447,1
+koi-finance-amm,Koi Finance AMM,parent#koi-finance,Dexs,2018475.42,1
+kpk,KPK,,Risk Curators,1412408,1
+kraken-bitcoin-vault,Kraken Bitcoin Vault,,Yield,2952387.89,1
+ktx-perps,KTX Perps,parent#ktx.finance,Derivatives,27237701,1
+kumbaya,Kumbaya,,Dexs,1742912,1
+kwenta,Kwenta,,Perps Aggregator,21771837,1
+kyberswap-aggregator,KyberSwap Aggregator,parent#kyberswap,DEX Aggregator,34371674.84,1
+kyberswap-elastic,KyberSwap Elastic,parent#kyberswap,Dexs,11848030,1
+kyros,Kyros,,Liquid Restaking,2043908.01,1
+lab-terminal,LAB Terminal,,Trading App,12548659,1
+lagoon,Lagoon,,Onchain Capital Allocator,3404197,1
+laine-sol,Laine SOL,,Liquid Staking,1413767,1
+land-bid,Land Bid,,Gamified Mining,2296262.91,1
+launch-coin-on-believe,Launch Coin on Believe,,Launchpad,40910990.98,1
+launchlab,LaunchLab,parent#raydium,Launchpad,108570499,1
+lava,Lava,,Lending,5749410,1
+lavarage,Lavarage,,Derivatives,1361126.52,1
+layer3,Layer3,,Foundation,3059188,1
+layerzero-v1,LayerZero V1,parent#layerzero,Bridge,63771526.71,1
+layerzero-v2,LayerZero V2,parent#layerzero,Bridge,12814401.89,1
+lens-protocol,Lens Protocol,,SoFi,2279958.34,1
+letscash,LetsCash,,Launchpad,2711614.23,1
+level,Level,,CDP,2617728,1
+level-perps,Level Perps,parent#level-finance,Derivatives,34326504,1
+leverup,LeverUp,,Derivatives,1044039,1
+levvy-for-tokens,Levvy for Tokens,parent#levvy-finance,Lending,1175948,1
+li.fi-bridge-aggregator,LI.FI Bridge Aggregator,parent#li.fi,Bridge Aggregator,29579862.17,1
+lido,Lido,,Liquid Staking,3441013561,1
+lifinity-v1,Lifinity V1,parent#lifinity,Dexs,18682927,1
+lighter-perps,Lighter Perps,parent#lighter,Derivatives,82401323,1
+lighter-robinhood-perps,Lighter Robinhood Perps,parent#lighter,Derivatives,5654851,1
+lighter-spot,Lighter Spot,parent#lighter,Dexs,2011249,1
+limitless-exchange,Limitless Exchange,,Prediction Market,14134284.38,1
+liquid-collective,Liquid Collective,,Liquid Staking,44990499,1
+liquid-perps,Liquid Perps,parent#liquid,Interface,2306866,1
+liquidspirit-hydromancer-rektgang-hype-staking,LiquidSpirit-Hydromancer-RektGang HYPE Staking,,Staking Pool,3620426,1
+liquity-v1,Liquity V1,parent#liquity,CDP,85091175.73,1
+liquity-v2,Liquity V2,parent#liquity,CDP,3859193,1
+liqwid,Liqwid,,Lending,1326821,1
+lista-cdp,Lista CDP,parent#lista-dao,CDP,12055198.63,1
+lista-lending,Lista Lending,parent#lista-dao,Lending,13946351,1
+lista-liquid-staking,Lista Liquid Staking,parent#lista-dao,Liquid Staking,13895377,1
+livepeer,Livepeer,,Video Infrastructure,1281348,1
+ln-exchange-perps,LN Exchange Perps,parent#ln-exchange,Derivatives,2188298.21,1
+lombard-lbtc,Lombard LBTC,parent#lombard-finance,Restaked BTC,4810893,1
+lombard-vaults,Lombard Vaults,parent#lombard-finance,Onchain Capital Allocator,3893292,1
+looksrare,LooksRare,,NFT Marketplace,611431533,1
+loopscale-lending,Loopscale Lending,parent#loopscale,Lending,1730715,1
+looter,Looter,,Trading App,18790383,1
+lorenzo-susd1+,Lorenzo sUSD1+,parent#lorenzo-protocol,Yield,3117772.25,1
+lp-agent,LP Agent,,Liquidity Automation,4491053,1
+lulo,Lulo,,Yield Aggregator,1861112,1
+lunar-lander,Lunar Lander,,Transaction Execution,56751905.02,1
+lynex-v2,Lynex V2,parent#lynex,Dexs,10091323,1
+m0,M0,,Stablecoin Issuer,22910609,1
+macaron.bid,Macaron.bid,,Gamified Mining,13357841,1
+maestro,Maestro,,Telegram Bot,145243553,1
+magma,Magma,,Dexs,1561834,1
+mainstreet,Mainstreet,,Yield,3355856.14,1
+makina,Makina,,Onchain Capital Allocator,2600079.5,1
+mamo,Mamo,,Yield Aggregator,9454864,1
+manifold.xyz,manifold.xyz,,NFT Launchpad,2443471.18,1
+mantle-index-four-fund,Mantle Index Four Fund,parent#securitize,RWA,1550927,1
+mantle-restaking,Mantle Restaking,,Liquid Restaking,27337382,1
+maple,Maple,parent#maple-finance,Lending,216345917.96,1
+marginfi-lst,marginfi LST,parent#marginfi,Liquid Staking,1156402.54,1
+marinade-liquid-staking,Marinade Liquid Staking,parent#marinade-finance,Liquid Staking,143630789,1
+marinade-native,Marinade Native,parent#marinade-finance,Staking Pool,110492130,1
+marinade-select,Marinade Select,parent#marinade-finance,Staking Pool,14019309,1
+mass,Mass,,Interface,1676929,1
+matcha,Matcha,,Trading App,13142859,1
+matrixdock-stbt,MatrixDock STBT,parent#matrixdock,RWA,1421777,1
+maverick-v1,Maverick V1,parent#maverick-protocol,Dexs,5502746.29,1
+maxbid,Maxbid,,Trading App,1402893.06,1
+maya-protocol,Maya Protocol,,Cross Chain Bridge,1714201,1
+mayan-dex-aggregator,Mayan DEX Aggregator,parent#mayan-finance,DEX Aggregator,13294297,1
+mellow-restaking,Mellow Restaking,parent#mellow-protocol,Liquid Restaking,12331114,1
+mememax,MemeMax,,Interface,1812231.87,1
+merchant-moe-liquidity-book,Merchant Moe Liquidity Book,parent#merchant-moe,Dexs,7275458.42,1
+meria-hype-staking,Meria HYPE Staking,,Staking Pool,2477210,1
+merkle-trade,Merkle Trade,,Derivatives,2729862,1
+meso-finance,Meso Finance,,Lending,3999743.93,1
+metamask-perps,MetaMask Perps,parent#metamask,Interface,13731253,1
+metamask-predictions,MetaMask Predictions,parent#metamask,Interface,1445875,1
+metamask-usd,MetaMask USD,parent#metamask,Stablecoin Issuer,1162074.2,1
+metamask-wallet,MetaMask Wallet,parent#metamask,Wallets,199973340,1
+metaplex,Metaplex,,Launchpad,49764798,1
+metavault.trade,Metavault.Trade,parent#metavault,Derivatives,2306485,1
+meteora-damm-v1,Meteora DAMM V1,parent#meteora,Dexs,108115267,1
+meteora-damm-v2,Meteora DAMM V2,parent#meteora,Dexs,263530275,1
+meteora-dlmm,Meteora DLMM,parent#meteora,Dexs,1089093925,1
+meteora-dynamic-bonding-curve,Meteora Dynamic Bonding Curve,parent#meteora,Launchpad,100368133,1
+meth-protocol,mETH Protocol,,Liquid Staking,93428047.01,1
+metronome-synth,Metronome Synth,parent#metronome,Synthetics,19934289.29,1
+metropolis-dlmm,Metropolis DLMM,parent#metropolis-exchange,Dexs,1410203,1
+mev-capital,MEV Capital,,Risk Curators,35402499,1
+mevx,MEVX,,Telegram Bot,8862202.16,1
+midas-rwa,Midas RWA,,RWA,40351793.81,1
+milkyway-liquid-staking,MilkyWay Liquid Staking,parent#milkyway-protocol,Liquid Staking,2096688,1
+mimo-v2,Mimo V2,parent#mimo,Dexs,2124235.56,1
+minara-ai-perps,Minara AI Perps,,Interface,1392064.59,1
+minebean,MineBean,parent#nu11dotfun,Gamified Mining,3302111,1
+minepea,MinePea,parent#nu11dotfun,Gamified Mining,4510192.38,1
+minswap-dex,Minswap DEX,parent#minswap,Dexs,2178674,1
+miracle,Miracle,,Interface,1572109,1
+mm-stableswap-polygon,MM Stableswap Polygon,parent#mm-finance,Dexs,2561153.01,1
+mojitoswap,MojitoSwap,,Dexs,3914657.01,1
+momentum,Momentum,,Dexs,18568432,1
+monster,Monster,,Physical TCG,2069368,1
+montra,Montra,,Launchpad,1315570,1
+moon.it,moon.it,,Launchpad,4194882.28,1
+mooniswap,MooniSwap,,Dexs,23255802.05,1
+moonlander,Moonlander,,Derivatives,1465829.01,1
+moonshot-create,Moonshot Create,parent#moonshot,Launchpad,4476470,1
+moonshot.money,moonshot.money,parent#moonshot,Trading App,64780263.06,1
+moonwell-apollo,Moonwell Apollo,,Lending,5770202,1
+moonwell-lending,Moonwell Lending,parent#moonwell,Lending,24126273,1
+moonwell-vaults,Moonwell Vaults,parent#moonwell,Onchain Capital Allocator,3680741.94,1
+morpheusai,MorpheusAI,,AI Agents,9988988,1
+morphex-v2,Morphex V2,parent#morphex,Derivatives,1692547,1
+morpho-blue,Morpho Blue,parent#morpho,Lending,394817014,1
+multipli.fi,Multipli.fi,,Yield,2330723,1
+mummy-finance,Mummy Finance,,Derivatives,5637646,1
+mux-perps,MUX Perps,parent#mux-protocol,Derivatives,33255563.59,1
+mystic-finance-lending,Mystic Finance Lending,parent#mystic-finance,Lending,2602169,1
+nad.fun-v1,Nad.fun V1,parent#naddotfun,Launchpad,1631139,1
+nado-perps,Nado Perps,parent#nado,Derivatives,22344939,1
+nansen-hypurrcollective-hype-staking,Nansen-HypurrCollective HYPE Staking,,Staking Pool,19550598,1
+native-core-clob,Native Core CLOB,parent#native,Dexs,1812601.26,1
+navi-lending,NAVI Lending,parent#navi-protocol,Lending,39364495,1
+nest-cl,nest CL,parent#nest,Dexs,4466113.43,1
+neverland,Neverland,,Lending,3557090.53,1
+nexus-mutual-insurance,Nexus Mutual Insurance,parent#nexus-mutual,Insurance,17506007.4,1
+nile-cl,Nile CL,parent#nile-exchange,Dexs,2051705.79,1
+nodedao,NodeDAO,,Liquid Staking,3866597,1
+nomiswap,Nomiswap,,Dexs,3001346.06,1
+noon,Noon,,Yield,4466482,1
+nouns,Nouns,,Services,140287244,1
+noxa-fun,NOXA Fun,parent#noxa,Launchpad,24095054.79,1
+nozomi,Nozomi,,Developer Tools,38270717,1
+ntm.ai,NTM.ai,,SoFi,3430620,1
+nullmask,Nullmask,,Privacy,1729233,1
+nuri-cl,Nuri CL,parent#nuri-exchange,Dexs,3779077.03,1
+o1-launchpad,o1 Launchpad,parent#o1-exchange,Launchpad,8955879.01,1
+o1.exchange-trading-terminal,o1.exchange Trading Terminal,parent#o1-exchange,Trading App,2504966,1
+odinbot,OdinBot,,Trading App,1350448.08,1
+odos,ODOS,,DEX Aggregator,8765231.88,1
+okx-swap,OKX Swap,parent#okx-dex,DEX Aggregator,19227894,1
+olympus-dao,Olympus DAO,,Reserve Currency,4298290,1
+ondo-yield-assets,Ondo Yield Assets,parent#ondo-finance,RWA,97111542,1
+onekey-perps,OneKey Perps,parent#onekey,Interface,1410368,1
+onre,OnRe,,RWA,19917737,1
+openeden-tbill,OpenEden TBILL,parent#openeden,RWA,1131905,1
+openeden-usdo,OpenEden USDO,parent#openeden,RWA,8158471,1
+opensea-seaport,Opensea Seaport,parent#opensea,NFT Marketplace,403801333,1
+opensea-v1,OpenSea V1,parent#opensea,NFT Marketplace,1634932517,1
+opensea-v2,OpenSea V2,parent#opensea,NFT Marketplace,797096278,1
+opentrade,OpenTrade,,RWA,2151353,1
+opinion,OPINION,,Prediction Market,17571533,1
+orca-dex,Orca DEX,parent#orca,Dexs,245106311,1
+orderly-perps,Orderly Perps,parent#orderly-network,Derivatives,14332858,1
+ore-protocol,ORE Protocol,,Gamified Mining,46339485,1
+origin-dollar,Origin Dollar,parent#origin-defi,Yield Aggregator,6272191,1
+origin-ether,Origin Ether,parent#origin-defi,Liquid Staking,20781062,1
+orynth,Orynth,,Launchpad,1126588.49,1
+osmosis-dex,Osmosis DEX,,Dexs,66669383,1
+ostium,Ostium,,Derivatives,44765490,1
+otc,OTC,,Launchpad,7748382,1
+overtime,Overtime,,Prediction Market,5224944,1
+paal-ai,PAAL AI,,Telegram Bot,14267697,1
+pac-finance,Pac Finance,,Lending,1057920,1
+pacifica-perps,Pacifica Perps,parent#pacifica,Derivatives,13432126,1
+padre,Padre,,Telegram Bot,10443036,1
+pagcrypto,PagCrypto,,Payments,4506779.33,1
+pancakeswap-amm,PancakeSwap AMM,parent#pancakeswap,Dexs,939037773,1
+pancakeswap-amm-v3,PancakeSwap AMM V3,parent#pancakeswap,Dexs,497381504,1
+pancakeswap-infinity,PancakeSwap Infinity,parent#pancakeswap,Dexs,13851940.18,1
+pancakeswap-prediction,PancakeSwap Prediction,parent#pancakeswap,Prediction Market,17201725,1
+pancakeswap-stableswap,PancakeSwap StableSwap,parent#pancakeswap,Dexs,1181126.71,1
+pangolin-v2,Pangolin V2,parent#pangolin,Dexs,54089104.65,1
+paperstrategy-pstr,PaperStrategy PSTR,parent#paperstrategy,Onchain Capital Allocator,3457167,1
+papertrade,Papertrade,,Derivatives,73288351,1
+paradex-perps,Paradex Perps,parent#paradex,Derivatives,27033148.67,1
+parcl-v3,Parcl V3,parent#parcl,Derivatives,7305993,1
+paxos-stablecoin-issuer,Paxos Stablecoin Issuer,parent#paxos,Stablecoin Issuer,981667939,1
+paycash,PayCash,,Dexs,5747645,1
+peapods-finance,Peapods Finance,,Yield,2376488.03,1
+pendle-v2,Pendle V2,parent#pendle,Yield,67485344,1
+penpie,Penpie,parent#magpie-ecosystem,Yield,12526032.29,1
+pepeboost,Pepeboost,,Telegram Bot,9197908,1
+perpetual-protocol,Perpetual Protocol,,Derivatives,9195598,1
+perpl,Perpl,,Derivatives,1193257.88,1
+phame-protocol,PHAME Protocol,,Derivatives,2332900.83,1
+phantom-perps,Phantom Perps,parent#phantom,Interface,28042312,1
+phantom-sol,Phantom SOL,,Liquid Staking,9742864.55,1
+phantom-wallet,Phantom Wallet,parent#phantom,Wallets,572506809,1
+pharaoh-cl,Pharaoh CL,parent#pharaoh-exchange,Dexs,16863667.04,1
+pharaoh-dlmm,Pharaoh DLMM,parent#pharaoh-exchange,Dexs,3455046.58,1
+pharaoh-legacy,Pharaoh Legacy,parent#pharaoh-exchange,Dexs,4733318.44,1
+pharaoh-v3,Pharaoh V3,parent#pharaoh-exchange,Dexs,9337001,1
+phase-delegation,Phase Delegation,parent#phase,Liquid Staking,7993796.75,1
+phoenix-perp,Phoenix Perp,parent#phoenix,Derivatives,1228772,1
+phoenix-spot,Phoenix Spot,parent#phoenix,Dexs,14546705.54,1
+photon,Photon,,Trading App,442216923,1
+phygitals,Phygitals,,Physical TCG,15596666,1
+pico-staked-sol,Pico Staked SOL,,Liquid Staking,2271393.68,1
+pier-two-hype-staking,Pier Two HYPE Staking,,Staking Pool,6279506,1
+piku-finance,Piku Finance,,Basis Trading,1266950.7,1
+pingu-exchange,Pingu Exchange,,Derivatives,1939791.6,1
+pinksale,PinkSale,,Launchpad,5460835.43,1
+piteas,Piteas,,DEX Aggregator,1871787.23,1
+plasma-saving-vaults,Plasma Saving Vaults,,Onchain Capital Allocator,8257488,1
+plume-vaults,Plume Vaults,,RWA,5740768.45,1
+pocket-universe-extension,Pocket Universe Extension,parent#pocket-universe,Security Extension,4615488.76,1
+polter-finance,Polter Finance,,Lending,1792574.06,1
+polymarket-combos,Polymarket Combos,parent#polymarket,Prediction Market,1221475,1
+polymarket-international,Polymarket International,parent#polymarket,Prediction Market,280674299,1
+polymarket-us,Polymarket US,parent#polymarket,Prediction Market,316812118,1
+pons-v1,Pons V1,parent#pons,Launchpad,30887370,1
+pons-v2,Pons V2,parent#pons,Launchpad,173350148,1
+pools,Pools,,Launchpad,2831056,1
+pooltogether-v5,PoolTogether V5,parent#pooltogether,Yield Lottery,1869987,1
+popdex-perps,PopDEX Perps,parent#popdex,Derivatives,1394811,1
+portal,Portal,,Bridge,1003840,1
+posttechsofi,PostTechSoFi,,SoFi,1070210.79,1
+potatoswap-v2,PotatoSwap V2,parent#potatoswap,Dexs,3272871,1
+predict-fun,Predict Fun,,Prediction Market,34132791.89,1
+predictstreet,PredictStreet,,Prediction Market,9415376.47,1
+prismalst,PrismaLST,parent#prisma,CDP,12289753,1
+privacy-cash,Privacy Cash,,Privacy,1322747,1
+prizm,PRIZM,,Trading App,1673313.17,1
+project-x,Project X,,Dexs,44629181,1
+propr,Propr,,Trading App,6074493,1
+puffer-stake,Puffer Stake,parent#puffer-finance,Liquid Restaking,36880146.41,1
+pull.fun,Pull.fun,,Physical TCG,1808389.3,1
+pulsex-v1,PulseX V1,parent#pulsex,Dexs,25482822,1
+pulsex-v2,PulseX V2,parent#pulsex,Dexs,15179528,1
+pump.fun,pump.fun,parent#pump,Launchpad,1327924110,1
+pump.fun-mobile-app,pump.fun Mobile App,parent#pump,Interface,2351655,1
+pumpswap,PumpSwap,parent#pump,Dexs,1033481449,1
+purrposeful-hype-staking,Purrposeful HYPE Staking,,Staking Pool,5812033,1
+pvp.trade-perps,pvp.trade Perps,parent#pvp-trade,Interface,8028615,1
+pyth-pro,Pyth Pro,parent#pyth,Oracle,5167559.67,1
+quasar-builder,Quasar Builder,,Block Builders,18634153,1
+qubic-idle-compute,Qubic Idle Compute,,Mining Pools,3567546,1
+quickswap-dex,Quickswap Dex,parent#quickswap,Dexs,198156853,1
+quickswap-v3,Quickswap V3,parent#quickswap,Dexs,28964647,1
+quotrons,Quotrons,,NftFi,1978336,1
+rabby-perps,Rabby Perps,parent#rabby,Interface,2865582,1
+rabby-wallet,Rabby Wallet,parent#rabby,Wallets,13609952,1
+radiant-v2,Radiant V2,parent#radiant,Lending,29497380.64,1
+railgun,Railgun,,Privacy,14191760,1
+rain,Rain,,Prediction Market,1511739.78,1
+rainbow-wallet,Rainbow Wallet,parent#rainbow,Wallets,8838155.53,1
+ramses-cl,Ramses CL,parent#ramses-exchange-hl,Dexs,6607099.13,1
+ramses-cl-v2,Ramses CL V2,parent#ramses-exchange-hl,Dexs,7116735,1
+rango,Rango,,Bridge Aggregator,3268379,1
+rapid-launch,Rapid Launch,,Launchpad,2950501,1
+ratex-dex,RateX DEX,parent#ratex,Yield,10098145.52,1
+raybot,RayBot,,Telegram Bot,5617632,1
+raydium-amm,Raydium AMM,parent#raydium,Dexs,1461505365,1
+re,Re,,RWA,14041653,1
+re7-labs,Re7 Labs,,Risk Curators,10287092.36,1
+realt-rmm-marketplace-v2,RealT RMM Marketplace V2,parent#realt,Lending,3496494,1
+relay,Relay,,Cross Chain Bridge,284103557,1
+relend-network,Relend Network,,Risk Curators,4169044.52,1
+render-network-bme,Render Network BME,,DePIN,4004285.82,1
+renzo,Renzo,,Liquid Restaking,51660908.28,1
+reserve-protocol,Reserve Protocol,,Indexes,15172989.59,1
+reservoir-protocol,Reservoir Protocol,,CDP,13950023,1
+resolv-usr,Resolv USR,parent#resolv,Basis Trading,36384792,1
+resupply,Resupply,,Lending,4588492.15,1
+retro,Retro,,Dexs,1787989.68,1
+reya-perps,Reya Perps,parent#reya,Derivatives,6239319,1
+rhea-dex,Rhea Dex,parent#rhea-finance,Dexs,5714908,1
+rhea-lend,Rhea Lend,parent#rhea-finance,Lending,5611900,1
+ring-swap,Ring Swap,parent#ring-protocol,Dexs,20477360,1
+ripple-usd,Ripple USD,,Stablecoin Issuer,66569709,1
+rise.rich,Rise.rich,,Launchpad,4837792,1
+rockawayx,RockawayX,,Risk Curators,2680731,1
+rocket-pool,Rocket Pool,,Liquid Staking,216724521,1
+royco-v1,Royco V1,parent#royco-protocol,Yield,1104589,1
+safe,Safe,,Services,3671847,1
+sailor,Sailor,,Dexs,8387480.55,1
+sakuraswap-amm,SakuraSwap AMM,parent#reservoir-tools,Dexs,3291558.05,1
+sakuraswap-clmm,SakuraSwap CLMM,parent#reservoir-tools,Dexs,3339247.88,1
+sanctum-infinity,Sanctum Infinity,parent#sanctum,Dexs,8483971,1
+sanctum-reserve,Sanctum Reserve,parent#sanctum,Yield,2297513.31,1
+sanctum-validator-lsts,Sanctum Validator LSTs,parent#sanctum,Liquid Staking,234303840,1
+saphyre-v3,Saphyre V3,parent#dragon-swap,Dexs,17711127,1
+sat-rush,Sat Rush,,Gamified Mining,1896691,1
+satori-perp,Satori Perp,parent#satori-finance,Derivatives,4475625.79,1
+saturn,Saturn,,Stablecoin Wrapper,4458760.7,1
+saucerswap-v1,SaucerSwap V1,parent#saucerswap,Dexs,4071281,1
+saucerswap-v2,SaucerSwap V2,parent#saucerswap,Dexs,9158453,1
+save,Save,parent#save-protocol,Lending,22347434,1
+scale,Scale,,Dexs,1588294.12,1
+scallop-lend,Scallop Lend,parent#scallop,Lending,18002083,1
+sdai,sDAI,,Yield,9009246,1
+seamless-v1,Seamless V1,parent#seamless-protocol,Lending,1472609.81,1
+seamless-vaults,Seamless Vaults,parent#seamless-protocol,Onchain Capital Allocator,2766242.43,1
+securitize-tokenized-aaa-clo-fund,Securitize Tokenized AAA CLO Fund,parent#securitize,RWA,8996419,1
+sentora-curator,Sentora Curator,parent#sentora,Risk Curators,50876007.43,1
+shadow-exchange-clmm,Shadow Exchange CLMM,parent#shadow-exchange,Dexs,35285440.7,1
+shadow-exchange-legacy,Shadow Exchange Legacy,parent#shadow-exchange,Dexs,3987776.47,1
+shibaswap-v1,ShibaSwap V1,parent#shibaswap,Dexs,53075493.17,1
+shmonad,ShMonad,,Liquid Staking,1631350,1
+shuriken,Shuriken,,Services,7361467.56,1
+sideshift,SideShift,,Cross Chain Bridge,14626382,1
+silo-v2,Silo V2,parent#silo-finance,Lending,16192977.32,1
+sky-lending,Sky Lending,parent#maker,CDP,1297110235,1
+sky-money,Sky Money,parent#maker,Risk Curators,2653756,1
+slvr,SLVR,,Gamified Mining,5814141,1
+smithii,Smithii,,Launchpad,2524025,1
+snake-finance,Snake Finance,,Algo-Stables,5634754.82,1
+snuggle,Snuggle,,Liquidity Manager,5946287.21,1
+socket-protocol,SOCKET Protocol,,Bridge Aggregator,2575213.48,1
+sodex-perps,SoDEX Perps,parent#sosovalue,Derivatives,2150279,1
+solana-name-service,Solana Name Service,,Domains,8337406.37,1
+solarbeam,Solarbeam,,Dexs,8936339.91,1
+solayer-restaking,Solayer Restaking,parent#solayer,Restaking,10709260.97,1
+solidlizard-dex,SolidLizard Dex,parent#solidlizard,Dexs,1046678.49,1
+solidly-v3,Solidly V3,parent#solidly-labs,Dexs,1817818.52,1
+solstice,Solstice,,Basis Trading,3666056,1
+soltradingbot,SolTradingBot,,Telegram Bot,53892898,1
+solvbtc,SolvBTC,parent#solv-protocol,Bridge,58438305.02,1
+sommelier,Sommelier,,Onchain Capital Allocator,2091783.05,1
+sonne-finance,Sonne Finance,,Lending,4163832.0,1
+sosovalue-indexes,SoSoValue Indexes,parent#sosovalue,Indexes,50089463,1
+spark-liquidity-layer,Spark Liquidity Layer,parent#spark,Onchain Capital Allocator,187936485,1
+sparkdex-v3.1,SparkDEX V3.1,parent#sparkdex,Dexs,1033372,1
+sparklend,SparkLend,parent#spark,Lending,198086136,1
+spectra-v2,Spectra V2,parent#spectra,Yield,1405237.5,1
+spiko,Spiko,,RWA,31637295,1
+spiritswap-amm,SpiritSwap AMM,parent#spiritswap,Dexs,32083594.44,1
+splash-protocol,Splash Protocol,,Dexs,2058513.53,1
+spookyswap-v2,SpookySwap V2,parent#spookyswap,Dexs,133976850.82,1
+sport.fun,Sport.fun,,Prediction Market,6461715,1
+springsui,SpringSui,parent#suilend-protocol,Liquid Staking,6195560,1
+springsui-ecosystem,SpringSui Ecosystem,parent#suilend-protocol,Liquid Staking,3762167.96,1
+ssv-network,SSV Network,,Staking Pool,6040899,1
+stables-labs-usdx,Stables Labs USDX,,Basis Trading,14475709,1
+stackingdao,StackingDAO,,Liquid Staking,2272914.2,1
+stader,Stader,,Liquid Staking,17458661,1
+stake-dao-yield,Stake DAO Yield,parent#stake-dao,Yield,3115285.63,1
+stake.link-liquid,stake.link liquid,parent#stake.link,Liquid Staking,14573328,1
+stakee,Stakee,,Liquid Staking,3947130.37,1
+stakestone-stone,StakeStone STONE,parent#stakestone,Liquid Staking,7278306.01,1
+stakewise-v3,StakeWise V3,parent#stakewise,Liquid Staking,43226294,1
+stargate-v1,Stargate V1,parent#stargate-finance,Cross Chain Bridge,33277346.06,1
+stargate-v2,Stargate V2,parent#stargate-finance,Cross Chain Bridge,4305511,1
+starke-staked-sol,Starke Staked SOL,,Liquid Staking,1027230.24,1
+steakhouse-financial,Steakhouse Financial,,Risk Curators,98721730,1
+steamm,STEAMM,parent#suilend-protocol,Dexs,2266116.75,1
+steer-protocol,Steer Protocol,,Liquidity Manager,1242030.93,1
+stellaswap-v2,StellaSwap V2,parent#stellaswap,Dexs,2690166.16,1
+step-finance,Step Finance,,Portfolio Tracker,4532811,1
+sthype,stHYPE,parent#valantis,Liquid Staking,6715429,1
+stkesol-by-sol-strategies,STKESOL by SOL Strategies,,Liquid Staking,2467789.98,1
+stockereum,Stockereum,,Launchpad,2234118.24,1
+stockrip,StockRip,,Gamified Mining,1524198.8,1
+ston.fi,STON.fi,,Dexs,20759271.65,1
+stonkbrokers-anvil,StonkBrokers Anvil,parent#stonkbrokers,NftFi,4057331.46,1
+stonkbrokers-safe-launch,StonkBrokers Safe Launch,parent#stonkbrokers,Launchpad,2086288.72,1
+stonkbrokers-safety-deposit-box,StonkBrokers Safety Deposit Box,parent#stonkbrokers,Token Locker,4658219.59,1
+stonkfun,StonkFun,,Launchpad,42907471,1
+storm-trade,Storm Trade,,Derivatives,6284961,1
+strata-markets,Strata Markets,parent#strata,Yield,5290615.75,1
+streamflow,Streamflow,,Payments,3139149,1
+stride,Stride,,Liquid Staking,21924409,1
+strike,Strike,,Lending,1216732.02,1
+stronghold-staked-sol,Stronghold Staked SOL,,Liquid Staking,1313744.16,1
+stusdt,stUSDT,,RWA,2228100.01,1
+sudo-perps,Sudo Perps,parent#sudo-finance,Derivatives,1550066.25,1
+sudoswap-v1,Sudoswap V1,parent#sudoswap,NFT Marketplace,3278133.39,1
+sudoswap-v2,Sudoswap V2,parent#sudoswap,NFT Marketplace,1574150.16,1
+sui-foundation,Sui Foundation,,Canonical Bridge,1625271.57,1
+suilend,Suilend,parent#suilend-protocol,Lending,37352060.76,1
+suite,SUITE,,Trading App,1141872,1
+summer.fi-pro,Summer.fi Pro,parent#summer.fi,CDP Manager,2500753,1
+sunpump,SunPump,parent#sun,Launchpad,6529690.3,1
+sunswap-v1,SUNSwap V1,parent#sun,Dexs,4041782,1
+sunswap-v2,SUNSwap V2,parent#sun,Dexs,25784824,1
+sunswap-v3,SUNSwap V3,parent#sun,Dexs,32733855,1
+sunswap-v4,SunSwap V4,parent#sun,Dexs,1741194.67,1
+superchain,Superchain,parent#optimism-foundation,Services,106063065,1
+surf-protocol,Surf Protocol,,Derivatives,5592195,1
+sushiswap,SushiSwap,parent#sushi,Dexs,687916905,1
+sushiswap-agg,SushiSwap Agg,parent#sushi,DEX Aggregator,10921672,1
+sushiswap-v3,SushiSwap V3,parent#sushi,Dexs,14197174.42,1
+swapx-algebra,SwapX Algebra,parent#swapx,Dexs,5209312.41,1
+swell-liquid-restaking,Swell Liquid Restaking,parent#swell,Liquid Restaking,5058342,1
+swell-liquid-staking,Swell Liquid Staking,parent#swell,Liquid Staking,24563199,1
+symbiotic,Symbiotic,,Collateral Markets,2522078.24,1
+synapse-cross-chain-bridge,Synapse Cross Chain Bridge,parent#synapse,Cross Chain Bridge,31784551.13,1
+syncswap,SyncSwap,parent#syncswap-protocol,Dexs,3320920.7,1
+synfutures-v3,SynFutures V3,parent#synfutures,Derivatives,61661089,1
+synthetix-v1+v2,Synthetix v1+v2,parent#synthetix,Synthetics,81338627,1
+synthetix-v3,Synthetix V3,parent#synthetix,Derivatives,2519644,1
+takara-lend,Takara Lend,,Lending,1814118,1
+tbtc,tBTC,parent#threshold-network,Decentralized BTC,2851545.85,1
+tectonic,Tectonic,,Lending,4015697.85,1
+telegram-wallet,Telegram Wallet,,Interface,3944649,1
+telos-consilium,Telos Consilium,,Risk Curators,2660643.4,1
+terminal,Terminal,parent#pump,Telegram Bot,49972562,1
+tether,Tether,,Stablecoin Issuer,20534576226,1
+tether-gold,Tether Gold,,RWA,6478831,1
+thalaswap,ThalaSwap,parent#thala-labs,Dexs,1918163.09,1
+thalaswap-v2,ThalaSwap V2,parent#thala-labs,Dexs,3428487,1
+the-graph,The Graph,,Developer Tools,1459812.73,1
+the-index,The Index,,Indexes,1902496,1
+the-standard-reserve,The Standard Reserve,,Reserve Currency,16499365,1
+the-vault-liquid-staking,The Vault Liquid Staking,parent#the-vault,Liquid Staking,23414527.76,1
+thena-fusion,THENA FUSION,parent#thena,Dexs,24535545,1
+thena-integral,THENA INTEGRAL,parent#thena,Dexs,4227146,1
+thena-v1,THENA V1,parent#thena,Dexs,2032854.95,1
+theo-network-thbill,Theo Network thBill,parent#theo,RWA,4584482.7,1
+thick,Thick,parent#guru-network-dao,Dexs,1704832.57,1
+thorchain-dex,THORChain DEX,,Dexs,178152175,1
+thorswap,THORSwap,,DEX Aggregator,8214329,1
+thruster-v3,Thruster V3,parent#thruster,Dexs,9377674.18,1
+titan-builder,Titan Builder,,Block Builders,310474152,1
+tokenlon-amm,Tokenlon AMM,parent#tokenlon,Dexs,73032004,1
+tokenworks,TokenWorks,,NFT Automated Strategies,55260276,1
+tonco-v1,TONCO V1,parent#tonco,Dexs,2055725.96,1
+tonstakers-lsd,Tonstakers LSD,parent#tonstakers,Liquid Staking,19710806.3,1
+tornado-cash,Tornado Cash,,Privacy,14948214,1
+toros,Toros,parent#dhedge,Yield,2280912.6,1
+trade[xyz],trade[XYZ],,Interface,75443668,1
+tradewiz,TradeWiz,,Telegram Bot,4957622,1
+tree-news,Tree News,,SoFi,3619460,1
+treehouse-protocol,Treehouse Protocol,,DOR,2814936.65,1
+trends-legacy,Trends Legacy,parent#trends,Launchpad,1192662.11,1
+trevee-earn,Trevee Earn,,Yield Aggregator,2071498,1
+tria-card,Tria Card,parent#tria,Crypto Card Issuer,2986771,1
+tribe.run,Tribe.run,,SoFi,2667531.33,1
+trojan,Trojan,,Telegram Bot,228496514,1
+tronsave,TRONSAVE,,Services,19182695,1
+trust-wallet-perps,Trust Wallet Perps,parent#trust-wallet,Interface,4685291.42,1
+trust-wallet-wallet,Trust Wallet Wallet,parent#trust-wallet,Wallets,36174158,1
+tulipa-capital,Tulipa Capital,,Risk Curators,2417517.47,1
+turbos,Turbos,,Dexs,1102885,1
+txflow-perps,TxFlow Perps,parent#txflow,Derivatives,3888637.26,1
+tydro,Tydro,,Lending,6650701,1
+typus-dov,Typus DOV,parent#typus-finance,Options Vault,2165188.35,1
+typus-perp,Typus Perp,parent#typus-finance,Derivatives,1009957.64,1
+unchain-x,Unchain X,,Dexs,1298098.35,1
+uncx-network-v2,UNCX Network V2,parent#uncx-network,Token Locker,14409689.51,1
+unibot,Unibot,,Telegram Bot,29278050.48,1
+unidex-perp,UniDex Perp,parent#unidex,Derivatives,1126296,1
+uniswap-labs,Uniswap Labs,,Developer Tools,182982638.5,1
+uniswap-v1,Uniswap V1,parent#uniswap,Dexs,6170330.55,1
+uniswap-v2,Uniswap V2,parent#uniswap,Dexs,1839797776,1
+uniswap-v3,Uniswap V3,parent#uniswap,Dexs,3744803464,1
+uniswap-v4,Uniswap V4,parent#uniswap,Dexs,561743772,1
+unit,Unit,,Bridge,15638221,1
+unitas-usdu,Unitas USDu,parent#unitas,Basis Trading,7010116,1
+up-v3,up v3,parent#up,Dexs,4216936,1
+upheaval-v3,Upheaval V3,parent#upheaval-finance,Dexs,1140051.82,1
+upshift,Upshift,,Onchain Capital Allocator,33717738,1
+usd-ai,USD AI,,RWA,31647644.04,1
+usdd,USDD,,CDP,5402267,1
+usdt0-luganodes-hype-staking,USDT0-Luganodes HYPE Staking,,Staking Pool,6877529,1
+usual-usd0,Usual USD0,parent#usual,RWA,76506363.21,1
+vader-ai,Vader AI,,AI Agents,3345141.58,1
+valas-finance,Valas Finance,,Lending,1440876,1
+valhalla,Valhalla,,Liquidity Automation,5974532,1
+validao-hype-staking,Validao HYPE Staking,,Staking Pool,5469721,1
+vaneck-treasury-fund,VanEck Treasury Fund,parent#securitize,RWA,3572445,1
+vault-bridge,Vault Bridge,,Risk Curators,5004434,1
+vaulta-ram,Vaulta RAM,,Dexs,1207400.38,1
+vaultka,Vaultka,,Yield,5617274,1
+vector.fun,VECTOR.FUN,,Launchpad,8466662,1
+veda,Veda,,Onchain Capital Allocator,61915644,1
+vela-exchange,Vela Exchange,,Derivatives,7846583,1
+velodrome-v1,Velodrome V1,parent#aero-protocol,Dexs,1183187.68,1
+velodrome-v2,Velodrome V2,parent#aero-protocol,Dexs,30523198.16,1
+velodrome-v3,Velodrome V3,parent#aero-protocol,Dexs,15223615.46,1
+velora,Velora,,DEX Aggregator,20411961,1
+venice,Venice,,Farm,4711172.43,1
+veno-finance,Veno Finance,,Liquid Staking,4003837.14,1
+venus-core-pool,Venus Core Pool,parent#venus-finance,Lending,159826960,1
+veranta,Veranta,,Derivatives,25707420.41,1
+verio,Verio,,Liquid Staking,1755098.65,1
+vertex-perps,Vertex Perps,parent#Edge,Derivatives,30421960,1
+vest-markets,Vest Markets,,Derivatives,5697921.59,1
+vfat.io,vfat.io,parent#vfat,Yield Aggregator,6400136,1
+virtuals-protocol,Virtuals Protocol,,AI Agents,74806497,1
+volo-vault,Volo Vault,parent#navi-protocol,Risk Curators,1295482.84,1
+vvs-standard,VVS Standard,parent#vvs-finance,Dexs,18122935,1
+w-dex,W-DEX,,Dexs,8593604.08,1
+wagmi,WAGMI,,Dexs,6808037.02,1
+waterneuron,WaterNeuron,,Liquid Staking,1489035,1
+wbtc,WBTC,,Bridge,17729648.56,1
+wigoswap,WigoSwap,,Dexs,20860139.21,1
+wildcat-protocol,Wildcat Protocol,,Uncollateralized Lending,30824456,1
+wisdomtree,WisdomTree,,RWA,46612526,1
+wombat-exchange,Wombat Exchange,,Dexs,1007591.8,1
+wompie,Wompie,parent#magpie-ecosystem,Yield,1054002.35,1
+woofi-pro-perps,WooFi Pro Perps,parent#woofi,Interface,5445931,1
+woofi-swap,WOOFi Swap,parent#woofi,Dexs,7579541,1
+world-liberty-financial,World Liberty Financial,,Lending,166791665,1
+x2y2,X2Y2,,NFT Lending,8270699,1
+xalgo-liquid-staking,xALGO Liquid Staking,parent#folks-finance,Liquid Staking,1798645,1
+xox-perps,XOX Perps,,Interface,3631100,1
+xrpl,XRPL,,Chain,3954044,1
+yala,Yala,,CDP,3867993.37,1
+yearn-curating,Yearn Curating,parent#yearn,Risk Curators,1748804,1
+yearn-finance,Yearn Finance,parent#yearn,Yield Aggregator,149648793,1
+yeet-bgt-auction,Yeet BGT Auction,,Gamified Mining,1590695.14,1
+yeilend,YeiLend,parent#yei-finance,Lending,13082474.75,1
+yield-yak-aggregator,Yield Yak Aggregator,parent#yield-yak,Yield Aggregator,3551402.7,1
+yieldfi,YieldFi,,Yield Aggregator,11867956,1
+yo-protocol,YO Protocol,,Yield Aggregator,2343820,1
+yolo-games,YOLO Games,,Gaming,22530608.17,1
+yuzu-money,Yuzu Money,,Yield,4924343.03,1
+zerion-wallet,Zerion Wallet,parent#zerion,Wallets,3425903.66,1
+zerolend-lending,ZeroLend Lending,parent#zerolend,Lending,4344200.76,1
+zinc,ZINC,,Gamified Mining,7250004.28,1
+zircuit-staking,Zircuit Staking,,Farm,9805188,1
+zivoe,Zivoe,,RWA,1442468,1
+zkswap-v2,zkSwap V2,parent#zkswap-finance,Dexs,1658084.03,1
+zora-coins,ZORA Coins,parent#zora,Launchpad,10444424,1
+zora-marketplace,ZORA Marketplace,parent#zora,NFT Marketplace,3745524.69,1
+zyberswap-v3,Zyberswap V3,parent#zyberswap,Dexs,1363528.89,1
