@@ -1,0 +1,56 @@
+{
+  "C_90_t0": 0.182264333929,
+  "by_h": {
+    "12": {
+      "P_at_month_h": 0.0539196026004,
+      "P_within": 0.0694292623466,
+      "entities": 136,
+      "interval_at_month_h": [
+        0.0258467023173,
+        0.0831471833386
+      ],
+      "interval_within": [
+        0.0387686117228,
+        0.102217219776
+      ],
+      "k_star": 5.62273071846,
+      "moments": 980,
+      "moments_crossing": 43
+    },
+    "24": {
+      "P_at_month_h": 0.0532063492063,
+      "P_within": 0.138476190476,
+      "entities": 75,
+      "interval_at_month_h": [
+        0.0222222222222,
+        0.090546031746
+      ],
+      "interval_within": [
+        0.0838095238095,
+        0.198922222222
+      ],
+      "k_star": 5.76230527708,
+      "moments": 525,
+      "moments_crossing": 65
+    },
+    "36": {
+      "P_at_month_h": 0.0612573099415,
+      "P_within": 0.166520467836,
+      "entities": 38,
+      "interval_at_month_h": [
+        0.0144736842105,
+        0.119736842105
+      ],
+      "interval_within": [
+        0.0805555555556,
+        0.259064327485
+      ],
+      "k_star": 5.90534453255,
+      "moments": 306,
+      "moments_crossing": 57
+    }
+  },
+  "class": "R",
+  "r": 0.0248232692636,
+  "scenario": "primary (W = 90, G_P = 1, G_kappa = 1)"
+}

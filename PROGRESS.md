@@ -357,3 +357,15 @@ Entities that reached it: 9
   ... (9 lines)
 Registered headline: P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark
 ```
+
+## U3 - At any point within the horizon (S4) (done)
+
+Secondary (specified after the primary results).
+- `within.py`: `first_crossing` (first month u in 1..h with a valid window and
+  `F(t+u)/F(t) >= (1+r)^(u/12) G_P / G_kappa / C_90(t0)`), `compute` on the registered class R
+  moments of each horizon, entity-weighted with the registered bootstrap.
+- `results/within.json` (primary scenario):
+  h = 12: within 0.069 (0.039 to 0.102) vs at month 12 0.054 (0.026 to 0.083);
+  h = 24: within 0.138 (0.084 to 0.199) vs at month 24 0.053 (0.022 to 0.091);
+  h = 36: within 0.167 (0.081 to 0.259) vs at month 36 0.061 (0.014 to 0.120).
+- Test: a synthetic entity crosses the threshold at month 10 and falls back by month 24.
