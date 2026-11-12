@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-11-12T10:17:09+00:00",
+  "files": {
+    "intents_volume": {
+      "url": "https://api.llama.fi/summary/dexs/near-intents?dataType=dailyVolume",
+      "sha256": "2fc4816f19c40b6acc21ae500854a070f6c5c694c750570faae799aec518b981",
+      "bytes": 50589
+    },
+    "intents_fees": {
+      "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyFees",
+      "sha256": "66689499af279188fb9a206cd98d06b907959823bd009405dec1ad7a973ec13a",
+      "bytes": 39072
+    },
+    "intents_revenue": {
+      "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyRevenue",
+      "sha256": "8293ba464a81eadec3ea49bc22796050e796de056e81482b55a8c8daa6cd8822",
+      "bytes": 36650
+    },
+    "intents_holders_revenue": {
+      "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyHoldersRevenue",
+      "sha256": "cc3a4d7ed699eb4fdca0564633e3f5ad81056336190e575b840e5ba002b9bd91",
+      "bytes": 36460
+    },
+    "nearblocks_charts": {
+      "url": "https://api.nearblocks.io/v1/charts",
+      "sha256": "fec9b13936aa95c725d19e97d9f3d5496905a36ae3afe835f0b18efa5709360c",
+      "bytes": 1543346
+    }
+  }
+}
