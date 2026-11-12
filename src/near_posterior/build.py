@@ -8,8 +8,8 @@ import csv
 import io
 import json
 
-from near_posterior import (audit, backtest, coverage, out, readme, refclass, rpc_check, site,
-                            speccurve, thesis)
+from near_posterior import (audit, backtest, coverage, exceedance, out, readme, refclass,
+                            rpc_check, site, speccurve, thesis)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -46,6 +46,7 @@ def compute(previous_history: str = "") -> dict:
     curve = speccurve.run(panel, snap, F_near, moms)
     head = speccurve.headline(panel, cov, bt["choice"], moms, counts, curve)
     summary = speccurve.summarise(curve, head["class"])
+    exc = exceedance.compute(panel, cov, moms, curve)
     files = {
         "results/coverage.json": out.json_text(cov),
         "results/refclass_counts.json": out.json_text(counts),
@@ -59,6 +60,10 @@ def compute(previous_history: str = "") -> dict:
                                               [[r[k] for k in CURVE_HEADER] for r in curve]),
         "results/speccurve.json": out.json_text(summary),
         "results/headline.json": out.json_text(head),
+        "results/exceedance.csv": out.csv_text(["h", "k", "P", "P_lo", "P_hi"], exc["exceedance"]),
+        "results/growth_quantiles.json": out.json_text(exc["growth"]),
+        "results/coverage_quantiles.json": out.json_text(exc["coverage"]),
+        "results/entities_R.csv": out.csv_text(exceedance.ENTITY_HEADER, exc["entities"]),
     }
     if rpc_check.RPC_FILE.exists():
         rpc = json.loads(rpc_check.RPC_FILE.read_text(encoding="ascii"))

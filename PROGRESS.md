@@ -333,3 +333,27 @@ P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0
 > uv run pytest -q
 83 passed
 ```
+
+## U2 - Exceedance curve, coverage distribution, ask (S3, S5) (done)
+
+Secondary (specified after the primary results).
+- `exceedance.py`: `P_B0(k, h)` of class R on the grid `k = 10^(-2 + i/20)`, i = 0..80,
+  h = 12, 24, 36, each with the registered bootstrap (`results/exceedance.csv`, 243 rows);
+  entity-weighted lower quantiles of `exp(Y)` and the entity-weighted share of floor outcomes
+  (`results/growth_quantiles.json`); per entity and horizon: category, moments, successes at
+  the primary k* of that horizon, largest growth and its origin (`results/entities_R.csv`);
+  entity-weighted quantiles of `C(h) = C_90(t0) exp(Y) / (1 + r)^(h/12)`
+  (`results/coverage_quantiles.json`). `build` writes them, so `verify` checks them.
+- `ask.py`: `python -m near_posterior.ask [--k K] [--h H]`; default k = primary k* of h.
+- Tests: `ask` at the primary k* returns the registered P, interval and entity count; P, P_lo
+  and P_hi non-increasing in k; weighted quantiles.
+- Build time rose from about 6 s to about 14 s (243 bootstraps).
+
+```
+> uv run python -m near_posterior.ask
+Class R, h = 24 months, k = 5.762 (primary k*):
+P(24-month fee growth >= k) = 0.053 (90% interval 0.022 to 0.091), 75 entities, 525 moments
+Entities that reached it: 9
+  ... (9 lines)
+Registered headline: P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark
+```
