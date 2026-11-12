@@ -62,6 +62,7 @@ this README's generated blocks, the current row of `history.csv`.
 | `data/raw/nearblocks_charts.json` | https://api.nearblocks.io/v1/charts |
 | `data/refclass/` | https://api.llama.fi/overview/fees and one `/summary/fees/<slug>` per protocol, fetched once |
 | `data/claims.csv` | figures read from other public NEAR theses, each at a fixed commit, file and line |
+| `data/rpc/supply.json` | NEAR archival RPC (`block` headers): total supply at the edges of two days, a second route checked against NearBlocks |
 
 Why DefiLlama and NearBlocks rather than BigQuery or the NEAR Intents Explorer: no API key, no
 cost, and anyone can re-run the fetch. The reference class needs the same fee definition for

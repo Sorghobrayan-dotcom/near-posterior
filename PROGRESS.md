@@ -302,3 +302,11 @@ workflows (never run, nothing pushed); macOS (no machine here).
 > uv run pytest -q
 83 passed
 ```
+
+## T11 - Governance issuance scenario (not done)
+
+Not done: it needs the proposal text read at its primary source and a model of when and how a
+new issuance parameter would apply, which I did not do. What the registered results already
+say: P is non-increasing in k*, and k* is proportional to G_I, so any issuance cut smaller than
+the registered "half" row gives a P at most that row's P (`results/speccurve.csv`), below 0.50;
+the break-even issuance cut is in `results/headline.json` (`what_would_change.G_I_cut_needed`).
