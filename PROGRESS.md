@@ -50,3 +50,29 @@ missing: 0/981 = 0.0000
 > uv run pytest -q tests/test_refclass_fetch.py tests/test_series.py tests/test_coverage.py
 27 passed in 8.43s
 ```
+
+## T3 - Moments, classes, outcomes (done)
+
+- `refclass.py`: `from_rows`/`load_panel` (day grid from the first panel day to `D`, dead fill
+  when the last present day is more than 30 days before `D`), `window_value` (exact `fsum` of the
+  present days of the 90-day window), `origin_values` (F and present counts at every month start),
+  `outcome`, `moments`, `in_class`, `resolved`, `counts`, `main`.
+- Synthetic panel tests (`tests/test_refclass.py`): normal entity, dead entity (dead fill, floor
+  outcome), 79 present days (excluded and listed in the excluded rows), 80 days valid, merged
+  parent with two children, unresolved moment, entity outside the scale band, age band.
+- Real panel: `D = 2026-11-11`, 797 entities, 65 dead-filled, 18707 valid moments.
+  Class counts are in `results/refclass_counts.json`; R at h = 24: 75 entities, 525 moments.
+  Stop rule (R below 30 entities at h = 24): not triggered. 467 excluded moments listed in
+  `data/refclass/excluded.csv` (one row per horizon and moment).
+- `data/refclass/excluded.csv` is derived, so the fetch manifest does not list it.
+
+```
+> uv run python -m near_posterior.refclass
+R {'12': {'entities': 136, 'moments': 980}, '24': {'entities': 75, 'moments': 525}, '36': {'entities': 38, 'moments': 306}}
+R_strict {'12': {'entities': 102, 'moments': 599}, '24': {'entities': 57, 'moments': 342}, '36': {'entities': 32, 'moments': 193}}
+R_all_ages {'12': {'entities': 139, 'moments': 1213}, '24': {'entities': 76, 'moments': 628}, '36': {'entities': 39, 'moments': 340}}
+R_trading {'12': {'entities': 58, 'moments': 431}, '24': {'entities': 38, 'moments': 267}, '36': {'entities': 20, 'moments': 161}}
+excluded moments: 467
+> uv run pytest -q
+58 passed in 13.35s
+```

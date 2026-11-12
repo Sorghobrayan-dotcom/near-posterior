@@ -14,7 +14,8 @@ def read_csv(name):
 
 def test_manifest_matches_files():
     man = json.loads((REF / "manifest.json").read_text(encoding="ascii"))
-    names = sorted(p.name for p in REF.iterdir() if p.name != "manifest.json")
+    derived = {"manifest.json", "excluded.csv"}  # excluded.csv is written by refclass.py (T3)
+    names = sorted(p.name for p in REF.iterdir() if p.name not in derived)
     assert sorted(man["files"]) == names
     for name, digest in man["files"].items():
         assert hashlib.sha256((REF / name).read_bytes()).hexdigest() == digest, name

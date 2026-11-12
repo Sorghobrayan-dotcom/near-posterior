@@ -140,7 +140,7 @@ def sha256(data: bytes) -> str:
 
 def write_manifest(meta: dict) -> None:
     """Write manifest.json with the sha256 of every data file in data/refclass/."""
-    names = sorted(p.name for p in REF.iterdir() if p.name != "manifest.json")
+    names = sorted(p.name for p in REF.iterdir() if p.name not in ("manifest.json", "excluded.csv"))
     meta["files"] = {n: sha256((REF / n).read_bytes()) for n in names}
     out.write_text(REF / "manifest.json", out.json_text(meta))
 

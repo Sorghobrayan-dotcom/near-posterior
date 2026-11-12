@@ -1,0 +1,88 @@
+{
+  "D": "2026-11-11",
+  "F_near": 75897110.4444,
+  "classes": {
+    "R": {
+      "12": {
+        "entities": 136,
+        "moments": 980
+      },
+      "24": {
+        "entities": 75,
+        "moments": 525
+      },
+      "36": {
+        "entities": 38,
+        "moments": 306
+      }
+    },
+    "R_all_ages": {
+      "12": {
+        "entities": 139,
+        "moments": 1213
+      },
+      "24": {
+        "entities": 76,
+        "moments": 628
+      },
+      "36": {
+        "entities": 39,
+        "moments": 340
+      }
+    },
+    "R_strict": {
+      "12": {
+        "entities": 102,
+        "moments": 599
+      },
+      "24": {
+        "entities": 57,
+        "moments": 342
+      },
+      "36": {
+        "entities": 32,
+        "moments": 193
+      }
+    },
+    "R_trading": {
+      "12": {
+        "entities": 58,
+        "moments": 431
+      },
+      "24": {
+        "entities": 38,
+        "moments": 267
+      },
+      "36": {
+        "entities": 20,
+        "moments": 161
+      }
+    }
+  },
+  "dead_filled": 65,
+  "entities": 797,
+  "moments": {
+    "12": {
+      "excluded": 253,
+      "floor": 654,
+      "ok": 10040,
+      "unresolved": 7760,
+      "valid": 18707
+    },
+    "24": {
+      "excluded": 147,
+      "floor": 531,
+      "ok": 4798,
+      "unresolved": 13231,
+      "valid": 18707
+    },
+    "36": {
+      "excluded": 67,
+      "floor": 279,
+      "ok": 2285,
+      "unresolved": 16076,
+      "valid": 18707
+    }
+  },
+  "stop_rule_R_below_30_at_h24": false
+}
