@@ -124,3 +124,5 @@ Primary row by calendar year of the origin: 2020: 0.500 (2 entities, 7 moments);
 None.
 
 Stop rules (PREREG 9): reference panel missing share 0.0 percent (0 of 981 entries); class R at h = 24 has 75 entities (30 or more: R stays primary). Control values of `docs/SPEC.md` section 5: reproduced (`tests/test_coverage.py`).
+
+Second route for total supply: the `total_supply` of the NEAR block header at the end of day (UTC) of 2025-11-11 and 2026-11-11, read from https://archival-rpc.mainnet.fastnear.com, differs from NearBlocks by at most 0.00e+00 in relative terms; net issuance between the two days differs by 0.00e+00 (`results/rpc_supply.json`).

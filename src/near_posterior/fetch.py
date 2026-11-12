@@ -8,6 +8,8 @@ import datetime as dt
 import hashlib
 import json
 import pathlib
+import time
+import urllib.error
 import urllib.request
 
 RAW = pathlib.Path(__file__).resolve().parents[2] / "data" / "raw"
@@ -47,5 +49,81 @@ def main() -> None:
     print(f"manifest written, fetched_at={fetched_at}")
 
 
+RPC = "https://archival-rpc.mainnet.fastnear.com"
+RPC_OUT = RAW.parent / "rpc" / "supply.json"
+GENESIS_HEIGHT = 9820210
+
+
+def rpc_header(height: int | None = None) -> dict | None:
+    """Return the block header at height (latest final block if None), or None if no block."""
+    params = {"finality": "final"} if height is None else {"block_id": height}
+    body = json.dumps({"jsonrpc": "2.0", "id": "near-posterior", "method": "block",
+                       "params": params}).encode("ascii")
+    req = urllib.request.Request(RPC, data=body, headers={
+        "Content-Type": "application/json", "User-Agent": "near-posterior/0.1"})
+    for attempt in range(6):
+        time.sleep(0.5)
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                res = json.loads(resp.read())
+            return res.get("result", {}).get("header")
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429:
+                raise
+            time.sleep(10 * (attempt + 1))
+    raise RuntimeError("RPC rate limit: 6 attempts failed")
+
+
+def existing_header(height: int) -> dict:
+    """Return the header of the highest existing block at or below height (heights can skip)."""
+    for h in range(height, height - 200, -1):
+        header = rpc_header(h)
+        if header:
+            return header
+    raise RuntimeError(f"no block between {height - 199} and {height}")
+
+
+def last_block_before(ts_ns: int, top: dict) -> dict:
+    """Return the header of the last block with a timestamp before ts_ns (binary search)."""
+    lo, hi = GENESIS_HEIGHT, top["height"]
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if existing_header(mid)["timestamp"] < ts_ns:
+            lo = mid
+        else:
+            hi = mid
+    return existing_header(lo)
+
+
+def rpc_supply(days: list[dt.date]) -> dict:
+    """Return total_supply at the last block of each day and of the day before, from the RPC."""
+    top = rpc_header()
+    res = {"rpc": RPC, "fetched_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
+           .isoformat(), "days": {}}
+    for day in days:
+        entry = {}
+        for label, edge in (("start_of_day", day), ("end_of_day", day + dt.timedelta(days=1))):
+            ts = int(dt.datetime(edge.year, edge.month, edge.day, tzinfo=dt.timezone.utc)
+                     .timestamp()) * 10**9
+            h = last_block_before(ts, top)
+            entry[label] = {"height": h["height"], "timestamp_ns": h["timestamp"],
+                            "total_supply": h["total_supply"]}
+            print(f"{day} {label}: height {h['height']}", flush=True)
+        res["days"][day.isoformat()] = entry
+    return res
+
+
+def rpc_main(days: list[str]) -> None:
+    """Write data/rpc/supply.json: total supply at the edges of the given days, from the RPC."""
+    res = rpc_supply([dt.date.fromisoformat(d) for d in days])
+    RPC_OUT.parent.mkdir(parents=True, exist_ok=True)
+    RPC_OUT.write_text(json.dumps(res, indent=2, sort_keys=True) + "\n", encoding="ascii",
+                       newline="\n")
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    if sys.argv[1:2] == ["--rpc-supply"]:
+        rpc_main(sys.argv[2:])
+    else:
+        main()

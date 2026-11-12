@@ -1,0 +1,63 @@
+{
+  "closest_edge": "end_of_day",
+  "days": [
+    "2025-11-11",
+    "2026-11-11"
+  ],
+  "issuance": {
+    "end_of_day": {
+      "I_nearblocks": 31766509.5096,
+      "I_rpc": 31766509.5096,
+      "r_nearblocks": 0.0248232692636,
+      "r_rpc": 0.0248232692636,
+      "rel_diff": 0.0
+    },
+    "start_of_day": {
+      "I_nearblocks": 31766509.5096,
+      "I_rpc": 31740869.0602,
+      "r_nearblocks": 0.0248232692636,
+      "r_rpc": 0.0248047483881,
+      "rel_diff": 0.0008078055244
+    }
+  },
+  "rpc": "https://archival-rpc.mainnet.fastnear.com",
+  "rpc_fetched_at": "2026-11-12T15:59:02+00:00",
+  "supply": [
+    {
+      "S_nearblocks": 1279706922.25,
+      "S_rpc": 1279628745.42,
+      "day": "2025-11-11",
+      "diff": 78176.8362851,
+      "edge": "start_of_day",
+      "height": 172104797,
+      "rel_diff": 6.10933730311e-05
+    },
+    {
+      "S_nearblocks": 1279706922.25,
+      "S_rpc": 1279706922.25,
+      "day": "2025-11-11",
+      "diff": 0.0,
+      "edge": "end_of_day",
+      "height": 172244004,
+      "rel_diff": 0.0
+    },
+    {
+      "S_nearblocks": 1311473431.76,
+      "S_rpc": 1311369614.48,
+      "day": "2026-11-11",
+      "diff": 103817.285661,
+      "edge": "start_of_day",
+      "height": 223988377,
+      "rel_diff": 7.91670666417e-05
+    },
+    {
+      "S_nearblocks": 1311473431.76,
+      "S_rpc": 1311473431.76,
+      "day": "2026-11-11",
+      "diff": 0.0,
+      "edge": "end_of_day",
+      "height": 224135609,
+      "rel_diff": 0.0
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "days": {
+    "2025-11-11": {
+      "end_of_day": {
+        "height": 172244004,
+        "timestamp_ns": 1762905599572545998,
+        "total_supply": "1279706922253202019594328066565498"
+      },
+      "start_of_day": {
+        "height": 172104797,
+        "timestamp_ns": 1762819199493758226,
+        "total_supply": "1279628745416916787872062543020049"
+      }
+    },
+    "2026-11-11": {
+      "end_of_day": {
+        "height": 224135609,
+        "timestamp_ns": 1794441599752706016,
+        "total_supply": "1311473431762787833076286255899939"
+      },
+      "start_of_day": {
+        "height": 223988377,
+        "timestamp_ns": 1794355199397062010,
+        "total_supply": "1311369614477126588041365505144239"
+      }
+    }
+  },
+  "fetched_at": "2026-11-12T15:59:02+00:00",
+  "rpc": "https://archival-rpc.mainnet.fastnear.com"
+}

@@ -35,6 +35,9 @@ def load_results(root=out.ROOT) -> dict:
     text = (root / "results" / "speccurve.csv").read_text(encoding="ascii")
     res["speccurve_rows"] = list(csv.DictReader(io.StringIO(text)))
     res["deviations"] = (root / "DEVIATIONS.md").read_text(encoding="ascii")
+    rpc = root / "results" / "rpc_supply.json"
+    if rpc.exists():
+        res["rpc_supply"] = json.loads(rpc.read_text(encoding="ascii"))
     return res
 
 
@@ -312,6 +315,16 @@ def render(res: dict) -> str:
              else "(30 or more: R stays primary).")
           + " Control values of `docs/SPEC.md` section 5: reproduced (`tests/test_coverage.py`).",
           ""]
+    if "rpc_supply" in res:
+        rp = res["rpc_supply"]
+        edge = rp["closest_edge"].replace("_", " ")
+        worst = max(abs(r["rel_diff"]) for r in rp["supply"] if r["edge"] == rp["closest_edge"])
+        iss = rp["issuance"][rp["closest_edge"]]
+        L += [f"Second route for total supply: the `total_supply` of the NEAR block header at the "
+              f"{edge} (UTC) of {rp['days'][0]} and {rp['days'][1]}, read from {rp['rpc']}, "
+              f"differs from NearBlocks by at most {worst:.2e} in relative terms; net issuance "
+              f"between the two days differs by {iss['rel_diff']:.2e} "
+              f"(`results/rpc_supply.json`).", ""]
     return "\n".join(L)
 
 

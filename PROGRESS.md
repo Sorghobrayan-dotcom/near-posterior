@@ -277,3 +277,28 @@ workflows (never run, nothing pushed); macOS (no machine here).
 
 - T10 (optional, supply from the NEAR RPC), T11 (optional, governance scenario): see below.
 - T12 is for the author (submission, video, public repository, form).
+
+## T10 - Second route for total supply from the NEAR RPC (done, optional)
+
+- `fetch.py --rpc-supply <day> <day>`: binary search on block height for the last block before
+  the start and before the end of each UTC day on `https://archival-rpc.mainnet.fastnear.com`
+  (0.5 s between requests, retries on HTTP 429: the first attempt hit the rate limit), stores
+  heights, timestamps and header `total_supply` in `data/rpc/supply.json`. Run once.
+- `rpc_check.py` compares offline with NearBlocks; `build` writes `results/rpc_supply.json`
+  and one sentence in THESIS section 9; `verify` checks the file like the others.
+- Result: NearBlocks `total_supply` for day D equals the header `total_supply` of the last
+  block of D (UTC) exactly, on 2025-11-11 (height 172244004) and 2026-11-11 (height 224135609).
+  So `I(t0)` and `r` are reproduced exactly by the RPC. The start-of-day blocks (end of the
+  previous day) give r = 0.02480474838807113, the value several other theses publish.
+
+```
+> uv run python -m near_posterior.fetch --rpc-supply 2026-11-11 2025-11-11
+2026-11-11 start_of_day: height 223988377
+2026-11-11 end_of_day: height 224135609
+2025-11-11 start_of_day: height 172104797
+2025-11-11 end_of_day: height 172244004
+> uv run python -m near_posterior.verify
+21 lines, all PASS
+> uv run pytest -q
+83 passed
+```
