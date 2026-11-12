@@ -1,0 +1,17 @@
+{
+  "by_h": {
+    "12": {
+      "resolution_date": "2027-11-11",
+      "status": "pending"
+    },
+    "24": {
+      "resolution_date": "2028-11-11",
+      "status": "pending"
+    },
+    "36": {
+      "resolution_date": "2029-11-11",
+      "status": "pending"
+    }
+  },
+  "snapshot_t0": "2026-11-11"
+}

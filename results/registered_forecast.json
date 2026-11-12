@@ -1,0 +1,39 @@
+{
+  "class": "R",
+  "forecasts": {
+    "12": {
+      "P": 0.0539196026004,
+      "entities": 136,
+      "interval": [
+        0.0258467023173,
+        0.0831471833386
+      ],
+      "k_star": 5.62273071846,
+      "resolution_date": "2027-11-11"
+    },
+    "24": {
+      "P": 0.0532063492063,
+      "entities": 75,
+      "interval": [
+        0.0222222222222,
+        0.090546031746
+      ],
+      "k_star": 5.76230527708,
+      "resolution_date": "2028-11-11"
+    },
+    "36": {
+      "P": 0.0612573099415,
+      "entities": 38,
+      "interval": [
+        0.0144736842105,
+        0.119736842105
+      ],
+      "k_star": 5.90534453255,
+      "resolution_date": "2029-11-11"
+    }
+  },
+  "rule": "outcome = 1 if C_90 at t0 + h months >= 1, else 0; Brier = (P - outcome)^2",
+  "scenario": "primary (W = 90, capture, price and issuance rate constant)",
+  "snapshot_fetched_at": "2026-11-12T10:17:09+00:00",
+  "t0": "2026-11-11"
+}
