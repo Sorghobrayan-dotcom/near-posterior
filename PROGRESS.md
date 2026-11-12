@@ -250,3 +250,30 @@ exit=0
 > uv run pytest -q
 82 passed in 14.03s
 ```
+
+## Clean-clone check (T1 to T9)
+
+Fresh `git clone` of commit 454d8a2 into a new directory, with `UV_OFFLINE=1`:
+
+```
+> uv sync                       (offline, from the uv cache)
+ + pytest==9.2.0
+> uv run pytest -q
+82 passed in 14.69s
+> uv run python -m near_posterior.verify
+20 lines, all PASS, exit=0
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance within 24 months) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance within 24 months
+> git status --short
+(empty)
+> sha256sum THESIS.md site/index.html history.csv README.md results/* | sha256sum
+ccc02b89...  (identical in the clone and in the working repository)
+```
+
+Only `fetch.py` and `refclass_fetch.py` import a network module. Not verified: the CI
+workflows (never run, nothing pushed); macOS (no machine here).
+
+## Left
+
+- T10 (optional, supply from the NEAR RPC), T11 (optional, governance scenario): see below.
+- T12 is for the author (submission, video, public repository, form).
