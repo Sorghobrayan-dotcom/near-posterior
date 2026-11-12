@@ -506,3 +506,35 @@ recounted 1659 / 188 and 201 / 51, equal to mine. Recorded as an erratum in `DEV
 - U9 (page with explorer and new charts), U10 (README first screen, `VERIFICATION.md`,
   `verify --write`), U12 (`pages.yml`, demo script, X post), U13 (optional), and a clean-clone
   check of the second pass. Not done.
+
+## U9 - The page (done)
+
+- `svg.py` rewritten: a `Frame` with linear or log axes, one accent colour and a neutral scale,
+  labels on the charts (no colour legend), standalone SVG output.
+- `site.py` rewritten: top block (question, headline number large, interval, snapshot date,
+  one line on the method, links to `THESIS.md`, `PREREG.md`, `PREREG_2.md`, the headline line);
+  explorer (exceedance curve with interval band, k* ticks by window, triangles for the other
+  theses' requirements, a cursor; slider over the 81 grid values of k and a 12/24/36 switch,
+  data embedded from `results/exceedance.csv` and `results/entities_R.csv`; the static text
+  shows the primary k* result, so the page is complete without JavaScript; the only script is
+  inline, with no request); charts: coverage since 2026-02-23, coverage distribution at 12/24/36
+  months, lever heat map (with the HSP-029 column), calibration of C0 against B2, backtest
+  scores (registered and S1), robustness (specification curve, class multiverse, leave one year
+  out), cohorts; tables: who reached k*, nearest analogs, other theses (measurements and
+  forward requirements); limits. Every block has its "Query:" line and one sentence; sentences
+  that state a direction are computed from the results.
+- `site/img/exceedance.svg`, `levers.svg`, `calibration.svg`: standalone copies written by
+  `build`, so `verify` checks them.
+- Checked in the built-in browser at desktop width and at 380 px (no horizontal scroll;
+  document width 380). Explorer checked by script: k = 1 at 24 months shows P = 0.205, equal
+  to `results/growth_quantiles.json`.
+- Screenshots of the first screen: `docs/img/page_1200.png` and `docs/img/page_380.png`, taken
+  with Edge headless (`--window-size`; the 380 px one through a 380 px iframe because headless
+  Edge enforces a wider minimum window).
+
+```
+> uv run python -m near_posterior.verify
+39 lines, all PASS
+> uv run pytest -q
+103 passed
+```

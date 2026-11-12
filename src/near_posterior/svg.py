@@ -1,9 +1,18 @@
-"""Minimal inline-SVG charts drawn in Python, with no external request."""
+"""Minimal inline-SVG drawing in Python: one accent colour, a neutral scale, labels on the chart.
+
+No external request; every chart is plain SVG text, also usable as a standalone file.
+"""
 
 import html
+import math
 
-W, H = 640, 260
-PAD_L, PAD_R, PAD_T, PAD_B = 64, 16, 16, 40
+ACCENT = "#c2410c"
+ACCENT_LIGHT = "#f6d3c1"
+INK = "#1f2933"
+MID = "#6b7280"
+LIGHT = "#d1d5db"
+FAINT = "#f3f4f6"
+FONT = "Helvetica, Arial, sans-serif"
 
 
 def esc(text) -> str:
@@ -19,126 +28,118 @@ def fmt(v: float) -> str:
     if a >= 1e6:
         return f"{v / 1e6:.1f}M"
     if a >= 1e3:
-        return f"{v / 1e3:.1f}k"
+        return f"{v / 1e3:.0f}k"
     if a >= 10 or v == 0:
         return f"{v:.0f}"
-    return f"{v:.2f}"
+    if a >= 1:
+        return f"{v:.1f}".rstrip("0").rstrip(".")
+    if a >= 0.01:
+        return f"{v:.2f}".rstrip("0").rstrip(".")
+    return f"{v:.3f}".rstrip("0").rstrip(".")
 
 
-def frame(lo: float, hi: float, xlabels: list[tuple[float, str]], ylabel: str) -> tuple:
-    """Return (svg header parts, x mapper, y mapper) for a plot with y range [lo, hi]."""
-    hi = hi if hi > lo else lo + 1.0
-    def sx(t):
-        return PAD_L + t * (W - PAD_L - PAD_R)
-    def sy(v):
-        return PAD_T + (1.0 - (v - lo) / (hi - lo)) * (H - PAD_T - PAD_B)
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" '
-             f'width="100%" style="max-width:{W}px">',
-             f'<rect x="0" y="0" width="{W}" height="{H}" fill="#ffffff"/>']
-    for i in range(5):
-        v = lo + (hi - lo) * i / 4
-        y = sy(v)
-        parts.append(f'<line x1="{PAD_L}" y1="{y:.1f}" x2="{W - PAD_R}" y2="{y:.1f}" '
-                     'stroke="#dddddd" stroke-width="1"/>')
-        parts.append(f'<text x="{PAD_L - 6}" y="{y + 4:.1f}" font-size="11" text-anchor="end" '
-                     f'fill="#444444">{esc(fmt(v))}</text>')
-    for t, label in xlabels:
-        parts.append(f'<text x="{sx(t):.1f}" y="{H - PAD_B + 16}" font-size="11" '
-                     f'text-anchor="middle" fill="#444444">{esc(label)}</text>')
-    parts.append(f'<text x="14" y="{PAD_T + (H - PAD_T - PAD_B) / 2:.1f}" font-size="11" '
-                 f'fill="#444444" transform="rotate(-90 14 {PAD_T + (H - PAD_T - PAD_B) / 2:.1f})" '
-                 f'text-anchor="middle">{esc(ylabel)}</text>')
-    return parts, sx, sy
+class Frame:
+    """A plotting area with linear or log axes; collects SVG elements."""
 
+    def __init__(self, xlo, xhi, ylo, yhi, xlog=False, ylog=False, w=480, h=280, left=52,
+                 right=16, top=18, bottom=42):
+        """Store the ranges and margins of the plot."""
+        self.xlo, self.xhi, self.ylo, self.yhi = xlo, xhi, ylo, yhi
+        self.xlog, self.ylog = xlog, ylog
+        self.w, self.h, self.left, self.right, self.top, self.bottom = w, h, left, right, top, bottom
+        self.parts: list[str] = []
 
-def line_chart(series: list[tuple[str, list[float], str]], xlabels: list[str], ylabel: str,
-               hline: tuple[float, str] | None = None) -> str:
-    """Return an SVG line chart; series are (name, values, colour) on a shared x axis."""
-    vals = [v for _, ys, _ in series for v in ys if v is not None]
-    lo, hi = min(vals + [0.0]), max(vals + ([hline[0]] if hline else []))
-    n = max(len(ys) for _, ys, _ in series)
-    ticks = [(i / max(n - 1, 1), xlabels[i]) for i in range(0, n, max(1, n // 5))]
-    parts, sx, sy = frame(lo, hi * 1.05, ticks, ylabel)
-    if hline:
-        y = sy(hline[0])
-        parts.append(f'<line x1="{PAD_L}" y1="{y:.1f}" x2="{W - PAD_R}" y2="{y:.1f}" '
-                     'stroke="#b00020" stroke-dasharray="4 3"/>')
-        parts.append(f'<text x="{W - PAD_R}" y="{y - 4:.1f}" font-size="11" text-anchor="end" '
-                     f'fill="#b00020">{esc(hline[1])}</text>')
-    for j, (name, ys, colour) in enumerate(series):
-        pts = " ".join(f"{sx(i / max(n - 1, 1)):.1f},{sy(v):.1f}" for i, v in enumerate(ys)
-                       if v is not None)
-        parts.append(f'<polyline fill="none" stroke="{colour}" stroke-width="2" points="{pts}"/>')
-        parts.append(f'<text x="{PAD_L + 8 + 120 * j}" y="{PAD_T + 12}" font-size="11" '
-                     f'fill="{colour}">{esc(name)}</text>')
-    parts.append("</svg>")
-    return "\n".join(parts)
+    def _u(self, v, lo, hi, log):
+        """Return v as a fraction of the axis range."""
+        if log:
+            v, lo, hi = math.log10(max(v, 1e-12)), math.log10(lo), math.log10(hi)
+        return (v - lo) / (hi - lo) if hi != lo else 0.5
 
+    def x(self, v) -> float:
+        """Return the pixel x of a data value."""
+        return self.left + self._u(v, self.xlo, self.xhi, self.xlog) * (self.w - self.left - self.right)
 
-def bar_chart(labels: list[str], values: list[float], ylabel: str, colour: str = "#3060a0",
-              hline: tuple[float, str] | None = None, errors: list[tuple] | None = None,
-              colours: list[str] | None = None, every: int = 1) -> str:
-    """Return an SVG bar chart, with optional error bars (lo, hi), per-bar colours and a
-    reference line; only every `every`-th x label is drawn."""
-    tops = [v for v in values] + ([hline[0]] if hline else [])
-    if errors:
-        tops += [e[1] for e in errors if e]
-    lo = min([0.0] + values + ([e[0] for e in errors if e] if errors else []))
-    hi = max(tops) * 1.1 if max(tops) > 0 else 1.0
-    n = len(values)
-    ticks = [((i + 0.5) / n, labels[i]) for i in range(0, n, every)]
-    parts, sx, sy = frame(lo, hi, ticks, ylabel)
-    bw = (W - PAD_L - PAD_R) / n * 0.6
-    for i, v in enumerate(values):
-        x = sx((i + 0.5) / n) - bw / 2
-        y0, y1 = sy(max(v, 0.0)), sy(min(v, 0.0))
-        fill = colours[i] if colours else colour
-        parts.append(f'<rect x="{x:.1f}" y="{y0:.1f}" width="{bw:.1f}" height="{y1 - y0:.1f}" '
-                     f'fill="{fill}"/>')
-        if errors and errors[i]:
-            cx = sx((i + 0.5) / n)
-            parts.append(f'<line x1="{cx:.1f}" y1="{sy(errors[i][0]):.1f}" x2="{cx:.1f}" '
-                         f'y2="{sy(errors[i][1]):.1f}" stroke="#000000" stroke-width="1.5"/>')
-    if hline:
-        y = sy(hline[0])
-        parts.append(f'<line x1="{PAD_L}" y1="{y:.1f}" x2="{W - PAD_R}" y2="{y:.1f}" '
-                     'stroke="#b00020" stroke-dasharray="4 3"/>')
-        parts.append(f'<text x="{W - PAD_R}" y="{y - 4:.1f}" font-size="11" text-anchor="end" '
-                     f'fill="#b00020">{esc(hline[1])}</text>')
-    parts.append("</svg>")
-    return "\n".join(parts)
+    def y(self, v) -> float:
+        """Return the pixel y of a data value."""
+        return self.top + (1 - self._u(v, self.ylo, self.yhi, self.ylog)) * (
+            self.h - self.top - self.bottom)
 
+    def text(self, x, y, s, anchor="start", colour=INK, size=12, weight="normal") -> None:
+        """Add a text label at pixel coordinates."""
+        self.parts.append(f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" '
+                          f'text-anchor="{anchor}" fill="{colour}" font-weight="{weight}">'
+                          f"{esc(s)}</text>")
 
-def dot_chart(values: list[float], ylabel: str, mark: int | None = None) -> str:
-    """Return an SVG chart of sorted values as dots, one marked in red."""
-    lo, hi = min(values + [0.0]), max(values + [1.0])
-    n = len(values)
-    parts, sx, sy = frame(lo, hi, [(0.0, "1"), (1.0, str(n))], ylabel)
-    for i, v in enumerate(values):
-        colour, r = ("#b00020", 4) if i == mark else ("#3060a0", 1.5)
-        parts.append(f'<circle cx="{sx(i / max(n - 1, 1)):.1f}" cy="{sy(v):.1f}" r="{r}" '
-                     f'fill="{colour}"/>')
-    parts.append("</svg>")
-    return "\n".join(parts)
+    def line(self, pts, colour=INK, width=2.0, dash=None) -> None:
+        """Add a polyline through data points (x, y)."""
+        d = " ".join(f"{self.x(a):.1f},{self.y(b):.1f}" for a, b in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        self.parts.append(f'<polyline fill="none" stroke="{colour}" stroke-width="{width}"'
+                          f'{extra} points="{d}"/>')
 
+    def band(self, xs, lo, hi, colour=ACCENT_LIGHT) -> None:
+        """Add a filled band between two curves over xs."""
+        top = [f"{self.x(a):.1f},{self.y(b):.1f}" for a, b in zip(xs, hi)]
+        bot = [f"{self.x(a):.1f},{self.y(b):.1f}" for a, b in zip(reversed(xs), reversed(lo))]
+        self.parts.append(f'<polygon fill="{colour}" stroke="none" points="{" ".join(top + bot)}"/>')
 
-def strip_chart(categories: list[str], points: list[tuple[int, float]], ylabel: str) -> str:
-    """Return an SVG strip chart: points (category index, value) with a zero line."""
-    vals = [v for _, v in points] + [0.0]
-    lo, hi = min(vals), max(vals)
-    pad = 0.1 * (hi - lo if hi > lo else 1.0)
-    n = len(categories)
-    ticks = [((i + 0.5) / n, c) for i, c in enumerate(categories)]
-    parts, sx, sy = frame(lo - pad, hi + pad, ticks, ylabel)
-    y0 = sy(0.0)
-    parts.append(f'<line x1="{PAD_L}" y1="{y0:.1f}" x2="{W - PAD_R}" y2="{y0:.1f}" '
-                 'stroke="#b00020" stroke-dasharray="4 3"/>')
-    seen: dict[int, int] = {}
-    for c, v in points:
-        k = seen.get(c, 0)
-        seen[c] = k + 1
-        x = sx((c + 0.5) / n) + (k % 6 - 2.5) * 6
-        parts.append(f'<circle cx="{x:.1f}" cy="{sy(v):.1f}" r="3.5" fill="#3060a0" '
-                     'fill-opacity="0.8"/>')
-    parts.append("</svg>")
-    return "\n".join(parts)
+    def rect(self, x0, y0, x1, y1, colour=ACCENT, opacity=1.0, stroke=None) -> None:
+        """Add a rectangle between two data corners."""
+        px0, px1 = sorted((self.x(x0), self.x(x1)))
+        py0, py1 = sorted((self.y(y0), self.y(y1)))
+        s = f' stroke="{stroke}"' if stroke else ""
+        self.parts.append(f'<rect x="{px0:.1f}" y="{py0:.1f}" width="{px1 - px0:.1f}" '
+                          f'height="{py1 - py0:.1f}" fill="{colour}" fill-opacity="{opacity}"{s}/>')
+
+    def dot(self, xv, yv, r=3.0, colour=ACCENT, opacity=1.0) -> None:
+        """Add a circle at a data point."""
+        self.parts.append(f'<circle cx="{self.x(xv):.1f}" cy="{self.y(yv):.1f}" r="{r:.1f}" '
+                          f'fill="{colour}" fill-opacity="{opacity}"/>')
+
+    def vline(self, xv, colour=MID, dash="3 3", label=None, at_top=True) -> None:
+        """Add a vertical reference line with an optional label."""
+        x = self.x(xv)
+        self.parts.append(f'<line x1="{x:.1f}" y1="{self.top}" x2="{x:.1f}" '
+                          f'y2="{self.h - self.bottom}" stroke="{colour}" stroke-dasharray="{dash}"/>')
+        if label:
+            self.text(x + 3, self.top + 10 if at_top else self.h - self.bottom - 4, label,
+                      colour=colour, size=11)
+
+    def hline(self, yv, colour=MID, dash="3 3", label=None) -> None:
+        """Add a horizontal reference line with an optional label on the right."""
+        y = self.y(yv)
+        self.parts.append(f'<line x1="{self.left}" y1="{y:.1f}" x2="{self.w - self.right}" '
+                          f'y2="{y:.1f}" stroke="{colour}" stroke-dasharray="{dash}"/>')
+        if label:
+            self.text(self.w - self.right, y - 4, label, anchor="end", colour=colour, size=11)
+
+    def axes(self, xticks, yticks, xlabel="", ylabel="", xfmt=fmt, yfmt=fmt) -> None:
+        """Add grid lines, tick labels and axis titles."""
+        for v in yticks:
+            y = self.y(v)
+            self.parts.append(f'<line x1="{self.left}" y1="{y:.1f}" x2="{self.w - self.right}" '
+                              f'y2="{y:.1f}" stroke="{FAINT}"/>')
+            self.text(self.left - 5, y + 4, yfmt(v), anchor="end", colour=MID, size=11)
+        for v in xticks:
+            self.text(self.x(v), self.h - self.bottom + 15, xfmt(v), anchor="middle", colour=MID,
+                      size=11)
+        self.parts.append(f'<line x1="{self.left}" y1="{self.h - self.bottom}" '
+                          f'x2="{self.w - self.right}" y2="{self.h - self.bottom}" stroke="{LIGHT}"/>')
+        if xlabel:
+            self.text((self.left + self.w - self.right) / 2, self.h - 6, xlabel, anchor="middle",
+                      colour=MID, size=11)
+        if ylabel:
+            cy = (self.top + self.h - self.bottom) / 2
+            self.parts.append(f'<text x="12" y="{cy:.1f}" font-size="11" fill="{MID}" '
+                              f'text-anchor="middle" transform="rotate(-90 12 {cy:.1f})">'
+                              f"{esc(ylabel)}</text>")
+
+    def svg(self, title: str, standalone: bool = False) -> str:
+        """Return the SVG text; standalone adds the XML namespace header for a file."""
+        head = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" '
+                f'role="img" aria-label="{esc(title)}" font-family="{FONT}"'
+                + ("" if standalone else ' width="100%" style="max-width:720px;height:auto"')
+                + ">")
+        return "\n".join([head, f"<title>{esc(title)}</title>",
+                          f'<rect x="0" y="0" width="{self.w}" height="{self.h}" fill="#ffffff"/>']
+                         + self.parts + ["</svg>"]) + ("\n" if standalone else "")
