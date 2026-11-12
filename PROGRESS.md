@@ -76,3 +76,24 @@ excluded moments: 467
 > uv run pytest -q
 58 passed in 13.35s
 ```
+
+## T4 - Forecast and scoring (done)
+
+- `forecast.py`: `entity_shares`, `class_frequency` (P_B0 = mean over entities of p_j),
+  `cluster_bootstrap` (2000 resamples of entities, `default_rng(20261112)`, percentiles 5/95),
+  exact `clopper_pearson` (binomial CDF in log space, bisection, no scipy), `b0` (with the
+  one-moment-per-entity estimate and the estimate by origin year), `robust_scale`
+  (1.4826 * MAD, else std, else 1), `analogs` (one nearest moment per entity, K nearest
+  entities, ties on origin month then entity id), `analog_forecast`.
+- `scoring.py`: `brier`, `crps_sample` (sorted closed form of the weighted formula),
+  `crps_normal`, `Phi` via `math.erf`, `normal_quantile`, `weighted_quantile`,
+  `interval_coverage`, `pit_sample` (mid-PIT), `pit_normal`, `pit` (histogram + KS distance).
+- Tests: Clopper-Pearson 0/10, 3/10, 10/10 at 90 percent (3/10 gives 0.0872644, 0.6066242) and
+  the defining tail equations to 1e-12; bootstrap reproducible; analogs keep one moment per
+  entity and the K nearest; CRPS of a 200000-draw Normal sample within 1e-2 of the closed form;
+  Brier of a perfect forecast 0; PIT of a calibrated forecast passes a KS bound.
+
+```
+> uv run pytest -q tests/test_forecast_scoring.py
+14 passed
+```
