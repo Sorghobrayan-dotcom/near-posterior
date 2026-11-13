@@ -131,7 +131,10 @@ daily workflow adds `--commit`). The reference panel is not refetched;
   commit with `PREREG.md`.
 - AI coding assistance was used to write the code and the documents.
 - Libraries: Python standard library and `numpy`; `pytest` for tests. No other dependency.
-- Author's declaration: no other project is submitted by the author.
+- Other project of the author (rule on two submissions per person): the author also takes part,
+  as a member of team TrustLock, in a second and independent NEAR HACKATHON submission,
+  [TrustLock](https://github.com/drizzy765/Trustlock) (pay on delivery for sellers on social
+  media, with an escrow on NEAR). The two projects share no code, data or result.
 
 ## License
 
