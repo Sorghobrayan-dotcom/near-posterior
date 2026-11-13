@@ -770,3 +770,39 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 120 passed in 111.57s
 ```
+
+## W3 - Total interval (T3); tail model (T4) not reported (done)
+
+Tertiary (specified after the secondary results).
+- `total.py`: `t3` pools the 2000 bootstrap values of each of the 72 class specifications of S7
+  (equal weight per specification, same seed), primary scenario, h = 24. To get those values
+  without changing any result, `forecast.bootstrap_means` and
+  `multiverse.moment_share_values` / `multiverse.specifications` expose what
+  `cluster_bootstrap` and `moment_share` already computed (no existing result file changed).
+  `results/total_uncertainty.json`: 144000 values; 5th percentile 0.0042, median 0.0321, 95th
+  percentile 0.0824; 29.5 percent of the pooled variance lies between class specifications.
+- T4 (optional, generalised Pareto tail): implemented (`total.gpd_fit`, `total.t4`, weighted
+  maximum likelihood by a grid search refined inside fixed bounds) but not reported and not
+  part of `build`. "Did not converge" was not defined by PREREG_3; I defined it as an optimum on
+  a bound of the parameter domain. With the code as committed (41-point grid, 3 refinements)
+  116 of 2000 resamples (5.8 percent) did not converge, above the 5 percent rule, so no number
+  is reported. Exploratory runs before settling the code showed the share depends on the
+  numerical definition: 2.5 and 4.3 percent with an "edge of the initial grid" criterion
+  (41 and 21 points), 4.7 percent with the bound criterion on a 21-point grid. The point fit
+  on the full class (xi -0.118, sigma 1.21, threshold 0.441 = entity-weighted 85th percentile
+  of Y, 95 excesses) would give 0.047 against the empirical 0.053; it is not a reported result.
+  Reproduce: `uv run python -c "import json; from near_posterior import coverage, refclass,
+  total; c = coverage.summary(coverage.load()); p = refclass.load_panel();
+  print(total.t4(p, refclass.moments(p, 24), c['F_near'],
+  json.load(open('results/headline.json'))['k_star'])['result'])"`.
+- Tests: pooled percentiles and between-group share on constructed groups; the T3 file holds
+  72 x 2000 values; the GPD fit recovers xi = 0.3, sigma = 1 on 5000 simulated excesses.
+
+```
+> uv run python -m near_posterior.verify --write
+47 lines, all PASS
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+123 passed in 113.91s
+```

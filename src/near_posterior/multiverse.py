@@ -36,17 +36,36 @@ def category_mask(panel: dict, mom: dict, which: str) -> np.ndarray:
     return keep[mom["e"]]
 
 
-def moment_share(Y: np.ndarray, e: np.ndarray, k: float) -> dict:
-    """Return the plain share of moments with Y >= ln k and its cluster bootstrap interval."""
+def moment_share_values(Y: np.ndarray, e: np.ndarray, k: float) -> tuple[float, np.ndarray]:
+    """Return the plain share of moments with Y >= ln k and its entity-resampled values."""
     ents, inv = np.unique(e, return_inverse=True)
     hits = np.bincount(inv, weights=(Y >= math.log(k)).astype(float), minlength=ents.size)
     n = np.bincount(inv, minlength=ents.size).astype(float)
     rng = np.random.default_rng(forecast.SEED)
     idx = rng.integers(0, ents.size, size=(forecast.RESAMPLES, ents.size))
-    shares = hits[idx].sum(axis=1) / n[idx].sum(axis=1)
-    return {"P": float(hits.sum() / n.sum()),
+    return float(hits.sum() / n.sum()), hits[idx].sum(axis=1) / n[idx].sum(axis=1)
+
+
+def moment_share(Y: np.ndarray, e: np.ndarray, k: float) -> dict:
+    """Return the plain share of moments with Y >= ln k and its cluster bootstrap interval."""
+    P, shares = moment_share_values(Y, e, k)
+    ents = np.unique(e)
+    return {"P": P,
             "interval": (float(np.percentile(shares, 5)), float(np.percentile(shares, 95))),
             "entities": int(ents.size), "moments": int(Y.size)}
+
+
+def specifications(panel: dict, mom: dict, F_near: float):
+    """Yield (scale q, age band, categories, weighting, Y, entity) for the 72 specifications."""
+    ok = refclass.resolved(mom)
+    for q in SCALES:
+        for lo, hi in AGES:
+            for cats in CATEGORIES:
+                mask = (ok & (mom["F"] >= F_near / q) & (mom["F"] <= F_near * q)
+                        & (mom["age"] >= lo) & (mom["age"] <= hi)
+                        & category_mask(panel, mom, cats))
+                for wt in WEIGHTINGS:
+                    yield q, (lo, hi), cats, wt, mom["Y"][mask], mom["e"][mask]
 
 
 def run(panel: dict, mom: dict, F_near: float, k: float) -> list[list]:

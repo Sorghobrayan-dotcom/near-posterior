@@ -21,11 +21,16 @@ def class_frequency(Y: np.ndarray, entity: np.ndarray, k: float) -> float:
     return float(entity_shares(Y, entity, k)[1].mean())
 
 
-def cluster_bootstrap(p: np.ndarray, resamples: int = RESAMPLES, seed: int = SEED) -> tuple:
-    """Return the 5th and 95th percentiles of the mean of p over entity resamples."""
+def bootstrap_means(p: np.ndarray, resamples: int = RESAMPLES, seed: int = SEED) -> np.ndarray:
+    """Return the mean of p over each entity resample (the registered cluster bootstrap)."""
     rng = np.random.default_rng(seed)
     idx = rng.integers(0, p.size, size=(resamples, p.size))
-    means = p[idx].mean(axis=1)
+    return p[idx].mean(axis=1)
+
+
+def cluster_bootstrap(p: np.ndarray, resamples: int = RESAMPLES, seed: int = SEED) -> tuple:
+    """Return the 5th and 95th percentiles of the mean of p over entity resamples."""
+    means = bootstrap_means(p, resamples, seed)
     return float(np.percentile(means, 5)), float(np.percentile(means, 95))
 
 

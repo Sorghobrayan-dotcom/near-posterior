@@ -13,7 +13,7 @@ import numpy as np
 
 from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
                             multiverse, out, readme, recalibration, recency, refclass, resolve,
-                            rpc_check, site, speccurve, thesis, validation, within)
+                            rpc_check, site, speccurve, thesis, total, validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -59,6 +59,7 @@ def compute(previous_history: str = "") -> dict:
     mv = multiverse.run(panel, moms[24], F_near, head["k_star"])
     years24 = np.array([refclass.month_start(int(m)).year for m in sample24["month"]])
     coh = multiverse.cohorts(sample24["Y"], sample24["e"], years24, head["k_star"])
+    tot = total.t3(panel, moms[24], F_near, head["k_star"])
     val, val_rows = validation.compute(panel, ov, moms, F_near)
     rec = recency.compute(panel, ov, moms, F_near, cov["t0"], exc["growth"]["k_star"])
     t0_month = refclass.month_index(dt.date.fromisoformat(cov["t0"]))
@@ -94,6 +95,7 @@ def compute(previous_history: str = "") -> dict:
         "results/validation.json": out.json_text(val),
         "results/recency.json": out.json_text(rec),
         "results/recalibration.json": out.json_text(recal),
+        "results/total_uncertainty.json": out.json_text(tot),
         "results/validation_targets.csv": out.csv_text(validation.CSV_HEADER, val_rows),
         "results/resolution.json": out.json_text(resolution),
         "RESOLUTION.md": resolve.markdown(reg, resolution),
