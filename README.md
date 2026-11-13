@@ -6,6 +6,21 @@ An investment thesis for NEAR HACKATHON (track `thesis`) on one question: **will
 funded by NEAR Intents revenue cover NEAR's net issuance at the 24-month mark?** Not financial
 advice.
 
+## In 30 seconds
+
+<!-- BEGIN GENERATED brief -->
+- **The question:** NEAR spends part of the NEAR Intents fees on buying back NEAR. Within 24 months, will these buybacks absorb all the new NEAR that the protocol issues?
+- **Today:** they absorb 18.5% of it (dollar value, last 90 days to 2026-11-12).
+- **The bar:** to absorb all of it, NEAR Intents fees must grow 5.67x in 24 months, from $77.5M to $439.2M a year, with price, issuance and the share of fees spent on buybacks unchanged.
+- **The odds:** 5.3%, about 1 chance in 19: the share of 75 DeFi protocols that once had NEAR Intents' size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.
+- **For an investor:** On base rates the buyback does not offset dilution by the 24-month mark: net supply growth stays the base case. A case for NEAR should not rest on buybacks creating scarcity within this horizon.
+- **What could change it:** governance, more than market growth: all fees to buybacks 15.2%, issuance cut to a quarter 15.9%, both 34.8%; the best cell of the lever table is 49.1%, so none reaches even odds.
+- **What would prove this wrong:** annualised NEAR Intents fees above $439.2M at today's price and issuance. `history.csv` records the odds at every daily snapshot.
+- **Locked in advance:** the forecasts are written on NEAR (contract `brayan-posterior.testnet`), cannot be edited, and resolve on 2028-11-11; one command rebuilds every number from the committed data.
+<!-- END GENERATED brief -->
+
+## In detail
+
 <!-- BEGIN GENERATED finding -->
 **Finding:** on the snapshot of 2026-11-12, buybacks cover 18.5% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.67x in 24 months. Among 75 comparable DefiLlama protocols, the share that did so is **5.3%** (90% interval 2.2% to 9.1%): buybacks are unlikely to cover issuance at the 24-month mark. Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), how often outcomes at this forecast level happened before: at 24 months, none of the past forecasts reached this level: 0 of 201 past 24-month forecasts, from 0 of 51 protocols, origins 2024; exact one-sided 95 percent upper bound 5.7% with protocols as units; bootstrap interval 0.0% to 0.0% (fitted on the same origins); at 12 months, 0.5% (9 of 1659 past 12-month forecasts, from 4 of 188 protocols, origins 2023, 2024, 2025; exact one-sided 95 percent upper bound 4.8% with protocols as units; bootstrap interval 0.1% to 1.1%) (tested on later origins).
 <!-- END GENERATED finding -->

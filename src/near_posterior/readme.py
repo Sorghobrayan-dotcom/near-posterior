@@ -27,6 +27,7 @@ def blocks(res: dict) -> dict:
                     f"{thesis.pcal_text(m['near']['12'], '12', percent=True)} (tested on later "
                     f"origins).")
     return {
+        "brief": "\n".join(f"- **{k}:** {v}" for k, v in thesis.brief(res)),
         "finding": finding,
         "headline": "```\n" + thesis.headline_line(res) + "\n```",
         "limits": "\n".join(f"- {t}" for t in thesis.limits(res)),

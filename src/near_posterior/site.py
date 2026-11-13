@@ -510,6 +510,9 @@ def render(res: dict) -> str:
         f"<p>Method: buybacks cover {pc(w90['C'])} of net issuance today, so NEAR Intents fees "
         f"must grow {f(h['k_star'], 2)}x in 24 months; the number above is how often protocols "
         f"of the same size and age did that.</p>",
+        '<ul class="brief">'
+        + "".join(f"<li><strong>{svg.esc(k)}:</strong> {svg.esc(v.replace('`', ''))}</li>"
+                  for k, v in thesis.brief(res)) + "</ul>",
         f"<p>{links}</p>",
         '<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses '
         'specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; '
