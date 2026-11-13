@@ -201,27 +201,36 @@ def verification_text(checks: list[tuple[bool, str]], t0: str) -> str:
     return "\n".join(L)
 
 
-def run(root: pathlib.Path = out.ROOT) -> list[tuple[bool, str]]:
-    """Return every check as (passed, description); the last one is VERIFICATION.md itself."""
+def base_checks(root: pathlib.Path = out.ROOT) -> tuple[list[tuple[bool, str]], str]:
+    """Return every check except the VERIFICATION.md one, and the snapshot t0."""
     history = root / "history.csv"
     files = build.compute(history.read_text(encoding="ascii") if history.exists() else "")
     checks = (check_controls() + check_manifests() + check_files(files, root)
               + check_history(files, root) + check_readme(files, root) + check_ask())
+    return checks, files["_t0"]
+
+
+def report_check(checks: list[tuple[bool, str]], t0: str,
+                 root: pathlib.Path = out.ROOT) -> tuple[bool, str]:
+    """Return the check that VERIFICATION.md lists these checks with their current status."""
     path = root / "VERIFICATION.md"
-    text = verification_text(checks, files["_t0"])
-    checks.append((path.exists() and path.read_text(encoding="ascii") == text,
-                   "VERIFICATION.md lists these checks with their current status"))
-    return checks
+    ok = path.exists() and path.read_text(encoding="ascii") == verification_text(checks, t0)
+    return ok, "VERIFICATION.md lists these checks with their current status"
+
+
+def run(root: pathlib.Path = out.ROOT) -> list[tuple[bool, str]]:
+    """Return every check as (passed, description); the last one is VERIFICATION.md itself."""
+    checks, t0 = base_checks(root)
+    return checks + [report_check(checks, t0, root)]
 
 
 def main(argv=None) -> int:
     """Print one PASS/FAIL line per check; with --write, rewrite VERIFICATION.md first."""
     argv = sys.argv[1:] if argv is None else argv
-    checks = run()
+    checks, t0 = base_checks()
     if "--write" in argv:
-        head = json.loads((out.RESULTS / "headline.json").read_text(encoding="ascii"))
-        out.write_text(out.ROOT / "VERIFICATION.md", verification_text(checks[:-1], head["t0"]))
-        checks = run()
+        out.write_text(out.ROOT / "VERIFICATION.md", verification_text(checks, t0))
+    checks = checks + [report_check(checks, t0)]
     for ok, text in checks:
         print(f"{'PASS' if ok else 'FAIL'} {text}")
     return 0 if all(ok for ok, _ in checks) else 1

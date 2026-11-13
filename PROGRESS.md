@@ -653,3 +653,42 @@ compressed bytes depend on the platform's zlib build.
 > uv run pytest -q
 108 passed
 ```
+
+## U16 - Daily refresh that lands a consistent tree (done)
+
+CI on 45e793a was green on Linux, Windows and macOS (reviewer's report). The reviewer found that
+the daily refresh would fail, or push an inconsistent tree, after a new snapshot.
+- Reproduced here on a copy with a changed snapshot (last 12 values of
+  `intents_holders_revenue.json` and `intents_revenue.json` x 1.2, manifest and `fetched_at`
+  updated), with the old workflow steps: `build` then `verify` -> 1 FAIL ("VERIFICATION.md lists
+  these checks with their current status"); the old `git add` list leaves `docs/DEMO_SCRIPT.md`
+  and `docs/X_POST.md` modified; `verify` on the tree it would push -> 3 FAIL (DEMO_SCRIPT,
+  X_POST, VERIFICATION).
+- Fix: `near_posterior.refresh` (`python -m near_posterior.refresh [--commit]`): build,
+  `verify --write` (must exit 0), with `--commit` `git add -A` and commit if anything changed,
+  then a plain `verify` on the committed tree and `git status --porcelain` empty; exit 0 only if
+  all hold. It first checks that the package it runs is the one of the target folder.
+  `refresh.yml`: fetch, then `refresh --commit`, then `git push` in a later step (so no push
+  if the refresh step fails). Bot identity kept; the reference panel is still not refetched.
+- `verify --write` now computes the checks once (it ran them twice before).
+- Everything `build` or `verify --write` writes (`RESOLUTION.md`, root `index.html`,
+  `site/img/*`, `docs/*`, `VERIFICATION.md`, README) is now committed by `git add -A`; the
+  regression test asserts an empty `git status` after the refresh.
+- `tests/test_refresh.py`: copies the repository to a temporary git repo, applies the same
+  snapshot change, runs `refresh.main(["--commit"])`, and asserts exit 0, an empty
+  `git status`, a refresh commit that includes `VERIFICATION.md`, `docs/DEMO_SCRIPT.md` and
+  `history.csv`, and that it changed files outside the old `git add` list; a second test checks
+  the workflow order (fetch, refresh --commit, push) and that no hand-written `git add` list or
+  bare `build` step remains. On the old logic the first test cannot pass (no refresh step, and
+  the old list misses those files).
+- README: the refresh line now says `fetch`, then `refresh`.
+
+```
+> uv run python -m near_posterior.verify --write
+44 lines, all PASS, exit=0
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+110 passed in 77.91s
+```
+Not verified: the scheduled workflow itself on GitHub (it runs once pushed).

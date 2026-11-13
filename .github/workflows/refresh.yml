@@ -1,6 +1,9 @@
 name: refresh
 
-# Daily: refetch the NEAR snapshot only (the reference panel stays frozen), rebuild, commit.
+# Daily: refetch the NEAR snapshot only (the reference panel stays frozen), then
+# `near_posterior.refresh --commit`: build, verify --write (must pass), git add -A, commit if
+# anything changed, a plain verify on the committed tree, and an empty `git status`. Push only
+# if that step succeeds.
 on:
   schedule:
     - cron: "30 6 * * *"
@@ -17,12 +20,10 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv sync
       - run: uv run python -m near_posterior.fetch
-      - run: uv run python -m near_posterior.build
-      - run: uv run python -m near_posterior.verify
-      - name: commit
+      - name: build, verify, commit, verify again
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw results THESIS.md README.md site history.csv data/refclass/excluded.csv
-          git diff --cached --quiet || git commit -m "chore(data): daily NEAR snapshot refresh"
-          git push
+          uv run python -m near_posterior.refresh --commit
+      - name: push
+        run: git push

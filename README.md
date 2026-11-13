@@ -82,8 +82,10 @@ Why DefiLlama and NearBlocks rather than BigQuery or the NEAR Intents Explorer: 
 cost, and anyone can re-run the fetch. The reference class needs the same fee definition for
 hundreds of protocols, which only an aggregator provides.
 
-Refresh the NEAR snapshot (network): `uv run python -m near_posterior.fetch`, then `build`. The
-reference panel is not refetched; `uv run python -m near_posterior.refclass_fetch` was run once.
+Refresh the NEAR snapshot (network): `uv run python -m near_posterior.fetch`, then
+`uv run python -m near_posterior.refresh` (build, `verify --write`, then a plain `verify`; the
+daily workflow adds `--commit`). The reference panel is not refetched;
+`uv run python -m near_posterior.refclass_fetch` was run once.
 
 ## Layout
 
