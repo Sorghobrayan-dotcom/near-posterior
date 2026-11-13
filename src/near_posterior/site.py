@@ -11,13 +11,32 @@ from near_posterior import out, svg, thesis
 from near_posterior.svg import ACCENT, ACCENT_LIGHT, INK, LIGHT, MID, Frame
 from near_posterior.thesis import f, interval, usd
 
-CSS = """:root{--ink:#1f2933;--mid:#6b7280;--accent:#c2410c;--line:#e5e7eb}
-body{font-family:Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:16px;
-color:var(--ink);background:#fff;line-height:1.5}
-h1{font-size:1.45em;line-height:1.25;margin:.2em 0}h2{font-size:1.1em;margin:2.2em 0 .4em}
-.kicker{color:var(--mid);font-size:.85em;margin:0}.big{font-size:3.2em;font-weight:bold;
-color:var(--accent);margin:.1em 0}.head{font-family:Consolas,monospace;font-size:.8em;
-background:#f9fafb;border:1px solid var(--line);padding:8px;overflow-wrap:anywhere}
+CSS = """:root{--ink:#111827;--mid:#6b7280;--accent:#c2410c;--line:#e5e7eb;--bg:#f4f1ec;
+--card:#fff;--hero:#0f1419;--near:#00ec97}
+*{box-sizing:border-box}
+body{font-family:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;max-width:880px;
+margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+header{background:var(--hero);color:#e5e7eb;border-radius:18px;padding:32px 28px;margin:8px 0 20px}
+header h1{color:#fff;font-family:Georgia,"Times New Roman",serif;font-weight:normal;
+font-size:2.1em;line-height:1.15;margin:.2em 0 .3em}header a{color:var(--near)}
+header .q{color:#9ca3af}header code{background:#1f2933;color:#e5e7eb}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35em;
+margin:0 0 .5em;line-height:1.3}
+section{background:var(--card);border-radius:14px;padding:22px 24px;margin:16px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.06)}section svg{max-width:100%;height:auto}
+.kicker{color:var(--near);font-size:.75em;letter-spacing:.12em;text-transform:uppercase;
+margin:0}.big{font-size:4.2em;font-weight:700;color:#fff;margin:.05em 0;line-height:1}
+.big+p strong{color:var(--near)}
+ul.brief{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+ul.brief li{background:#1a2129;border:1px solid #2a333d;border-radius:10px;padding:12px 14px;
+font-size:.9em;color:#d1d5db}ul.brief strong{display:block;color:var(--near);font-size:.8em;
+text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.head{font-family:Consolas,monospace;font-size:.75em;background:#1a2129;color:#9ca3af;
+border-radius:8px;padding:10px;overflow-wrap:anywhere}
+.chain{border-left:4px solid var(--near)}.chain a{color:#047857}
+@media (max-width:520px){header{padding:22px 16px}header h1{font-size:1.6em}.big{font-size:3.2em}
+section{padding:16px}}
 code{font-size:.85em;background:#f3f4f6;padding:1px 3px;overflow-wrap:anywhere}
 .q{font-size:.85em;color:var(--mid)}
 .tag{font-size:.65em;font-weight:normal;color:#fff;background:var(--mid);border-radius:3px;
@@ -39,6 +58,28 @@ def chart(title: str, body: str, query: str, sentence: str, anchor: str = "",
     return (f"<section{ident}>\n<h2>{svg.esc(title)}{label}</h2>\n{body}\n"
             f'<p class="q">Query: <code>{svg.esc(query)}</code></p>\n'
             f"<p>{svg.esc(sentence)}</p>\n</section>")
+
+
+def chain_block() -> str:
+    """Return the section on the forecasts written on NEAR, from data/onchain/commitments.json."""
+    path = out.ROOT / "data" / "onchain" / "commitments.json"
+    if not path.exists():
+        return ""
+    com = json.loads(path.read_text(encoding="utf-8"))
+    host = "testnet.nearblocks.io" if com["network"] == "testnet" else "nearblocks.io"
+    acct = svg.esc(com["contract"])
+    rows = "".join(
+        f'<li>{c["h_months"]} months: P = {f(json.loads(c["record"])["P"])}, resolves '
+        f'{svg.esc(json.loads(c["record"])["resolution_date"])} - '
+        f'<a href="https://{host}/txns/{svg.esc(c["tx"])}">transaction</a></li>'
+        for c in sorted(com["commitments"], key=lambda c: c["h_months"]))
+    return (f'<section class="chain">\n<h2>Written on NEAR, before the outcome</h2>\n'
+            f'<p>The registered forecasts are stored in the contract '
+            f'<a href="https://{host}/address/{acct}">{acct}</a> ({svg.esc(com["network"])}). '
+            f"No method can edit or delete them, and the contract refuses a resolution before "
+            f"its date.</p>\n<ul>{rows}</ul>\n"
+            f'<p class="q">Check: <code>uv run python -m near_posterior.onchain</code></p>\n'
+            f"</section>")
 
 
 def table(header: list[str], rows: list[list], left: int = 1) -> str:
@@ -526,7 +567,7 @@ def render(res: dict) -> str:
         "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<title>NEAR buybacks vs issuance</title>", f"<style>{CSS}</style>", "</head>", "<body>",
-        *top, *blocks,
+        *top, chain_block(), *blocks,
         "<section>\n<h2>What this cannot tell you</h2>\n<ul>\n"
         + "\n".join(f"<li>{svg.esc(t)}</li>" for t in thesis.limits(res)) + "\n</ul>\n</section>",
         '<p class="q">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of '
