@@ -11,7 +11,7 @@ import json
 import numpy as np
 
 from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
-                            multiverse, out, readme, refclass, resolve, rpc_check, site,
+                            multiverse, out, readme, recency, refclass, resolve, rpc_check, site,
                             speccurve, thesis, validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
@@ -59,6 +59,7 @@ def compute(previous_history: str = "") -> dict:
     years24 = np.array([refclass.month_start(int(m)).year for m in sample24["month"]])
     coh = multiverse.cohorts(sample24["Y"], sample24["e"], years24, head["k_star"])
     val, val_rows = validation.compute(panel, ov, moms, F_near)
+    rec = recency.compute(panel, ov, moms, F_near, cov["t0"], exc["growth"]["k_star"])
     reg = resolve.registered(panel)
     resolution = resolve.resolve(reg, snap)
     fwd = forward.run(forward.load(), {h: exceedance.class_sample(panel, moms[h], F_near)
@@ -87,6 +88,7 @@ def compute(previous_history: str = "") -> dict:
         "results/forward_claims.csv": out.csv_text(forward.HEADER, fwd),
         "results/registered_forecast.json": out.json_text(reg),
         "results/validation.json": out.json_text(val),
+        "results/recency.json": out.json_text(rec),
         "results/validation_targets.csv": out.csv_text(validation.CSV_HEADER, val_rows),
         "results/resolution.json": out.json_text(resolution),
         "RESOLUTION.md": resolve.markdown(reg, resolution),

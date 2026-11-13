@@ -692,3 +692,42 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 110 passed in 77.91s
 ```
 Not verified: the scheduled workflow itself on GitHub (it runs once pushed).
+
+# Third pass (PREREG_3.md, docs/TASKS_V3.md)
+
+Pull before starting: `git pull --ff-only origin main` at 2026-11-13 06:22 UTC and again at
+06:31 UTC: already up to date at 7ecd678 (the branch has no upstream configured, so the remote
+is named explicitly). No bot commit "chore(data): daily NEAR snapshot refresh" had arrived yet
+(the schedule is 06:30 UTC). Work starts on the snapshot fetched 2026-11-12T10:17:09Z
+(t0 = 2026-11-11). A later bot commit only touches files that W1 to W3 do not modify, so these
+commits can be rebased onto it and rebuilt.
+
+## W1 - Recency-weighted class forecast (T1) (done)
+
+Tertiary (specified after the secondary results).
+- `recency.py`: weights `(1/n_j') 0.5^(d/H)`, d = months from the moment's origin to the
+  target's origin, normalised; H in {12, 24, 48, infinity}; scored on exactly the S1 targets
+  with the S1 scores; `choose` picks H* on 12-month targets with origins up to 2024 and keeps it
+  only if the 90 percent interval of CRPS(C_H*) - CRPS(C0) on origins 2025 is below 0;
+  `weighted_frequency` gives P_recency for class R at t0 (d to the month of t0) with the
+  registered entity bootstrap. `results/recency.json`.
+- Result: mean CRPS on origins up to 2024 (596 targets): H = 12: 1.0055, 24: 1.0061,
+  48: 1.0118, infinity: 1.0244, so H = 12 is best on the choice set. On origins 2025
+  (1063 targets), CRPS(C_12) - CRPS(C0) = -0.0061, interval -0.0146 to 0.0028: it contains 0,
+  so H* = infinity and recency weighting is not used. P_recency therefore equals the class
+  frequency: 12 months 0.054 (0.026 to 0.083), 24 months 0.053 (0.022 to 0.091), 36 months
+  0.061 (0.014 to 0.120). At 24 months (one origin year, no choice): mean CRPS H = 12: 1.277,
+  24: 1.325, 48: 1.362, infinity: 1.410.
+- Tests: H = infinity reproduces C0 exactly (all six S1 scores, both horizons); weights sum to
+  1; a synthetic pool whose recent outcomes are lower makes H = 12 beat infinity; changing a
+  2025 target does not change the choice statistics; a finite H is kept only if it beats C0 on
+  2025 origins.
+
+```
+> uv run python -m near_posterior.verify --write
+45 lines, all PASS
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+115 passed in 90.97s
+```
