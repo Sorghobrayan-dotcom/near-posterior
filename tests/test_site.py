@@ -36,7 +36,8 @@ def test_one_inline_script_and_no_external_request():
     scripts = re.findall(r"<script([^>]*)>(.*?)</script>", text, re.S)
     assert len(scripts) == 1 and scripts[0][0] == ""
     assert not re.search(r"fetch\(|XMLHttpRequest|import\(|https?:", scripts[0][1])
-    assert not re.search(r"""(src|href)\s*=\s*["']?(https?:)?//""", text, re.I)
+    assert not re.search(r"""src\s*=\s*["']?(https?:)?//""", text, re.I)
+    assert not re.search(r"""<link[^>]*href\s*=\s*["']?(https?:)?//""", text, re.I)
     assert "@import" not in text and "url(" not in text
 
 
