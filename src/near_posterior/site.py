@@ -344,7 +344,7 @@ def correction_block(res: dict) -> str:
         rows.append([f"{h} months", f"{f(prim['P'])} ({f(prim['P_lo'])} to {f(prim['P_hi'])})",
                      "not used" if rec["choice"]["H_star"] == "inf" else
                      f"{f(rec['near']['by_h'][h]['P'])}",
-                     f"{f(n['P_cal'])} ({interval(n['interval'])})",
+                     thesis.pcal_text(n, h),
                      "yes, on 2025 origins" if n["tested_out_of_sample"] else "no, in sample"])
     body = (correction_fig(res).svg("Recalibration on held-out origins") + "\n"
             + table(["Horizon", "Registered P", "Recency-weighted P", "P_cal",

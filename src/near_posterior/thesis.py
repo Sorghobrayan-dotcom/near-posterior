@@ -406,17 +406,33 @@ def section_method(res: dict) -> list[str]:
 TERTIARY = "tertiary (specified after the secondary results)"
 
 
+def pcal_text(n: dict, h: str, percent: bool = False) -> str:
+    """Return P_cal with the count of past forecasts that reached the level and the exact
+    one-sided 95 percent upper bound (protocols as units); never a bare zero."""
+    def fmt(x):
+        return f"{100 * float(x):.1f}%" if percent else f(x)
+    years = ", ".join(str(y) for y in n["origin_years"])
+    count = (f"{n['targets_above']} of {n['targets']} past {h}-month forecasts, from "
+             f"{n['protocols_above']} of {n['entities']} protocols, origins {years}")
+    bound = (f"exact one-sided 95 percent upper bound {fmt(n['upper_95_protocols'])} with "
+             f"protocols as units; bootstrap interval {fmt(n['interval'][0])} to "
+             f"{fmt(n['interval'][1])}")
+    if n["targets_above"] == 0:
+        return f"none of the past forecasts reached this level: {count}; {bound}"
+    return f"{fmt(n['P_cal'])} ({count}; {bound})"
+
+
 def correction_sentence(res: dict) -> list[str]:
     """Return the summary sentence on the correction for past over-forecasting, or nothing."""
     m = res["recalibration"]["models"]["C0"]
     if not m["held_out_12"]["improves"]:
         return []
     n12, n24 = m["near"]["12"], m["near"]["24"]
-    return [f"Corrected for past over-forecasting [{TERTIARY}]: in the past, outcomes at this "
-            f"forecast level happened with a frequency of {f(n24['P_cal'])} at 24 months "
-            f"(map fitted on the same origins, not tested out of sample) and {f(n12['P_cal'])} "
-            f"at 12 months (map tested out of sample on later origins), against the "
-            f"registered {f(res['headline']['P'])}."]
+    return [f"Corrected for past over-forecasting [{TERTIARY}], how often outcomes at this "
+            f"forecast level happened in the past: at 24 months, {pcal_text(n24, '24')} (map "
+            f"fitted on the same origins, not tested out of sample); at 12 months, "
+            f"{pcal_text(n12, '12')} (map tested out of sample on later origins). The "
+            f"registered probability stays {f(res['headline']['P'])}."]
 
 
 def section_correction(res: dict) -> list[str]:
@@ -478,8 +494,8 @@ def section_correction(res: dict) -> list[str]:
           f"{f(ins['recalibrated']['brier_2'], 4)} recalibrated, in sample.", "",
           "**For NEAR Intents.** The registered probability comes first; then how often "
           "outcomes at this forecast level happened in the past:", "",
-          "| Horizon | Registered P (90% CI) | Recency-weighted P | P_cal (90% CI) | "
-          "P_cal tested out of sample |", "|---|---|---|---|---|"]
+          "| Horizon | Registered P (90% CI) | Recency-weighted P | P_cal (count, exact bound, "
+          "bootstrap interval) | P_cal tested out of sample |", "|---|---|---|---|---|"]
     for h in ("12", "24"):
         prim = primary_row(res, "R", int(h))
         n = m["near"][h]
@@ -487,7 +503,7 @@ def section_correction(res: dict) -> list[str]:
                         f"{f(rec['near']['by_h'][h]['P'])} "
                         f"({interval(rec['near']['by_h'][h]['interval'])})")
         L.append(f"| {h} months | {f(prim['P'])} ({f(prim['P_lo'])} to {f(prim['P_hi'])}) | "
-                 f"{recency_text} | {f(n['P_cal'])} ({interval(n['interval'])}) | "
+                 f"{recency_text} | {pcal_text(n, h)} | "
                  f"{'yes (origins 2025)' if n['tested_out_of_sample'] else 'no (in sample)'} |")
     L += ["", f"P_cal = 1 - G(F_R(ln k*)): F_R(ln k*) is where k* sits in the class R forecast "
           f"({f(m['near']['24']['F_R'], 3)} at 24 months), and G says how often past outcomes "

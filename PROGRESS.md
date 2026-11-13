@@ -860,3 +860,32 @@ reached origin/main by 08:16 UTC (origin/main still 7ecd678); I could not open t
 failed, was delayed or had nothing to commit. If a bot commit lands, these four commits touch no
 file it changes except the generated ones (`results/`, `THESIS.md`, `README.md`, `site/`,
 `VERIFICATION.md`, `history.csv`): rebase, then rerun `build` and `verify --write`.
+
+## X1 - P_cal never printed as a bare zero; judgement calls recorded (done)
+
+The reviewer recomputed the third pass independently (no calculation error; largest past
+24-month PIT 0.9037 against F_R = 0.9468).
+- `recalibration.near_p_cal` adds, for each horizon: the number of past forecasts whose PIT is
+  above F_R(ln k*) (`targets_above`), the number of protocols they come from, the origin years,
+  and an exact one-sided 95 percent upper bound by Clopper-Pearson with the protocols as the
+  independent units (`forecast.clopper_pearson(x, n, 0.90)[1]`). 24 months: 0 of 201 past
+  forecasts, 0 of 51 protocols, origins 2024, bound 0.057. 12 months: 9 of 1659 past forecasts,
+  4 of 188 protocols, bound 0.048. No existing number changed (the diff of
+  `results/recalibration.json` only adds these fields).
+- `thesis.pcal_text` prints P_cal with that count, the bound and the registered bootstrap
+  interval, and never as a bare zero; used in the thesis summary and section 8 table, the page
+  table and the README finding. The demo script and the X post do not quote P_cal.
+- `DEVIATIONS.md`: "2026-11-13: judgement calls of the third pass (not changes of method)":
+  (a) the rule for "recalibration improved the held-out scores", (b) T4 not reported and why,
+  (c) the exact upper bound added after the results.
+- Test: the bound equals Clopper-Pearson on the protocol counts (and 1 - 0.05^(1/n) at zero);
+  the text always gives the count and the bound; "0.000 (0.000 to 0.000)" appears nowhere.
+
+```
+> uv run python -m near_posterior.verify --write
+47 lines, all PASS
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+125 passed in 191.92s
+```

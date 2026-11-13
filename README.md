@@ -7,7 +7,7 @@ funded by NEAR Intents revenue cover NEAR's net issuance at the 24-month mark?**
 advice.
 
 <!-- BEGIN GENERATED finding -->
-**Finding:** on the snapshot of 2026-11-11, buybacks cover 18.2% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.76x in 24 months. Among 75 comparable DefiLlama protocols, the share that did so is **5.3%** (90% interval 2.2% to 9.1%): buybacks are unlikely to cover issuance at the 24-month mark. Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), outcomes at this forecast level happened 0.0% of the time at 24 months (fitted on the same origins) and 0.5% at 12 months (tested on later origins).
+**Finding:** on the snapshot of 2026-11-11, buybacks cover 18.2% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.76x in 24 months. Among 75 comparable DefiLlama protocols, the share that did so is **5.3%** (90% interval 2.2% to 9.1%): buybacks are unlikely to cover issuance at the 24-month mark. Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), how often outcomes at this forecast level happened before: at 24 months, none of the past forecasts reached this level: 0 of 201 past 24-month forecasts, from 0 of 51 protocols, origins 2024; exact one-sided 95 percent upper bound 5.7% with protocols as units; bootstrap interval 0.0% to 0.0% (fitted on the same origins); at 12 months, 0.5% (9 of 1659 past 12-month forecasts, from 4 of 188 protocols, origins 2023, 2024, 2025; exact one-sided 95 percent upper bound 4.8% with protocols as units; bootstrap interval 0.1% to 1.1%) (tested on later origins).
 <!-- END GENERATED finding -->
 
 ![How often comparable protocols grew fees k-fold in 24 months](site/img/exceedance.svg)

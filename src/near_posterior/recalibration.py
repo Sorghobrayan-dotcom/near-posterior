@@ -128,9 +128,20 @@ def near_p_cal(rows: list[dict], F_R: float) -> dict:
         pick = np.concatenate([np.flatnonzero(inv == j)
                                for j in rng.integers(0, ents.size, ents.size)])
         boot.append(1.0 - float(G(F_R, fit(pits[pick]))))
+    above = pits > F_R
+    protocols_above = int(np.unique(inv[above]).size)
+    years = sorted({int(r["year"]) for r in rows})
     return {"P_cal": 1.0 - float(G(F_R, fit(pits))), "F_R": F_R,
             "interval": [float(np.percentile(boot, 5)), float(np.percentile(boot, 95))],
-            "targets": int(pits.size), "entities": int(ents.size)}
+            "targets": int(pits.size), "entities": int(ents.size),
+            "targets_above": int(above.sum()), "protocols_above": protocols_above,
+            "origin_years": years,
+            "upper_95_protocols": forecast.clopper_pearson(protocols_above, int(ents.size),
+                                                          0.90)[1],
+            "upper_note": "exact one-sided 95 percent upper bound (Clopper-Pearson), protocols "
+                          "as the independent units; added after the results because the "
+                          "bootstrap interval is degenerate when no past forecast reached the "
+                          "level"}
 
 
 def class_r_cdf(panel: dict, mom: dict, F_near: float, k: float, H, t0_month: int) -> float:

@@ -58,3 +58,19 @@ def test_improves_rule():
     assert rc.improves(good)
     mixed = dict(good, brier_5={"mean": 0.001, "interval": [-0.01, 0.01]})
     assert not rc.improves(mixed)
+
+
+def test_p_cal_reports_count_and_exact_bound_never_a_bare_zero():
+    from near_posterior import forecast, thesis
+    res = json.loads((out.RESULTS / "recalibration.json").read_text(encoding="ascii"))
+    for h, n in res["models"]["C0"]["near"].items():
+        assert n["upper_95_protocols"] == pytest.approx(
+            forecast.clopper_pearson(n["protocols_above"], n["entities"], 0.90)[1])
+        text = thesis.pcal_text(n, h)
+        assert f"{n['targets_above']} of {n['targets']}" in text and "upper bound" in text
+        if n["targets_above"] == 0:
+            assert n["upper_95_protocols"] == pytest.approx(1 - 0.05 ** (1 / n["entities"]))
+            assert not text.startswith("0.000")
+    page = (out.ROOT / "site" / "index.html").read_text(encoding="ascii")
+    assert "0.000 (0.000 to 0.000)" not in page
+    assert "0.000 (0.000 to 0.000)" not in (out.ROOT / "THESIS.md").read_text(encoding="ascii")

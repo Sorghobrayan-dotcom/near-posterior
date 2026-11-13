@@ -322,8 +322,8 @@ border-left:3px solid var(--accent)}</style>
 </svg>
 <div class="wrap"><table>
 <tr><th class="left">Horizon</th><th>Registered P</th><th>Recency-weighted P</th><th>P_cal</th><th>P_cal tested out of sample</th></tr>
-<tr><td class="left">12 months</td><td>0.054 (0.026 to 0.083)</td><td>not used</td><td>0.005 (0.001 to 0.011)</td><td>yes, on 2025 origins</td></tr>
-<tr><td class="left">24 months</td><td>0.053 (0.022 to 0.091)</td><td>not used</td><td>0.000 (0.000 to 0.000)</td><td>no, in sample</td></tr>
+<tr><td class="left">12 months</td><td>0.054 (0.026 to 0.083)</td><td>not used</td><td>0.005 (9 of 1659 past 12-month forecasts, from 4 of 188 protocols, origins 2023, 2024, 2025; exact one-sided 95 percent upper bound 0.048 with protocols as units; bootstrap interval 0.001 to 0.011)</td><td>yes, on 2025 origins</td></tr>
+<tr><td class="left">24 months</td><td>0.053 (0.022 to 0.091)</td><td>not used</td><td>none of the past forecasts reached this level: 0 of 201 past 24-month forecasts, from 0 of 51 protocols, origins 2024; exact one-sided 95 percent upper bound 0.057 with protocols as units; bootstrap interval 0.000 to 0.000</td><td>no, in sample</td></tr>
 </table></div>
 <p class="q">Query: <code>near_posterior.recalibration.compute -&gt; results/recalibration.json; results/recency.json</code></p>
 <p>Fitted on origins up to 2024 and tested on 1063 targets from 2025, recalibration lowered the Brier score for &#x27;fees doubled&#x27; by 0.024 (0.020 to 0.028); the registered P stays the headline and P_cal says how often outcomes at this forecast level happened before.</p>

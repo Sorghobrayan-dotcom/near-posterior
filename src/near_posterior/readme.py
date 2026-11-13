@@ -21,9 +21,11 @@ def blocks(res: dict) -> dict:
     m = res["recalibration"]["models"]["C0"]
     if m["held_out_12"]["improves"]:
         finding += (f" Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), "
-                    f"outcomes at this forecast level happened {pc(m['near']['24']['P_cal'])} of "
-                    f"the time at 24 months (fitted on the same origins) and "
-                    f"{pc(m['near']['12']['P_cal'])} at 12 months (tested on later origins).")
+                    f"how often outcomes at this forecast level happened before: at 24 months, "
+                    f"{thesis.pcal_text(m['near']['24'], '24', percent=True)} (fitted on the "
+                    f"same origins); at 12 months, "
+                    f"{thesis.pcal_text(m['near']['12'], '12', percent=True)} (tested on later "
+                    f"origins).")
     return {
         "finding": finding,
         "headline": "```\n" + thesis.headline_line(res) + "\n```",

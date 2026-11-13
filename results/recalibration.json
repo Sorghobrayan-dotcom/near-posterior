@@ -470,8 +470,17 @@
             0.0108937080452
           ],
           "k_star": 5.62273071846,
+          "origin_years": [
+            2023,
+            2024,
+            2025
+          ],
+          "protocols_above": 4,
           "targets": 1659,
-          "tested_out_of_sample": true
+          "targets_above": 9,
+          "tested_out_of_sample": true,
+          "upper_95_protocols": 0.0480245771971,
+          "upper_note": "exact one-sided 95 percent upper bound (Clopper-Pearson), protocols as the independent units; added after the results because the bootstrap interval is degenerate when no past forecast reached the level"
         },
         "24": {
           "F_R": 0.946793650794,
@@ -482,8 +491,15 @@
             0.0
           ],
           "k_star": 5.76230527708,
+          "origin_years": [
+            2024
+          ],
+          "protocols_above": 0,
           "targets": 201,
-          "tested_out_of_sample": false
+          "targets_above": 0,
+          "tested_out_of_sample": false,
+          "upper_95_protocols": 0.0570479523604,
+          "upper_note": "exact one-sided 95 percent upper bound (Clopper-Pearson), protocols as the independent units; added after the results because the bootstrap interval is degenerate when no past forecast reached the level"
         }
       }
     }
