@@ -3,7 +3,7 @@ name: refresh
 # Daily: refetch the NEAR snapshot only (the reference panel stays frozen), then
 # `near_posterior.refresh --commit`: build, verify --write (must pass), git add -A, commit if
 # anything changed, a plain verify on the committed tree, and an empty `git status`. Push only
-# if that step succeeds.
+# if that step and the tests on the refreshed snapshot succeed.
 on:
   schedule:
     - cron: "30 6 * * *"
@@ -25,5 +25,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           uv run python -m near_posterior.refresh --commit
+      - name: tests on the refreshed snapshot (no push if one fails)
+        run: uv run pytest -q
       - name: push
         run: git push

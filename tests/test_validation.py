@@ -3,7 +3,7 @@ import json
 
 import numpy as np
 
-from near_posterior import coverage, out, refclass, validation
+from near_posterior import coverage, out, refclass, validation, verify
 
 
 def setup(h):
@@ -39,4 +39,12 @@ def test_counts_of_the_registered_rule():
     assert (s12["candidates"], s12["scored"], s12["entities"]) == (2730, 1659, 188)
     assert s12["origins_by_year"] == {"2023": 102, "2024": 494, "2025": 1063}
     assert (s24["candidates"], s24["scored"], s24["entities"]) == (1390, 201, 51)
-    assert (v["S2"]["scored"], v["S2"]["entities"]) == (92, 31)
+
+
+def test_s2_counts_on_the_registered_snapshot():
+    # S2 uses class R, whose scale band follows F_NEAR: its counts move with the daily snapshot,
+    # so they are pinned on the registered one.
+    panel, ov, mom = setup(24)
+    F_registered = coverage.summary(coverage.load(verify.FIXTURE))["F_near"]
+    s2 = validation.run_s2(panel, ov, {24: mom}, F_registered)
+    assert (s2["scored"], s2["entities"]) == (92, 31)
