@@ -3,48 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEAR buybacks vs issuance</title>
-<style>:root{--ink:#111827;--mid:#6b7280;--accent:#c2410c;--line:#e5e7eb;--bg:#f4f1ec;
---card:#fff;--hero:#0f1419;--near:#00ec97}
+<title>NEAR Buyback Coverage Forecast</title>
+<style>:root{--ink:#e6e8eb;--mid:#8b929b;--accent:#f97316;--line:#262a31;--bg:#0b0d10;
+--card:#14171c;--card2:#1b1f26;--near:#00ec97;--blue:#2f80ed}
 *{box-sizing:border-box}
-body{font-family:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;max-width:880px;
-margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
-header{background:var(--hero);color:#e5e7eb;border-radius:18px;padding:32px 28px;margin:8px 0 20px}
-header h1{color:#fff;font-family:Georgia,"Times New Roman",serif;font-weight:normal;
-font-size:2.1em;line-height:1.15;margin:.2em 0 .3em}header a{color:var(--near)}
-header .q{color:#9ca3af}header code{background:#1f2933;color:#e5e7eb}
-h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35em;
-margin:0 0 .5em;line-height:1.3}
-section{background:var(--card);border-radius:14px;padding:22px 24px;margin:16px 0;
-box-shadow:0 1px 3px rgba(0,0,0,.06)}section svg{max-width:100%;height:auto}
-.kicker{color:var(--near);font-size:.75em;letter-spacing:.12em;text-transform:uppercase;
-margin:0}.big{font-size:4.2em;font-weight:700;color:#fff;margin:.05em 0;line-height:1}
-.big+p strong{color:var(--near)}
-ul.brief{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-ul.brief li{background:#1a2129;border:1px solid #2a333d;border-radius:10px;padding:12px 14px;
-font-size:.9em;color:#d1d5db}ul.brief strong{display:block;color:var(--near);font-size:.8em;
-text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.head{font-family:Consolas,monospace;font-size:.75em;background:#1a2129;color:#9ca3af;
-border-radius:8px;padding:10px;overflow-wrap:anywhere}
-.chain{border-left:4px solid var(--near)}.chain a{color:#047857}
-@media (max-width:520px){header{padding:22px 16px}header h1{font-size:1.6em}.big{font-size:3.2em}
-section{padding:16px}}
-code{font-size:.85em;background:#f3f4f6;padding:1px 3px;overflow-wrap:anywhere}
-.q{font-size:.85em;color:var(--mid)}
-.tag{font-size:.65em;font-weight:normal;color:#fff;background:var(--mid);border-radius:3px;
-padding:1px 6px;vertical-align:middle;white-space:nowrap}.wrap{overflow-x:auto}
-table{border-collapse:collapse;font-size:.8em;width:100%}
-td,th{border-bottom:1px solid var(--line);padding:3px 5px;text-align:right;vertical-align:top}
+body{font-family:Inter,"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+max-width:1040px;margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);
+line-height:1.6;font-size:15px}
+a{color:var(--blue)}
+header{background:linear-gradient(180deg,#12161b,#0e1115);border:1px solid var(--line);
+border-radius:14px;padding:28px;margin:8px 0 16px}
+header h1{color:#fff;font-weight:700;font-size:2em;line-height:1.2;margin:.25em 0 .6em;
+letter-spacing:-.01em}
+h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
+.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
+font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
+.tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
+.tiles div{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.tiles span{display:block;color:var(--mid);font-size:.75em;text-transform:uppercase;
+letter-spacing:.05em}.tiles b{display:block;font-size:1.6em;color:#fff;
+font-variant-numeric:tabular-nums}.tiles i{display:block;font-style:normal;color:var(--mid);
+font-size:.75em}.problem .tiles b{color:var(--accent)}
+ul.brief{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+ul.brief li{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+padding:12px 14px;font-size:.88em;color:#c9cdd3}ul.brief strong{display:block;color:var(--near);
+font-size:.78em;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.head,pre{font-family:Consolas,"SFMono-Regular",monospace;font-size:.8em;background:#0b0d10;
+color:#a7f3d0;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+.head{color:var(--mid);overflow-wrap:anywhere}
+.chain{border-left:3px solid var(--near)}
+.simgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sl{display:block;margin:0 0 14px}.sl span{display:flex;justify-content:space-between;gap:8px;
+font-size:.9em}.sl b{color:var(--near);font-variant-numeric:tabular-nums}
+.sl input{width:100%;accent-color:var(--near)}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
+.hz label{margin-right:14px;font-size:.9em}
+.out{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:16px}
+.out span{color:var(--mid);font-size:.75em;text-transform:uppercase;letter-spacing:.05em}
+.out>b{display:block;font-size:3.2em;font-weight:800;color:var(--accent);line-height:1.1;
+font-variant-numeric:tabular-nums}.out em{color:#c9cdd3;font-style:normal}
+.bar{height:8px;background:#0b0d10;border-radius:4px;margin:10px 0;overflow:hidden}
+.bar div{height:100%;background:var(--accent)}
+.flow{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+counter-reset:s}.flow div{background:var(--card2);border:1px solid var(--line);
+border-top:3px solid var(--blue);border-radius:8px;padding:10px;font-size:.85em}
+.flow b{display:block;color:#fff}.flow span{color:#b4bac2}
+.flow div:nth-child(4){border-top-color:var(--near)}
+.punch{border-color:var(--accent)}
+code{font-size:.85em;background:var(--card2);color:#d1d5db;padding:1px 4px;border-radius:4px;
+overflow-wrap:anywhere}
+.q{font-size:.82em;color:var(--mid)}
+.tag{font-size:.62em;font-weight:600;color:#0b0d10;background:var(--mid);border-radius:3px;
+padding:1px 6px;vertical-align:middle;white-space:nowrap;text-transform:uppercase}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:.8em;width:100%;font-variant-numeric:tabular-nums}
+th{color:var(--mid);font-weight:600;text-transform:uppercase;font-size:.85em}
+td,th{border-bottom:1px solid var(--line);padding:6px 6px;text-align:right;vertical-align:top}
+tr:hover td{background:var(--card2)}
 td:first-child,th:first-child{text-align:left}.left{text-align:left}
 #explorer form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:.5em 0}
-#explorer input[type=range]{flex:1 1 200px}#ex-out{background:#fff7ed;padding:8px;
-border-left:3px solid var(--accent)}</style>
+#explorer input[type=range]{flex:1 1 200px;accent-color:var(--accent)}
+#ex-out{background:var(--card2);padding:10px;border-left:3px solid var(--accent);border-radius:6px}
+svg rect[fill="#ffffff"]{fill:#101317}svg [fill="#1f2933"]{fill:#e6e8eb}
+svg [stroke="#1f2933"]{stroke:#9aa1a9}svg [stroke="#d1d5db"]{stroke:#2a2f37}
+svg [fill="#d1d5db"]{fill:#3a4049}svg [fill="#f6d3c1"]{fill:#5b2a12}
+svg [stroke="#c2410c"]{stroke:#f97316}svg [fill="#c2410c"]{fill:#f97316}
+@media (max-width:520px){header{padding:18px 14px}header h1{font-size:1.5em}.big{font-size:3em}
+section{padding:14px}}</style>
 </head>
 <body>
 <header>
-<p class="kicker">NEAR Hackathon - thesis track - not financial advice</p>
-<h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>
+<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - not financial advice</p>
+<h1>Will NEAR's buybacks offset its new supply within 24 months?</h1>
+<div class="tiles"><div><span>Buybacks / new supply today</span><b>18.5%</b></div><div><span>Fee growth needed in 24 months</span><b>5.67x</b></div><div><span>Comparable protocols</span><b>75</b></div><div><span>Base rate (registered)</span><b>5.3%</b></div><div><span>Forecast stored on</span><b>NEAR</b></div></div>
 <p class="big">5.3%</p>
 <p><strong>90% interval 2.2% to 9.1%</strong> - share of 75 comparable DefiLlama protocols that grew fees enough - snapshot t0 = 2026-11-12 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
 <p>Method: buybacks cover 18.5% of net issuance today, so NEAR Intents fees must grow 5.67x in 24 months; the number above is how often protocols of the same size and age did that.</p>
@@ -53,11 +87,32 @@ border-left:3px solid var(--accent)}</style>
 <p class="q">Charts tagged <span class="tag">secondary</span> come from analyses specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; charts tagged <span class="tag">tertiary</span> from corrections specified after the secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported whatever they show. The number above follows PREREG.md.</p>
 <p class="head">P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-12: buybacks are unlikely to cover issuance at the 24-month mark</p>
 </header>
+<section class="problem">
+<h2>The problem: token theses promise, nobody keeps score</h2>
+<div class="tiles light"><div><span>Comparable protocols with higher fees 24 months later</span><b>20%</b><i>75 DeFi protocols at NEAR Intents' size and age, DefiLlama</i></div><div><span>Growth other NEAR theses need</span><b>1.6x to 7.2x</b><i>9 public theses, read at a fixed commit</i></div><div><span>How often comparable protocols did that</span><b>3% to 14%</b><i>same reference class, 24 months</i></div></div>
+<p>NEAR now spends NEAR Intents revenue on buying back NEAR, and many investment theses read this as a path to scarcity. What they do today is extrapolate recent growth: a trend, a multiple, a chart. Most of the protocols that once looked like NEAR Intents did not keep growing, and no one records which forecasts were right once the date has passed.</p>
+</section>
+<section id="sim">
+<h2>Try it: change the assumptions, watch the odds</h2>
+<div class="simgrid"><div><label class="sl"><span>Share of NEAR Intents fees spent on buybacks <b id="v-cap">27.2%</b></span><input id="s-cap" type="range" min="10" max="100" step="0.1" value="27.2"><i>today 27.2% (last 90 days)</i></label><label class="sl"><span>NEAR issuance, % of today's path <b id="v-iss">100%</b></span><input id="s-iss" type="range" min="25" max="150" step="0.1" value="100"><i>governance can cut it (HSP-029)</i></label><label class="sl"><span>NEAR price, % of today <b id="v-px">100%</b></span><input id="s-px" type="range" min="25" max="400" step="0.1" value="100"><i>a higher price makes new supply cost more to absorb</i></label><div class="hz"><label><input type="radio" name="s-h" value="12"> 12 months</label><label><input type="radio" name="s-h" value="24" checked> 24 months</label><label><input type="radio" name="s-h" value="36"> 36 months</label></div></div><div class="out"><span>Chance that buybacks offset new supply</span><b id="o-p">5.3%</b><em id="o-n"></em><div class="bar"><div id="o-b"></div></div><p>Fee growth needed: <b id="o-k"></b></p><p class="q">Registered forecast, written on NEAR: 5.3% (24 months, today's settings). The simulator explores; it does not change the registered number.</p></div></div>
+<p class="q">k* = k*(today) x issuance x price x (capture today / capture); the chance is the share of comparable protocols whose fees grew at least k* (results/exceedance.csv).</p>
+<script>(function(){var D={"P": {"12": [0.9586, 0.9265, 0.9167, 0.9167, 0.9146, 0.9121, 0.911, 0.911, 0.9106, 0.8957, 0.8915, 0.8896, 0.8896, 0.8758, 0.8608, 0.8485, 0.8316, 0.8183, 0.8007, 0.7853, 0.7702, 0.7469, 0.7137, 0.677, 0.6574, 0.6193, 0.5975, 0.5793, 0.5518, 0.5258, 0.4851, 0.4603, 0.4245, 0.3889, 0.3541, 0.3254, 0.3037, 0.2727, 0.2552, 0.2299, 0.2055, 0.1776, 0.1596, 0.1428, 0.1226, 0.1091, 0.0965, 0.0919, 0.0883, 0.0801, 0.0723, 0.0697, 0.0622, 0.0589, 0.0554, 0.0522, 0.0522, 0.0515, 0.0444, 0.0437, 0.0437, 0.043, 0.0393, 0.0331, 0.03, 0.0275, 0.0275, 0.0275, 0.0226, 0.0226, 0.018, 0.018, 0.0141, 0.0101, 0.0077, 0.0077, 0.0037, 0.0, 0.0, 0.0, 0.0, 0.0], "24": [0.8967, 0.8207, 0.8207, 0.818, 0.8054, 0.802, 0.7803, 0.7564, 0.7564, 0.747, 0.7209, 0.7111, 0.7035, 0.6927, 0.6833, 0.6766, 0.673, 0.662, 0.641, 0.6118, 0.5998, 0.5797, 0.5597, 0.5523, 0.524, 0.5049, 0.4905, 0.4533, 0.4173, 0.4003, 0.3698, 0.3585, 0.3411, 0.3334, 0.2874, 0.2751, 0.256, 0.2453, 0.2344, 0.2122, 0.2021, 0.1924, 0.166, 0.1594, 0.1449, 0.1149, 0.1049, 0.0971, 0.0868, 0.0794, 0.073, 0.0656, 0.0637, 0.0631, 0.061, 0.0531, 0.0531, 0.043, 0.0322, 0.0303, 0.0303, 0.0296, 0.0283, 0.0258, 0.0252, 0.0239, 0.02, 0.02, 0.02, 0.0156, 0.0089, 0.0089, 0.0089, 0.0044, 0.0044, 0.0044, 0.0044, 0.0044, 0.0044, 0.0, 0.0, 0.0], "36": [0.905, 0.8394, 0.8306, 0.8076, 0.8076, 0.7933, 0.7845, 0.777, 0.7503, 0.7389, 0.7182, 0.7079, 0.6869, 0.6766, 0.6672, 0.655, 0.6428, 0.6428, 0.6346, 0.5982, 0.5907, 0.584, 0.5773, 0.5638, 0.5466, 0.5325, 0.5127, 0.4812, 0.4383, 0.4241, 0.3972, 0.3692, 0.3472, 0.3232, 0.3196, 0.3078, 0.2796, 0.2613, 0.2444, 0.2373, 0.2319, 0.226, 0.2018, 0.1853, 0.1825, 0.1693, 0.1561, 0.1544, 0.1509, 0.1447, 0.1357, 0.1173, 0.0841, 0.0759, 0.0732, 0.0658, 0.0652, 0.0576, 0.0537, 0.0522, 0.0497, 0.0485, 0.0472, 0.0457, 0.0445, 0.042, 0.0276, 0.0263, 0.0263, 0.0263, 0.0175, 0.0175, 0.0175, 0.0175, 0.0088, 0.0088, 0.0088, 0.0088, 0.0088, 0.0088, 0.0088, 0.0]}, "c0": 0.272, "k": [0.01, 0.01122, 0.012589, 0.014125, 0.015849, 0.017783, 0.019953, 0.022387, 0.025119, 0.028184, 0.031623, 0.035481, 0.039811, 0.044668, 0.050119, 0.056234, 0.063096, 0.070795, 0.079433, 0.089125, 0.1, 0.112202, 0.125893, 0.141254, 0.158489, 0.177828, 0.199526, 0.223872, 0.251189, 0.281838, 0.316228, 0.354813, 0.398107, 0.446684, 0.501187, 0.562341, 0.630957, 0.707946, 0.794328, 0.891251, 1.0, 1.122018, 1.258925, 1.412538, 1.584893, 1.778279, 1.995262, 2.238721, 2.511886, 2.818383, 3.162278, 3.548134, 3.981072, 4.466836, 5.011872, 5.623413, 5.6698, 6.309573, 7.079458, 7.943282, 8.912509, 10.0, 11.220185, 12.589254, 14.125375, 15.848932, 17.782794, 19.952623, 22.387211, 25.118864, 28.183829, 31.622777, 35.481339, 39.810717, 44.668359, 50.118723, 56.234133, 63.095734, 70.794578, 79.432823, 89.125094, 100.0], "ks": {"12": 5.5326, "24": 5.6698, "36": 5.8105}, "reg": 0.0531};function g(i){return document.getElementById(i);}function pk(h,k){var K=D.k,P=D.P[h];if(k<=K[0])return P[0];for(var i=1;i<K.length;i++){if(k<=K[i]){var t=(Math.log(k)-Math.log(K[i-1]))/(Math.log(K[i])-Math.log(K[i-1]));return P[i-1]+t*(P[i]-P[i-1]);}}return P[P.length-1];}function up(){var c=+g('s-cap').value/100,s=+g('s-iss').value/100,p=+g('s-px').value/100,r=document.querySelector('input[name=s-h]:checked'),h=r?r.value:'24',k=D.ks[h]*s*p*D.c0/c,P=pk(h,k);g('v-cap').textContent=Math.round(c*100)+'%';g('v-iss').textContent=Math.round(s*100)+'%';g('v-px').textContent=Math.round(p*100)+'%';g('o-p').textContent=(100*P).toFixed(1)+'%';g('o-k').textContent=k.toFixed(2)+'x';g('o-n').textContent=P>0?'about 1 chance in '+Math.max(1,Math.round(1/P)):'no case in the class';g('o-b').style.width=Math.min(100,100*P)+'%';}var a=document.querySelectorAll('#sim input');for(var j=0;j<a.length;j++){a[j].addEventListener('input',up);}up();})();</script>
+</section>
 <section class="chain">
 <h2>Written on NEAR, before the outcome</h2>
 <p>The registered forecasts are stored in the contract <a href="https://testnet.nearblocks.io/address/brayan-posterior.testnet">brayan-posterior.testnet</a> (testnet). No method can edit or delete them, and the contract refuses a resolution before its date.</p>
 <ul><li>12 months: P = 0.054, resolves 2027-11-11 - <a href="https://testnet.nearblocks.io/txns/2aQxnA4oEEZkRHN8eaEBLYGveeiDU5fcxz9x6SKPMpTN">transaction</a></li><li>24 months: P = 0.053, resolves 2028-11-11 - <a href="https://testnet.nearblocks.io/txns/H53Gfecymqhko9Cx3eqFk1qVtwz7bcqNDw6rmmWAbkpf">transaction</a></li><li>36 months: P = 0.061, resolves 2029-11-11 - <a href="https://testnet.nearblocks.io/txns/3TqUAUA9mUx99h5Ud9E3AGjqM6nj1uehDXtaEvRFstt1">transaction</a></li></ul>
 <p class="q">Check: <code>uv run python -m near_posterior.onchain</code></p>
+</section>
+<section class="hood">
+<h2>Under the hood</h2>
+<div class="flow"><div><b>1. Data</b><span>Fees of 797 DeFi protocols and of NEAR Intents (DefiLlama); NEAR supply and price (NearBlocks), checked on the NEAR RPC.</span></div><div><b>2. Frozen</b><span>Rules written in PREREG.md before the download; every file pinned by sha256.</span></div><div><b>3. Model</b><span>Keep the 75 protocols that once had NEAR Intents&#x27; size and age; count how many grew fees at least k* in 24 months.</span></div><div><b>4. On NEAR</b><span>The forecast goes into a NEAR contract that cannot edit or delete it.</span></div><div><b>5. Resolution</b><span>On 2028-11-11 the outcome is written next to the forecast and scored.</span></div></div>
+<p>The core of the method, simplified (<code>near_posterior.forecast.b0</code>):</p>
+<pre>k_star = issuance_in_dollars / buybacks        # growth the fees need
+peers  = protocols at NEAR Intents&#x27; size and age, at any past month
+P      = mean over peers of share(fee growth in 24 months &gt;= k_star)
+band   = bootstrap over peers (90 percent)
+# replayed on past forecasts: beats trend extrapolation, still too optimistic</pre>
 </section>
 <section id="explorer">
 <h2>Explorer: how often did comparable protocols grow fees by k? <span class="tag">secondary</span></h2>
@@ -1536,6 +1591,10 @@ border-left:3px solid var(--accent)}</style>
 </table></div>
 <p class="q">Query: <code>near_posterior.forward.run -&gt; results/forward_claims.csv</code></p>
 <p>Growth multiples stated by other theses, placed on the class R base rate at 24 months; applying a fee base rate to revenue or volume assumes a constant take rate.</p>
+</section>
+<section class="punch">
+<h2>A thesis that can be proven wrong, in public</h2>
+<p>Every number here rebuilds from one command, and the forecast sits on NEAR until 2028-11-11. If token theses were published this way, investors could check track records instead of promises, and this one will be checked too.</p>
 </section>
 <section>
 <h2>What this cannot tell you</h2>

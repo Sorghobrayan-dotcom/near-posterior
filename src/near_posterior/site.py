@@ -11,42 +11,75 @@ from near_posterior import out, svg, thesis
 from near_posterior.svg import ACCENT, ACCENT_LIGHT, INK, LIGHT, MID, Frame
 from near_posterior.thesis import f, interval, usd
 
-CSS = """:root{--ink:#111827;--mid:#6b7280;--accent:#c2410c;--line:#e5e7eb;--bg:#f4f1ec;
---card:#fff;--hero:#0f1419;--near:#00ec97}
+CSS = """:root{--ink:#e6e8eb;--mid:#8b929b;--accent:#f97316;--line:#262a31;--bg:#0b0d10;
+--card:#14171c;--card2:#1b1f26;--near:#00ec97;--blue:#2f80ed}
 *{box-sizing:border-box}
-body{font-family:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;max-width:880px;
-margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
-header{background:var(--hero);color:#e5e7eb;border-radius:18px;padding:32px 28px;margin:8px 0 20px}
-header h1{color:#fff;font-family:Georgia,"Times New Roman",serif;font-weight:normal;
-font-size:2.1em;line-height:1.15;margin:.2em 0 .3em}header a{color:var(--near)}
-header .q{color:#9ca3af}header code{background:#1f2933;color:#e5e7eb}
-h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35em;
-margin:0 0 .5em;line-height:1.3}
-section{background:var(--card);border-radius:14px;padding:22px 24px;margin:16px 0;
-box-shadow:0 1px 3px rgba(0,0,0,.06)}section svg{max-width:100%;height:auto}
-.kicker{color:var(--near);font-size:.75em;letter-spacing:.12em;text-transform:uppercase;
-margin:0}.big{font-size:4.2em;font-weight:700;color:#fff;margin:.05em 0;line-height:1}
-.big+p strong{color:var(--near)}
-ul.brief{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-ul.brief li{background:#1a2129;border:1px solid #2a333d;border-radius:10px;padding:12px 14px;
-font-size:.9em;color:#d1d5db}ul.brief strong{display:block;color:var(--near);font-size:.8em;
-text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.head{font-family:Consolas,monospace;font-size:.75em;background:#1a2129;color:#9ca3af;
-border-radius:8px;padding:10px;overflow-wrap:anywhere}
-.chain{border-left:4px solid var(--near)}.chain a{color:#047857}
-@media (max-width:520px){header{padding:22px 16px}header h1{font-size:1.6em}.big{font-size:3.2em}
-section{padding:16px}}
-code{font-size:.85em;background:#f3f4f6;padding:1px 3px;overflow-wrap:anywhere}
-.q{font-size:.85em;color:var(--mid)}
-.tag{font-size:.65em;font-weight:normal;color:#fff;background:var(--mid);border-radius:3px;
-padding:1px 6px;vertical-align:middle;white-space:nowrap}.wrap{overflow-x:auto}
-table{border-collapse:collapse;font-size:.8em;width:100%}
-td,th{border-bottom:1px solid var(--line);padding:3px 5px;text-align:right;vertical-align:top}
+body{font-family:Inter,"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+max-width:1040px;margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);
+line-height:1.6;font-size:15px}
+a{color:var(--blue)}
+header{background:linear-gradient(180deg,#12161b,#0e1115);border:1px solid var(--line);
+border-radius:14px;padding:28px;margin:8px 0 16px}
+header h1{color:#fff;font-weight:700;font-size:2em;line-height:1.2;margin:.25em 0 .6em;
+letter-spacing:-.01em}
+h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
+.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
+font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
+.tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
+.tiles div{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.tiles span{display:block;color:var(--mid);font-size:.75em;text-transform:uppercase;
+letter-spacing:.05em}.tiles b{display:block;font-size:1.6em;color:#fff;
+font-variant-numeric:tabular-nums}.tiles i{display:block;font-style:normal;color:var(--mid);
+font-size:.75em}.problem .tiles b{color:var(--accent)}
+ul.brief{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+ul.brief li{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+padding:12px 14px;font-size:.88em;color:#c9cdd3}ul.brief strong{display:block;color:var(--near);
+font-size:.78em;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.head,pre{font-family:Consolas,"SFMono-Regular",monospace;font-size:.8em;background:#0b0d10;
+color:#a7f3d0;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+.head{color:var(--mid);overflow-wrap:anywhere}
+.chain{border-left:3px solid var(--near)}
+.simgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sl{display:block;margin:0 0 14px}.sl span{display:flex;justify-content:space-between;gap:8px;
+font-size:.9em}.sl b{color:var(--near);font-variant-numeric:tabular-nums}
+.sl input{width:100%;accent-color:var(--near)}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
+.hz label{margin-right:14px;font-size:.9em}
+.out{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:16px}
+.out span{color:var(--mid);font-size:.75em;text-transform:uppercase;letter-spacing:.05em}
+.out>b{display:block;font-size:3.2em;font-weight:800;color:var(--accent);line-height:1.1;
+font-variant-numeric:tabular-nums}.out em{color:#c9cdd3;font-style:normal}
+.bar{height:8px;background:#0b0d10;border-radius:4px;margin:10px 0;overflow:hidden}
+.bar div{height:100%;background:var(--accent)}
+.flow{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+counter-reset:s}.flow div{background:var(--card2);border:1px solid var(--line);
+border-top:3px solid var(--blue);border-radius:8px;padding:10px;font-size:.85em}
+.flow b{display:block;color:#fff}.flow span{color:#b4bac2}
+.flow div:nth-child(4){border-top-color:var(--near)}
+.punch{border-color:var(--accent)}
+code{font-size:.85em;background:var(--card2);color:#d1d5db;padding:1px 4px;border-radius:4px;
+overflow-wrap:anywhere}
+.q{font-size:.82em;color:var(--mid)}
+.tag{font-size:.62em;font-weight:600;color:#0b0d10;background:var(--mid);border-radius:3px;
+padding:1px 6px;vertical-align:middle;white-space:nowrap;text-transform:uppercase}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:.8em;width:100%;font-variant-numeric:tabular-nums}
+th{color:var(--mid);font-weight:600;text-transform:uppercase;font-size:.85em}
+td,th{border-bottom:1px solid var(--line);padding:6px 6px;text-align:right;vertical-align:top}
+tr:hover td{background:var(--card2)}
 td:first-child,th:first-child{text-align:left}.left{text-align:left}
 #explorer form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:.5em 0}
-#explorer input[type=range]{flex:1 1 200px}#ex-out{background:#fff7ed;padding:8px;
-border-left:3px solid var(--accent)}"""
+#explorer input[type=range]{flex:1 1 200px;accent-color:var(--accent)}
+#ex-out{background:var(--card2);padding:10px;border-left:3px solid var(--accent);border-radius:6px}
+svg rect[fill="#ffffff"]{fill:#101317}svg [fill="#1f2933"]{fill:#e6e8eb}
+svg [stroke="#1f2933"]{stroke:#9aa1a9}svg [stroke="#d1d5db"]{stroke:#2a2f37}
+svg [fill="#d1d5db"]{fill:#3a4049}svg [fill="#f6d3c1"]{fill:#5b2a12}
+svg [stroke="#c2410c"]{stroke:#f97316}svg [fill="#c2410c"]{fill:#f97316}
+@media (max-width:520px){header{padding:18px 14px}header h1{font-size:1.5em}.big{font-size:3em}
+section{padding:14px}}"""
 
 
 def chart(title: str, body: str, query: str, sentence: str, anchor: str = "",
@@ -58,6 +91,134 @@ def chart(title: str, body: str, query: str, sentence: str, anchor: str = "",
     return (f"<section{ident}>\n<h2>{svg.esc(title)}{label}</h2>\n{body}\n"
             f'<p class="q">Query: <code>{svg.esc(query)}</code></p>\n'
             f"<p>{svg.esc(sentence)}</p>\n</section>")
+
+
+def problem_block(res: dict) -> str:
+    """Return the problem: what comparable protocols did, what other theses assume."""
+    h = res["headline"]
+    up = next(float(r["P"]) for r in res["exceedance_rows"]
+              if r["h"] == "24" and abs(float(r["k"]) - 1.0) < 1e-9)
+    fwd = [r for r in res["forward_claims_rows"] if r["h"] == "24"]
+    ks, ps = [float(r["k"]) for r in fwd], [float(r["P"]) for r in fwd]
+    def pc(x):
+        return f"{100 * float(x):.0f}%"
+    return (
+        '<section class="problem">\n<h2>The problem: token theses promise, nobody keeps score'
+        "</h2>\n<div class=\"tiles light\">"
+        f"<div><span>Comparable protocols with higher fees 24 months later</span>"
+        f"<b>{pc(up)}</b><i>{h['entities']} DeFi protocols at NEAR Intents' size and age, "
+        f"DefiLlama</i></div>"
+        f"<div><span>Growth other NEAR theses need</span><b>{min(ks):.1f}x to {max(ks):.1f}x</b>"
+        f"<i>{len({r['thesis'] for r in fwd})} public theses, read at a fixed commit</i></div>"
+        f"<div><span>How often comparable protocols did that</span><b>{pc(min(ps))} to "
+        f"{pc(max(ps))}</b><i>same reference class, 24 months</i></div></div>\n"
+        "<p>NEAR now spends NEAR Intents revenue on buying back NEAR, and many investment theses "
+        "read this as a path to scarcity. What they do today is extrapolate recent growth: a "
+        "trend, a multiple, a chart. Most of the protocols that once looked like NEAR Intents "
+        "did not keep growing, and no one records which forecasts were right once the date "
+        "has passed.</p>\n</section>")
+
+
+def simulator(res: dict) -> str:
+    """Return the live simulator: capture, issuance, price and horizon move k* and P."""
+    rows = res["exceedance_rows"]
+    w90 = next(w for w in res["coverage"]["windows"] if w["window"] == "90")
+    data = {"k": [round(float(r["k"]), 6) for r in rows if r["h"] == "24"],
+            "P": {hh: [round(float(r["P"]), 4) for r in rows if r["h"] == hh]
+                  for hh in ("12", "24", "36")},
+            "ks": {hh: round(v, 4) for hh, v in res["growth_quantiles"]["k_star"].items()},
+            "c0": round(float(w90["kappa"]), 3), "reg": round(float(res["headline"]["P"]), 4)}
+    # put the exact primary point (k*, P) on the 24-month curve so the defaults show the headline
+    ks, i = data["ks"]["24"], 0
+    while i < len(data["k"]) and data["k"][i] < ks:
+        i += 1
+    if 0 < i < len(data["k"]):
+        t = (math.log(ks) - math.log(data["k"][i - 1])) / (math.log(data["k"][i])
+                                                           - math.log(data["k"][i - 1]))
+        for hh, P in data["P"].items():
+            P.insert(i, data["reg"] if hh == "24" else round(P[i - 1] + t * (P[i] - P[i - 1]), 4))
+        data["k"].insert(i, ks)
+    data["ks"]["24"] = round(float(res["headline"]["k_star"]), 4)
+    c0 = round(100 * float(w90["kappa"]), 1)
+    js = ("(function(){var D=" + json.dumps(data, sort_keys=True, ensure_ascii=True) + ";"
+          "function g(i){return document.getElementById(i);}"
+          "function pk(h,k){var K=D.k,P=D.P[h];if(k<=K[0])return P[0];"
+          "for(var i=1;i<K.length;i++){if(k<=K[i]){var t=(Math.log(k)-Math.log(K[i-1]))/"
+          "(Math.log(K[i])-Math.log(K[i-1]));return P[i-1]+t*(P[i]-P[i-1]);}}return P[P.length-1];}"
+          "function up(){var c=+g('s-cap').value/100,s=+g('s-iss').value/100,"
+          "p=+g('s-px').value/100,r=document.querySelector('input[name=s-h]:checked'),"
+          "h=r?r.value:'24',k=D.ks[h]*s*p*D.c0/c,P=pk(h,k);"
+          "g('v-cap').textContent=Math.round(c*100)+'%';g('v-iss').textContent=Math.round(s*100)+'%';"
+          "g('v-px').textContent=Math.round(p*100)+'%';"
+          "g('o-p').textContent=(100*P).toFixed(1)+'%';g('o-k').textContent=k.toFixed(2)+'x';"
+          "g('o-n').textContent=P>0?'about 1 chance in '+Math.max(1,Math.round(1/P)):'no case in "
+          "the class';g('o-b').style.width=Math.min(100,100*P)+'%';}"
+          "var a=document.querySelectorAll('#sim input');for(var j=0;j<a.length;j++)"
+          "{a[j].addEventListener('input',up);}up();})();")
+    def slider(i, label, lo, hi, v, note):
+        return (f'<label class="sl"><span>{label} <b id="v-{i}">{v}%</b></span>'
+                f'<input id="s-{i}" type="range" min="{lo}" max="{hi}" step="0.1" value="{v}">'
+                f"<i>{note}</i></label>")
+    return (
+        '<section id="sim">\n<h2>Try it: change the assumptions, watch the odds</h2>\n'
+        '<div class="simgrid"><div>'
+        + slider("cap", "Share of NEAR Intents fees spent on buybacks", 10, 100, c0,
+                 f"today {c0}% (last 90 days)")
+        + slider("iss", "NEAR issuance, % of today's path", 25, 150, 100,
+                 "governance can cut it (HSP-029)")
+        + slider("px", "NEAR price, % of today", 25, 400, 100,
+                 "a higher price makes new supply cost more to absorb")
+        + '<div class="hz">' + "".join(
+            f'<label><input type="radio" name="s-h" value="{hh}"'
+            + (" checked" if hh == "24" else "") + f"> {hh} months</label>"
+            for hh in ("12", "24", "36")) + "</div></div>"
+        '<div class="out"><span>Chance that buybacks offset new supply</span>'
+        f'<b id="o-p">{100 * data["reg"]:.1f}%</b><em id="o-n"></em>'
+        '<div class="bar"><div id="o-b"></div></div>'
+        '<p>Fee growth needed: <b id="o-k"></b></p>'
+        f'<p class="q">Registered forecast, written on NEAR: {100 * data["reg"]:.1f}% '
+        "(24 months, today's settings). The simulator explores; it does not change the "
+        "registered number.</p></div></div>\n"
+        '<p class="q">k* = k*(today) x issuance x price x (capture today / capture); the chance '
+        "is the share of comparable protocols whose fees grew at least k* (results/exceedance.csv)."
+        f"</p>\n<script>{js}</script>\n</section>")
+
+
+def hood_block(res: dict) -> str:
+    """Return 'under the hood': the pipeline in five steps and the core function."""
+    n = res["refclass_counts"]["entities"]
+    h = res["headline"]
+    steps = [("1. Data", f"Fees of {n} DeFi protocols and of NEAR Intents (DefiLlama); NEAR "
+              "supply and price (NearBlocks), checked on the NEAR RPC."),
+             ("2. Frozen", "Rules written in PREREG.md before the download; every file "
+              "pinned by sha256."),
+             ("3. Model", f"Keep the {h['entities']} protocols that once had NEAR Intents' size "
+              "and age; count how many grew fees at least k* in 24 months."),
+             ("4. On NEAR", "The forecast goes into a NEAR contract that cannot edit or delete "
+              "it."),
+             ("5. Resolution", f"On {res['registered_forecast']['forecasts']['24']['resolution_date']}"
+              " the outcome is written next to the forecast and scored.")]
+    code = ("k_star = issuance_in_dollars / buybacks        # growth the fees need\n"
+            "peers  = protocols at NEAR Intents' size and age, at any past month\n"
+            "P      = mean over peers of share(fee growth in 24 months >= k_star)\n"
+            "band   = bootstrap over peers (90 percent)\n"
+            "# replayed on past forecasts: beats trend extrapolation, still too optimistic")
+    return ('<section class="hood">\n<h2>Under the hood</h2>\n<div class="flow">'
+            + "".join(f"<div><b>{svg.esc(a)}</b><span>{svg.esc(b)}</span></div>"
+                      for a, b in steps)
+            + "</div>\n<p>The core of the method, simplified "
+              "(<code>near_posterior.forecast.b0</code>):</p>\n"
+            f"<pre>{svg.esc(code)}</pre>\n</section>")
+
+
+def punchline(res: dict) -> str:
+    """Return the closing section."""
+    due = res["registered_forecast"]["forecasts"]["24"]["resolution_date"]
+    return ('<section class="punch">\n<h2>A thesis that can be proven wrong, in public</h2>\n'
+            f"<p>Every number here rebuilds from one command, and the forecast sits on NEAR "
+            f"until {due}. If token theses were published this way, investors could check "
+            f"track records instead of promises, and this one will be checked too.</p>\n"
+            "</section>")
 
 
 def chain_block() -> str:
@@ -539,10 +700,18 @@ def render(res: dict) -> str:
              '</a> (secondary analyses)')
     def pc(x):
         return f"{100 * float(x):.1f}%"
+    tiles = [("Buybacks / new supply today", pc(w90["C"])),
+             ("Fee growth needed in 24 months", f"{f(h['k_star'], 2)}x"),
+             ("Comparable protocols", str(h["entities"])),
+             ("Base rate (registered)", pc(h["P"])),
+             ("Forecast stored on", "NEAR")]
     top = [
         "<header>",
-        '<p class="kicker">NEAR Hackathon - thesis track - not financial advice</p>',
-        "<h1>Will NEAR buybacks cover net issuance at the 24-month mark?</h1>",
+        '<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - '
+        'not financial advice</p>',
+        "<h1>Will NEAR's buybacks offset its new supply within 24 months?</h1>",
+        '<div class="tiles">' + "".join(f'<div><span>{svg.esc(a)}</span><b>{svg.esc(b)}</b></div>'
+                                        for a, b in tiles) + "</div>",
         f'<p class="big">{pc(h["P"])}</p>',
         f"<p><strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong> - "
         f"share of "
@@ -566,8 +735,9 @@ def render(res: dict) -> str:
     return "\n".join([
         "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
-        "<title>NEAR buybacks vs issuance</title>", f"<style>{CSS}</style>", "</head>", "<body>",
-        *top, chain_block(), *blocks,
+        "<title>NEAR Buyback Coverage Forecast</title>", f"<style>{CSS}</style>", "</head>",
+        "<body>", *top, problem_block(res), simulator(res), chain_block(), hood_block(res),
+        *blocks, punchline(res),
         "<section>\n<h2>What this cannot tell you</h2>\n<ul>\n"
         + "\n".join(f"<li>{svg.esc(t)}</li>" for t in thesis.limits(res)) + "\n</ul>\n</section>",
         '<p class="q">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of '

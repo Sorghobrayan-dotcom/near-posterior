@@ -1,4 +1,4 @@
-# near-posterior
+# near-posterior: NEAR Buyback Coverage Forecast
 
 [![check](https://github.com/Sorghobrayan-dotcom/near-posterior/actions/workflows/check.yml/badge.svg)](https://github.com/Sorghobrayan-dotcom/near-posterior/actions/workflows/check.yml)
 
@@ -18,6 +18,28 @@ advice.
 - **What would prove this wrong:** annualised NEAR Intents fees above $439.2M at today's price and issuance. `history.csv` records the odds at every daily snapshot.
 - **Locked in advance:** the forecasts are written on NEAR (contract `brayan-posterior.testnet`), cannot be edited, and resolve on 2028-11-11; one command rebuilds every number from the committed data.
 <!-- END GENERATED brief -->
+
+## How it works
+
+```mermaid
+flowchart LR
+  A["Historical data<br/>DefiLlama fees of 797 protocols,<br/>NEAR Intents, NEAR supply"] --> B["Frozen<br/>rules in PREREG.md first,<br/>files pinned by sha256"]
+  B --> C["Static model<br/>75 comparable protocols:<br/>share that grew fees k*-fold"]
+  C --> D["NEAR contract<br/>forecast written once,<br/>cannot be edited"]
+  D --> E["Resolution 2028-11-11<br/>outcome written on chain,<br/>Brier score"]
+```
+
+## What makes it different
+
+- **Outside view, not a trend line.** The odds come from what comparable protocols actually
+  did, not from extrapolating NEAR Intents' recent growth.
+- **Rules before data.** `PREREG.md` was committed before the reference data was downloaded.
+- **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
+  the README says where it was still too optimistic.
+- **On NEAR, cannot be edited.** The forecasts sit in our own contract until they resolve.
+- **One command rebuilds every number**, checked by CI on Linux, Windows and macOS.
+- **Live page**: `site/index.html` has a simulator (share of fees spent on buybacks, issuance,
+  price, horizon) that recomputes the odds as you move the sliders.
 
 ## In detail
 

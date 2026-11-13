@@ -31,11 +31,12 @@ def test_top_has_question_number_interval_date_and_links():
         assert needle in head, needle
 
 
-def test_one_inline_script_and_no_external_request():
+def test_inline_scripts_only_and_no_external_request():
     text = PAGE.read_text(encoding="ascii")
     scripts = re.findall(r"<script([^>]*)>(.*?)</script>", text, re.S)
-    assert len(scripts) == 1 and scripts[0][0] == ""
-    assert not re.search(r"fetch\(|XMLHttpRequest|import\(|https?:", scripts[0][1])
+    assert len(scripts) == 2 and all(attrs == "" for attrs, _ in scripts)
+    for _, body in scripts:
+        assert not re.search(r"fetch\(|XMLHttpRequest|import\(|https?:", body)
     assert not re.search(r"""src\s*=\s*["']?(https?:)?//""", text, re.I)
     assert not re.search(r"""<link[^>]*href\s*=\s*["']?(https?:)?//""", text, re.I)
     assert "@import" not in text and "url(" not in text
