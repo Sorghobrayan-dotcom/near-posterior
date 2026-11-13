@@ -836,3 +836,27 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 124 passed in 199.47s
 ```
+
+## Clean-clone check of the third pass
+
+Fresh `git clone` of commit 207fdcb into a new directory, with `UV_OFFLINE=1`:
+
+```
+> uv sync && uv run pytest -q
+124 passed in 202.65s
+> uv run python -m near_posterior.verify
+47 lines, all PASS, exit=0
+> uv run python -m near_posterior.build
+P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), ...
+> git status --short
+(empty)
+> uv run python -m near_posterior.ask
+... Registered headline: P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 ...
+```
+
+Third pass status: W1 to W4 committed (T4 implemented, not reported). No bot refresh commit had
+reached origin/main by 08:16 UTC (origin/main still 7ecd678); I could not open the Actions page
+(the built-in browser is no longer signed in to GitHub), so I do not know whether the 06:30 run
+failed, was delayed or had nothing to commit. If a bot commit lands, these four commits touch no
+file it changes except the generated ones (`results/`, `THESIS.md`, `README.md`, `site/`,
+`VERIFICATION.md`, `history.csv`): rebase, then rerun `build` and `verify --write`.
