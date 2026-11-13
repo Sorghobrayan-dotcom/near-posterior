@@ -30,7 +30,7 @@ border-left:3px solid var(--accent)}</style>
 <p><strong>90% interval 2.2% to 9.1%</strong> - share of 75 comparable DefiLlama protocols that grew fees enough - snapshot t0 = 2026-11-11 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
 <p>Method: buybacks cover 18.2% of net issuance today, so NEAR Intents fees must grow 5.76x in 24 months; the number above is how often protocols of the same size and age did that.</p>
 <p><a href="../THESIS.md">THESIS.md</a> (the argument) - <a href="../PREREG.md">PREREG.md</a> (rules fixed before the data) - <a href="../PREREG_2.md">PREREG_2.md</a> (secondary analyses)</p>
-<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; they are reported whatever they show. The number above follows PREREG.md.</p>
+<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; charts tagged <span class="tag">tertiary</span> from corrections specified after the secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported whatever they show. The number above follows PREREG.md.</p>
 <p class="head">P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0.022 to 0.091), model B0, class R, 75 entities, snapshot t0 = 2026-11-11: buybacks are unlikely to cover issuance at the 24-month mark</p>
 </header>
 <section id="explorer">
@@ -287,6 +287,46 @@ border-left:3px solid var(--accent)}</style>
 </svg>
 <p class="q">Query: <code>near_posterior.validation.compute -&gt; results/validation.json: S1.*.reliability</code></p>
 <p>Dots on the diagonal would be calibrated. The class forecast C0 sits closer to it than trend extrapolation B2 but still above the observed share: at 24 months its largest bin forecast 0.25 and saw 0.03 (201 targets, origins 2024).</p>
+</section>
+<section>
+<h2>Correcting for past over-forecasting <span class="tag">tertiary</span></h2>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Recalibration on held-out origins" font-family="Helvetica, Arial, sans-serif" width="100%" style="max-width:720px;height:auto">
+<title>Recalibration on held-out origins</title>
+<rect x="0" y="0" width="480" height="300" fill="#ffffff"/>
+<line x1="52" y1="258.0" x2="464" y2="258.0" stroke="#f3f4f6"/>
+<text x="47.0" y="262.0" font-size="11" text-anchor="end" fill="#6b7280" font-weight="normal">0</text>
+<line x1="52" y1="138.0" x2="464" y2="138.0" stroke="#f3f4f6"/>
+<text x="47.0" y="142.0" font-size="11" text-anchor="end" fill="#6b7280" font-weight="normal">0.25</text>
+<line x1="52" y1="18.0" x2="464" y2="18.0" stroke="#f3f4f6"/>
+<text x="47.0" y="22.0" font-size="11" text-anchor="end" fill="#6b7280" font-weight="normal">0.5</text>
+<text x="52.0" y="273.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">0</text>
+<text x="258.0" y="273.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">0.25</text>
+<text x="464.0" y="273.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">0.5</text>
+<line x1="52" y1="258" x2="464" y2="258" stroke="#d1d5db"/>
+<text x="258.0" y="294.0" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="normal">forecast probability</text>
+<text x="12" y="138.0" font-size="11" fill="#6b7280" text-anchor="middle" transform="rotate(-90 12 138.0)">observed share</text>
+<polyline fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3 3" points="52.0,258.0 464.0,18.0"/>
+<text x="348.6" y="70.8" font-size="11" text-anchor="start" fill="#6b7280" font-weight="normal">calibrated</text>
+<polyline fill="none" stroke="#6b7280" stroke-width="1.5" points="127.3,258.0 194.2,230.8 272.5,226.1 392.4,258.0"/>
+<circle cx="127.3" cy="258.0" r="3.0" fill="#6b7280" fill-opacity="0.85"/>
+<circle cx="194.2" cy="230.8" r="6.0" fill="#6b7280" fill-opacity="0.85"/>
+<circle cx="272.5" cy="226.1" r="7.3" fill="#6b7280" fill-opacity="0.85"/>
+<circle cx="392.4" cy="258.0" r="3.2" fill="#6b7280" fill-opacity="0.85"/>
+<text x="278.5" y="244.1" font-size="12" text-anchor="start" fill="#6b7280" font-weight="bold">before recalibration</text>
+<polyline fill="none" stroke="#c2410c" stroke-width="1.5" points="80.9,232.7 119.0,232.6 157.1,238.1 260.9,207.8"/>
+<circle cx="80.9" cy="232.7" r="5.0" fill="#c2410c" fill-opacity="0.85"/>
+<circle cx="119.0" cy="232.6" r="5.9" fill="#c2410c" fill-opacity="0.85"/>
+<circle cx="157.1" cy="238.1" r="6.6" fill="#c2410c" fill-opacity="0.85"/>
+<circle cx="260.9" cy="207.8" r="6.2" fill="#c2410c" fill-opacity="0.85"/>
+<text x="256.9" y="193.8" font-size="12" text-anchor="end" fill="#c2410c" font-weight="bold">after recalibration</text>
+</svg>
+<div class="wrap"><table>
+<tr><th class="left">Horizon</th><th>Registered P</th><th>Recency-weighted P</th><th>P_cal</th><th>P_cal tested out of sample</th></tr>
+<tr><td class="left">12 months</td><td>0.054 (0.026 to 0.083)</td><td>not used</td><td>0.005 (0.001 to 0.011)</td><td>yes, on 2025 origins</td></tr>
+<tr><td class="left">24 months</td><td>0.053 (0.022 to 0.091)</td><td>not used</td><td>0.000 (0.000 to 0.000)</td><td>no, in sample</td></tr>
+</table></div>
+<p class="q">Query: <code>near_posterior.recalibration.compute -&gt; results/recalibration.json; results/recency.json</code></p>
+<p>Fitted on origins up to 2024 and tested on 1063 targets from 2025, recalibration lowered the Brier score for &#x27;fees doubled&#x27; by 0.024 (0.020 to 0.028); the registered P stays the headline and P_cal says how often outcomes at this forecast level happened before.</p>
 </section>
 <section>
 <h2>Backtest scores <span class="tag">partly secondary</span></h2>

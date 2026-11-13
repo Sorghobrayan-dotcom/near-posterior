@@ -172,7 +172,7 @@ def summary(res: dict) -> list[str]:
            f"24-month bin)" if over else "")
         + ", and its weakest point is that the 24-month check rests on origins in "
         + " and ".join(years24) + " only.",
-    ] + investor(res)
+    ] + correction_sentence(res) + investor(res)
 
 
 def investor(res: dict) -> list[str]:
@@ -403,13 +403,114 @@ def section_method(res: dict) -> list[str]:
     return L
 
 
+TERTIARY = "tertiary (specified after the secondary results)"
+
+
+def correction_sentence(res: dict) -> list[str]:
+    """Return the summary sentence on the correction for past over-forecasting, or nothing."""
+    m = res["recalibration"]["models"]["C0"]
+    if not m["held_out_12"]["improves"]:
+        return []
+    n12, n24 = m["near"]["12"], m["near"]["24"]
+    return [f"Corrected for past over-forecasting [{TERTIARY}]: in the past, outcomes at this "
+            f"forecast level happened with a frequency of {f(n24['P_cal'])} at 24 months "
+            f"(map fitted on the same origins, not tested out of sample) and {f(n12['P_cal'])} "
+            f"at 12 months (map tested out of sample on later origins), against the "
+            f"registered {f(res['headline']['P'])}."]
+
+
+def section_correction(res: dict) -> list[str]:
+    """Return the section 'Correcting for past over-forecasting' (PREREG_3 T1 to T4)."""
+    rec, cal, tot = res["recency"], res["recalibration"], res["total_uncertainty"]
+    ch = rec["choice"]
+    m = cal["models"]["C0"]
+    ho, ins = m["held_out_12"], m["in_sample_24"]
+    hd = ch["held_out_difference"]
+    L = ["## 8. Correcting for past over-forecasting", "",
+         f"Everything in this section is {TERTIARY}, fixed in `PREREG_3.md` before it was run, "
+         f"and reported whatever it shows. The registered probability does not change.", "",
+         "**Recency weighting (T1).** Older outcomes may describe a faster-growing period, so "
+         "class moments were down-weighted by their age with half-life H. Mean CRPS on the "
+         "12-month targets with origins up to 2024: "
+         + ", ".join(f"H = {k} months: {f(v)}" if k != "inf" else f"no weighting: {f(v)}"
+                     for k, v in ch["choice_mean_crps"].items()) + ". "
+         + (f"On the {hd['targets']} later targets (origins 2025), CRPS(C_{ch['best_on_choice_set']})"
+            f" - CRPS(C0) = {f(hd['mean'], 4)} ({f(hd['interval'][0], 4)} to "
+            f"{f(hd['interval'][1], 4)}). " if hd else "")
+         + ("Recency weighting did not help on data it did not see, so it is not used."
+            if ch["H_star"] == "inf" else
+            f"Recency weighting with H = {ch['H_star']} months beat the class forecast on data "
+            f"it did not see, and is used below."), "",
+         f"**Recalibration (T2).** The map from forecast to observed frequency was fitted on the "
+         f"PIT values of the {ho['train_targets']} 12-month targets with origins up to 2024 and "
+         f"tested on the {ho['test_targets']} targets with origins 2025 "
+         f"({ho['test_entities']} protocols):", "",
+         "| Score (origins 2025) | Raw class forecast | Recalibrated | Difference (90% CI) |",
+         "|---|---|---|---|"]
+    d = ho["difference"]
+    for k, name in (("brier_1", "Brier, fees maintained"), ("brier_2", "Brier, fees doubled"),
+                    ("brier_5", "Brier, fees at least 5x")):
+        L.append(f"| {name} | {f(ho['raw'][k], 4)} | {f(ho['recalibrated'][k], 4)} | "
+                 f"{f(d[k]['mean'], 4)} ({f(d[k]['interval'][0], 4)} to "
+                 f"{f(d[k]['interval'][1], 4)}) |")
+    L.append(f"| KS distance of PIT to uniform | {f(ho['raw']['ks'], 3)} | "
+             f"{f(ho['recalibrated']['ks'], 3)} | {f(d['ks']['mean'], 3)} "
+             f"({f(d['ks']['interval'][0], 3)} to {f(d['ks']['interval'][1], 3)}) |")
+    for c in ("cov_50", "cov_90"):
+        L.append(f"| Coverage of the central {c[4:]}% interval | {f(ho['raw'][c], 3)} | "
+                 f"{f(ho['recalibrated'][c], 3)} | |")
+    L += ["", "Reliability on origins 2025, event 'fees at least doubled':", "",
+          "| Forecast | Bin | Targets | Mean forecast | Observed |", "|---|---|---|---|---|"]
+    for name, key in (("raw", "raw"), ("recalibrated", "recalibrated")):
+        for b in ho[key]["reliability"]["Y_ge_ln2"]:
+            if b["targets"]:
+                L.append(f"| {name} | {f(b['bin'][0], 2)} to {f(b['bin'][1], 2)} | "
+                         f"{b['targets']} | {f(b['mean_forecast'], 3)} | "
+                         f"{f(b['observed'], 3)} |")
+    L += ["", ("Recalibration improved the held-out scores (lower Brier score for all three "
+               "events, with at least one interval below 0 and none above)."
+               if ho["improves"] else
+               "Recalibration did not improve the held-out scores by the rule fixed for this "
+               "section (lower Brier score for all three events, at least one interval below 0, "
+               "none above), so it is not quoted as a correction."), "",
+          f"At 24 months the map is fitted on all {ins['targets']} targets ({ins['note']}): "
+          f"Brier for 'fees doubled' {f(ins['raw']['brier_2'], 4)} raw against "
+          f"{f(ins['recalibrated']['brier_2'], 4)} recalibrated, in sample.", "",
+          "**For NEAR Intents.** The registered probability comes first; then how often "
+          "outcomes at this forecast level happened in the past:", "",
+          "| Horizon | Registered P (90% CI) | Recency-weighted P | P_cal (90% CI) | "
+          "P_cal tested out of sample |", "|---|---|---|---|---|"]
+    for h in ("12", "24"):
+        prim = primary_row(res, "R", int(h))
+        n = m["near"][h]
+        recency_text = ("not used" if ch["H_star"] == "inf" else
+                        f"{f(rec['near']['by_h'][h]['P'])} "
+                        f"({interval(rec['near']['by_h'][h]['interval'])})")
+        L.append(f"| {h} months | {f(prim['P'])} ({f(prim['P_lo'])} to {f(prim['P_hi'])}) | "
+                 f"{recency_text} | {f(n['P_cal'])} ({interval(n['interval'])}) | "
+                 f"{'yes (origins 2025)' if n['tested_out_of_sample'] else 'no (in sample)'} |")
+    L += ["", f"P_cal = 1 - G(F_R(ln k*)): F_R(ln k*) is where k* sits in the class R forecast "
+          f"({f(m['near']['24']['F_R'], 3)} at 24 months), and G says how often past outcomes "
+          f"fell above that forecast level. At 24 months it rests on {m['near']['24']['targets']}"
+          f" targets from {m['near']['24']['entities']} protocols with origins in one year.", "",
+          f"**One interval for sampling and class definition (T3).** Pooling the 2000 bootstrap "
+          f"values of each of the {tot['groups']} class definitions of the multiverse: 5th "
+          f"percentile {f(tot['p5'])}, median {f(tot['p50'])}, 95th percentile {f(tot['p95'])}. "
+          f"{pct(tot['between_share'])} of the pooled variance lies between class definitions.",
+          "", "**Tail model (T4, optional).** Not reported: in exploratory runs the share of "
+          "bootstrap fits of the generalised Pareto tail that did not converge was close to the "
+          "5 percent stop line of `PREREG_3.md` and depended on the numerical definition of "
+          "convergence (details in `PROGRESS.md`).", ""]
+    return L
+
+
 def section_robustness(res: dict) -> list[str]:
     """Return section 8."""
     s, mv, coh = res["speccurve"], res["class_multiverse"], res["cohorts"]
     loo = coh["leave_one_year_out"]
     tb = coh["two_stage_bootstrap"]
     return [
-        "## 8. Robustness", "",
+        "## 9. Robustness", "",
         f"Specification curve (registered): {s['rows']} combinations of window, class, horizon, "
         f"capture, issuance and price, all with the class frequency. P has median "
         f"{f(s['median'])}, minimum {f(s['min'])}, maximum {f(s['max'])}.", "",
@@ -430,7 +531,7 @@ def section_others(res: dict) -> list[str]:
     sc = a["status_counts"]
     fwd = [r for r in res["forward_claims_rows"] if r["h"] == "24"]
     L = [
-        "## 9. How other theses measure the same thing, and what they need to be true", "",
+        "## 10. How other theses measure the same thing, and what they need to be true", "",
         f"{a['claims']} published values from {a['theses']} public NEAR theses, each read at a "
         f"fixed commit (file and line in `data/claims.csv`). For each: y = their value, r = ours "
         f"under their window, end date and definition, r0 = ours under our primary definition "
@@ -473,7 +574,7 @@ def section_change(res: dict) -> list[str]:
     wc = res["headline"]["what_would_change"]
     reg = res["registered_forecast"]["forecasts"]
     return [
-        "## 10. What would change our mind", "",
+        "## 11. What would change our mind", "",
         f"P crosses 0.50 (PREREG 8) when the required growth k* falls to {f(wc['k50'], 3)}x or "
         f"below. On its own that needs a capture rate of {f(wc['kappa_needed'], 3)} of gross "
         f"fees" + (" (above 1, impossible)" if wc["kappa_needed"] > 1 else "")
@@ -497,11 +598,13 @@ def section_registration(res: dict) -> list[str]:
     dev = "\n".join(("**" + line[3:] + "**") if line.startswith("## ") else line
                     for line in dev.splitlines())
     counts = res["refclass_counts"]
-    L = ["## 12. Pre-registration, addendum, deviations, resolution", "",
+    L = ["## 13. Pre-registration, addenda, deviations, resolution", "",
          "`PREREG.md` fixed the question, data, estimators, backtest and decision rules before "
          "any reference-class fee history was downloaded. `PREREG_2.md` added the secondary "
          "analyses after the primary results were known; everything it specifies is labelled "
-         f"\"{SECONDARY}\" and reported whatever it shows.", "",
+         f"\"{SECONDARY}\" and reported whatever it shows. `PREREG_3.md` added the corrections "
+         f"for past over-forecasting after the secondary results; they are labelled "
+         f"\"{TERTIARY}\".", "",
          f"Stop rules (PREREG 9): reference panel missing share "
          f"{pct(counts['panel']['missing_share'])} ({counts['panel']['missing']} of "
          f"{counts['panel']['universe']} entries); class R at h = 24 has "
@@ -543,10 +646,11 @@ def render(res: dict) -> str:
     L += section_within(res)
     L += section_levers(res)
     L += section_method(res)
+    L += section_correction(res)
     L += section_robustness(res)
     L += section_others(res)
     L += section_change(res)
-    L += ["## 11. What this cannot tell you", ""] + [f"- {t}" for t in limits(res)] + [""]
+    L += ["## 12. What this cannot tell you", ""] + [f"- {t}" for t in limits(res)] + [""]
     L += section_registration(res)
     return "\n".join(L)
 

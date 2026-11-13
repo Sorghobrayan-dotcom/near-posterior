@@ -806,3 +806,33 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 123 passed in 113.91s
 ```
+
+## W4 - Thesis, page, README (done)
+
+- `THESIS.md`: new section 8 "Correcting for past over-forecasting" (sections renumbered to 13):
+  what T1 chose and why (recency weighting not used: it did not beat C0 on 2025 origins), the
+  held-out test of T2 as a table (Brier for three events, KS, coverage, with difference
+  intervals) and the 2025 reliability table before and after, the 24-month in-sample note, the
+  numbers for NEAR Intents in the order fixed by PREREG_3 (registered P, recency-weighted P
+  "not used", P_cal with interval and whether it was tested out of sample), the T3 interval,
+  and T4 "not reported" with the reason. Summary: one added sentence giving the registered P and
+  how often outcomes at that forecast level happened in the past, at 24 months (in sample) and
+  12 months (tested out of sample). Rule for quoting P_cal as a correction
+  (`recalibration.improves`): mean Brier lower for k = 1, 2, 5, no interval above 0, at least
+  one below 0; it holds on the 2025 targets, so the sentence is shown; otherwise the section
+  says recalibration did not improve the held-out scores and the summary does not quote P_cal.
+- Page: one block tagged "tertiary" (reliability before and after recalibration on the 2025
+  origins, and a table with the registered P, the recency-weighted P and P_cal side by side for
+  12 and 24 months); the top note now explains the "tertiary" tag with a link to `PREREG_3.md`.
+  Explorer unchanged. Checked in the built-in browser.
+- README finding: headline unchanged; one added sentence with P_cal under the same rule.
+- `VERIFICATION.md`, `docs/DEMO_SCRIPT.md`, `docs/X_POST.md` regenerate (unchanged by this task).
+
+```
+> uv run python -m near_posterior.verify --write
+47 lines, all PASS
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+124 passed in 199.47s
+```

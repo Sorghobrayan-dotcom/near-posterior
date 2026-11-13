@@ -18,6 +18,12 @@ def blocks(res: dict) -> dict:
                f"{thesis.f(h['k_star'], 2)}x in 24 months. Among {h['entities']} comparable "
                f"DefiLlama protocols, the share that did so is **{pc(h['P'])}** (90% interval "
                f"{pc(h['interval'][0])} to {pc(h['interval'][1])}): {h['verdict']}.")
+    m = res["recalibration"]["models"]["C0"]
+    if m["held_out_12"]["improves"]:
+        finding += (f" Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), "
+                    f"outcomes at this forecast level happened {pc(m['near']['24']['P_cal'])} of "
+                    f"the time at 24 months (fitted on the same origins) and "
+                    f"{pc(m['near']['12']['P_cal'])} at 12 months (tested on later origins).")
     return {
         "finding": finding,
         "headline": "```\n" + thesis.headline_line(res) + "\n```",

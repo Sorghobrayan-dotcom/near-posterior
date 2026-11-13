@@ -38,3 +38,15 @@ def test_one_inline_script_and_no_external_request():
     assert not re.search(r"fetch\(|XMLHttpRequest|import\(|https?:", scripts[0][1])
     assert not re.search(r"""(src|href)\s*=\s*["']?(https?:)?//""", text, re.I)
     assert "@import" not in text and "url(" not in text
+
+
+def test_correction_block_has_its_tag_chart_and_three_numbers():
+    text = PAGE.read_text(encoding="ascii")
+    block = [s for s in re.findall(r"<section[^>]*>(.*?)</section>", text, re.S)
+             if "Correcting for past over-forecasting" in s]
+    assert len(block) == 1
+    s = block[0]
+    assert '<span class="tag">tertiary</span>' in s and "<svg" in s
+    for col in ("Registered P", "Recency-weighted P", "P_cal", "P_cal tested out of sample"):
+        assert col in s
+    assert "../PREREG_3.md" in text.split("</header>")[0]

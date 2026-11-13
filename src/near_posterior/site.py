@@ -307,6 +307,63 @@ def explorer(res: dict) -> str:
                  "explorer", "secondary")
 
 
+def correction_fig(res: dict) -> Frame:
+    """Return the reliability of the class forecast before and after recalibration on the
+    held-out origins (12 months, event: fees at least doubled)."""
+    ho = res["recalibration"]["models"]["C0"]["held_out_12"]
+    fr = Frame(0, 0.5, 0, 0.5, w=480, h=300)
+    fr.axes([0, 0.25, 0.5], [0, 0.25, 0.5], xlabel="forecast probability",
+            ylabel="observed share")
+    fr.line([(0, 0), (0.5, 0.5)], colour=LIGHT, width=1, dash="3 3")
+    fr.text(fr.x(0.36), fr.y(0.39), "calibrated", colour=MID, size=11)
+    for key, colour, name in (("raw", MID, "before"), ("recalibrated", ACCENT, "after")):
+        pts = [b for b in ho[key]["reliability"]["Y_ge_ln2"] if b["targets"]]
+        fr.line([(b["mean_forecast"], b["observed"]) for b in pts], colour=colour, width=1.5)
+        for b in pts:
+            fr.dot(b["mean_forecast"], b["observed"], r=2 + math.sqrt(b["targets"]) ** 0.5,
+                   colour=colour, opacity=0.85)
+        if key == "raw":
+            big = max(pts, key=lambda b: b["targets"])
+            fr.text(fr.x(big["mean_forecast"]) + 6, fr.y(big["observed"]) + 18,
+                    f"{name} recalibration", colour=colour, weight="bold", size=12)
+        else:
+            top = max(pts, key=lambda b: b["mean_forecast"])
+            fr.text(fr.x(top["mean_forecast"]) - 4, fr.y(top["observed"]) - 14,
+                    f"{name} recalibration", anchor="end", colour=colour, weight="bold", size=12)
+    return fr
+
+
+def correction_block(res: dict) -> str:
+    """Return the block 'Correcting for past over-forecasting': chart, three numbers, query."""
+    rec, cal = res["recency"], res["recalibration"]["models"]["C0"]
+    ho = cal["held_out_12"]
+    rows = []
+    for h in ("12", "24"):
+        prim = thesis.primary_row(res, "R", int(h))
+        n = cal["near"][h]
+        rows.append([f"{h} months", f"{f(prim['P'])} ({f(prim['P_lo'])} to {f(prim['P_hi'])})",
+                     "not used" if rec["choice"]["H_star"] == "inf" else
+                     f"{f(rec['near']['by_h'][h]['P'])}",
+                     f"{f(n['P_cal'])} ({interval(n['interval'])})",
+                     "yes, on 2025 origins" if n["tested_out_of_sample"] else "no, in sample"])
+    body = (correction_fig(res).svg("Recalibration on held-out origins") + "\n"
+            + table(["Horizon", "Registered P", "Recency-weighted P", "P_cal",
+                     "P_cal tested out of sample"], rows, 1))
+    d = ho["difference"]["brier_2"]
+    sentence = ((f"Fitted on origins up to 2024 and tested on {ho['test_targets']} targets from "
+                 f"2025, recalibration lowered the Brier score for 'fees doubled' by "
+                 f"{f(-d['mean'], 3)} ({f(-d['interval'][1], 3)} to {f(-d['interval'][0], 3)}); "
+                 f"the registered P stays the headline and P_cal says how often outcomes at "
+                 f"this forecast level happened before.")
+                if ho["improves"] else
+                (f"Recalibration did not improve the scores on the {ho['test_targets']} held-out "
+                 f"2025 targets, so P_cal is not used as a correction; the registered P stays "
+                 f"the headline."))
+    return chart("Correcting for past over-forecasting", body,
+                 "near_posterior.recalibration.compute -> results/recalibration.json; "
+                 "results/recency.json", sentence, tag="tertiary")
+
+
 def tables(res: dict) -> list[str]:
     """Return the three table blocks: who reached k*, nearest analogs, other theses."""
     h = res["headline"]
@@ -415,6 +472,7 @@ def render(res: dict) -> str:
               f"largest bin forecast {f(b['mean_forecast'], 2)} and saw {f(b['observed'], 2)} "
               f"({val['24']['scored']} targets, origins "
               + ", ".join(val["24"]["origins_by_year"]) + ").", tag="secondary"),
+        correction_block(res),
         chart("Backtest scores", backtest_fig(res).svg("Backtest scores"),
               "results/backtest.json (registered), results/validation.json (S1)",
               "Bars: mean CRPS, lines: 90 percent intervals. The class forecast (accent) "
@@ -455,7 +513,9 @@ def render(res: dict) -> str:
         f"<p>{links}</p>",
         '<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses '
         'specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; '
-        "they are reported whatever they show. The number above follows PREREG.md.</p>",
+        'charts tagged <span class="tag">tertiary</span> from corrections specified after the '
+        'secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported '
+        "whatever they show. The number above follows PREREG.md.</p>",
         f'<p class="head">{svg.esc(thesis.headline_line(res))}</p>',
         "</header>",
     ]
