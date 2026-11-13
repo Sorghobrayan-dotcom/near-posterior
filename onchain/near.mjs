@@ -4,6 +4,7 @@
 //   node onchain/near.mjs create <account>         new testnet account, key in ~/.near-credentials
 //   node onchain/near.mjs deploy <account> <wasm>  deploy the registry contract
 //   node onchain/near.mjs commit <account>         commit the registered forecasts
+//   node onchain/near.mjs call <signer> <contract> <method> [args]
 //   node onchain/near.mjs view <account> <method> [args]
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -119,6 +120,10 @@ if (cmd === "create") {
   const dir = path.join(ROOT, "data", "onchain");
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "commitments.json"), JSON.stringify(out, null, 2) + "\n");
+} else if (cmd === "call") {
+  const [contract, method, args = ""] = rest;
+  const res = await send(acct, contract, [callAction(method, Buffer.from(args))]);
+  console.log("tx", res.transaction.hash, Buffer.from(res.status.SuccessValue || "", "base64").toString());
 } else if (cmd === "view") {
   console.log(await view(acct, rest[0], rest[1] || ""));
 } else {

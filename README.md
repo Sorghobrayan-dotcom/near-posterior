@@ -40,6 +40,33 @@ P(buybacks cover NEAR net issuance at the 24-month mark) = 0.053 (90% interval 0
 ```
 <!-- END GENERATED headline -->
 
+## On NEAR: the forecasts are written on chain and cannot be changed
+
+The three registered forecasts (12, 24, 36 months) are stored on NEAR testnet in a contract
+written for this project, [`brayan-posterior.testnet`](https://testnet.nearblocks.io/address/brayan-posterior.testnet)
+(Q-010: testnet is accepted in every track).
+
+- `contract/src/lib.rs`: Rust, no dependency, 4 KB of wasm. `commit` stores a record with the
+  block time and height; no method edits or deletes a record. `resolve` stores one outcome per
+  record, once, and the contract refuses it before the record's resolution date. Only the
+  contract account can write; anyone can read with `count` and `get`.
+- Each record holds the probability, its interval, k*, the resolution date and rule, the git
+  commit, and the sha256 of `results/registered_forecast.json` and of the three PREREG files.
+  The transactions are listed in `data/onchain/commitments.json`.
+- `onchain/near.mjs`: signs and sends transactions with Node's standard library only
+  (`node:crypto` ed25519, borsh by hand, public JSON-RPC). No npm package.
+- Tested on chain: a `resolve` before the date fails with "resolution date not reached"; a
+  `commit` from another account fails with "only the contract account can write".
+
+| Do | See |
+|---|---|
+| `uv run python -m near_posterior.onchain` (network) | 9 `PASS` lines: the code on chain is `contract/posterior_registry.wasm`; each record read from the chain equals the committed record and was written before its resolution date |
+| `node onchain/near.mjs view brayan-posterior.testnet get 1` | the 24-month record as stored on chain, with its block height |
+| `cd contract`, then `cargo build --release --target wasm32-unknown-unknown` with `RUSTFLAGS="-C target-cpu=mvp"` | a wasm build of the contract from source |
+
+When a resolution date is reached, `resolve` writes the outcome on chain next to the forecast,
+and the Brier score follows from the two values.
+
 What governance can change (secondary analysis, specified after the primary results): P at the
 24-month mark for each capture rate and issuance path, price unchanged.
 

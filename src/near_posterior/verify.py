@@ -13,7 +13,7 @@ import pathlib
 import re
 import sys
 
-from near_posterior import ask, build, coverage, out, readme, refclass, series
+from near_posterior import ask, build, coverage, onchain, out, readme, refclass, series
 
 FIXTURE = out.ROOT / "tests" / "fixtures" / "near_20261112"
 SPEC = out.ROOT / "docs" / "SPEC.md"
@@ -179,6 +179,8 @@ CLAIMS = [
     ("Control values of docs/SPEC.md section 5 are reproduced", "control values check"),
     ("The data are the committed snapshot and frozen panel", "data/raw and data/refclass "
      "manifest checks"),
+    ("The registered forecasts are written on NEAR", "on-chain record checks (offline); "
+     "`python -m near_posterior.onchain` reads them back from the chain"),
 ]
 
 
@@ -206,7 +208,8 @@ def base_checks(root: pathlib.Path = out.ROOT) -> tuple[list[tuple[bool, str]], 
     history = root / "history.csv"
     files = build.compute(history.read_text(encoding="ascii") if history.exists() else "")
     checks = (check_controls() + check_manifests() + check_files(files, root)
-              + check_history(files, root) + check_readme(files, root) + check_ask())
+              + check_history(files, root) + check_readme(files, root) + check_ask()
+              + onchain.offline_checks())
     return checks, files["_t0"]
 
 

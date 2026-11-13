@@ -1,0 +1,28 @@
+{
+  "network": "testnet",
+  "contract": "brayan-posterior.testnet",
+  "code_sha256": "55d1c1c1a840dab36676d85b862fd5057f844657a337b1342c35909f87aa8daa",
+  "commitments": [
+    {
+      "h_months": 12,
+      "index": 0,
+      "tx": "2aQxnA4oEEZkRHN8eaEBLYGveeiDU5fcxz9x6SKPMpTN",
+      "block_hash": "6Nyo8SPYYgvUMnF7eizN8GeGmFLg5Km7pgFdkHfZiraW",
+      "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"229bf3f5f05f713b7ac93f8979e850072c1b5517\",\"question\":\"P(NEAR buybacks cover NEAR net issuance at the 12-month mark)\",\"h_months\":12,\"t0\":\"2026-11-11\",\"class\":\"R\",\"k_star\":5.62273071846,\"P\":0.0539196026004,\"interval\":[0.0258467023173,0.0831471833386],\"resolution_date\":\"2027-11-11\",\"rule\":\"outcome = 1 if C_90 at t0 + h months >= 1, else 0; Brier = (P - outcome)^2\",\"sha256\":{\"results/registered_forecast.json\":\"ef0de918a1eaac95136614e2828a2f2e236e37db897953902ffc81b9d5f6cec3\",\"PREREG.md\":\"1f288ba679200639e30ccd13247c6ca6aa5a5abde7300b2e2c061e71ae05101e\",\"PREREG_2.md\":\"4848d6d37507d582577f1549dccb6059a63b1139d8670b22cd30b8925df47257\",\"PREREG_3.md\":\"450530662cc1521d00d9c7aa9fc15845a30e773c934cbec90773e44645008954\"}}"
+    },
+    {
+      "h_months": 24,
+      "index": 1,
+      "tx": "H53Gfecymqhko9Cx3eqFk1qVtwz7bcqNDw6rmmWAbkpf",
+      "block_hash": "FY33qsEGV9jwYxEeXiwFowhWrDUtcUiy7ebJoTdhHm9H",
+      "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"229bf3f5f05f713b7ac93f8979e850072c1b5517\",\"question\":\"P(NEAR buybacks cover NEAR net issuance at the 24-month mark)\",\"h_months\":24,\"t0\":\"2026-11-11\",\"class\":\"R\",\"k_star\":5.76230527708,\"P\":0.0532063492063,\"interval\":[0.0222222222222,0.090546031746],\"resolution_date\":\"2028-11-11\",\"rule\":\"outcome = 1 if C_90 at t0 + h months >= 1, else 0; Brier = (P - outcome)^2\",\"sha256\":{\"results/registered_forecast.json\":\"ef0de918a1eaac95136614e2828a2f2e236e37db897953902ffc81b9d5f6cec3\",\"PREREG.md\":\"1f288ba679200639e30ccd13247c6ca6aa5a5abde7300b2e2c061e71ae05101e\",\"PREREG_2.md\":\"4848d6d37507d582577f1549dccb6059a63b1139d8670b22cd30b8925df47257\",\"PREREG_3.md\":\"450530662cc1521d00d9c7aa9fc15845a30e773c934cbec90773e44645008954\"}}"
+    },
+    {
+      "h_months": 36,
+      "index": 2,
+      "tx": "3TqUAUA9mUx99h5Ud9E3AGjqM6nj1uehDXtaEvRFstt1",
+      "block_hash": "A8kWVETqmuB9iWQLXkMyE1C7wW8U3kWHBcVnwvufJAeV",
+      "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"229bf3f5f05f713b7ac93f8979e850072c1b5517\",\"question\":\"P(NEAR buybacks cover NEAR net issuance at the 36-month mark)\",\"h_months\":36,\"t0\":\"2026-11-11\",\"class\":\"R\",\"k_star\":5.90534453255,\"P\":0.0612573099415,\"interval\":[0.0144736842105,0.119736842105],\"resolution_date\":\"2029-11-11\",\"rule\":\"outcome = 1 if C_90 at t0 + h months >= 1, else 0; Brier = (P - outcome)^2\",\"sha256\":{\"results/registered_forecast.json\":\"ef0de918a1eaac95136614e2828a2f2e236e37db897953902ffc81b9d5f6cec3\",\"PREREG.md\":\"1f288ba679200639e30ccd13247c6ca6aa5a5abde7300b2e2c061e71ae05101e\",\"PREREG_2.md\":\"4848d6d37507d582577f1549dccb6059a63b1139d8670b22cd30b8925df47257\",\"PREREG_3.md\":\"450530662cc1521d00d9c7aa9fc15845a30e773c934cbec90773e44645008954\"}}"
+    }
+  ]
+}

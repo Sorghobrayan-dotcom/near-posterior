@@ -77,7 +77,7 @@ def live_checks() -> list[tuple[bool, str]]:
     com = json.loads(FILE.read_text(encoding="utf-8"))
     net, acct = com["network"], com["contract"]
     acc = rpc(net, "query", {"request_type": "view_account", "finality": "final", "account_id": acct})
-    res = [(acc["code_hash"] == b58(WASM.read_bytes()),
+    res = [(acc["code_hash"] == b58(hashlib.sha256(WASM.read_bytes()).digest()),
             f"code deployed on {acct} ({net}) is contract/posterior_registry.wasm")]
     for c in com["commitments"]:
         q = rpc(net, "query", {"request_type": "call_function", "finality": "final", "account_id": acct,
