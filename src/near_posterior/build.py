@@ -5,14 +5,15 @@ touches the network.
 """
 
 import csv
+import datetime as dt
 import io
 import json
 
 import numpy as np
 
 from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
-                            multiverse, out, readme, recency, refclass, resolve, rpc_check, site,
-                            speccurve, thesis, validation, within)
+                            multiverse, out, readme, recalibration, recency, refclass, resolve,
+                            rpc_check, site, speccurve, thesis, validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -60,6 +61,9 @@ def compute(previous_history: str = "") -> dict:
     coh = multiverse.cohorts(sample24["Y"], sample24["e"], years24, head["k_star"])
     val, val_rows = validation.compute(panel, ov, moms, F_near)
     rec = recency.compute(panel, ov, moms, F_near, cov["t0"], exc["growth"]["k_star"])
+    t0_month = refclass.month_index(dt.date.fromisoformat(cov["t0"]))
+    recal = recalibration.compute(panel, ov, moms, F_near, t0_month, exc["growth"]["k_star"],
+                                  rec["choice"]["H_star"])
     reg = resolve.registered(panel)
     resolution = resolve.resolve(reg, snap)
     fwd = forward.run(forward.load(), {h: exceedance.class_sample(panel, moms[h], F_near)
@@ -89,6 +93,7 @@ def compute(previous_history: str = "") -> dict:
         "results/registered_forecast.json": out.json_text(reg),
         "results/validation.json": out.json_text(val),
         "results/recency.json": out.json_text(rec),
+        "results/recalibration.json": out.json_text(recal),
         "results/validation_targets.csv": out.csv_text(validation.CSV_HEADER, val_rows),
         "results/resolution.json": out.json_text(resolution),
         "RESOLUTION.md": resolve.markdown(reg, resolution),

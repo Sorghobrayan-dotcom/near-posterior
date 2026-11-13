@@ -1,0 +1,491 @@
+{
+  "convention": "PIT and F use the mid convention; coverage is PIT-based for raw and recalibrated forecasts alike; raw event probabilities are the S1 ones",
+  "label": "tertiary (specified after the secondary results)",
+  "models": {
+    "C0": {
+      "held_out_12": {
+        "difference": {
+          "brier_1": {
+            "interval": [
+              -0.028467927777,
+              -0.0184093331196
+            ],
+            "mean": -0.0236142796515
+          },
+          "brier_2": {
+            "interval": [
+              -0.028437298074,
+              -0.0195335015426
+            ],
+            "mean": -0.0242442186061
+          },
+          "brier_5": {
+            "interval": [
+              -0.013068560691,
+              -0.00856049956128
+            ],
+            "mean": -0.0112224144025
+          },
+          "ks": {
+            "interval": [
+              -0.0504928600316,
+              -0.00751405036864
+            ],
+            "mean": -0.032034594323
+          }
+        },
+        "fitted_on": "origins up to 2024",
+        "improves": true,
+        "raw": {
+          "brier_1": 0.194123992015,
+          "brier_2": 0.0942669637402,
+          "brier_5": 0.0227444221532,
+          "cov_50": 0.603951081844,
+          "cov_90": 0.902163687676,
+          "ks": 0.238440423084,
+          "reliability": {
+            "Y_ge_ln2": [
+              {
+                "bin": [
+                  0.0,
+                  0.05
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 1,
+                "mean_forecast": 0.0914423740511,
+                "observed": 0.0,
+                "targets": 1
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "entities": 73,
+                "mean_forecast": 0.172588957615,
+                "observed": 0.0566801619433,
+                "targets": 247
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.4
+                ],
+                "entities": 154,
+                "mean_forecast": 0.267567413629,
+                "observed": 0.0664206642066,
+                "targets": 813
+              },
+              {
+                "bin": [
+                  0.4,
+                  1.0
+                ],
+                "entities": 2,
+                "mean_forecast": 0.413134456848,
+                "observed": 0.0,
+                "targets": 2
+              }
+            ],
+            "Y_ge_ln5": [
+              {
+                "bin": [
+                  0.0,
+                  0.02
+                ],
+                "entities": 5,
+                "mean_forecast": 0.0148244619873,
+                "observed": 0.0,
+                "targets": 9
+              },
+              {
+                "bin": [
+                  0.02,
+                  0.05
+                ],
+                "entities": 25,
+                "mean_forecast": 0.0384565927744,
+                "observed": 0.0135135135135,
+                "targets": 74
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 91,
+                "mean_forecast": 0.0806251764837,
+                "observed": 0.010067114094,
+                "targets": 298
+              },
+              {
+                "bin": [
+                  0.1,
+                  1.0
+                ],
+                "entities": 145,
+                "mean_forecast": 0.136243748232,
+                "observed": 0.0117302052786,
+                "targets": 682
+              }
+            ]
+          }
+        },
+        "recalibrated": {
+          "brier_1": 0.170509712363,
+          "brier_2": 0.0700227451341,
+          "brier_5": 0.0115220077507,
+          "cov_50": 0.555973659454,
+          "cov_90": 0.937911571025,
+          "ks": 0.206405828761,
+          "reliability": {
+            "Y_ge_ln2": [
+              {
+                "bin": [
+                  0.0,
+                  0.05
+                ],
+                "entities": 33,
+                "mean_forecast": 0.0350803602967,
+                "observed": 0.0526315789474,
+                "targets": 76
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 76,
+                "mean_forecast": 0.0813056204358,
+                "observed": 0.0528634361233,
+                "targets": 227
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "entities": 120,
+                "mean_forecast": 0.127539921315,
+                "observed": 0.0413793103448,
+                "targets": 435
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.4
+                ],
+                "entities": 102,
+                "mean_forecast": 0.253536396489,
+                "observed": 0.104615384615,
+                "targets": 325
+              },
+              {
+                "bin": [
+                  0.4,
+                  1.0
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              }
+            ],
+            "Y_ge_ln5": [
+              {
+                "bin": [
+                  0.0,
+                  0.02
+                ],
+                "entities": 122,
+                "mean_forecast": 0.0116761774875,
+                "observed": 0.00891265597148,
+                "targets": 561
+              },
+              {
+                "bin": [
+                  0.02,
+                  0.05
+                ],
+                "entities": 128,
+                "mean_forecast": 0.0337172439378,
+                "observed": 0.00502512562814,
+                "targets": 398
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 54,
+                "mean_forecast": 0.0694444444444,
+                "observed": 0.0555555555556,
+                "targets": 90
+              },
+              {
+                "bin": [
+                  0.1,
+                  1.0
+                ],
+                "entities": 12,
+                "mean_forecast": 0.10822147651,
+                "observed": 0.0,
+                "targets": 14
+              }
+            ]
+          }
+        },
+        "test_entities": 164,
+        "test_targets": 1063,
+        "train_targets": 596
+      },
+      "in_sample_24": {
+        "note": "G fitted on all 24-month targets (origins 2024); no later origin to test it on",
+        "raw": {
+          "brier_1": 0.134177242082,
+          "brier_2": 0.0767613905697,
+          "brier_5": 0.0341721756782,
+          "cov_50": 0.373134328358,
+          "cov_90": 0.73631840796,
+          "ks": 0.320897496644,
+          "reliability": {
+            "Y_ge_ln2": [
+              {
+                "bin": [
+                  0.0,
+                  0.05
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "entities": 23,
+                "mean_forecast": 0.16367145672,
+                "observed": 0.0675675675676,
+                "targets": 74
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.4
+                ],
+                "entities": 40,
+                "mean_forecast": 0.253081997792,
+                "observed": 0.0314960629921,
+                "targets": 127
+              },
+              {
+                "bin": [
+                  0.4,
+                  1.0
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              }
+            ],
+            "Y_ge_ln5": [
+              {
+                "bin": [
+                  0.0,
+                  0.02
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.02,
+                  0.05
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 14,
+                "mean_forecast": 0.0772631143464,
+                "observed": 0.0,
+                "targets": 40
+              },
+              {
+                "bin": [
+                  0.1,
+                  1.0
+                ],
+                "entities": 44,
+                "mean_forecast": 0.168077867332,
+                "observed": 0.0186335403727,
+                "targets": 161
+              }
+            ]
+          }
+        },
+        "recalibrated": {
+          "brier_1": 0.0745732982079,
+          "brier_2": 0.0434348393672,
+          "brier_5": 0.0147386874444,
+          "cov_50": 0.497512437811,
+          "cov_90": 0.89552238806,
+          "ks": 0.00995024875622,
+          "reliability": {
+            "Y_ge_ln2": [
+              {
+                "bin": [
+                  0.0,
+                  0.05
+                ],
+                "entities": 22,
+                "mean_forecast": 0.0296312554873,
+                "observed": 0.0735294117647,
+                "targets": 68
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 42,
+                "mean_forecast": 0.0652751281188,
+                "observed": 0.0300751879699,
+                "targets": 133
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.4
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              },
+              {
+                "bin": [
+                  0.4,
+                  1.0
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              }
+            ],
+            "Y_ge_ln5": [
+              {
+                "bin": [
+                  0.0,
+                  0.02
+                ],
+                "entities": 26,
+                "mean_forecast": 0.0038886029622,
+                "observed": 0.0,
+                "targets": 87
+              },
+              {
+                "bin": [
+                  0.02,
+                  0.05
+                ],
+                "entities": 26,
+                "mean_forecast": 0.0366224433389,
+                "observed": 0.0277777777778,
+                "targets": 72
+              },
+              {
+                "bin": [
+                  0.05,
+                  0.1
+                ],
+                "entities": 24,
+                "mean_forecast": 0.0568585643213,
+                "observed": 0.0238095238095,
+                "targets": 42
+              },
+              {
+                "bin": [
+                  0.1,
+                  1.0
+                ],
+                "entities": 0,
+                "mean_forecast": null,
+                "observed": null,
+                "targets": 0
+              }
+            ]
+          }
+        },
+        "targets": 201
+      },
+      "near": {
+        "12": {
+          "F_R": 0.9460803974,
+          "P_cal": 0.00542495479204,
+          "entities": 188,
+          "interval": [
+            0.00107872606711,
+            0.0108937080452
+          ],
+          "k_star": 5.62273071846,
+          "targets": 1659,
+          "tested_out_of_sample": true
+        },
+        "24": {
+          "F_R": 0.946793650794,
+          "P_cal": 0.0,
+          "entities": 51,
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "k_star": 5.76230527708,
+          "targets": 201,
+          "tested_out_of_sample": false
+        }
+      }
+    }
+  }
+}

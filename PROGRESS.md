@@ -731,3 +731,42 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 115 passed in 90.97s
 ```
+
+## W2 - Recalibration (T2) (done)
+
+Tertiary (specified after the secondary results).
+- `recalibration.py`: G = empirical distribution function of training mid-PIT values;
+  recalibrated event probability `1 - G(F(ln k))` (F: weighted class distribution function, mid
+  convention); recalibrated PIT `G(PIT)`. Coverage of the central 50 and 90 percent intervals is
+  PIT-based for raw and recalibrated forecasts alike; raw event probabilities are the S1 ones.
+  Brier differences with the cluster bootstrap over target entities; KS difference by the same
+  entity resampling. Rule used later by the thesis (`improves`): recalibration improves the
+  held-out scores if the mean Brier falls for k = 1, 2, 5, no interval is above 0 and at least
+  one is below 0. `results/recalibration.json`. W1 kept H* = infinity, so only C0 is reported.
+- Held-out test at 12 months: G fitted on 596 targets with origins up to 2024, tested on 1063
+  targets with origins 2025 (164 protocols). Raw against recalibrated: Brier (fees maintained)
+  0.1941 vs 0.1705, difference -0.0236 (-0.0285 to -0.0184); Brier (doubled) 0.0943 vs 0.0700,
+  -0.0242 (-0.0284 to -0.0195); Brier (5x) 0.0227 vs 0.0115, -0.0112 (-0.0131 to -0.0086); KS
+  of PIT 0.238 vs 0.206, -0.032 (-0.050 to -0.008); coverage 50 percent 0.604 vs 0.556, 90
+  percent 0.902 vs 0.938. Recalibration improves the held-out scores by the rule. The 2025
+  reliability is closer but still above the diagonal (largest recalibrated bin: forecast 0.254,
+  observed 0.105).
+- 24 months, G fitted on all 201 targets (origins 2024 only, in sample): Brier (doubled) 0.0768
+  vs 0.0434; KS 0.321 vs 0.010 (in sample, so not a test).
+- NEAR Intents: P_cal at 12 months 0.0054 (0.0011 to 0.0109), F_R(ln k*) = 0.946, G from all
+  1659 12-month targets (map tested out of sample at this horizon); at 24 months P_cal 0.000
+  (0.000 to 0.000), F_R(ln k*) = 0.947: none of the 201 past 24-month targets (51 protocols,
+  origins 2024) had a PIT above that level, in sample.
+- Tests: uniform PITs leave G close to the identity; a forecast that doubles a Normal tail
+  probability is corrected to within four standard errors; changing a 2025 target does not
+  change the fitted map; the map is applied to event probabilities and PITs as specified; the
+  `improves` rule.
+
+```
+> uv run python -m near_posterior.verify --write
+46 lines, all PASS
+> uv run python -m near_posterior.refresh
+refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
+> uv run pytest -q
+120 passed in 111.57s
+```
