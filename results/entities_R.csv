@@ -17,7 +17,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,eigencloud,EigenCloud,Restaking,5,0,0.149064926587,2025-07-01
 12,ens,ENS,Domains,14,0,1.97698719257,2021-11-01
 12,euler-dao,Euler DAO,Risk Curators,4,0,0.0253751742135,2025-08-01
-12,foundation,Foundation,NFT Marketplace,5,0,0.0992257733764,2022-03-01
+12,foundation,Foundation,NFT Marketplace,4,0,0.0887332566512,2022-02-01
 12,four.meme,four.meme,Launchpad,1,0,0.0281295111865,2025-11-01
 12,gains-network,Gains Network,Derivatives,5,0,1.00295446293,2023-05-01
 12,gamma,Gamma,Liquidity Manager,12,0,1.28856995017,2024-03-01
@@ -28,50 +28,49 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,looksrare,LooksRare,NFT Marketplace,3,0,0.0629423411419,2022-11-01
 12,maestro,Maestro,Telegram Bot,25,0,3.39905814663,2024-02-01
 12,metaplex,Metaplex,Launchpad,7,0,0.403970175839,2025-01-01
-12,meth-protocol,mETH Protocol,Liquid Staking,16,0,0.811597855496,2024-11-01
-12,mev-capital,MEV Capital,Risk Curators,3,0,0.0313361957375,2025-11-01
+12,meth-protocol,mETH Protocol,Liquid Staking,15,0,0.811597855496,2024-11-01
+12,mev-capital,MEV Capital,Risk Curators,2,0,0.0313361957375,2025-11-01
 12,nouns,Nouns,Services,7,0,0.628583639997,2022-12-01
 12,osmosis-dex,Osmosis DEX,Dexs,6,0,0.726954780846,2024-01-01
 12,padre,Padre,Telegram Bot,2,0,0.01,2025-10-01
 12,parent#Edge,Edge,Derivatives,1,0,0.470721480605,2024-06-01
-12,parent#aave,aave,Lending,21,0,4.83072484124,2023-07-01
+12,parent#aave,aave,Lending,22,0,4.83072484124,2023-07-01
 12,parent#abracadabra,abracadabra,CDP,1,0,0.127148749922,2022-06-01
-12,parent#aero-protocol,aero-protocol,Dexs,5,1,13.9122385915,2024-03-01
+12,parent#aero-protocol,aero-protocol,Dexs,6,1,13.9122385915,2024-03-01
 12,parent#apeswap,apeswap,Dexs,3,0,0.0519253165277,2022-02-01
 12,parent#apex-protocol,apex-protocol,Derivatives,1,0,0.125559846648,2025-11-01
 12,parent#astherus,astherus,Derivatives,3,0,1.91256501341,2025-07-01
 12,parent#balancer,balancer,Dexs,27,0,1.61055334353,2021-01-01
 12,parent#bancor,bancor,Dexs,7,0,0.13033712834,2021-10-01
-12,parent#benqi,benqi,Liquid Staking,4,0,0.887348627903,2025-01-01
+12,parent#benqi,benqi,Liquid Staking,3,0,0.887348627903,2025-01-01
 12,parent#biswap,biswap,Dexs,3,0,0.106331440108,2022-09-01
-12,parent#bluefin,bluefin,Dexs,9,0,0.799582510938,2025-02-01
+12,parent#bluefin,bluefin,Dexs,8,0,0.799582510938,2025-02-01
 12,parent#blur,blur,NFT Marketplace,4,0,0.689098984054,2024-02-01
 12,parent#bonkfun,bonkfun,Telegram Bot,17,1,6.64825551223,2024-10-01
 12,parent#camelot,camelot,Dexs,7,0,0.629240517511,2024-02-01
-12,parent#cetus,cetus,Dexs,13,0,0.564050688919,2024-11-01
+12,parent#cetus,cetus,Dexs,12,0,0.564050688919,2024-11-01
 12,parent#chainlink,chainlink,Services,2,0,1.49622438006,2025-10-01
 12,parent#compound-finance,compound-finance,Lending,10,4,9.51864804929,2020-08-01
-12,parent#curve-finance,curve-finance,Dexs,24,0,3.94604553869,2022-10-01
+12,parent#curve-finance,curve-finance,Dexs,25,0,3.94604553869,2022-10-01
 12,parent#desk,desk,Derivatives,1,0,0.112035855239,2024-06-01
 12,parent#dodo,dodo,Dexs,9,0,3.12418618328,2024-11-01
 12,parent#drift,drift,Derivatives,9,0,0.80209389819,2025-04-01
 12,parent#dydx,dydx,Derivatives,7,0,0.590406655953,2024-12-01
 12,parent#ethena,ethena,Basis Trading,6,1,6.38128616372,2024-11-01
-12,parent#ether-fi,ether-fi,Liquid Staking,5,0,1.14523049122,2025-05-01
+12,parent#ether-fi,ether-fi,Liquid Staking,6,0,1.14523049122,2025-05-01
 12,parent#euler,euler,Lending,6,0,0.873463456676,2025-06-01
 12,parent#farcaster,farcaster,Launchpad,7,0,3.58643209797,2025-05-01
-12,parent#felix,felix,Onchain Capital Allocator,1,0,0.148709597485,2025-10-01
 12,parent#fjord-foundry,fjord-foundry,Launchpad,3,0,0.01,2024-04-01
 12,parent#fluid,fluid,Lending,15,0,2.86154298318,2024-09-01
 12,parent#frax-finance,frax-finance,Liquid Staking,5,0,0.855702794028,2024-03-01
 12,parent#friend-tech,friend-tech,SoFi,2,0,0.00117582145327,2024-07-01
 12,parent#gmx,gmx,Derivatives,28,0,1.70301234555,2022-06-01
 12,parent#jito,jito,MEV,3,3,52.7322294541,2024-01-01
-12,parent#jupiter,jupiter,Derivatives,3,3,27.1303133891,2024-01-01
+12,parent#jupiter,jupiter,Derivatives,4,3,27.1303133891,2024-01-01
 12,parent#kamino-finance,kamino-finance,Lending,16,0,1.92539441751,2024-10-01
 12,parent#kelp-dao,kelp-dao,Liquid Restaking,3,0,0.531451803182,2025-09-01
 12,parent#ktx.finance,ktx.finance,Derivatives,4,0,0.01,2025-02-01
-12,parent#kyberswap,kyberswap,DEX Aggregator,4,0,0.35009129124,2025-01-01
+12,parent#kyberswap,kyberswap,DEX Aggregator,3,0,0.35009129124,2025-01-01
 12,parent#layerzero,layerzero,Bridge,11,0,0.328432196192,2024-01-01
 12,parent#lifinity,lifinity,Dexs,1,0,0.00384474862501,2025-02-01
 12,parent#liquity,liquity,CDP,7,0,0.22689765827,2022-11-01
@@ -80,19 +79,19 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#maple-finance,maple-finance,Lending,3,0,4.75641325911,2025-01-01
 12,parent#marinade-finance,marinade-finance,Liquid Staking,12,0,1.39806157847,2024-12-01
 12,parent#metamask,metamask,Wallets,15,0,1.11984483832,2024-09-01
-12,parent#moonshot,moonshot,Trading App,2,0,0.18413035031,2025-06-01
+12,parent#moonshot,moonshot,Trading App,1,0,0.114732698678,2025-05-01
 12,parent#morpho,morpho,Lending,11,1,6.15718754109,2024-12-01
 12,parent#mux-protocol,mux-protocol,Derivatives,5,0,0.128369822884,2024-02-01
 12,parent#navi-protocol,navi-protocol,Lending,2,0,0.175930377522,2025-10-01
 12,parent#opensea,opensea,NFT Marketplace,5,5,54.3822632311,2021-04-01
-12,parent#optimism-foundation,optimism-foundation,Services,16,0,2.90448236432,2023-11-01
+12,parent#optimism-foundation,optimism-foundation,Services,15,0,2.90448236432,2023-11-01
 12,parent#orca,orca,Dexs,3,0,0.678218302088,2025-11-01
 12,parent#pancakeswap,pancakeswap,Dexs,20,0,4.00177972285,2023-06-01
 12,parent#pangolin,pangolin,Dexs,5,0,0.0963515485876,2022-04-01
 12,parent#paxos,paxos,Stablecoin Issuer,6,2,27.1975976048,2022-03-01
 12,parent#pendle,pendle,Yield,11,0,1.0828134339,2024-06-01
 12,parent#phantom,phantom,Wallets,3,0,0.395947026616,2025-06-01
-12,parent#pharaoh-exchange,pharaoh-exchange,Dexs,4,0,0.314263520157,2025-05-01
+12,parent#pharaoh-exchange,pharaoh-exchange,Dexs,3,0,0.314263520157,2025-05-01
 12,parent#puffer-finance,puffer-finance,Liquid Restaking,1,0,0.11436889487,2025-02-01
 12,parent#pulsex,pulsex,Dexs,5,0,0.206440263686,2025-02-01
 12,parent#quickswap,quickswap,Dexs,14,0,0.335810837789,2022-09-01
@@ -100,7 +99,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#raydium,raydium,Dexs,3,3,31.7400073472,2023-12-01
 12,parent#resolv,resolv,Basis Trading,2,0,0.01,2025-10-01
 12,parent#sanctum,sanctum,Liquid Staking,17,0,3.09697844525,2024-07-01
-12,parent#securitize,securitize,RWA,11,0,4.79270397109,2025-01-01
+12,parent#securitize,securitize,RWA,10,0,4.12295794455,2025-02-01
 12,parent#solv-protocol,solv-protocol,Bridge,2,0,0.668458299935,2025-10-01
 12,parent#sosovalue,sosovalue,Indexes,2,0,0.833869089424,2025-11-01
 12,parent#spark,spark,Lending,5,0,1.66472916973,2025-06-01
@@ -120,7 +119,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#uniswap,uniswap,Dexs,2,2,56.73288124,2020-08-01
 12,parent#usual,usual,RWA,5,0,0.120587859771,2025-11-01
 12,parent#venus-finance,venus-finance,Lending,18,0,0.737992140155,2024-10-01
-12,parent#yearn,yearn,Yield Aggregator,13,0,0.745962838539,2022-05-01
+12,parent#yearn,yearn,Yield Aggregator,12,0,0.593339441779,2022-04-01
 12,photon,Photon,Trading App,8,0,0.258776029819,2024-11-01
 12,renzo,Renzo,Liquid Restaking,4,0,0.139277872526,2025-08-01
 12,rocket-pool,Rocket Pool,Liquid Staking,26,0,2.99731590769,2023-12-01
@@ -141,7 +140,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,convex-finance,Convex Finance,Yield,19,0,1.00874102039,2023-11-01
 24,debridge,deBridge,Bridge,1,0,0.23954034648,2024-07-01
 24,ens,ENS,Domains,14,0,0.408668533332,2021-11-01
-24,foundation,Foundation,NFT Marketplace,5,0,0.0324039806648,2022-02-01
+24,foundation,Foundation,NFT Marketplace,4,0,0.0324039806648,2022-02-01
 24,gains-network,Gains Network,Derivatives,5,0,0.360632639074,2023-06-01
 24,gamma,Gamma,Liquidity Manager,8,0,0.0541350284749,2024-03-01
 24,looksrare,LooksRare,NFT Marketplace,3,0,0.01,2022-11-01
@@ -150,19 +149,19 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,nouns,Nouns,Services,7,0,0.125449457543,2022-06-01
 24,osmosis-dex,Osmosis DEX,Dexs,6,0,0.30960592941,2024-01-01
 24,parent#Edge,Edge,Derivatives,1,0,0.01,2024-06-01
-24,parent#aave,aave,Lending,21,11,16.4317027776,2023-03-01
+24,parent#aave,aave,Lending,22,11,16.4317027776,2023-03-01
 24,parent#abracadabra,abracadabra,CDP,1,0,0.0753417594044,2022-06-01
-24,parent#aero-protocol,aero-protocol,Dexs,4,0,3.43972428617,2024-03-01
+24,parent#aero-protocol,aero-protocol,Dexs,5,0,3.43972428617,2024-03-01
 24,parent#apeswap,apeswap,Dexs,3,0,0.0314233660622,2022-02-01
 24,parent#balancer,balancer,Dexs,27,0,1.9618692746,2023-02-01
 24,parent#bancor,bancor,Dexs,7,0,0.161252319799,2022-01-01
-24,parent#benqi,benqi,Liquid Staking,2,0,0.587688440932,2024-06-01
+24,parent#benqi,benqi,Liquid Staking,1,0,0.49744359975,2024-05-01
 24,parent#blur,blur,NFT Marketplace,4,0,0.01,2024-05-01
 24,parent#bonkfun,bonkfun,Telegram Bot,6,0,1.46578582585,2024-11-01
 24,parent#camelot,camelot,Dexs,6,0,0.0324675484598,2024-02-01
 24,parent#cetus,cetus,Dexs,1,0,0.154665287736,2024-11-01
 24,parent#compound-finance,compound-finance,Lending,10,0,1.09344643747,2020-08-01
-24,parent#curve-finance,curve-finance,Dexs,24,0,2.91028251143,2021-12-01
+24,parent#curve-finance,curve-finance,Dexs,25,0,2.91028251143,2021-12-01
 24,parent#desk,desk,Derivatives,1,0,0.01,2024-06-01
 24,parent#dodo,dodo,Dexs,1,0,0.0814997500358,2024-11-01
 24,parent#dydx,dydx,Derivatives,3,0,0.0969546295968,2024-11-01
@@ -173,7 +172,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#friend-tech,friend-tech,SoFi,2,0,0.000122446640848,2024-07-01
 24,parent#gmx,gmx,Derivatives,28,0,1.3329808353,2022-06-01
 24,parent#jito,jito,MEV,3,1,6.56832973644,2024-01-01
-24,parent#jupiter,jupiter,Derivatives,3,1,16.8360541035,2024-01-01
+24,parent#jupiter,jupiter,Derivatives,4,1,16.8360541035,2024-01-01
 24,parent#kamino-finance,kamino-finance,Lending,4,0,0.842805205937,2024-08-01
 24,parent#ktx.finance,ktx.finance,Derivatives,1,0,0.01,2024-11-01
 24,parent#layerzero,layerzero,Bridge,11,0,0.1441369519,2023-11-01
@@ -183,8 +182,8 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#metamask,metamask,Wallets,11,0,1.77622637736,2023-11-01
 24,parent#mux-protocol,mux-protocol,Derivatives,5,0,0.0131153671776,2024-02-01
 24,parent#opensea,opensea,NFT Marketplace,5,0,3.38828401414,2021-04-01
-24,parent#optimism-foundation,optimism-foundation,Services,11,0,1.01702753559,2023-04-01
-24,parent#pancakeswap,pancakeswap,Dexs,20,4,15.1016822186,2023-11-01
+24,parent#optimism-foundation,optimism-foundation,Services,10,0,0.883559175455,2024-01-01
+24,parent#pancakeswap,pancakeswap,Dexs,20,6,15.1016822186,2023-11-01
 24,parent#pangolin,pangolin,Dexs,5,0,0.186690985931,2022-04-01
 24,parent#paxos,paxos,Stablecoin Issuer,6,0,1.64611061022,2022-03-01
 24,parent#pendle,pendle,Yield,2,0,0.45693804928,2024-06-01
@@ -202,7 +201,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#trader-joe,trader-joe,Dexs,17,0,1.09424512091,2022-11-01
 24,parent#uniswap,uniswap,Dexs,2,2,25.9153182666,2020-08-01
 24,parent#venus-finance,venus-finance,Lending,6,0,0.296157632377,2024-10-01
-24,parent#yearn,yearn,Yield Aggregator,13,0,0.890307181863,2022-05-01
+24,parent#yearn,yearn,Yield Aggregator,12,0,0.633327519925,2022-04-01
 24,photon,Photon,Trading App,1,0,0.02890983763,2024-11-01
 24,rocket-pool,Rocket Pool,Liquid Staking,14,0,1.62181236498,2023-10-01
 24,soltradingbot,SolTradingBot,Telegram Bot,1,0,0.018783159032,2024-09-01
@@ -212,18 +211,18 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,uniswap-labs,Uniswap Labs,Developer Tools,4,0,1.80210135247e-07,2024-08-01
 36,convex-finance,Convex Finance,Yield,13,0,0.395077213749,2022-11-01
 36,ens,ENS,Domains,14,0,0.203623695985,2021-11-01
-36,foundation,Foundation,NFT Marketplace,5,0,0.0109101490273,2022-02-01
+36,foundation,Foundation,NFT Marketplace,4,0,0.0109101490273,2022-02-01
 36,gains-network,Gains Network,Derivatives,2,0,0.225604379382,2023-05-01
 36,looksrare,LooksRare,NFT Marketplace,3,0,0.01,2022-11-01
 36,maestro,Maestro,Telegram Bot,6,0,0.430699228127,2023-11-01
 36,nouns,Nouns,Services,7,0,0.0612367814912,2022-12-01
-36,parent#aave,aave,Lending,20,11,18.0723824346,2023-01-01
+36,parent#aave,aave,Lending,21,11,18.0723824346,2023-01-01
 36,parent#apeswap,apeswap,Dexs,3,0,0.0261947650102,2022-02-01
 36,parent#balancer,balancer,Dexs,27,0,0.848917582286,2022-11-01
 36,parent#bancor,bancor,Dexs,7,0,0.0477276821964,2022-04-01
 36,parent#biswap,biswap,Dexs,3,0,0.0124901591122,2022-09-01
 36,parent#compound-finance,compound-finance,Lending,10,0,0.772568329554,2020-08-01
-36,parent#curve-finance,curve-finance,Dexs,24,0,1.53736331609,2022-10-01
+36,parent#curve-finance,curve-finance,Dexs,25,0,1.53736331609,2022-10-01
 36,parent#gmx,gmx,Derivatives,18,0,1.27396174279,2022-07-01
 36,parent#layerzero,layerzero,Bridge,3,0,0.0794823361247,2023-11-01
 36,parent#liquity,liquity,CDP,7,0,0.10881386982,2022-11-01
@@ -231,8 +230,8 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 36,parent#maple-finance,maple-finance,Lending,2,0,3.97643031413,2022-12-01
 36,parent#metamask,metamask,Wallets,2,0,1.31640777809,2023-10-01
 36,parent#opensea,opensea,NFT Marketplace,5,0,1.17451461339,2021-04-01
-36,parent#optimism-foundation,optimism-foundation,Services,5,0,0.334958535383,2023-04-01
-36,parent#pancakeswap,pancakeswap,Dexs,15,0,5.8225479928,2022-11-01
+36,parent#optimism-foundation,optimism-foundation,Services,4,0,0.200453147936,2023-05-01
+36,parent#pancakeswap,pancakeswap,Dexs,15,1,5.8225479928,2022-11-01
 36,parent#pangolin,pangolin,Dexs,5,0,0.0168328698746,2022-03-01
 36,parent#paxos,paxos,Stablecoin Issuer,6,0,1.05118970493,2023-09-01
 36,parent#quickswap,quickswap,Dexs,14,0,1.34825593563,2022-09-01
@@ -244,7 +243,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 36,parent#tokenlon,tokenlon,Dexs,3,0,0.432539063842,2022-01-01
 36,parent#trader-joe,trader-joe,Dexs,9,0,1.22147634125,2022-11-01
 36,parent#uniswap,uniswap,Dexs,2,1,17.3902192792,2020-08-01
-36,parent#yearn,yearn,Yield Aggregator,13,0,0.962726910486,2022-05-01
+36,parent#yearn,yearn,Yield Aggregator,12,0,0.80997249314,2022-04-01
 36,rocket-pool,Rocket Pool,Liquid Staking,2,0,0.654219858965,2023-10-01
 36,tether,Tether,Stablecoin Issuer,3,3,93.4020892781,2022-02-01
 36,thorchain-dex,THORChain DEX,Dexs,2,0,1.79176679173,2022-07-01

@@ -462,14 +462,14 @@
       },
       "near": {
         "12": {
-          "F_R": 0.9460803974,
+          "F_R": 0.947779758368,
           "P_cal": 0.00542495479204,
           "entities": 188,
           "interval": [
             0.00107872606711,
             0.0108937080452
           ],
-          "k_star": 5.62273071846,
+          "k_star": 5.53264741303,
           "origin_years": [
             2023,
             2024,
@@ -483,14 +483,14 @@
           "upper_note": "exact one-sided 95 percent upper bound (Clopper-Pearson), protocols as the independent units; added after the results because the bootstrap interval is degenerate when no past forecast reached the level"
         },
         "24": {
-          "F_R": 0.946793650794,
+          "F_R": 0.946888888889,
           "P_cal": 0.0,
           "entities": 51,
           "interval": [
             0.0,
             0.0
           ],
-          "k_star": 5.76230527708,
+          "k_star": 5.66984940412,
           "origin_years": [
             2024
           ],
