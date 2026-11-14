@@ -1039,3 +1039,27 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
 > uv run pytest -q
 141 passed in 91.49s (0:01:31)
 ```
+
+## 2026-11-14: wording found by the full audit (16-audit-complet.md)
+
+- `readme.py`, judges block: the headline is no longer called an upper bound "because it holds
+  price and issuance fixed". Price and issuance can move the odds both ways (lever table: price
+  halved gives 0.079, issuance cut to a quarter 0.159); only the backtest supports "more likely
+  lower than higher", and the sentence now says so.
+- `thesis.py`, investor sentence (README brief, THESIS position and brief, page): "very likely
+  does not offset" instead of "does not offset", since P = 0.053.
+- `ervhint/tideline` answers 404 on GitHub (deleted by its author; the commit cited in
+  `data/claims.csv` and `data/forward_claims.csv` is gone). The rows stay, with the values and
+  quotes read at that commit; `thesis.DELETED_SOURCES` adds one sentence to section 10, the
+  scoreboard and the audit block.
+- README disclosure lists the Node.js standard library (`onchain/near.mjs`) and Rust `core`
+  (`contract/`, no crate).
+- After `build`, `results/validation_targets.csv` showed the known 12th-digit difference on
+  Windows; it was restored to the committed file.
+
+```
+> uv run python -m near_posterior.verify
+62 lines, all PASS (exit 0)
+> uv run pytest -q
+141 passed in 91.93s (0:01:31)
+```

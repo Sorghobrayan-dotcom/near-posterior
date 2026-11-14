@@ -11,7 +11,7 @@ advice.
 <!-- BEGIN GENERATED judges -->
 - **No install:** [the page](https://sorghobrayan-dotcom.github.io/near-posterior/site/), [the same on-chain checks run by your browser](https://sorghobrayan-dotcom.github.io/near-posterior/site/verify.html), [the contract `brayan-posterior.testnet`](https://testnet.nearblocks.io/address/brayan-posterior.testnet).
 - **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); `uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: `PASS` lines for the contract's code hash, each record read back from the chain equal to the repository copy, and its only key limited to `resolve`).
-- **Two limits:** the headline number is an upper bound: it holds price and issuance fixed, and replayed on past data the method was too optimistic. Everything written on chain is on NEAR testnet, not mainnet.
+- **Two limits:** the headline number holds price and issuance at today's values, and either can move the odds both ways (see the lever table); replayed on past data the method was too optimistic, so the real odds are more likely lower than higher. Everything written on chain is on NEAR testnet, not mainnet.
 - **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-12 today) are refreshed every day, hence small differences between them.
 - **Resolves during judging:** a short forecast sits on a second locked contract, [`brayan-posterior-live.testnet`](https://testnet.nearblocks.io/address/brayan-posterior-live.testnet), due 2026-11-17. After that date the author writes the outcome next to it and any NEAR account can add its own reading with `attest`.
 <!-- END GENERATED judges -->
@@ -23,7 +23,7 @@ advice.
 - **Today:** they absorb 18.5% of it (dollar value, last 90 days to 2026-11-12).
 - **The bar:** to absorb all of it, NEAR Intents fees must grow 5.67x in 24 months, from $77.5M to $439.2M a year, with price, issuance and the share of fees spent on buybacks unchanged.
 - **The odds:** 5.3%, about 1 chance in 19: the share of 75 DeFi protocols that once had NEAR Intents' size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.
-- **For an investor:** On base rates the buyback does not offset dilution by the 24-month mark: net supply growth stays the base case. A case for NEAR should not rest on buybacks creating scarcity within this horizon.
+- **For an investor:** On base rates the buyback very likely does not offset dilution by the 24-month mark: net supply growth stays the base case. A case for NEAR should not rest on buybacks creating scarcity within this horizon.
 - **What could change it:** governance, more than market growth: all fees to buybacks 15.2%, issuance cut to a quarter 15.9%, both 34.8%; the best cell of the lever table is 49.1%, so none reaches even odds.
 - **What would prove this wrong:** annualised NEAR Intents fees above $439.2M at today's price and issuance. `history.csv` records the odds at every daily snapshot.
 - **Locked in advance:** the forecasts are written on NEAR (contract `brayan-posterior.testnet`), cannot be edited, and resolve on 2028-11-11; one command rebuilds every number from the committed data.
@@ -236,7 +236,9 @@ daily workflow adds `--commit`). The reference panel is not refetched;
   only commits are the daily data refresh (`refresh.yml`) and the resolution of the short
   forecast of `PREREG_4.md`, as that file and the "Resolving it" steps above require: new
   data and an on-chain transaction, no change of code or method.
-- Libraries: Python standard library and `numpy`; `pytest` for tests. No other dependency.
+- Libraries: Python standard library and `numpy`; `pytest` for tests; the Node.js standard
+  library for `onchain/near.mjs`; Rust `core` only, no crate, for `contract/`. No other
+  dependency.
 - Other project of the author (rule on two submissions per person): the author also takes part,
   as a member of team TrustLock, in a second and independent NEAR HACKATHON submission,
   [TrustLock](https://github.com/drizzy765/Trustlock) (pay on delivery for sellers on social

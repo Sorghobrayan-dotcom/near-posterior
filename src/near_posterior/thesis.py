@@ -31,6 +31,19 @@ LIMITS = [
 ]
 
 
+# Public theses whose repository was deleted by its author after we read it at the cited commit.
+DELETED_SOURCES = {"ervhint/tideline": "2026-11-14"}
+
+
+def deleted_note(code: bool = True) -> str:
+    """Return the sentence on cited repositories that their authors deleted, or ''."""
+    q = "`" if code else ""
+    return " ".join(
+        f"{q}{t}{q} was deleted by its author after we read it (missing on {d}): its rows keep "
+        f"the values and quotes read at the cited commit ({q}data/claims.csv{q}, "
+        f"{q}data/forward_claims.csv{q})." for t, d in sorted(DELETED_SOURCES.items()))
+
+
 def parse(texts: dict) -> dict:
     """Return parsed results: `name.json` as res[name], `name.csv` rows as res[name_rows]."""
     res = {}
@@ -195,8 +208,9 @@ def investor(res: dict) -> list[str]:
     iss = lever(res, "lever grid", "kappa_90", 0.25, 1.0)
     both = lever(res, "lever grid", "1.0", 0.25, 1.0)
     if P < 0.10:
-        first = ("For an investor, this means that on base rates the buyback does not offset "
-                 "dilution by the 24-month mark: net supply growth stays the base case.")
+        first = ("For an investor, this means that on base rates the buyback very likely does "
+                 "not offset dilution by the 24-month mark: net supply growth stays the base "
+                 "case.")
     elif P <= 0.50:
         first = ("For an investor, this means that on base rates offsetting dilution by the "
                  "24-month mark is possible but not the base case.")
@@ -669,6 +683,8 @@ def section_others(res: dict) -> list[str]:
           f"({f(r['P_lo'])} to {f(r['P_hi'])}) |" for r in fwd]
     L += ["", "The base rate is about fee growth in class R; applying it to revenue or volume "
           "assumes a constant take rate.", ""]
+    if DELETED_SOURCES:
+        L += [deleted_note(), ""]
     return L
 
 

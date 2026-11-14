@@ -43,9 +43,10 @@ def blocks(res: dict) -> dict:
         "every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: "
         "`PASS` lines for the contract's code hash, each record read back from the chain equal to "
         "the repository copy, and its only key limited to `resolve`).",
-        "- **Two limits:** the headline number is an upper bound: it holds price and issuance "
-        "fixed, and replayed on past data the method was too optimistic. Everything written on "
-        "chain is on NEAR testnet, not mainnet.",
+        "- **Two limits:** the headline number holds price and issuance at today's values, and "
+        "either can move the odds both ways (see the lever table); replayed on past data the "
+        "method was too optimistic, so the real odds are more likely lower than higher. "
+        "Everything written on chain is on NEAR testnet, not mainnet.",
         f"- **Two snapshots:** \"registered\" numbers (t0 = {res['registered_forecast']['t0']}) "
         f"are the ones written on chain and never recomputed; \"daily\" numbers (t0 = "
         f"{h['t0']} today) are refreshed every day, hence small differences between them.",

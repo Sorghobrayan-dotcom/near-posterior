@@ -138,7 +138,8 @@ def scoreboard(res: dict) -> str:
                  f"Each row is a growth multiple stated in a public NEAR thesis, read at a fixed "
                  f"commit, next to the share of {h['entities']} comparable protocols that grew "
                  f"that much in 24 months; applying a fee base rate to revenue or volume assumes "
-                 f"a constant take rate.", anchor="scoreboard", tag="secondary")
+                 f"a constant take rate. {thesis.deleted_note(code=False)}".rstrip(),
+                 anchor="scoreboard", tag="secondary")
 
 
 def milestones_block(res: dict) -> str:
@@ -765,7 +766,7 @@ def tables(res: dict) -> list[str]:
               "near_posterior.audit.run -> results/audit.csv",
               f"{a['claims']} values from {a['theses']} theses: {a['status_counts']['reproduced']} "
               f"reproduced within 2 percent under our reading of their definition; the status "
-              f"does not say a figure is wrong."),
+              f"does not say a figure is wrong. {thesis.deleted_note(code=False)}".rstrip()),
     ]
 
 
