@@ -18,7 +18,7 @@ letter-spacing:-.01em}
 h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
 section{background:var(--card);border:1px solid var(--line);border-radius:12px;
 padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
-.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.lead{font-size:1.5em;font-weight:700;margin:.5em 0 0}ol.steps{margin:14px 0 4px;padding-left:1.3em;display:grid;gap:6px}ol.steps b{color:var(--near)}header details{margin-top:14px}header summary{cursor:pointer;color:var(--near);font-size:.9em}.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
 .big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
 font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
 .tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
@@ -76,15 +76,19 @@ section{padding:14px}}</style>
 </head>
 <body>
 <header>
-<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - not financial advice</p>
+<p class="kicker">NEAR HACKATHON - investment thesis - not financial advice</p>
 <h1>Will NEAR's buybacks offset its new supply 24 months from now?</h1>
-<div class="tiles"><div><span>Buybacks / new supply today</span><b>18.5%</b></div><div><span>Coverage read from the chain alone</span><b>19.0%</b><i>NEAR into the buyback wallet / new NEAR, 90 days to 2026-11-11, mainnet RPC</i></div><div><span>Fee growth needed in 24 months</span><b>5.67x</b></div><div><span>Comparable protocols</span><b>75</b></div><div><span>Base rate (registered)</span><b>5.3%</b></div><div><span>Forecast stored on</span><b>NEAR</b></div></div>
+<p class="lead">Probably not. About 1 chance in 19.</p>
 <p class="big">5.3%</p>
-<p><strong>90% interval 2.2% to 9.1%</strong> - share of 75 comparable DefiLlama protocols that grew fees enough - snapshot t0 = 2026-11-12 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
-<p>Method: buybacks cover 18.5% of net issuance today, so NEAR Intents fees must grow 5.67x in 24 months; the number above is how often protocols of the same size and age did that.</p>
+<p>That is how often DeFi protocols of the size and age of NEAR Intents grew enough (<strong>90% interval 2.2% to 9.1%</strong>). Tested on past data, this method was too optimistic, so the real odds are more likely lower than higher.</p>
+<ol class="steps"><li><b>Today</b> buybacks absorb 18.5% of the new NEAR (19.0% when read from the chain alone).</li><li><b>The bar</b> to absorb all of it: NEAR Intents fees must grow 5.67x in 24 months.</li><li><b>The record</b> of 75 DeFi protocols that once had the same size and age: 5.3% of them did.</li></ol>
+<div class="tiles"><div><span>New NEAR absorbed by buybacks today</span><b>18.5%</b></div><div><span>The same, read from the chain alone</span><b>19.0%</b><i>NEAR into the buyback wallet / new NEAR, 90 days to 2026-11-11, mainnet RPC</i></div><div><span>Fee growth needed in 24 months</span><b>5.67x</b></div><div><span>Comparable protocols</span><b>75</b></div><div><span>How often it happened</span><b>5.3%</b></div><div><span>Forecast stored on</span><b>NEAR</b></div></div>
+<details><summary>The summary in eight lines, the rules and the snapshot</summary>
 <ul class="brief"><li><strong>The question:</strong> NEAR spends part of the NEAR Intents fees on buying back NEAR. In 24 months from now, will these buybacks absorb all the new NEAR that the protocol issues?</li><li><strong>Today:</strong> they absorb 18.5% of it (dollar value, last 90 days to 2026-11-12).</li><li><strong>The bar:</strong> to absorb all of it, NEAR Intents fees must grow 5.67x in 24 months, from $77.5M to $439.2M a year, with price, issuance and the share of fees spent on buybacks unchanged.</li><li><strong>The odds:</strong> 5.3%, about 1 chance in 19: the share of 75 DeFi protocols that once had NEAR Intents&#x27; size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.</li><li><strong>For an investor:</strong> On base rates the buyback does not offset dilution by the 24-month mark: net supply growth stays the base case. A case for NEAR should not rest on buybacks creating scarcity within this horizon.</li><li><strong>What could change it:</strong> governance, more than market growth: all fees to buybacks 15.2%, issuance cut to a quarter 15.9%, both 34.8%; the best cell of the lever table is 49.1%, so none reaches even odds.</li><li><strong>What would prove this wrong:</strong> annualised NEAR Intents fees above $439.2M at today&#x27;s price and issuance. history.csv records the odds at every daily snapshot.</li><li><strong>Locked in advance:</strong> the forecasts are written on NEAR (contract brayan-posterior.testnet), cannot be edited, and resolve on 2028-11-11; one command rebuilds every number from the committed data.</li></ul>
+<p>Snapshot t0 = 2026-11-12 - verdict: buybacks are unlikely to cover issuance at the 24-month mark.</p>
 <p><a href="../THESIS.md">THESIS.md</a> (the argument) - <a href="../PREREG.md">PREREG.md</a> (rules fixed before the data) - <a href="../PREREG_2.md">PREREG_2.md</a> (secondary analyses)</p>
 <p class="q">Charts tagged <span class="tag">secondary</span> come from analyses specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; charts tagged <span class="tag">tertiary</span> from corrections specified after the secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported whatever they show. The number above follows PREREG.md.</p>
+</details>
 </header>
 <section class="problem">
 <h2>The problem: token theses promise, nobody keeps score</h2>

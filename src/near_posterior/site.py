@@ -25,7 +25,7 @@ letter-spacing:-.01em}
 h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
 section{background:var(--card);border:1px solid var(--line);border-radius:12px;
 padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
-.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.lead{font-size:1.5em;font-weight:700;margin:.5em 0 0}ol.steps{margin:14px 0 4px;padding-left:1.3em;display:grid;gap:6px}ol.steps b{color:var(--near)}header details{margin-top:14px}header summary{cursor:pointer;color:var(--near);font-size:.9em}.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
 .big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
 font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
 .tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
@@ -971,41 +971,51 @@ def render(res: dict) -> str:
              '</a> (secondary analyses)')
     def pc(x):
         return f"{100 * float(x):.1f}%"
-    tiles = [("Buybacks / new supply today", pc(w90["C"]), "")]
+    tiles = [("New NEAR absorbed by buybacks today", pc(w90["C"]), "")]
     if "onchain_coverage" in res:
         o = res["onchain_coverage"]
-        tiles.append(("Coverage read from the chain alone", pc(o["coverage_onchain"]),
+        tiles.append(("The same, read from the chain alone", pc(o["coverage_onchain"]),
                       f"NEAR into the buyback wallet / new NEAR, {o['window_days']} days to "
                       f"{o['t0']}, mainnet RPC"))
     tiles += [("Fee growth needed in 24 months", f"{f(h['k_star'], 2)}x", ""),
               ("Comparable protocols", str(h["entities"]), ""),
-              ("Base rate (registered)", pc(h["P"]), ""),
+              ("How often it happened", pc(h["P"]), ""),
               ("Forecast stored on", "NEAR", "")]
+    odds = float(h["P"])
+    chain = (f" ({pc(res['onchain_coverage']['coverage_onchain'])} when read from the chain "
+             f"alone)" if "onchain_coverage" in res else "")
     top = [
         "<header>",
-        '<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - '
-        'not financial advice</p>',
+        '<p class="kicker">NEAR HACKATHON - investment thesis - not financial advice</p>',
         "<h1>Will NEAR's buybacks offset its new supply 24 months from now?</h1>",
+        '<p class="lead">' + ("Probably not." if odds < 0.5 else "More likely than not.")
+        + (f" About 1 chance in {max(1, round(1 / odds))}." if odds > 0 else "") + "</p>",
+        f'<p class="big">{pc(h["P"])}</p>',
+        f"<p>That is how often DeFi protocols of the size and age of NEAR Intents grew enough "
+        f"(<strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong>). "
+        f"Tested on past data, this method was too optimistic, so the real odds are more "
+        f"likely lower than higher.</p>",
+        '<ol class="steps">'
+        f"<li><b>Today</b> buybacks absorb {pc(w90['C'])} of the new NEAR{chain}.</li>"
+        f"<li><b>The bar</b> to absorb all of it: NEAR Intents fees must grow "
+        f"{f(h['k_star'], 2)}x in 24 months.</li>"
+        f"<li><b>The record</b> of {h['entities']} DeFi protocols that once had the same size "
+        f"and age: {pc(h['P'])} of them did.</li></ol>",
         '<div class="tiles">' + "".join(f'<div><span>{svg.esc(a)}</span><b>{svg.esc(b)}</b>'
                                         + (f"<i>{svg.esc(n)}</i>" if n else "") + "</div>"
                                         for a, b, n in tiles) + "</div>",
-        f'<p class="big">{pc(h["P"])}</p>',
-        f"<p><strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong> - "
-        f"share of "
-        f"{h['entities']} comparable DefiLlama protocols that grew fees enough - snapshot "
-        f"t0 = {h['t0']} - verdict: {svg.esc(h['verdict'])}.</p>",
-        f"<p>Method: buybacks cover {pc(w90['C'])} of net issuance today, so NEAR Intents fees "
-        f"must grow {f(h['k_star'], 2)}x in 24 months; the number above is how often protocols "
-        f"of the same size and age did that.</p>",
+        "<details><summary>The summary in eight lines, the rules and the snapshot</summary>",
         '<ul class="brief">'
         + "".join(f"<li><strong>{svg.esc(k)}:</strong> {svg.esc(v.replace('`', ''))}</li>"
                   for k, v in thesis.brief(res)) + "</ul>",
+        f"<p>Snapshot t0 = {h['t0']} - verdict: {svg.esc(h['verdict'])}.</p>",
         f"<p>{links}</p>",
         '<p class="q">Charts tagged <span class="tag">secondary</span> come from analyses '
         'specified after the primary results, in <a href="../PREREG_2.md">PREREG_2.md</a>; '
         'charts tagged <span class="tag">tertiary</span> from corrections specified after the '
         'secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported '
         "whatever they show. The number above follows PREREG.md.</p>",
+        "</details>",
         "</header>",
     ]
     return "\n".join([
