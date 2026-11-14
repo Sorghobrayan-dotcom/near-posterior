@@ -1,6 +1,6 @@
 {
   "D": "2026-11-11",
-  "F_near": 77460514.9444,
+  "F_near": 77391456.9444,
   "classes": {
     "R": {
       "12": {
@@ -33,11 +33,11 @@
     "R_strict": {
       "12": {
         "entities": 102,
-        "moments": 593
+        "moments": 594
       },
       "24": {
         "entities": 57,
-        "moments": 341
+        "moments": 342
       },
       "36": {
         "entities": 32,
