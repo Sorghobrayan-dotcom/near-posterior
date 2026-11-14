@@ -13,6 +13,7 @@ advice.
 - **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); `uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: `PASS` lines for the contract's code hash, each record read back from the chain equal to the repository copy, and its only key limited to `resolve`).
 - **Two limits:** the headline number is an upper bound: it holds price and issuance fixed, and replayed on past data the method was too optimistic. Everything written on chain is on NEAR testnet, not mainnet.
 - **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-12 today) are refreshed every day, hence small differences between them.
+- **Resolves during judging:** a short forecast sits on a second locked contract, [`brayan-posterior-live.testnet`](https://testnet.nearblocks.io/address/brayan-posterior-live.testnet), due 2026-11-17. After that date the author writes the outcome next to it and any NEAR account can add its own reading with `attest`.
 <!-- END GENERATED judges -->
 
 ## In 30 seconds
@@ -56,9 +57,9 @@ flowchart LR
 <!-- BEGIN GENERATED live -->
 - **A forecast that resolves during judging.** Specified after the primary results (`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = 0.632 that C_90 on 2026-11-15 is at least C_90 on 2026-11-12 (108 of 171 past 3-day pairs), due 2026-11-17T00:00:00Z on a second testnet contract (`data/live/forecast.json`, `results/live.json`).
 <!-- END GENERATED live -->
-- **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
-  the README says where it was still too optimistic. The page replays them, and the 24-month ones,
-  next to what happened, protocol by protocol.
+- **Tested on the past.** Replayed on past forecasts of the same method; it beats trend
+  extrapolation, and the README says where it was still too optimistic. The page replays each
+  past forecast next to what happened, protocol by protocol.
 - **On NEAR, cannot be edited.** The forecasts sit in our own contract until they resolve.
 - **One command rebuilds every number**, checked by CI on Linux, Windows and macOS.
 - **Live page**: `site/index.html` has a simulator (share of fees spent on buybacks, issuance,

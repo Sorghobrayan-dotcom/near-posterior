@@ -1,8 +1,9 @@
 """Fill the generated blocks of README.md (finding, headline line, limits) from the results."""
 
+import json
 import re
 
-from near_posterior import out, thesis
+from near_posterior import onchain, out, thesis
 
 README = out.ROOT / "README.md"
 
@@ -61,6 +62,14 @@ def blocks(res: dict) -> dict:
             f"buyback is not a burn.")
     if "live" in res:
         lv = res["live"]
+        com = json.loads(onchain.FILE.read_text(encoding="utf-8")) if onchain.FILE.exists() else {}
+        acct = com.get("live", {}).get("contract")
+        if acct:
+            parts["judges"] += (
+                f"\n- **Resolves during judging:** a short forecast sits on a second locked "
+                f"contract, [`{acct}`](https://testnet.nearblocks.io/address/{acct}), due "
+                f"{lv['resolution_due'][:10]}. After that date the author writes the outcome next "
+                f"to it and any NEAR account can add its own reading with `attest`.")
         parts["live"] = (
             f"- **A forecast that resolves during judging.** Specified after the primary results "
             f"(`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = "
