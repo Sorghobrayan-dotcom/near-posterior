@@ -956,3 +956,35 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 134 passed in 184.45s
 ```
+
+## C3 (offline part) - A short forecast that resolves during judging (code done, nothing sent)
+
+- `PREREG_4.md` written before the forecast was computed (no number in it): event
+  C_90(2026-11-15) >= C_90(anchor), anchor = last day of `daily[]` when frozen, P = share of past
+  k-day pairs after the 90-day window is full, resolution from one snapshot fetched on or after
+  2026-11-17 00:00 UTC, account `brayan-posterior-live.testnet`.
+- `live.py`: `probability` (pure), `freeze`, `register` (`python -m near_posterior.live
+  --register`, refused once `commitments.json` has a `live` key), `reading` (current reading,
+  labelled as not the on-chain resolution). The frozen file `data/live/forecast.json` holds the
+  series it was computed from; `build` never writes it, it writes `results/live.json` (frozen
+  forecast + current reading). `verify` adds one check: P, n, k recompute from the frozen series,
+  so revisions of the daily series cannot make it FAIL.
+- `onchain.py`: `live_offline` / `live_live` checks, empty while there is no `live` key.
+  `near.mjs`: `commit-live`, `resolve-live`, and `lock` records `live.lock` for the live account.
+  Nothing was sent: no account, no deploy, no commit. `node --check onchain/near.mjs` passes.
+- Site: the chain block shows the frozen forecast with its label (and the second contract once
+  `live` exists); `verify.html` checks the second contract when `live` exists. README: generated
+  block `live`.
+- Frozen now: anchor 2026-11-12 (C_90 0.185227529992), event 2026-11-15, k = 3, P = 0.632
+  (108 of 171 pairs since 2026-05-23), snapshot fetched 2026-11-13T14:47:40+00:00.
+- The `live`-present branch of verify.html ran under node with a stand-in `live` entry pointing
+  at the existing contract (15 checks passed); `live_live` (Python, network) is not exercised.
+
+```
+> uv run python -m near_posterior.live --register
+live: anchor 2026-11-12 (C_90 = 0.185227529992), event 2026-11-15, k = 3, P = 0.631578947368421 (108 of 171)
+> uv run python -m near_posterior.verify
+60 lines, all PASS
+> uv run pytest -q
+140 passed in 122.50s
+```

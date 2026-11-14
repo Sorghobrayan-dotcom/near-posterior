@@ -1,0 +1,22 @@
+{
+  "P": 0.631578947368,
+  "anchor_C_90": 0.185227529992,
+  "anchor_day": "2026-11-12",
+  "buyback_start": "2026-02-23",
+  "current_reading": {
+    "label": "current reading on the latest daily snapshot, not the on-chain resolution; recent days may still be revised",
+    "snapshot_fetched_at": "2026-11-13T14:47:40+00:00",
+    "snapshot_t0": "2026-11-12",
+    "status": "pending"
+  },
+  "event_day": "2026-11-15",
+  "first_day": "2026-05-23",
+  "hits": 108,
+  "k": 3,
+  "label": "specified after the primary results (PREREG_4.md); it tests the machinery, not the 24-month thesis",
+  "n": 171,
+  "question": "C_90(2026-11-15) >= C_90(2026-11-12)",
+  "resolution_due": "2026-11-17T00:00:00Z",
+  "rule": "outcome = 1 if C_90(e) >= C_90(a), both from daily[] of the first daily snapshot fetched on or after the due time, else 0; Brier = (P - outcome)^2",
+  "snapshot_fetched_at": "2026-11-13T14:47:40+00:00"
+}

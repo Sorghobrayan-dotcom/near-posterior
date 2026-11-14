@@ -138,6 +138,20 @@ line(same&&when<due,(k?k.label:"record "+i)+(g.record.P===undefined?"":" (P = "+
 +g.block_height+", equal to the repository copy; resolves on "+due.toISOString().slice(0,10)+", "
 +(g.outcome?"outcome written":"no outcome yet")+".");
 if(g.record.type===undefined&&g.record.sha256){for(var f in g.record.sha256){files[f]=g.record.sha256[f];}}}
+if(com.live){var L=com.live,lu=RPCS[L.network],lr=JSON.parse(L.record);
+var la=await rpc(lu,{request_type:"view_account",finality:"final",account_id:L.contract});
+line(la.code_hash===b58(await sha(await file("contract/posterior_registry.wasm"))),"The code running on "
++L.contract+" (short forecast of PREREG_4.md) is contract/posterior_registry.wasm (code hash "+la.code_hash+").");
+var lk=(await rpc(lu,{request_type:"view_access_key_list",finality:"final",account_id:L.contract})).keys;
+line(lk.length>0&&lk.every(function(k){var p=k.access_key.permission;
+return p!=="FullAccess"&&p.FunctionCall&&p.FunctionCall.method_names.join()==="resolve";}),
+L.contract+" holds no full-access key ("+lk.length+" key, limited to the method resolve).");
+var lg=JSON.parse(await view(lu,L.contract,"get",String(L.index)));
+var lw=new Date(lg.block_timestamp_ns/1e6),ld=new Date(lg.resolution_unix_s*1000);
+line(JSON.stringify(lg.record)===JSON.stringify(lr)&&lw<ld,"Short forecast (P = "+lr.P+", "+lr.question
++"): on chain since "+lw.toISOString().slice(0,16).replace("T"," ")+" UTC, equal to the repository copy; due "
++ld.toISOString().slice(0,16).replace("T"," ")+" UTC, "+(lg.outcome?"outcome written":"no outcome yet")+".");
+for(var g2 in lr.sha256){files[g2]=lr.sha256[g2];}}
 for(var f in files){line(hex(await sha(await file(f)))===files[f],
 f+" on this site has the sha256 written on chain ("+files[f].slice(0,12)+"...).");}
 sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")

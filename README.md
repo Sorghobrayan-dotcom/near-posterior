@@ -53,6 +53,9 @@ flowchart LR
 <!-- BEGIN GENERATED onchain -->
 - **Coverage measured from the chain alone.** Mainnet RPC readings only (total supply from block headers, balance of `buybacks.multisignature.near` at blocks 211225999 and 224135609) give a coverage of 19.0% over the 90 days to 2026-11-11, against 18.2% for the model's dollar-weighted C_90 on the same date (`results/onchain_coverage.json`). It is the wallet's net NEAR inflow, and a buyback is not a burn.
 <!-- END GENERATED onchain -->
+<!-- BEGIN GENERATED live -->
+- **A forecast that resolves during judging.** Specified after the primary results (`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = 0.632 that C_90 on 2026-11-15 is at least C_90 on 2026-11-12 (108 of 171 past 3-day pairs), due 2026-11-17T00:00:00Z on a second testnet contract (`data/live/forecast.json`, `results/live.json`).
+<!-- END GENERATED live -->
 - **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
   the README says where it was still too optimistic. The page replays them, and the 24-month ones,
   next to what happened, protocol by protocol.

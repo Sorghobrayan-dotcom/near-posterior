@@ -59,6 +59,15 @@ def blocks(res: dict) -> dict:
             f"{pc(o['C_90_model'])} for the model's dollar-weighted C_90 on the same date "
             f"(`results/onchain_coverage.json`). It is the wallet's net NEAR inflow, and a "
             f"buyback is not a burn.")
+    if "live" in res:
+        lv = res["live"]
+        parts["live"] = (
+            f"- **A forecast that resolves during judging.** Specified after the primary results "
+            f"(`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = "
+            f"{thesis.f(lv['P'])} that C_90 on {lv['event_day']} is at least C_90 on "
+            f"{lv['anchor_day']} ({lv['hits']} of {lv['n']} past {lv['k']}-day pairs), due "
+            f"{lv['resolution_due']} on a second testnet contract "
+            f"(`data/live/forecast.json`, `results/live.json`).")
     return parts
 
 

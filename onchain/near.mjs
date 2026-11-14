@@ -5,7 +5,9 @@
 //   node onchain/near.mjs deploy <account> <wasm>  deploy the registry contract
 //   node onchain/near.mjs commit <account>         commit the registered forecasts
 //   node onchain/near.mjs commit-extra <account>   commit the scoreboard and the milestones
+//   node onchain/near.mjs commit-live <account> <wasm>  commit the short forecast of PREREG_4.md
 //   node onchain/near.mjs lock <account>           keep only a key that can call `resolve`
+//   node onchain/near.mjs resolve-live <account>   resolve the short forecast from results/coverage.json
 //   node onchain/near.mjs selftest <account> <stranger> <wasm>  behaviour test on a spare account
 //   node onchain/near.mjs call <signer> <contract> <method> [args]
 //   node onchain/near.mjs view <account> <method> [args]
@@ -92,6 +94,7 @@ const csvLine = (l) => { const o = []; let c = "", q = false;
   o.push(c); return o; };
 const COMMITS = path.join(ROOT, "data", "onchain", "commitments.json");
 const REPO = "https://github.com/Sorghobrayan-dotcom/near-posterior";
+const LIVE = "data/live/forecast.json";
 const sha = (f) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, f))).digest("hex");
 
 const [cmd, acct, ...rest] = process.argv.slice(2);
@@ -167,6 +170,46 @@ if (cmd === "create") {
     console.log(`${kind} committed as index ${index}, tx ${res.transaction.hash}`);
   }
   fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+} else if (cmd === "commit-live") {
+  // The short forecast of PREREG_4.md, on its own account; stored under `live`, other keys untouched.
+  const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
+  if (com.live) throw new Error("data/onchain/commitments.json already has a `live` record");
+  const fz = JSON.parse(fs.readFileSync(path.join(ROOT, LIVE), "utf8"));
+  const commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
+  const rec = { project: "near-posterior", repo: REPO, git_commit: commit, type: "live",
+    label: fz.label, question: fz.question, anchor_day: fz.anchor_day, anchor_C_90: fz.anchor_C_90,
+    event_day: fz.event_day, k: fz.k, P: fz.P, n: fz.n, hits: fz.hits,
+    snapshot_fetched_at: fz.snapshot_fetched_at, resolution_due: fz.resolution_due, rule: fz.rule,
+    sha256: { "PREREG_4.md": sha("PREREG_4.md"), [LIVE]: sha(LIVE) } };
+  const record = JSON.stringify(rec);
+  const due = Math.floor(Date.parse(fz.resolution_due) / 1000);
+  const res = await send(acct, acct, [callAction("commit", Buffer.from(`${due}|${record}`))]);
+  const index = Number(Buffer.from(res.status.SuccessValue, "base64").toString());
+  com.live = { network: NET, contract: acct, code_sha256: sha(rest[0]), index, tx: res.transaction.hash,
+    block_hash: res.transaction_outcome.block_hash, record };
+  fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+  console.log(`live forecast committed as index ${index}, tx ${res.transaction.hash}`);
+} else if (cmd === "resolve-live") {
+  // PREREG_4.md: both C_90 values from daily[] of one snapshot fetched on or after the due time.
+  const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
+  if (!com.live || com.live.contract !== acct) throw new Error("no `live` record for " + acct);
+  if (com.live.resolution) throw new Error("the live forecast is already resolved");
+  const rec = JSON.parse(com.live.record);
+  const cov = JSON.parse(fs.readFileSync(path.join(ROOT, "results", "coverage.json"), "utf8"));
+  if (Date.parse(cov.fetched_at) < Date.parse(rec.resolution_due))
+    throw new Error(`snapshot fetched ${cov.fetched_at}, before the due time ${rec.resolution_due}: run fetch and build first`);
+  const C = Object.fromEntries(cov.daily.map((d) => [d.date, d.C_90]));
+  if (!(rec.event_day in C) || !(rec.anchor_day in C))
+    throw new Error(`the daily series (last day ${cov.t0}) does not contain ${rec.event_day} and ${rec.anchor_day}`);
+  const outcome = C[rec.event_day] >= C[rec.anchor_day] ? 1 : 0;
+  const commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
+  const json = JSON.stringify({ outcome, C_90_event: C[rec.event_day], C_90_anchor: C[rec.anchor_day],
+    event_day: rec.event_day, anchor_day: rec.anchor_day, snapshot_fetched_at: cov.fetched_at,
+    brier: (rec.P - outcome) ** 2, git_commit: commit });
+  const res = await send(acct, acct, [callAction("resolve", Buffer.from(`${com.live.index}|${json}`))]);
+  com.live.resolution = { tx: res.transaction.hash, record: json };
+  fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+  console.log(`live forecast resolved, outcome ${outcome}, tx ${res.transaction.hash}`);
 } else if (cmd === "lock") {
   // One transaction: add a key that can only call `resolve` on this account, delete the full-access key.
   const old = loadKey(acct);
@@ -185,6 +228,9 @@ if (cmd === "create") {
     const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
     if (com.contract === acct && com.network === NET) {
       com.lock = { tx: res.transaction.hash, methods: ["resolve"] };
+      fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+    } else if (com.live && com.live.contract === acct && com.live.network === NET) {
+      com.live.lock = { tx: res.transaction.hash, methods: ["resolve"] };
       fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
     }
   }
@@ -225,5 +271,5 @@ if (cmd === "create") {
 } else if (cmd === "view") {
   console.log(await view(acct, rest[0], rest[1] || ""));
 } else {
-  console.log("usage: create|deploy|commit|view <account> ...");
+  console.log("usage: create|deploy|commit|commit-extra|commit-live|lock|resolve-live|view <account> ...");
 }

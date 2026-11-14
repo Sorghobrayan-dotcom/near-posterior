@@ -11,10 +11,10 @@ import json
 
 import numpy as np
 
-from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
-                            milestones, multiverse, out, readme, recalibration, recency,
-                            refclass, resolve, rpc_check, site, speccurve, thesis, total,
-                            validation, within)
+from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, live,
+                            material, milestones, multiverse, out, readme, recalibration,
+                            recency, refclass, resolve, rpc_check, site, speccurve, thesis,
+                            total, validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -115,6 +115,9 @@ def compute(previous_history: str = "") -> dict:
         wallet = json.loads(rpc_check.WALLET_FILE.read_text(encoding="ascii"))
         files["results/onchain_coverage.json"] = out.json_text(
             rpc_check.onchain_coverage(wallet, cov))
+    if live.FROZEN.exists():
+        files["results/live.json"] = out.json_text(
+            live.reading(json.loads(live.FROZEN.read_text(encoding="ascii")), cov))
     res = thesis.parse({rel[len("results/"):]: text for rel, text in files.items()
                         if rel.startswith("results/")})
     res["deviations"] = (out.ROOT / "DEVIATIONS.md").read_text(encoding="ascii")

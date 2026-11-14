@@ -371,6 +371,29 @@ def chain_block(res: dict) -> str:
                 f"transaction</a> the account holds no full-access key: its only key can call "
                 f"<code>resolve</code>, so nobody, the author included, can replace the code or "
                 f"the records.")
+    if "live" in res:
+        lv = res["live"]
+        now = lv["current_reading"]
+        where = "not yet written on chain"
+        if "live" in com:
+            c = com["live"]
+            la = svg.esc(c["contract"])
+            where = (f'written in the second contract <a href="https://{host}/address/{la}">{la}'
+                     f'</a> (<a href="https://{host}/txns/{svg.esc(c["tx"])}">transaction</a>)')
+            if "lock" in c:
+                where += ", whose only key can call <code>resolve</code>"
+        reading = ("no reading yet: the event day is not in the daily series"
+                   if now["status"] == "pending" else
+                   f"current reading on the snapshot fetched {svg.esc(now['snapshot_fetched_at'])}"
+                   f": C_90 {f(now['C_90_event'], 4)} on {lv['event_day']} against "
+                   f"{f(now['C_90_anchor'], 4)} on {lv['anchor_day']}, outcome {now['outcome']} "
+                   f"(not the on-chain resolution; recent days may be revised)")
+        supply += (f"<p>A short forecast that resolves during judging, {svg.esc(lv['label'])}: "
+                   f"will C_90 on {lv['event_day']} be at least C_90 on {lv['anchor_day']}, the "
+                   f"last day known when it was frozen? P = {f(lv['P'])}: the share of past "
+                   f"{lv['k']}-day pairs since {lv['first_day']} where coverage did not fall "
+                   f"({lv['hits']} of {lv['n']}; overlapping windows, a small sample). Due "
+                   f"{svg.esc(lv['resolution_due'])}, {where}; {reading}.</p>\n")
     return (f'<section class="chain">\n<h2>Written on NEAR, before the outcome</h2>\n'
             f'<p>The registered forecasts, the scoreboard and the milestones are stored in the '
             f'contract <a href="https://{host}/address/{acct}">{acct}</a> '
@@ -793,6 +816,20 @@ line(same&&when<due,(k?k.label:"record "+i)+(g.record.P===undefined?"":" (P = "+
 +g.block_height+", equal to the repository copy; resolves on "+due.toISOString().slice(0,10)+", "
 +(g.outcome?"outcome written":"no outcome yet")+".");
 if(g.record.type===undefined&&g.record.sha256){for(var f in g.record.sha256){files[f]=g.record.sha256[f];}}}
+if(com.live){var L=com.live,lu=RPCS[L.network],lr=JSON.parse(L.record);
+var la=await rpc(lu,{request_type:"view_account",finality:"final",account_id:L.contract});
+line(la.code_hash===b58(await sha(await file("contract/posterior_registry.wasm"))),"The code running on "
++L.contract+" (short forecast of PREREG_4.md) is contract/posterior_registry.wasm (code hash "+la.code_hash+").");
+var lk=(await rpc(lu,{request_type:"view_access_key_list",finality:"final",account_id:L.contract})).keys;
+line(lk.length>0&&lk.every(function(k){var p=k.access_key.permission;
+return p!=="FullAccess"&&p.FunctionCall&&p.FunctionCall.method_names.join()==="resolve";}),
+L.contract+" holds no full-access key ("+lk.length+" key, limited to the method resolve).");
+var lg=JSON.parse(await view(lu,L.contract,"get",String(L.index)));
+var lw=new Date(lg.block_timestamp_ns/1e6),ld=new Date(lg.resolution_unix_s*1000);
+line(JSON.stringify(lg.record)===JSON.stringify(lr)&&lw<ld,"Short forecast (P = "+lr.P+", "+lr.question
++"): on chain since "+lw.toISOString().slice(0,16).replace("T"," ")+" UTC, equal to the repository copy; due "
++ld.toISOString().slice(0,16).replace("T"," ")+" UTC, "+(lg.outcome?"outcome written":"no outcome yet")+".");
+for(var g2 in lr.sha256){files[g2]=lr.sha256[g2];}}
 for(var f in files){line(hex(await sha(await file(f)))===files[f],
 f+" on this site has the sha256 written on chain ("+files[f].slice(0,12)+"...).");}
 sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")

@@ -13,7 +13,7 @@ import pathlib
 import re
 import sys
 
-from near_posterior import ask, build, coverage, onchain, out, readme, refclass, series
+from near_posterior import ask, build, coverage, live, onchain, out, readme, refclass, series
 
 FIXTURE = out.ROOT / "tests" / "fixtures" / "near_20261112"
 SPEC = out.ROOT / "docs" / "SPEC.md"
@@ -209,7 +209,7 @@ def base_checks(root: pathlib.Path = out.ROOT) -> tuple[list[tuple[bool, str]], 
     files = build.compute(history.read_text(encoding="ascii") if history.exists() else "")
     checks = (check_controls() + check_manifests() + check_files(files, root)
               + check_history(files, root) + check_readme(files, root) + check_ask()
-              + onchain.offline_checks())
+              + onchain.offline_checks() + live.checks())
     return checks, files["_t0"]
 
 

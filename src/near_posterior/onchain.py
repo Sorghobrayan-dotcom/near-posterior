@@ -25,6 +25,7 @@ from near_posterior import out
 
 FILE = out.ROOT / "data" / "onchain" / "commitments.json"
 WASM = out.ROOT / "contract" / "posterior_registry.wasm"
+LIVE = out.ROOT / "data" / "live" / "forecast.json"
 RPC = {"testnet": "https://rpc.testnet.fastnear.com", "mainnet": "https://rpc.mainnet.fastnear.com"}
 B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
@@ -75,7 +76,53 @@ def offline_checks() -> list[tuple[bool, str]]:
             ok = r["type"] == e["kind"] and len(r["rows"]) > 0 and len(r["git_commit"]) == 40
             res.append((ok, f"on-chain {e['kind']} (index {e['index']}, tx {e['tx']}) lists "
                             f"{len(r['rows'])} rows and the commit they were computed at"))
-    return res
+    return res + live_offline(com)
+
+
+def live_offline(com: dict) -> list[tuple[bool, str]]:
+    """Return the offline checks of the live forecast record (PREREG_4), none if absent."""
+    if "live" not in com:
+        return []
+    lv = com["live"]
+    r = json.loads(lv["record"])
+    fz = json.loads(LIVE.read_text(encoding="ascii"))
+    keys = ("anchor_day", "anchor_C_90", "event_day", "k", "n", "P", "resolution_due")
+    return [
+        (lv["code_sha256"] == sha256("contract/posterior_registry.wasm"),
+         f"contract/posterior_registry.wasm is the build named for {lv['contract']}"),
+        (set(r["sha256"]) == {"PREREG_4.md", "data/live/forecast.json"}
+         and all(r["sha256"][k] == sha256(k) for k in r["sha256"])
+         and all(r[k] == fz[k] for k in keys) and r["type"] == "live",
+         f"on-chain live forecast (index {lv['index']}, tx {lv['tx']}) names PREREG_4.md and "
+         f"data/live/forecast.json and carries its numbers"),
+    ]
+
+
+def live_live(com: dict) -> list[tuple[bool, str]]:
+    """Return the network checks of the live forecast contract, none if there is none."""
+    if "live" not in com:
+        return []
+    lv = com["live"]
+    net, acct = lv["network"], lv["contract"]
+    acc = rpc(net, "query", {"request_type": "view_account", "finality": "final", "account_id": acct})
+    got = read(net, acct, lv["index"])
+    when = dt.datetime.fromtimestamp(got["block_timestamp_ns"] / 1e9, dt.timezone.utc)
+    due = dt.datetime.fromisoformat(json.loads(lv["record"])["resolution_due"].replace("Z", "+00:00"))
+    keys = rpc(net, "query", {"request_type": "view_access_key_list", "finality": "final",
+                              "account_id": acct})["keys"]
+    perms = [k["access_key"]["permission"] for k in keys]
+    return [
+        (acc["code_hash"] == b58(hashlib.sha256(WASM.read_bytes()).digest()),
+         f"code deployed on {acct} ({net}) is contract/posterior_registry.wasm"),
+        (got["record"] == json.loads(lv["record"]) and when < due
+         and got["resolution_unix_s"] == int(due.timestamp()),
+         f"live forecast read on {acct} equals the committed record, written at block "
+         f"{got['block_height']} on {when:%Y-%m-%d %H:%M} UTC, due {due:%Y-%m-%d %H:%M} UTC"),
+        (len(perms) > 0 and all(isinstance(p, dict) and p["FunctionCall"]["method_names"]
+                                == ["resolve"] and p["FunctionCall"]["receiver_id"] == acct
+                                for p in perms),
+         f"{acct} holds no full-access key: its {len(perms)} key can only call `resolve`"),
+    ]
 
 
 def rpc(network: str, method: str, params: dict) -> dict:
@@ -124,7 +171,7 @@ def live_checks() -> list[tuple[bool, str]]:
              and p["FunctionCall"]["receiver_id"] == acct for p in perms)
     res.append((ok, f"{acct} holds no full-access key: its {len(perms)} key can only call "
                     "`resolve`, so the code and the records cannot be replaced"))
-    return res
+    return res + live_live(com)
 
 
 def main(argv=None) -> int:
