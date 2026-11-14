@@ -46,7 +46,7 @@ color:#a7f3d0;border:1px solid var(--line);border-radius:8px;padding:12px;overfl
 .simgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .sl{display:block;margin:0 0 14px}.sl span{display:flex;justify-content:space-between;gap:8px;
 font-size:.9em}.sl b{color:var(--near);font-variant-numeric:tabular-nums}
-.sl input{width:100%;accent-color:var(--near)}.sl input[type=number]{box-sizing:border-box;background:var(--bg);color:inherit;border:1px solid #2a2f37;border-radius:6px;padding:7px 9px;font:inherit}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
+.sl input{width:100%;accent-color:var(--near)}.rp{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:6px}.rp select{background:var(--bg);color:inherit;border:1px solid #2a2f37;border-radius:6px;padding:7px 9px;font:inherit;max-width:100%}.rp-y{color:var(--near);font-weight:600}.rp-n{color:var(--mid)}.sl input[type=number]{box-sizing:border-box;background:var(--bg);color:inherit;border:1px solid #2a2f37;border-radius:6px;padding:7px 9px;font:inherit}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
 .hz label{margin-right:14px;font-size:.9em}
 .out{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:16px}
 .out span{color:var(--mid);font-size:.75em;text-transform:uppercase;letter-spacing:.05em}
@@ -156,6 +156,68 @@ def milestones_block(res: dict) -> str:
                  f"constant growth rate; on {t['date']} coverage is {pc(t['C_90'])} against "
                  f"{pc(t['C_path'])} on the line ({t['status']}). It is a yardstick refreshed "
                  f"daily, not a forecast.", anchor="milestones", tag="descriptive")
+
+
+def replay(res: dict) -> str:
+    """Return the replay: every forecast of the validation backtest next to what happened."""
+    rows = res["validation_targets_rows"]
+    ents, taus = sorted({r["entity"] for r in rows}), sorted({r["tau"] for r in rows})
+    ei, ti = {e: i for i, e in enumerate(ents)}, {t: i for i, t in enumerate(taus)}
+    data = {"e": [e.replace("parent#", "") for e in ents], "t": [t[:7] for t in taus],
+            "r": {}, "d": {}}
+    for h in ("12", "24"):
+        x = [r for r in rows if r["h"] == h]
+        data["r"][h] = [[ei[r["entity"]], ti[r["tau"]], round(math.exp(float(r["Y"])), 2),
+                         round(100 * float(r["C0_prob_2"])), round(100 * float(r["B2_prob_2"])),
+                         int(float(r["Y"]) >= math.log(2))] for r in x]
+        n = {}
+        for r in x:
+            n[r["entity"]] = n.get(r["entity"], 0) + 1
+        data["d"][h] = ei[min(n, key=lambda e: (-n[e], e))]
+    x = [r for r in rows if r["h"] == "12"]
+    def mean(v):
+        return f"{100 * sum(v) / len(v):.1f}%"
+    js = ("(function(){var D=" + json.dumps(data, sort_keys=True, ensure_ascii=True,
+                                            separators=(",", ":")) + ";"
+          "function g(i){return document.getElementById(i);}"
+          "var sel=g('rp-e'),tb=document.querySelector('#rp-w table'),sm=g('rp-s');"
+          "function hz(){var r=document.querySelector('input[name=rp-h]:checked');"
+          "return r?r.value:'12';}"
+          "function show(){var h=hz(),e=+sel.value,k=0,c=0,b=0,n=0,"
+          "t='<tr><th class=\"left\">Forecast made</th><th>Class method: chance fees double</th>"
+          "<th>Trend extrapolation: chance fees double</th><th>Fee growth '+h+' months later</th>"
+          "<th>Doubled?</th></tr>';"
+          "D.r[h].forEach(function(x){if(x[0]!==e){return;}n++;k+=x[5];c+=x[3];b+=x[4];"
+          "t+='<tr><td class=\"left\">'+D.t[x[1]]+'</td><td>'+x[3]+'%</td><td>'+x[4]+'%</td><td>'"
+          "+x[2].toFixed(2)+'x</td><td class=\"'+(x[5]?'rp-y':'rp-n')+'\">'+(x[5]?'yes':'no')"
+          "+'</td></tr>';});tb.innerHTML=t;"
+          "sm.textContent=n?D.e[e]+': '+n+' past forecast'+(n===1?'':'s')+' at '+h+"
+          "' months; fees doubled '+k+"
+          "' time'+(k===1?'':'s')+'. On average the class method gave '+Math.round(c/n)+"
+          "'% and trend extrapolation '+Math.round(b/n)+'%.':'';}"
+          "function fill(){var h=hz(),seen={},cur=sel.value;"
+          "D.r[h].forEach(function(x){seen[x[0]]=1;});sel.textContent='';"
+          "D.e.forEach(function(name,i){if(seen[i]){var o=document.createElement('option');"
+          "o.value=i;o.textContent=name;sel.appendChild(o);}});"
+          "sel.value=seen[cur]?cur:D.d[h];show();}"
+          "sel.addEventListener('change',show);"
+          "var a=document.querySelectorAll('input[name=rp-h]');"
+          "for(var j=0;j<a.length;j++){a[j].addEventListener('change',fill);}fill();})();")
+    body = ('<div class="rp"><label>Protocol <select id="rp-e"></select></label><div class="hz">'
+            + "".join(f'<label><input type="radio" name="rp-h" value="{h}"'
+                      + (" checked" if h == "12" else "") + f"> {h} months</label>"
+                      for h in ("12", "24"))
+            + '</div></div>\n<p id="rp-s" class="q"></p>\n<div class="wrap" id="rp-w"><table>\n'
+            f"</table></div>\n<script>{js}</script>")
+    return chart(f"Replay: {len(rows)} past forecasts, each next to what happened", body,
+                 "near_posterior.validation.compute -> results/validation_targets.csv",
+                 f"Each row is the forecast the method gives for that protocol at that date from "
+                 f"what was known then, next to what happened; over the {len(x)} forecasts at 12 "
+                 f"months the class method gave a doubling "
+                 f"{mean([float(r['C0_prob_2']) for r in x])} on average, trend extrapolation "
+                 f"{mean([float(r['B2_prob_2']) for r in x])}, and fees doubled "
+                 f"{mean([float(r['Y']) >= math.log(2) for r in x])} of the time.",
+                 anchor="replay", tag="secondary")
 
 
 def simulator(res: dict) -> str:
@@ -876,7 +938,7 @@ def render(res: dict) -> str:
         "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<title>NEAR Buyback Coverage Forecast</title>", f"<style>{CSS}</style>", "</head>",
-        "<body>", *top, problem_block(res), scoreboard(res), simulator(res),
+        "<body>", *top, problem_block(res), scoreboard(res), simulator(res), replay(res),
         milestones_block(res), chain_block(res), hood_block(res), *blocks, punchline(res),
         "<section>\n<h2>What this cannot tell you</h2>\n<ul>\n"
         + "\n".join(f"<li>{svg.esc(t)}</li>" for t in thesis.limits(res)) + "\n</ul>\n</section>",

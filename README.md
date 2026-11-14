@@ -42,7 +42,8 @@ flowchart LR
 - **The chain is a data source too.** NEAR supply is read from block headers on an archival
   RPC node and compared with the explorer figure (`results/rpc_supply.json`).
 - **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
-  the README says where it was still too optimistic.
+  the README says where it was still too optimistic. The page replays every one of them next
+  to what happened, protocol by protocol.
 - **On NEAR, cannot be edited.** The forecasts sit in our own contract until they resolve.
 - **One command rebuilds every number**, checked by CI on Linux, Windows and macOS.
 - **Live page**: `site/index.html` has a simulator (share of fees spent on buybacks, issuance,

@@ -34,7 +34,7 @@ def test_top_has_question_number_interval_date_and_links():
 def test_inline_scripts_only_and_no_external_request():
     text = PAGE.read_text(encoding="ascii")
     scripts = re.findall(r"<script([^>]*)>(.*?)</script>", text, re.S)
-    assert len(scripts) == 2 and all(attrs == "" for attrs, _ in scripts)
+    assert len(scripts) == 3 and all(attrs == "" for attrs, _ in scripts)
     for _, body in scripts:
         assert not re.search(r"fetch\(|XMLHttpRequest|import\(|https?:", body)
     assert not re.search(r"""src\s*=\s*["']?(https?:)?//""", text, re.I)
