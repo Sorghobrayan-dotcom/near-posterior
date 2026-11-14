@@ -1063,3 +1063,16 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
 > uv run pytest -q
 141 passed in 91.93s (0:01:31)
 ```
+
+## 2026-11-14: the other project is now called Podlock
+
+- The TrustLock repository was renamed `drizzy765/podlock` ("Podlock, formerly TrustLock"); its
+  README names near-posterior (rule Q-015). The disclosure line of this README now names Podlock
+  and links the new address.
+
+```
+> uv run python -m near_posterior.verify
+62 lines, all PASS (exit 0)
+> uv run pytest -q
+141 passed in 128.36s (0:02:08)
+```

@@ -240,9 +240,10 @@ daily workflow adds `--commit`). The reference panel is not refetched;
   library for `onchain/near.mjs`; Rust `core` only, no crate, for `contract/`. No other
   dependency.
 - Other project of the author (rule on two submissions per person): the author also takes part,
-  as a member of team TrustLock, in a second and independent NEAR HACKATHON submission,
-  [TrustLock](https://github.com/drizzy765/Trustlock) (pay on delivery for sellers on social
-  media, with an escrow on NEAR). The two projects share no code, data or result.
+  as a member of team Podlock, in a second and independent NEAR HACKATHON submission,
+  [Podlock](https://github.com/drizzy765/podlock), formerly TrustLock (pay on delivery for
+  sellers on social media, with an escrow on NEAR). The two projects share no code, data or
+  result.
 
 ## License
 
