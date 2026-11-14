@@ -1099,3 +1099,11 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
 > uv run pytest -q
 141 passed in 290.17s (0:04:50)
 ```
+
+## 2026-11-14: the page is published after each daily refresh
+
+- `refresh.yml` pushes with the Actions token, and a push made with that token starts no other
+  workflow: `pages.yml` (on push) did not run after the bot's commits, so the live page kept the
+  numbers of the last human push. `pages.yml` now also runs on `workflow_run` of `refresh`
+  (completed, deploy only if it succeeded), so the page and its "Verdict today" follow the daily
+  snapshot. Checked: the YAML parses; the first real run will be the next scheduled refresh.

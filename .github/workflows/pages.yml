@@ -6,10 +6,14 @@ name: pages
 # Actions > Variables) after enabling Pages, so a private repository gets no red mark.
 # The whole repository is published so that the relative links of site/index.html
 # (../THESIS.md, ../PREREG.md) resolve; the page is at /near-posterior/site/ and the root
-# index.html redirects there.
+# index.html redirects there. The daily refresh pushes with the Actions token, and such a push
+# starts no other workflow, so the page is also published when `refresh` completes successfully.
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: [refresh]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -23,7 +27,8 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ vars.PAGES_ENABLED == 'true' }}
+    if: ${{ vars.PAGES_ENABLED == 'true' && (github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
