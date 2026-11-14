@@ -232,6 +232,10 @@ daily workflow adds `--commit`). The reference panel is not refetched;
 - The code was written during the hackathon window; the git history starts at the scaffold
   commit with `PREREG.md`.
 - AI coding assistance was used to write the code and the documents.
+- The code submitted is at the tag `hackathon-submission`. After the end of development, the
+  only commits are the daily data refresh (`refresh.yml`) and the resolution of the short
+  forecast of `PREREG_4.md`, as that file and the "Resolving it" steps above require: new
+  data and an on-chain transaction, no change of code or method.
 - Libraries: Python standard library and `numpy`; `pytest` for tests. No other dependency.
 - Other project of the author (rule on two submissions per person): the author also takes part,
   as a member of team TrustLock, in a second and independent NEAR HACKATHON submission,
