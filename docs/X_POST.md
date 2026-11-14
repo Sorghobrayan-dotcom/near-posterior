@@ -2,13 +2,13 @@
 
 Generated from `results/` by `uv run python -m near_posterior.build`. Lead with the problem, one complete moment, what NEAR's public data made possible, a link, a real question. The Pages link works once the repository is public and Pages is enabled.
 
-Post 1 (270 characters):
+Post 1 (231 characters):
 
-> Built at NEAR HACKATHON: NEAR buys back its token with Intents revenue. Does that offset new supply? Today it covers 19% of net issuance. To reach 100% in 24 months, fees must grow 5.7x. Of 75 DeFi protocols of the same size and age, 5% did. @NEARProtocol #NEARHackathon
+> Built at NEAR HACKATHON: 9 NEAR theses say Intents fees must grow 1.6x to 7.2x for buybacks to offset new supply. How often did protocols of that size do it? 3% to 14% of the time. NEAR today: 5.7x, 5%. @NEARProtocol #NEARHackathon
 
 Post 2 (reply):
 
-> Rules were committed before the data was fetched; the number is rebuilt offline from DefiLlama and NearBlocks and checked by one command. Explorer for any growth multiple: https://sorghobrayan-dotcom.github.io/near-posterior/site/ - code: https://github.com/Sorghobrayan-dotcom/near-posterior
+> Forecasts, scoreboard and dated milestones are written in a NEAR contract whose account holds no full-access key: nobody, the author included, can change them. Score any multiple: https://sorghobrayan-dotcom.github.io/near-posterior/site/ - code: https://github.com/Sorghobrayan-dotcom/near-posterior
 
 Post 3 (reply):
 
