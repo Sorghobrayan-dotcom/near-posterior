@@ -49,10 +49,11 @@ def demo_script(res: dict) -> str:
          "The forecasts, the scoreboard and the milestones sit in a NEAR contract, and your "
          "browser checks them live. The account holds no full-access key, so nobody can change "
          "them, and after the date any account can write its own reading of the outcome."),
-        ("0:55-1:05", "Page, calibration chart", "Point at the C0 and B2 dots.",
-         f"We tested the method on {res['validation']['S1']['12']['scored']} past forecasts: it "
-         f"beats trend extrapolation, and it was if anything too optimistic "
-         f"({f(b['mean_forecast'], 2)} forecast, {f(b['observed'], 2)} observed)."),
+        ("0:55-1:05", "Page, replay", "Pick a protocol in the replay, scroll its rows.",
+         f"We replayed the method on {res['validation']['S1']['12']['scored']} past forecasts, "
+         f"each shown next to what happened: it beats trend extrapolation, and it was if "
+         f"anything too optimistic ({f(b['mean_forecast'], 2)} forecast, {f(b['observed'], 2)} "
+         f"observed in its largest bin)."),
         ("1:05-1:15", "Terminal",
          "`uv run python -m near_posterior.verify` scrolling to the last PASS line.",
          "Every number is rebuilt offline by one command, and the rules were committed before "
