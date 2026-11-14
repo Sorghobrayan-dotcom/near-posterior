@@ -1012,3 +1012,30 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
 > uv run pytest -q
 140 passed in 182.52s (0:03:02)
 ```
+
+## Review fixes (2026-11-14): resolution procedure, window note, build claim
+
+- Read-only review of a19dfbe..82679cb: no blocker; the fixes below answer its important points.
+- `onchain/near.mjs resolve-live` now refuses a dirty working tree (the git commit written on
+  chain must hold the snapshot read) and refuses unless `results/coverage.json` is the first
+  snapshot of `history.csv` fetched on or after the due time (PREREG_4.md, Resolution).
+  Dry run in a temporary clone with no key and a dead RPC: dirty tree refused; a second snapshot
+  refused ("the first snapshot of history.csv fetched on or after the due time is ..."); the
+  first snapshot on a clean tree passes both checks and stops at the missing key file. No
+  transaction was signed.
+- README `live` block (generated): the resolution procedure, and the sentence that the 3-day
+  window had started before the forecast was frozen (`thesis.live_window`, also on the page).
+- README "Do X, see Y": `build` no longer promises an empty `git status`. In a fresh Windows
+  clone one value of `results/validation_targets.csv` differs in its 12th digit from the file
+  the Linux refresh bot wrote; `verify` accepts it (relative 1e-9).
+- The contract rebuilt from source in a temporary clone (cargo 1.100, `-C target-cpu=mvp`)
+  has the sha256 named in `data/onchain/commitments.json`.
+- The refresh bot has run once (2026-11-13 14:47 UTC, a scheduled run 8 h late); the resolution
+  on 2026-11-17 must not wait for it.
+
+```
+> uv run python -m near_posterior.verify --write
+62 lines, all PASS (exit 0)
+> uv run pytest -q
+141 passed in 91.49s (0:01:31)
+```

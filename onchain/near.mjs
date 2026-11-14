@@ -198,7 +198,13 @@ if (cmd === "create") {
   const cov = JSON.parse(fs.readFileSync(path.join(ROOT, "results", "coverage.json"), "utf8"));
   if (Date.parse(cov.fetched_at) < Date.parse(rec.resolution_due))
     throw new Error(`snapshot fetched ${cov.fetched_at}, before the due time ${rec.resolution_due}: run fetch and build first`);
-  const C = Object.fromEntries(cov.daily.map((d) => [d.date, d.C_90]));
+  if (execSync("git status --porcelain", { cwd: ROOT }).toString().trim())
+    throw new Error("uncommitted changes: run `python -m near_posterior.refresh --commit` first, so the git commit written on chain holds this snapshot");
+  const after = fs.readFileSync(path.join(ROOT, "history.csv"), "utf8").trim().split("\n").slice(1)
+    .map((l) => l.split(",")[0]).filter((t) => Date.parse(t) >= Date.parse(rec.resolution_due)).sort();
+  if (after[0] !== cov.fetched_at)
+    throw new Error(`results/coverage.json was fetched ${cov.fetched_at}, but the first snapshot of history.csv fetched on or after the due time is ${after[0]} (PREREG_4.md)`);
+  const C =Object.fromEntries(cov.daily.map((d) => [d.date, d.C_90]));
   if (!(rec.event_day in C) || !(rec.anchor_day in C))
     throw new Error(`the daily series (last day ${cov.t0}) does not contain ${rec.event_day} and ${rec.anchor_day}`);
   const outcome = C[rec.event_day] >= C[rec.anchor_day] ? 1 : 0;

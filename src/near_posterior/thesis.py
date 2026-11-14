@@ -72,6 +72,18 @@ def interval(iv) -> str:
     return f"{f(iv[0])} to {f(iv[1])}"
 
 
+def live_window(lv: dict) -> str:
+    """Return the sentence saying the short forecast's window had started when it was frozen,
+    or nothing if its snapshot was fetched on the anchor day itself."""
+    fetched = lv["snapshot_fetched_at"][:10]
+    if fetched <= lv["anchor_day"]:
+        return ""
+    return (f" Its window had started before it was frozen: the snapshot it uses was fetched on "
+            f"{fetched}, after {lv['anchor_day']} had ended, and it was written on chain later. "
+            f"No day after {lv['anchor_day']} enters P, but part of the window had passed, "
+            f"so it tests the machinery, not foresight.")
+
+
 def headline_line(res: dict) -> str:
     """Return the one-line headline printed by build and repeated in the README."""
     h = res["headline"]

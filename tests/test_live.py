@@ -5,7 +5,7 @@ import json
 
 import pytest
 
-from near_posterior import live, onchain
+from near_posterior import live, onchain, thesis
 
 
 def series(values, start="2026-01-01"):
@@ -74,3 +74,10 @@ def test_live_checks_are_absent_without_a_live_key_and_check_the_record_with_one
     rec["P"] = 0.5
     com["live"]["record"] = json.dumps(rec)
     assert not onchain.live_offline(com)[1][0]
+
+
+def test_live_window_says_the_window_had_started_only_when_it_had():
+    """The sentence appears when the snapshot was fetched after the anchor day, not otherwise."""
+    lv = {"anchor_day": "2026-11-12", "snapshot_fetched_at": "2026-11-13T14:47:40+00:00"}
+    assert "2026-11-13, after 2026-11-12 had ended" in thesis.live_window(lv)
+    assert thesis.live_window({**lv, "snapshot_fetched_at": "2026-11-12T23:00:00+00:00"}) == ""

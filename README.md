@@ -55,7 +55,8 @@ flowchart LR
 - **Coverage measured from the chain alone.** Mainnet RPC readings only (total supply from block headers, balance of `buybacks.multisignature.near` at blocks 211225999 and 224135609) give a coverage of 19.0% over the 90 days to 2026-11-11, against 18.2% for the model's dollar-weighted C_90 on the same date (`results/onchain_coverage.json`). It is the wallet's net NEAR inflow, and a buyback is not a burn.
 <!-- END GENERATED onchain -->
 <!-- BEGIN GENERATED live -->
-- **A forecast that resolves during judging.** Specified after the primary results (`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = 0.632 that C_90 on 2026-11-15 is at least C_90 on 2026-11-12 (108 of 171 past 3-day pairs), due 2026-11-17T00:00:00Z on a second testnet contract (`data/live/forecast.json`, `results/live.json`).
+- **A forecast that resolves during judging.** Specified after the primary results (`PREREG_4.md`), it tests the machinery, not the 24-month thesis: P = 0.632 that C_90 on 2026-11-15 is at least C_90 on 2026-11-12 (108 of 171 past 3-day pairs), due 2026-11-17T00:00:00Z on a second testnet contract (`data/live/forecast.json`, `results/live.json`). Its window had started before it was frozen: the snapshot it uses was fetched on 2026-11-13, after 2026-11-12 had ended, and it was written on chain later. No day after 2026-11-12 enters P, but part of the window had passed, so it tests the machinery, not foresight.
+- **Resolving it.** After 2026-11-17T00:00:00Z: `uv run python -m near_posterior.fetch`, `uv run python -m near_posterior.refresh --commit`, `git push` (the snapshot is now in `history.csv`), then `node onchain/near.mjs resolve-live brayan-posterior-live.testnet`, which refuses unless the working tree is clean and `results/coverage.json` is the first snapshot of `history.csv` fetched on or after the due time; then `uv run python -m near_posterior.refresh --commit` and `git push` again to record the resolution transaction.
 <!-- END GENERATED live -->
 - **Tested on the past.** Replayed on past forecasts of the same method; it beats trend
   extrapolation, and the README says where it was still too optimistic. The page replays each
@@ -85,7 +86,7 @@ every push (`check.yml`: `uv sync`, `pytest -q`, `verify`); the result is the ba
 | `uv sync` | `numpy` (and `pytest` for tests) installed in `.venv` |
 | `uv run pytest -q` | all tests pass |
 | `uv run python -m near_posterior.verify` | one line per check, every line starts with `PASS`, exit code 0 (`--write` also rewrites `VERIFICATION.md`) |
-| `uv run python -m near_posterior.build` | the headline line below, printed exactly; `git status` shows no change (every file regenerates byte for byte) |
+| `uv run python -m near_posterior.build` | the headline line below, printed exactly; every file regenerates, text byte for byte and numbers to a relative 1e-9 (the check `verify` runs). Floating point can differ in the last of 12 printed digits from one machine to another, so `git status` may list a CSV of `results/` with such a change |
 | `uv run python -m near_posterior.ask` | the base rate at the registered required growth k*, its interval, the protocols that reached it, then the registered headline line |
 | `uv run python -m near_posterior.ask --k 2 --h 12` | the same question for any growth multiple and horizon (12, 24, 36 months); `--slug aave` centres the class on any protocol of the panel |
 | `uv run python -m near_posterior.resolve` | the registered forecasts and the dates they resolve |
@@ -136,7 +137,7 @@ written for this project, [`brayan-posterior.testnet`](https://testnet.nearblock
 | Open [`site/verify.html`](https://sorghobrayan-dotcom.github.io/near-posterior/site/verify.html) | the same checks run by your browser against a public RPC node: code hash, access keys, every record, the sha256 of the PREREG files |
 | `node onchain/near.mjs view brayan-posterior.testnet get 3` | the scoreboard of the other theses as stored on chain |
 | `node onchain/near.mjs view brayan-posterior.testnet get 1` | the 24-month record as stored on chain, with its block height |
-| `cd contract`, then `cargo build --release --target wasm32-unknown-unknown` with `RUSTFLAGS="-C target-cpu=mvp"` | a wasm build of the contract from source |
+| `cd contract`, then `cargo build --release --target wasm32-unknown-unknown` with `RUSTFLAGS="-C target-cpu=mvp"` | a wasm build of the contract from source; its sha256 should equal `code_sha256` in `data/onchain/commitments.json` |
 
 When a resolution date is reached, `resolve` writes the outcome on chain next to the forecast,
 and the Brier score follows from the two values.

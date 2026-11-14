@@ -76,7 +76,15 @@ def blocks(res: dict) -> dict:
             f"{thesis.f(lv['P'])} that C_90 on {lv['event_day']} is at least C_90 on "
             f"{lv['anchor_day']} ({lv['hits']} of {lv['n']} past {lv['k']}-day pairs), due "
             f"{lv['resolution_due']} on a second testnet contract "
-            f"(`data/live/forecast.json`, `results/live.json`).")
+            f"(`data/live/forecast.json`, `results/live.json`)."
+            + thesis.live_window(lv)
+            + f"\n- **Resolving it.** After {lv['resolution_due']}: `uv run python -m "
+            f"near_posterior.fetch`, `uv run python -m near_posterior.refresh --commit`, `git "
+            f"push` (the snapshot is now in `history.csv`), then `node onchain/near.mjs "
+            f"resolve-live {acct or '<account>'}`, which refuses unless the working tree is clean "
+            f"and `results/coverage.json` is the first snapshot of `history.csv` fetched on or "
+            f"after the due time; then `uv run python -m near_posterior.refresh --commit` and "
+            f"`git push` again to record the resolution transaction.")
     return parts
 
 

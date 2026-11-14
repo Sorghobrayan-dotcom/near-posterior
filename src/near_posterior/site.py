@@ -393,7 +393,8 @@ def chain_block(res: dict) -> str:
                    f"last day known when it was frozen? P = {f(lv['P'])}: the share of past "
                    f"{lv['k']}-day pairs since {lv['first_day']} where coverage did not fall "
                    f"({lv['hits']} of {lv['n']}; overlapping windows, a small sample). Due "
-                   f"{svg.esc(lv['resolution_due'])}, {where}; {reading}.</p>\n")
+                   f"{svg.esc(lv['resolution_due'])}, {where}; {reading}."
+                   f"{svg.esc(thesis.live_window(lv))}</p>\n")
     return (f'<section class="chain">\n<h2>Written on NEAR, before the outcome</h2>\n'
             f'<p>The registered forecasts, the scoreboard and the milestones are stored in the '
             f'contract <a href="https://{host}/address/{acct}">{acct}</a> '
