@@ -32,6 +32,23 @@ def blocks(res: dict) -> dict:
         "headline": "```\n" + thesis.headline_line(res) + "\n```",
         "limits": "\n".join(f"- {t}" for t in thesis.limits(res)),
     }
+    site = "https://sorghobrayan-dotcom.github.io/near-posterior/site/"
+    parts["judges"] = "\n".join([
+        f"- **No install:** [the page]({site}), [the same on-chain checks run by your browser]"
+        f"({site}verify.html), [the contract `brayan-posterior.testnet`]"
+        f"(https://testnet.nearblocks.io/address/brayan-posterior.testnet).",
+        "- **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); "
+        "`uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, "
+        "every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: "
+        "`PASS` lines for the contract's code hash, each record read back from the chain equal to "
+        "the repository copy, and its only key limited to `resolve`).",
+        "- **Two limits:** the headline number is an upper bound: it holds price and issuance "
+        "fixed, and replayed on past data the method was too optimistic. Everything written on "
+        "chain is on NEAR testnet, not mainnet.",
+        f"- **Two snapshots:** \"registered\" numbers (t0 = {res['registered_forecast']['t0']}) "
+        f"are the ones written on chain and never recomputed; \"daily\" numbers (t0 = "
+        f"{h['t0']} today) are refreshed every day, hence small differences between them.",
+    ])
     if "onchain_coverage" in res:
         o = res["onchain_coverage"]
         parts["onchain"] = (

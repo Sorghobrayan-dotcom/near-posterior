@@ -918,3 +918,21 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 133 passed
 ```
+
+## C2 - "Judges, start here" and a first screen without jargon (done)
+
+- README: section "Judges, start here" before "In 30 seconds", a generated block `judges`
+  (`readme.py`): three no-install links, three commands with what they print (run here:
+  `uv sync` resolves and checks the packages; `verify` all PASS; `onchain` read-only, 14 PASS
+  lines), two limits, and the registered / daily snapshot sentence with both t0 from results/.
+- Page: the simulator formula says "required fee growth" instead of k*; the exact headline line
+  (which says "model B0, class R") moved from the header to the footer with a gloss, since
+  `verify` needs it verbatim. Technical terms further down are unchanged. No test asserted the
+  old wording.
+
+```
+> uv run python -m near_posterior.verify
+57 lines, all PASS
+> uv run pytest -q
+133 passed in 177.71s
+```

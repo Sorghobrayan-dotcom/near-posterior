@@ -6,6 +6,15 @@ An investment thesis for NEAR HACKATHON (track `thesis`) on one question: **will
 funded by NEAR Intents revenue cover NEAR's net issuance at the 24-month mark?** Not financial
 advice.
 
+## Judges, start here
+
+<!-- BEGIN GENERATED judges -->
+- **No install:** [the page](https://sorghobrayan-dotcom.github.io/near-posterior/site/), [the same on-chain checks run by your browser](https://sorghobrayan-dotcom.github.io/near-posterior/site/verify.html), [the contract `brayan-posterior.testnet`](https://testnet.nearblocks.io/address/brayan-posterior.testnet).
+- **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); `uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: `PASS` lines for the contract's code hash, each record read back from the chain equal to the repository copy, and its only key limited to `resolve`).
+- **Two limits:** the headline number is an upper bound: it holds price and issuance fixed, and replayed on past data the method was too optimistic. Everything written on chain is on NEAR testnet, not mainnet.
+- **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-12 today) are refreshed every day, hence small differences between them.
+<!-- END GENERATED judges -->
+
 ## In 30 seconds
 
 <!-- BEGIN GENERATED brief -->

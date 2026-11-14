@@ -286,8 +286,9 @@ def simulator(res: dict) -> str:
         f'<p class="q">Registered forecast, written on NEAR: {100 * data["reg"]:.1f}% '
         "(24 months, today's settings). The simulator explores; it does not change the "
         "registered number.</p></div></div>\n"
-        '<p class="q">k* = k*(today) x issuance x price x (capture today / capture); the chance '
-        "is the share of comparable protocols whose fees grew at least k* (results/exceedance.csv)."
+        '<p class="q">required fee growth = required fee growth today x issuance x price x '
+        "(capture today / capture); the chance is the share of comparable protocols whose fees "
+        "grew at least that much (results/exceedance.csv)."
         f"</p>\n<script>{js}</script>\n</section>")
 
 
@@ -961,7 +962,6 @@ def render(res: dict) -> str:
         'charts tagged <span class="tag">tertiary</span> from corrections specified after the '
         'secondary results, in <a href="../PREREG_3.md">PREREG_3.md</a>. Both are reported '
         "whatever they show. The number above follows PREREG.md.</p>",
-        f'<p class="head">{svg.esc(thesis.headline_line(res))}</p>',
         "</header>",
     ]
     return "\n".join([
@@ -975,6 +975,9 @@ def render(res: dict) -> str:
         '<p class="q">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of '
         f"{res['refclass_counts']['entities']} reference entities), NearBlocks (supply, price). "
         "Generated from results/ only by <code>uv run python -m near_posterior.build</code>.</p>",
+        '<p class="q">Registered headline line, exactly as <code>build</code> prints it (model B0 '
+        "is the base rate, class R the comparable protocols):</p>",
+        f'<p class="head">{svg.esc(thesis.headline_line(res))}</p>',
         "</body>", "</html>", ""])
 
 
