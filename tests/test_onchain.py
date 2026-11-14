@@ -8,7 +8,7 @@ from near_posterior import onchain
 def test_offline_checks_pass():
     """Every committed record names the files and numbers of this repository."""
     checks = onchain.offline_checks()
-    assert len(checks) == 7 and all(ok for ok, _ in checks)
+    assert len(checks) == 9 and all(ok for ok, _ in checks)
 
 
 def test_record_names_registered_forecast():

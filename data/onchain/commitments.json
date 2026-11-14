@@ -44,5 +44,20 @@
     "methods": [
       "resolve"
     ]
+  },
+  "live": {
+    "network": "testnet",
+    "contract": "brayan-posterior-live.testnet",
+    "code_sha256": "126ec238014128a5d04aff32dabaa5b4a9d8d31ff132d530ddcbcf2fd3df8bde",
+    "index": 0,
+    "tx": "4QQ1N8LEXNp1dVr14cKCDgNkYKyUpgaDJ2ng1JNkqmKW",
+    "block_hash": "B7jVdfUNy5fkmHK2GUVFcoZRfW8uR3wUP38hEWQnmPeK",
+    "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"5cf68c7b1a1463a4ae6706935f4029ba003f5ad1\",\"type\":\"live\",\"label\":\"specified after the primary results (PREREG_4.md); it tests the machinery, not the 24-month thesis\",\"question\":\"C_90(2026-11-15) >= C_90(2026-11-12)\",\"anchor_day\":\"2026-11-12\",\"anchor_C_90\":0.185227529992,\"event_day\":\"2026-11-15\",\"k\":3,\"P\":0.631578947368,\"n\":171,\"hits\":108,\"snapshot_fetched_at\":\"2026-11-13T14:47:40+00:00\",\"resolution_due\":\"2026-11-17T00:00:00Z\",\"rule\":\"outcome = 1 if C_90(e) >= C_90(a), both from daily[] of the first daily snapshot fetched on or after the due time, else 0; Brier = (P - outcome)^2\",\"sha256\":{\"PREREG_4.md\":\"781a3e1e7bd704b12e495e52c496bf46fa0a423e824e924afa4d213a2c2b739c\",\"data/live/forecast.json\":\"b5c4789ced58466fa3564d0e3d5815b45cc8e3946bc6a8093af19350c17592bf\"}}",
+    "lock": {
+      "tx": "GJ6AzCGCsRjyTzaAmfffnA7DETKRWgoWsM1VTbUs6D92",
+      "methods": [
+        "resolve"
+      ]
+    }
   }
 }

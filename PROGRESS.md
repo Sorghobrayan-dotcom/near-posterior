@@ -988,3 +988,27 @@ live: anchor 2026-11-12 (C_90 = 0.185227529992), event 2026-11-15, k = 3, P = 0.
 > uv run pytest -q
 140 passed in 122.50s
 ```
+
+## C3 (on-chain part) - Live forecast written on testnet and locked
+
+- Sent on `brayan-posterior-live.testnet`, at commit 5cf68c7 (already pushed) and before the next
+  daily refresh, so the anchor 2026-11-12 was still the last day of the committed snapshot:
+  `create`, `deploy` (tx 2ta2GaGdZYatuvWa3GVgsPkyiW8Lm9dKXmoV62RqLBUa), `commit-live` (index 0,
+  tx 4QQ1N8LEXNp1dVr14cKCDgNkYKyUpgaDJ2ng1JNkqmKW), `lock`
+  (tx GJ6AzCGCsRjyTzaAmfffnA7DETKRWgoWsM1VTbUs6D92).
+- The day 2026-11-13 had ended when the record was written (2026-11-14 04:14 UTC) but was not in
+  the snapshot (fetched 2026-11-13T14:47:40+00:00); P uses no data past the anchor.
+- `tests/test_onchain.py`: the number of offline checks goes from 7 to 9 (the two live checks).
+- Left: `node onchain/near.mjs resolve-live brayan-posterior-live.testnet` on or after
+  2026-11-17 00:00 UTC, on a snapshot fetched after the due time, then the cycle and a commit.
+
+```
+> uv run python -m near_posterior.verify
+62 lines, all PASS
+> uv run python -m near_posterior.onchain
+19 lines, all PASS
+PASS live forecast read on brayan-posterior-live.testnet equals the committed record, written at block 277606652 on 2026-11-14 04:14 UTC, due 2026-11-17 00:00 UTC
+PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only call `resolve`
+> uv run pytest -q
+140 passed in 182.52s (0:03:02)
+```
