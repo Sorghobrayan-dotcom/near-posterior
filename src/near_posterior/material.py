@@ -44,10 +44,11 @@ def demo_script(res: dict) -> str:
         ("0:33-0:42", "Page, milestones", "Scroll to the milestones table.",
          f"Nothing has to wait for 2028: from {first}, dated milestones say whether coverage is "
          f"on the line to the target."),
-        ("0:42-0:55", "NEAR explorer", "Click the contract link, show its transactions and keys.",
-         "The forecasts, the scoreboard and the milestones sit in a NEAR contract. Its account "
-         "holds no full-access key, so nobody can change them, and after the date any account "
-         "can write its own reading of the outcome."),
+        ("0:42-0:55", "Page 'check it yourself'", "Under 'Written on NEAR', click 'run the same "
+         "checks in your browser', then 'Run the checks again'.",
+         "The forecasts, the scoreboard and the milestones sit in a NEAR contract, and your "
+         "browser checks them live. The account holds no full-access key, so nobody can change "
+         "them, and after the date any account can write its own reading of the outcome."),
         ("0:55-1:05", "Page, calibration chart", "Point at the C0 and B2 dots.",
          f"We tested the method on {res['validation']['S1']['12']['scored']} past forecasts: it "
          f"beats trend extrapolation, and it was if anything too optimistic "
