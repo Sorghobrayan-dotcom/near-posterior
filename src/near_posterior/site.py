@@ -567,10 +567,12 @@ def robustness_fig(res: dict) -> Frame:
     curve = [float(r["P"]) for r in res["speccurve_rows"]]
     mv = [float(r["P"]) for r in res["class_multiverse_rows"]]
     loo = [v["P"] for v in res["cohorts"]["leave_one_year_out"].values() if v]
-    xmax = max(curve + mv + loo) * 1.1
-    fr = Frame(0, xmax, 0, 3, w=480, h=200, left=150, right=16, top=10, bottom=34)
+    ph = [res["posthoc_class"]["P"]]
+    xmax = max(curve + mv + loo + ph) * 1.1
+    fr = Frame(0, xmax, 0, 4, w=480, h=250, left=150, right=16, top=10, bottom=34)
     fr.axes([0, xmax / 2, xmax], [], xlabel="P at the horizon")
-    for row, (label, vals) in enumerate((("leave one year out", loo),
+    for row, (label, vals) in enumerate((("post hoc: no interest income", ph),
+                                         ("leave one year out", loo),
                                          ("class multiverse (72)", mv),
                                          ("specification curve (864)", curve))):
         for i, v in enumerate(vals):
@@ -914,7 +916,12 @@ def render(res: dict) -> str:
               "results/speccurve.csv, results/class_multiverse.csv, results/cohorts.json",
               f"Every registered and secondary specification gives P at or below "
               f"{f(top_p)}; the headline is {f(h['P'])}. The multiverse and the "
-              f"leave-one-year-out rows are secondary.", tag="partly secondary"),
+              f"leave-one-year-out rows are secondary; the post hoc row, specified after the "
+              f"primary results, leaves out a named, hand-picked list of "
+              f"{len(res['posthoc_class']['excluded'])} interest-income protocols ("
+              + ", ".join(e.replace("parent#", "") for e in res["posthoc_class"]["excluded"])
+              + f") and gives {f(res['posthoc_class']['P'])} "
+              f"(90% interval {interval(res['posthoc_class']['interval'])}).", tag="partly secondary"),
         chart("Cohorts: P with one origin year left out",
               cohorts_fig(res).svg("Cohorts"), "near_posterior.multiverse.cohorts -> "
               "results/cohorts.json",

@@ -1,0 +1,24 @@
+{
+  "P": 0.031220657277,
+  "entities": 71,
+  "excluded": [
+    "tether",
+    "parent#maker",
+    "parent#aave",
+    "binance-staked-eth"
+  ],
+  "excluded_present": [
+    "binance-staked-eth",
+    "parent#aave",
+    "parent#maker",
+    "tether"
+  ],
+  "h": 24,
+  "interval": [
+    0.00821596244131,
+    0.0598591549296
+  ],
+  "k_star": 5.66984940412,
+  "label": "post hoc (specified after the primary results; named, hand-picked list)",
+  "moments": 472
+}

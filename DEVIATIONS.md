@@ -41,3 +41,15 @@ level and an exact one-sided 95 percent upper bound by Clopper-Pearson with the 
 independent units (0 of 51 at 24 months; the same bound is shown at 12 months, 4 of 188
 protocols). The bootstrap interval stays reported next to them, as registered.
 
+
+## 2026-11-14: post hoc class without interest-income protocols (not a change of method)
+
+Specified after the primary results, in answer to the objection that the reference class mixes
+fee businesses with protocols whose fees are interest income. The 24-month probability is
+recomputed with the registered estimator (`forecast.b0`, entity-weighted, cluster bootstrap) on
+the same class sample and the same k*, leaving out `tether`, `parent#maker`, `parent#aave` and
+`binance-staked-eth` (ids as in `results/entities_R.csv`). This list is named and hand-picked
+after seeing which protocols reached k*; it is not a rule written in advance, and other lists
+would give other numbers. The result is in `results/posthoc_class.json`, shown as a "post hoc"
+row in the robustness block of the page and in section 9 of `THESIS.md`. The registered headline
+does not change.

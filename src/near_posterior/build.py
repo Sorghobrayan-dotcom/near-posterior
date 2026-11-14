@@ -91,6 +91,8 @@ def compute(previous_history: str = "") -> dict:
         "results/levers.csv": out.csv_text(levers.HEADER, lev),
         "results/class_multiverse.csv": out.csv_text(multiverse.HEADER, mv),
         "results/class_multiverse.json": out.json_text(multiverse.summary(mv)),
+        "results/posthoc_class.json": out.json_text(
+            multiverse.without_entities(panel, sample24, head["k_star"])),
         "results/forward_claims.csv": out.csv_text(forward.HEADER, fwd),
         "results/registered_forecast.json": out.json_text(reg),
         "results/validation.json": out.json_text(val),

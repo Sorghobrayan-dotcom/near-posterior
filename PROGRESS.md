@@ -936,3 +936,23 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 133 passed in 177.71s
 ```
+
+## C4 - Two objections: heterogeneous class, investor conclusion (done)
+
+- `multiverse.without_entities`: the registered estimator `forecast.b0` on the same 24-month
+  class sample and k* (as `cohorts` and `total` use), leaving out `tether`, `parent#maker`,
+  `parent#aave`, `binance-staked-eth`; `build` writes `results/posthoc_class.json`. Shown as a
+  "post hoc" row of the robustness chart and in its sentence, in THESIS section 9, and recorded
+  in `DEVIATIONS.md` (specified after the primary results; named, hand-picked list).
+- Measured: P = 0.031 (90% interval 0.008 to 0.060), 71 protocols, 472 moments, against the
+  headline 0.053 (75 protocols). Close to the rough expectation of about 3 percent.
+- `thesis.conclusion`: "Investor conclusion" at the top of THESIS.md, three sentences: position
+  (from `investor`), milestones at 3, 12 and 24 months from `results/milestones.json`, price
+  sensitivity at half / today / twice the price from `results/levers.csv`.
+
+```
+> uv run python -m near_posterior.verify
+58 lines, all PASS
+> uv run pytest -q
+134 passed in 184.45s
+```

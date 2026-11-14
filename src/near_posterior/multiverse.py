@@ -20,6 +20,7 @@ YIELD = frozenset({
     "Anchor BTC", "Decentralized BTC", "Leveraged Farming", "Farm",
 })
 CATEGORIES = ("all", "trading", "all except yield-type")
+INTEREST_INCOME = ("tether", "parent#maker", "parent#aave", "binance-staked-eth")
 HEADER = ["scale_q", "age_lo", "age_hi", "weighting", "categories", "P", "P_lo", "P_hi",
           "entities", "moments", "flag_below_30_entities"]
 
@@ -85,6 +86,18 @@ def run(panel: dict, mom: dict, F_near: float, k: float) -> list[list]:
                                  res["P"], res["interval"][0], res["interval"][1],
                                  res["entities"], res["moments"], int(res["entities"] < 30)])
     return rows
+
+
+def without_entities(panel: dict, sample: dict, k: float, ids=INTEREST_INCOME) -> dict:
+    """Return P_B0(k) of the class sample with the named entities left out (post hoc)."""
+    drop = np.array([i in ids for i in panel["ids"]])
+    keep = ~drop[sample["e"]]
+    res = forecast.b0(sample["Y"][keep], sample["e"][keep], k)
+    return {"label": "post hoc (specified after the primary results; named, hand-picked list)",
+            "excluded": list(ids), "excluded_present": sorted({panel["ids"][e] for e in
+                                                              sample["e"][~keep]}),
+            "h": H, "k_star": k, "P": res["P"], "interval": list(res["interval"]),
+            "entities": res["entities"], "moments": res["moments"]}
 
 
 def summary(rows: list[list]) -> dict:

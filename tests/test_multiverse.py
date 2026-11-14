@@ -35,3 +35,13 @@ def test_cohorts_leave_one_year_out():
     assert res["leave_one_year_out"]["2021"]["P"] == 0.0
     assert res["leave_one_year_out"]["2022"]["P"] == 1.0
     assert res["blocks"] == 4 and res["two_stage_bootstrap"]["mean_block_share"] == 0.5
+
+
+def test_without_entities_drops_the_named_protocols_only():
+    panel = {"ids": ["a", "tether", "b"]}
+    sample = {"Y": np.log(np.array([10.0, 1.0, 10.0, 10.0, 1.0])),
+              "e": np.array([0, 0, 1, 2, 2])}
+    res = multiverse.without_entities(panel, sample, 5.0)
+    assert res["excluded_present"] == ["tether"]
+    assert res["entities"] == 2 and res["moments"] == 4 and res["P"] == 0.5
+    assert "post hoc" in res["label"]
