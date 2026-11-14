@@ -35,7 +35,8 @@ def blocks(res: dict) -> dict:
     }
     site = "https://sorghobrayan-dotcom.github.io/near-posterior/site/"
     parts["judges"] = "\n".join([
-        f"- **No install:** [the page]({site}), [the same on-chain checks run by your browser]"
+        f"- **No install:** [the page]({site}), [today's verdict read live from NEAR mainnet and "
+        f"the on-chain checks, run by your browser]"
         f"({site}verify.html), [the contract `brayan-posterior.testnet`]"
         f"(https://testnet.nearblocks.io/address/brayan-posterior.testnet).",
         "- **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); "

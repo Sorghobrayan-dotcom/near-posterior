@@ -1076,3 +1076,26 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
 > uv run pytest -q
 141 passed in 128.36s (0:02:08)
 ```
+
+## 2026-11-14: verdict of the day, on the page and live from mainnet
+
+- First screen of the page: a "Verdict today" box from `results/milestones.json` (`today`): the
+  model's C_90 on the latest daily snapshot against the dated line to the 24-month target
+  (C0 * (1/C0)^(elapsed / 731 days), the line of the milestones record on NEAR), ahead or behind.
+  The main page still makes no request; the box links to the live reading.
+- `verify.html`, new first section: the browser reads NEAR mainnet archival RPC nodes (FastNEAR,
+  then near.org) for the latest final block and the block 90 days earlier, the balance of
+  `buybacks.multisignature.near` and total supply at both, and prints coverage = net NEAR into the
+  wallet / supply growth, next to the line value for this instant.
+- Checked by hand: in the browser, "Ahead of the line: coverage 19.3% against 18.4% needed today"
+  (blocks 211616488 to 224551669); an independent Python reading of the same blocks gives
+  dB = 1,535,249.1 NEAR, dS = 7,936,690.9 NEAR, C = 0.1934, line = 0.1839.
+- Under the headline: the forecast written on NEAR (registered snapshot) next to the daily number.
+- README judges block names the live verdict.
+
+```
+> uv run python -m near_posterior.verify
+62 lines, all PASS (exit 0)
+> uv run pytest -q
+141 passed in 290.17s (0:04:50)
+```

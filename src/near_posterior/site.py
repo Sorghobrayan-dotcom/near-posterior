@@ -25,7 +25,7 @@ letter-spacing:-.01em}
 h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
 section{background:var(--card);border:1px solid var(--line);border-radius:12px;
 padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
-.why{border-left:3px solid var(--near);padding-left:12px;margin-top:14px}.lead{font-size:1.5em;font-weight:700;margin:.5em 0 0}ol.steps{margin:14px 0 4px;padding-left:1.3em;display:grid;gap:6px}ol.steps b{color:var(--near)}header details{margin-top:14px}header summary{cursor:pointer;color:var(--near);font-size:.9em}.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.verdict{border:1px solid var(--near);border-radius:8px;padding:10px 14px;margin-top:14px;background:#0d1d16}.verdict b{color:var(--near)}.why{border-left:3px solid var(--near);padding-left:12px;margin-top:14px}.lead{font-size:1.5em;font-weight:700;margin:.5em 0 0}ol.steps{margin:14px 0 4px;padding-left:1.3em;display:grid;gap:6px}ol.steps b{color:var(--near)}header details{margin-top:14px}header summary{cursor:pointer;color:var(--near);font-size:.9em}.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
 .big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
 font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
 .tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
@@ -847,7 +847,41 @@ w.textContent="The buyback wallet "+st.account+" holds "+fmt(near(a.amount)+near
 +" NEAR now (mainnet block "+a.block_height+", read by your browser), against "
 +fmt(near(d.amount)+near(d.locked))+" NEAR at block "+d.height+" (end of "+st.t0
 +"), the reading behind the on-chain coverage of the page.";}
+var ARCH=["https://archival-rpc.mainnet.fastnear.com","https://archival-rpc.mainnet.near.org"];
+async function arpc(method,params){var err;for(var i=0;i<ARCH.length;i++){try{var r=await fetch(ARCH[i],
+{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:"v",
+method:method,params:params})});var j=await r.json();if(j.error){throw new Error(JSON.stringify(j.error)
+.slice(0,160));}return j.result;}catch(x){err=x;}}throw err;}
+async function hdr(h){for(var d=0;d<30;d++){try{return (await arpc("block",{block_id:h-d})).header;}
+catch(x){}}throw new Error("no block near height "+h);}
+async function nearTime(ns,top){var t=top;for(var i=0;i<10;i++){
+var dt=Number(BigInt(t.timestamp_nanosec)-ns)/1e9;if(Math.abs(dt)<30){break;}
+t=await hdr(Math.max(1,t.height-Math.round(dt/0.6)));}return t;}
+async function held(acct,h){var a=await arpc("query",{request_type:"view_account",block_id:h,account_id:acct});
+return BigInt(a.amount)+BigInt(a.locked);}
+function pct(x){return (100*x).toFixed(1)+"%";}
+async function verdict(){var v=document.getElementById("vd");v.textContent="Reading NEAR mainnet...";
+var st=JSON.parse(new TextDecoder().decode(await file("data/rpc/buyback_wallet.json")));
+var ms=JSON.parse(new TextDecoder().decode(await file("results/milestones.json")));
+var rf=JSON.parse(new TextDecoder().decode(await file("results/registered_forecast.json")));
+var now=(await arpc("block",{finality:"final"})).header;
+var start=await nearTime(BigInt(now.timestamp_nanosec)-BigInt(st.window_days*86400)*1000000000n,now);
+var dB=(await held(st.account,now.height))-(await held(st.account,start.height));
+var dS=BigInt(now.total_supply)-BigInt(start.total_supply);
+var C=Number(dB*1000000n/dS)/1e6,t0=Date.parse(ms.t0+"T00:00:00Z");
+var tEnd=Date.parse(rf.forecasts["24"].resolution_date+"T00:00:00Z"),tNow=Number(BigInt(now.timestamp_nanosec)/1000000n);
+var path=ms.C0*Math.pow(1/ms.C0,(tNow-t0)/(tEnd-t0)),days=Number(BigInt(now.timestamp_nanosec)
+-BigInt(start.timestamp_nanosec))/864e11;
+v.innerHTML="";var b=document.createElement("b");b.textContent=(C>=path?"Ahead of the line":"Behind the line")
++": coverage "+pct(C)+" against "+pct(path)+" needed today.";v.appendChild(b);
+v.appendChild(document.createTextNode(" Over the last "+days.toFixed(1)+" days (mainnet blocks "+start.height
++" to "+now.height+"), NEAR flowing into "+st.account+" was "+fmt(near(dB.toString()))+" NEAR while total supply "
++"grew "+fmt(near(dS.toString()))+" NEAR: your browser read both from archival RPC nodes, nothing else. The line "
++"goes from "+pct(ms.C0)+" on "+ms.t0+" to 100% on "+rf.forecasts["24"].resolution_date+" (the milestones record "
++"on NEAR). This counts NEAR into the wallet, while the page's daily figure weighs each day in dollars, so the "
++"two differ a little; a buyback is not a burn, and one day says little."));}
 run().catch(function(e){sum.textContent="Could not finish: "+e.message;});
+verdict().catch(function(e){document.getElementById("vd").textContent="Could not read mainnet: "+e.message;});
 wallet().catch(function(e){document.getElementById("wallet").textContent="Could not read the "
 +"buyback wallet: "+e.message;});})();"""
 
@@ -872,7 +906,8 @@ def verify_page() -> str:
         "server of ours, and the same checks run offline with "
         "<code>uv run python -m near_posterior.onchain</code>.</p>",
         '<p><button id="go" type="button">Run the checks again</button></p>',
-        "</header>", "<section>", "<h2>Checks</h2>", '<p id="sum"></p>',
+        "</header>", '<section id="verdict">', "<h2>Verdict today, live from NEAR mainnet</h2>",
+        '<p id="vd"></p>', "</section>", "<section>", "<h2>Checks</h2>", '<p id="sum"></p>',
         '<ul class="chk" id="checks"></ul>', "</section>",
         "<section>", "<h2>Buyback wallet, live from mainnet</h2>", '<p id="wallet"></p>',
         "</section>",
@@ -992,6 +1027,14 @@ def render(res: dict) -> str:
            "score. This forecast was written on NEAR testnet before the outcome and locked, so "
            f"its author cannot change it and it gets scored in public whatever happens.{due} "
            '<a href="verify.html">Check it from your browser</a>.</p>')
+    td = res.get("milestones", {}).get("today")
+    verdict = "" if not td else (
+        f'<p class="verdict"><b>Verdict today ({td["date"]}):</b> buybacks cover {pc(td["C_90"])} '
+        f"of the new NEAR; the dated line to the 24-month target (milestones written on NEAR) "
+        f"needs {pc(td['C_path'])} today, so they are <b>"
+        f"{'ahead of' if td['status'] == 'ahead' else 'behind'} the line</b>. On a single day "
+        f'this says little; it is scored again every day. <a href="verify.html#verdict">Read it '
+        f"live from NEAR mainnet in your browser</a>.</p>")
     top = [
         "<header>",
         '<p class="kicker">NEAR HACKATHON - investment thesis - not financial advice</p>',
@@ -1002,13 +1045,17 @@ def render(res: dict) -> str:
         f"<p>That is how often DeFi protocols of the size and age of NEAR Intents grew enough "
         f"(<strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong>). "
         f"Tested on past data, this method was too optimistic, so the real odds are more "
-        f"likely lower than higher.</p>",
+        f"likely lower than higher. The forecast written on NEAR is "
+        f"{pc(res['registered_forecast']['forecasts']['24']['P'])} (snapshot of "
+        f"{res['registered_forecast']['t0']}); the number above is recomputed on each daily "
+        f"snapshot.</p>",
         '<ol class="steps">'
         f"<li><b>Today</b> buybacks absorb {pc(w90['C'])} of the new NEAR{chain}.</li>"
         f"<li><b>The bar</b> to absorb all of it: NEAR Intents fees must grow "
         f"{f(h['k_star'], 2)}x in 24 months.</li>"
         f"<li><b>The record</b> of {h['entities']} DeFi protocols that once had the same size "
         f"and age: {pc(h['P'])} of them did.</li></ol>",
+        verdict,
         why,
         "<details><summary>Key figures, the summary in eight lines, the rules "
         "and the snapshot</summary>",
