@@ -214,8 +214,8 @@ def brief(res: dict) -> list[tuple[str, str]]:
         return f"{100 * float(x):.1f}%"
     odds = (f"about 1 chance in {round(1 / h['P'])}" if h["P"] > 0 else "no case in the class")
     return [
-        ("The question", "NEAR spends part of the NEAR Intents fees on buying back NEAR. Within "
-         "24 months, will these buybacks absorb all the new NEAR that the protocol issues?"),
+        ("The question", "NEAR spends part of the NEAR Intents fees on buying back NEAR. In "
+         "24 months from now, will these buybacks absorb all the new NEAR that the protocol issues?"),
         ("Today", f"they absorb {p(w90['C'])} of it (dollar value, last 90 days to {c['t0']})."),
         ("The bar", f"to absorb all of it, NEAR Intents fees must grow {f(h['k_star'], 2)}x in "
          f"24 months, from {usd(w90['A_f'])} to {usd(w90['A_f'] * h['k_star'])} a year, with "

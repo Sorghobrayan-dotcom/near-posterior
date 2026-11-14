@@ -9,7 +9,7 @@ advice.
 ## In 30 seconds
 
 <!-- BEGIN GENERATED brief -->
-- **The question:** NEAR spends part of the NEAR Intents fees on buying back NEAR. Within 24 months, will these buybacks absorb all the new NEAR that the protocol issues?
+- **The question:** NEAR spends part of the NEAR Intents fees on buying back NEAR. In 24 months from now, will these buybacks absorb all the new NEAR that the protocol issues?
 - **Today:** they absorb 18.5% of it (dollar value, last 90 days to 2026-11-12).
 - **The bar:** to absorb all of it, NEAR Intents fees must grow 5.67x in 24 months, from $77.5M to $439.2M a year, with price, issuance and the share of fees spent on buybacks unchanged.
 - **The odds:** 5.3%, about 1 chance in 19: the share of 75 DeFi protocols that once had NEAR Intents' size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.
@@ -42,8 +42,8 @@ flowchart LR
 - **The chain is a data source too.** NEAR supply is read from block headers on an archival
   RPC node and compared with the explorer figure (`results/rpc_supply.json`).
 - **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
-  the README says where it was still too optimistic. The page replays every one of them next
-  to what happened, protocol by protocol.
+  the README says where it was still too optimistic. The page replays them, and the 24-month ones,
+  next to what happened, protocol by protocol.
 - **On NEAR, cannot be edited.** The forecasts sit in our own contract until they resolve.
 - **One command rebuilds every number**, checked by CI on Linux, Windows and macOS.
 - **Live page**: `site/index.html` has a simulator (share of fees spent on buybacks, issuance,

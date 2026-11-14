@@ -911,7 +911,7 @@ def render(res: dict) -> str:
         "<header>",
         '<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - '
         'not financial advice</p>',
-        "<h1>Will NEAR's buybacks offset its new supply within 24 months?</h1>",
+        "<h1>Will NEAR's buybacks offset its new supply 24 months from now?</h1>",
         '<div class="tiles">' + "".join(f'<div><span>{svg.esc(a)}</span><b>{svg.esc(b)}</b></div>'
                                         for a, b in tiles) + "</div>",
         f'<p class="big">{pc(h["P"])}</p>',
