@@ -1,0 +1,62 @@
+{
+  "C0": 0.182264333929,
+  "h": 24,
+  "label": "descriptive yardstick, not a forecast, not pre-registered",
+  "milestones": [
+    {
+      "C_needed": 0.225811510693,
+      "date": "2027-02-11",
+      "month": 3,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.277815455998,
+      "date": "2027-05-11",
+      "month": 6,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.34419201201,
+      "date": "2027-08-11",
+      "month": 9,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.426427466773,
+      "date": "2027-11-11",
+      "month": 12,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.528310879025,
+      "date": "2028-02-11",
+      "month": 15,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.65149521934,
+      "date": "2028-05-11",
+      "month": 18,
+      "status": "pending"
+    },
+    {
+      "C_needed": 0.807152537839,
+      "date": "2028-08-11",
+      "month": 21,
+      "status": "pending"
+    },
+    {
+      "C_needed": 1.0,
+      "date": "2028-11-11",
+      "month": 24,
+      "status": "pending"
+    }
+  ],
+  "t0": "2026-11-11",
+  "today": {
+    "C_90": 0.185227529992,
+    "C_path": 0.182689271852,
+    "date": "2026-11-12",
+    "status": "ahead"
+  }
+}

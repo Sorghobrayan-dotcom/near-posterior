@@ -46,7 +46,7 @@ color:#a7f3d0;border:1px solid var(--line);border-radius:8px;padding:12px;overfl
 .simgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .sl{display:block;margin:0 0 14px}.sl span{display:flex;justify-content:space-between;gap:8px;
 font-size:.9em}.sl b{color:var(--near);font-variant-numeric:tabular-nums}
-.sl input{width:100%;accent-color:var(--near)}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
+.sl input{width:100%;accent-color:var(--near)}.sl input[type=number]{box-sizing:border-box;background:var(--bg);color:inherit;border:1px solid #2a2f37;border-radius:6px;padding:7px 9px;font:inherit}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
 .hz label{margin-right:14px;font-size:.9em}
 .out{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:16px}
 .out span{color:var(--mid);font-size:.75em;text-transform:uppercase;letter-spacing:.05em}
@@ -119,6 +119,45 @@ def problem_block(res: dict) -> str:
         "has passed.</p>\n</section>")
 
 
+def scoreboard(res: dict) -> str:
+    """Return the scoreboard: the multiple each public thesis needs and how often it happened."""
+    h = res["headline"]
+    rows = [(float(r["k"]), r["thesis"], r["condition"], r["P"], r["P_lo"], r["P_hi"])
+            for r in res["forward_claims_rows"] if r["h"] == "24"]
+    rows.append((float(h["k_star"]), "near-posterior (this repository)",
+                 "issuance rate, capture and price as today", h["P"], *h["interval"]))
+    def pc(x):
+        return f"{100 * float(x):.1f}%"
+    body = table(["Thesis", "Fee growth it needs", "Condition", "How often that happened",
+                  "90% interval"],
+                 [[t, f"{k:.2f}x", c, pc(P), f"{pc(lo)} to {pc(hi)}"]
+                  for k, t, c, P, lo, hi in sorted(rows)], 1)
+    n = len({r[1] for r in rows}) - 1
+    return chart(f"The scoreboard: {n} NEAR theses name a multiple, one base rate scores them",
+                 body, "near_posterior.forward.run -> results/forward_claims.csv",
+                 f"Each row is a growth multiple stated in a public NEAR thesis, read at a fixed "
+                 f"commit, next to the share of {h['entities']} comparable protocols that grew "
+                 f"that much in 24 months; applying a fee base rate to revenue or volume assumes "
+                 f"a constant take rate.", anchor="scoreboard", tag="secondary")
+
+
+def milestones_block(res: dict) -> str:
+    """Return the dated milestones before the 24-month resolution."""
+    m = res["milestones"]
+    def pc(x):
+        return f"{100 * float(x):.1f}%"
+    body = table(["Date", "Month", "Coverage needed to be on the line", "Observed", "Status"],
+                 [[r["date"], str(r["month"]), pc(r["C_needed"]),
+                   pc(r["C_90"]) if "C_90" in r else "-", r["status"]] for r in m["milestones"]], 1)
+    t = m["today"]
+    return chart("Milestones: what to check before 2028", body,
+                 "near_posterior.milestones.compute -> results/milestones.json",
+                 f"The line goes from {pc(m['C0'])} at {m['t0']} to 100% in {m['h']} months at a "
+                 f"constant growth rate; on {t['date']} coverage is {pc(t['C_90'])} against "
+                 f"{pc(t['C_path'])} on the line ({t['status']}). It is a yardstick refreshed "
+                 f"daily, not a forecast.", anchor="milestones", tag="descriptive")
+
+
 def simulator(res: dict) -> str:
     """Return the live simulator: capture, issuance, price and horizon move k* and P."""
     rows = res["exceedance_rows"]
@@ -145,9 +184,11 @@ def simulator(res: dict) -> str:
           "function pk(h,k){var K=D.k,P=D.P[h];if(k<=K[0])return P[0];"
           "for(var i=1;i<K.length;i++){if(k<=K[i]){var t=(Math.log(k)-Math.log(K[i-1]))/"
           "(Math.log(K[i])-Math.log(K[i-1]));return P[i-1]+t*(P[i]-P[i-1]);}}return P[P.length-1];}"
-          "function up(){var c=+g('s-cap').value/100,s=+g('s-iss').value/100,"
+          "function up(e){var c=+g('s-cap').value/100,s=+g('s-iss').value/100,"
           "p=+g('s-px').value/100,r=document.querySelector('input[name=s-h]:checked'),"
-          "h=r?r.value:'24',k=D.ks[h]*s*p*D.c0/c,P=pk(h,k);"
+          "h=r?r.value:'24',k=D.ks[h]*s*p*D.c0/c,x=g('s-k');"
+          "if(e&&e.target===x&&+x.value>0){k=+x.value;}else{x.value=k.toFixed(2);}"
+          "var P=pk(h,k);"
           "g('v-cap').textContent=Math.round(c*100)+'%';g('v-iss').textContent=Math.round(s*100)+'%';"
           "g('v-px').textContent=Math.round(p*100)+'%';"
           "g('o-p').textContent=(100*P).toFixed(1)+'%';g('o-k').textContent=k.toFixed(2)+'x';"
@@ -171,7 +212,11 @@ def simulator(res: dict) -> str:
         + '<div class="hz">' + "".join(
             f'<label><input type="radio" name="s-h" value="{hh}"'
             + (" checked" if hh == "24" else "") + f"> {hh} months</label>"
-            for hh in ("12", "24", "36")) + "</div></div>"
+            for hh in ("12", "24", "36")) + "</div>"
+        '<label class="sl"><span>Or score any thesis: the fee multiple it needs</span>'
+        f'<input id="s-k" type="number" min="0.1" max="100" step="0.01" '
+        f'value="{data["ks"]["24"]:.2f}">'
+        "<i>type the multiple a thesis assumes; the sliders are then ignored</i></label></div>"
         '<div class="out"><span>Chance that buybacks offset new supply</span>'
         f'<b id="o-p">{100 * data["reg"]:.1f}%</b><em id="o-n"></em>'
         '<div class="bar"><div id="o-b"></div></div>'
@@ -221,11 +266,20 @@ def punchline(res: dict) -> str:
             "</section>")
 
 
-def chain_block() -> str:
+def chain_block(res: dict) -> str:
     """Return the section on the forecasts written on NEAR, from data/onchain/commitments.json."""
     path = out.ROOT / "data" / "onchain" / "commitments.json"
     if not path.exists():
         return ""
+    supply = ""
+    if "rpc_supply" in res:
+        r = res["rpc_supply"]
+        i = r["issuance"][r["closest_edge"]]
+        supply = (f"<p>The chain is also a data source: NEAR total supply is read from block "
+                  f"headers on an archival RPC node. Between {r['days'][0]} and {r['days'][1]} "
+                  f"that gives a net issuance of {i['I_rpc'] / 1e6:.2f} million NEAR "
+                  f"({100 * i['r_rpc']:.2f}% a year), {100 * abs(i['rel_diff']):.2f}% away from "
+                  f"the NearBlocks figure used in the model.</p>\n")
     com = json.loads(path.read_text(encoding="utf-8"))
     host = "testnet.nearblocks.io" if com["network"] == "testnet" else "nearblocks.io"
     acct = svg.esc(com["contract"])
@@ -238,7 +292,7 @@ def chain_block() -> str:
             f'<p>The registered forecasts are stored in the contract '
             f'<a href="https://{host}/address/{acct}">{acct}</a> ({svg.esc(com["network"])}). '
             f"No method can edit or delete them, and the contract refuses a resolution before "
-            f"its date.</p>\n<ul>{rows}</ul>\n"
+            f"its date.</p>\n<ul>{rows}</ul>\n{supply}"
             f'<p class="q">Check: <code>uv run python -m near_posterior.onchain</code></p>\n'
             f"</section>")
 
@@ -581,10 +635,6 @@ def tables(res: dict) -> list[str]:
                  [[r["thesis"], r["metric"], f"{float(r['y_common']):.4g}",
                    "" if r["r_common"] == "" else f"{float(r['r_common']):.4g}", r["status"]]
                   for r in res["audit_rows"]], 2)
-    fwd = table(["Thesis", "Required multiple", "Condition", "P at 24 months"],
-                [[r["thesis"], f"{f(r['k'], 2)}x", r["condition"],
-                  f"{f(r['P'])} ({f(r['P_lo'])} to {f(r['P_hi'])})"]
-                 for r in res["forward_claims_rows"] if r["h"] == "24"], 3)
     a = res["audit"]
     return [
         chart(f"Who reached k* = {f(h['k_star'], 2)}x in 24 months", t1,
@@ -603,11 +653,6 @@ def tables(res: dict) -> list[str]:
               f"{a['claims']} values from {a['theses']} theses: {a['status_counts']['reproduced']} "
               f"reproduced within 2 percent under our reading of their definition; the status "
               f"does not say a figure is wrong."),
-        chart("Other theses: what they need to be true", fwd,
-              "near_posterior.forward.run -> results/forward_claims.csv",
-              "Growth multiples stated by other theses, placed on the class R base rate at 24 "
-              "months; applying a fee base rate to revenue or volume assumes a constant take "
-              "rate.", tag="secondary"),
     ]
 
 
@@ -736,8 +781,8 @@ def render(res: dict) -> str:
         "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<title>NEAR Buyback Coverage Forecast</title>", f"<style>{CSS}</style>", "</head>",
-        "<body>", *top, problem_block(res), simulator(res), chain_block(), hood_block(res),
-        *blocks, punchline(res),
+        "<body>", *top, problem_block(res), scoreboard(res), simulator(res),
+        milestones_block(res), chain_block(res), hood_block(res), *blocks, punchline(res),
         "<section>\n<h2>What this cannot tell you</h2>\n<ul>\n"
         + "\n".join(f"<li>{svg.esc(t)}</li>" for t in thesis.limits(res)) + "\n</ul>\n</section>",
         '<p class="q">Data: DefiLlama (NEAR Intents fees, holders revenue, volume; fees of '

@@ -12,8 +12,9 @@ import json
 import numpy as np
 
 from near_posterior import (audit, backtest, coverage, exceedance, forward, levers, material,
-                            multiverse, out, readme, recalibration, recency, refclass, resolve,
-                            rpc_check, site, speccurve, thesis, total, validation, within)
+                            milestones, multiverse, out, readme, recalibration, recency,
+                            refclass, resolve, rpc_check, site, speccurve, thesis, total,
+                            validation, within)
 
 CURVE_HEADER = ["cls", "window", "W", "h", "capture", "issuance", "G_P", "G_kappa", "G_I", "C_W",
                 "kappa_W", "k_star", "P", "P_lo", "P_hi", "entities", "moments"]
@@ -98,6 +99,8 @@ def compute(previous_history: str = "") -> dict:
         "results/total_uncertainty.json": out.json_text(tot),
         "results/validation_targets.csv": out.csv_text(validation.CSV_HEADER, val_rows),
         "results/resolution.json": out.json_text(resolution),
+        "results/milestones.json": out.json_text(
+            milestones.compute(coverage.load(resolve.FIXTURE), snap)),
         "RESOLUTION.md": resolve.markdown(reg, resolution),
         "results/cohorts.json": out.json_text(dict(coh, k_star=head["k_star"], h=24,
                                                    label="secondary (specified after the "

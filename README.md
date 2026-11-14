@@ -33,7 +33,14 @@ flowchart LR
 
 - **Outside view, not a trend line.** The odds come from what comparable protocols actually
   did, not from extrapolating NEAR Intents' recent growth.
+- **It scores the other theses too.** Every growth multiple stated in a public NEAR thesis is
+  placed on the same base rate (`results/forward_claims.csv`, first table of the page). Type
+  any multiple in the page, or run `python -m near_posterior.ask --k K`, to score your own.
 - **Rules before data.** `PREREG.md` was committed before the reference data was downloaded.
+- **Something to check before 2028.** `results/milestones.json` gives the coverage needed at
+  each quarter to be on the line to the target; the daily refresh says ahead or behind.
+- **The chain is a data source too.** NEAR supply is read from block headers on an archival
+  RPC node and compared with the explorer figure (`results/rpc_supply.json`).
 - **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
   the README says where it was still too optimistic.
 - **On NEAR, cannot be edited.** The forecasts sit in our own contract until they resolve.
