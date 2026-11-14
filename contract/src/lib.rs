@@ -5,12 +5,19 @@
 //! block timestamp has passed the record's resolution time. Only the account that holds the
 //! contract can call `commit` and `resolve`; anyone can read with `count` and `get`.
 //!
+//! `attest` lets any account write its own reading of the outcome (0 or 1) next to a record once
+//! the resolution time has passed: one per account, never changed or deleted, at most 32 per
+//! record. The owner's `resolve` is therefore one reading among others, not the only one.
+//!
 //! commit input:  `<resolution unix seconds>|<record JSON>`
 //! resolve input: `<index>|<outcome JSON>`
 //! get input:     `<index>`
+//! attest input:  `<index>|<0 or 1>`
+//! attestations input: `<index>`
 #![no_std]
 
 const MAX: usize = 4096;
+const MAX_ATTEST: u64 = 32;
 static mut IN: [u8; MAX] = [0; MAX];
 static mut OUT: [u8; 3 * MAX] = [0; 3 * MAX];
 static mut TMP: [u8; MAX] = [0; MAX];
@@ -217,6 +224,81 @@ pub extern "C" fn resolve() {
     v[8..8 + outcome.len()].copy_from_slice(outcome);
     put(&key(b'r', i), &v[..8 + outcome.len()]);
     W(0).n(i).done();
+}
+
+/// Storage key of the j-th attestation of record i.
+fn akey(i: u64, j: u64) -> [u8; 17] {
+    let mut k = [b'a'; 17];
+    k[1..9].copy_from_slice(&i.to_le_bytes());
+    k[9..].copy_from_slice(&j.to_le_bytes());
+    k
+}
+
+fn attest_count(i: u64) -> u64 {
+    match take(&key(b'c', i)) {
+        Some(v) if v.len() == 8 => u64_at(v, 0),
+        _ => 0,
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn attest() {
+    let (i, outcome) = split(arg());
+    let i = num(i);
+    if outcome != b"0" && outcome != b"1" {
+        fail("outcome must be 0 or 1");
+    }
+    let due = match take(&key(b'm', i)) {
+        Some(m) => u64_at(m, 16),
+        None => fail("no such forecast"),
+    };
+    if unsafe { block_timestamp() } / 1_000_000_000 < due {
+        fail("resolution date not reached");
+    }
+    // stored value: block timestamp (8 bytes), outcome (1 byte), account id
+    let mut v = [0u8; 9 + 64];
+    let n = unsafe {
+        predecessor_account_id(0);
+        let n = register_len(0) as usize;
+        if n > 64 {
+            fail("account id too long");
+        }
+        read_register(0, v.as_mut_ptr().add(9) as u64);
+        n
+    };
+    let k = attest_count(i);
+    if k >= MAX_ATTEST {
+        fail("attestation list is full");
+    }
+    for j in 0..k {
+        if let Some(a) = take(&akey(i, j)) {
+            if a[9..] == v[9..9 + n] {
+                fail("already attested");
+            }
+        }
+    }
+    v[..8].copy_from_slice(&unsafe { block_timestamp() }.to_le_bytes());
+    v[8] = outcome[0];
+    put(&akey(i, k), &v[..9 + n]);
+    put(&key(b'c', i), &(k + 1).to_le_bytes());
+    W(0).n(k).done();
+}
+
+#[no_mangle]
+pub extern "C" fn attestations() {
+    let i = num(arg());
+    let mut w = W(0);
+    w.b(b"[");
+    for j in 0..attest_count(i) {
+        if let Some(a) = take(&akey(i, j)) {
+            if j > 0 {
+                w.b(b",");
+            }
+            w.b(b"{\"account\":\"").b(&a[9..]).b(b"\",\"outcome\":").b(&a[8..9]);
+            w.b(b",\"block_timestamp_ns\":").n(u64_at(a, 0)).b(b"}");
+        }
+    }
+    w.b(b"]").done();
 }
 
 #[no_mangle]

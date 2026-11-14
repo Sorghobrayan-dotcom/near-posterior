@@ -90,21 +90,33 @@ The three registered forecasts (12, 24, 36 months) are stored on NEAR testnet in
 written for this project, [`brayan-posterior.testnet`](https://testnet.nearblocks.io/address/brayan-posterior.testnet)
 (Q-010: testnet is accepted in every track).
 
-- `contract/src/lib.rs`: Rust, no dependency, 4 KB of wasm. `commit` stores a record with the
+- `contract/src/lib.rs`: Rust, no dependency, 6 KB of wasm. `commit` stores a record with the
   block time and height; no method edits or deletes a record. `resolve` stores one outcome per
   record, once, and the contract refuses it before the record's resolution date. Only the
-  contract account can write; anyone can read with `count` and `get`.
+  contract account can call these two; anyone can read with `count` and `get`.
+- **The author cannot change it either.** The contract account holds no full-access key: its
+  only key can call `resolve` (see `lock` in `data/onchain/commitments.json`). The network
+  refuses a new deployment and a new `commit` from that account.
+- **The author's word is not the only one.** Once a resolution date has passed, any NEAR
+  account can call `attest` and write its own reading of the outcome (0 or 1) next to the
+  record, once, for good; `attestations` lists them.
+- **The other theses and the milestones are on chain too**: the scoreboard (the multiple each
+  public thesis needs and its base rate) and the dated milestones, under `extras` in
+  `data/onchain/commitments.json`.
 - Each record holds the probability, its interval, k*, the resolution date and rule, the git
   commit, and the sha256 of `results/registered_forecast.json` and of the three PREREG files.
   The transactions are listed in `data/onchain/commitments.json`.
 - `onchain/near.mjs`: signs and sends transactions with Node's standard library only
   (`node:crypto` ed25519, borsh by hand, public JSON-RPC). No npm package.
-- Tested on chain: a `resolve` before the date fails with "resolution date not reached"; a
-  `commit` from another account fails with "only the contract account can write".
+- Tested on chain: `node onchain/near.mjs selftest <spare account> <stranger> <wasm>` deploys
+  the build on a spare account and checks its behaviour (a stranger cannot commit or resolve,
+  nothing resolves or is attested before the date, one attestation per account, one resolution
+  per record).
 
 | Do | See |
 |---|---|
-| `uv run python -m near_posterior.onchain` (network) | 9 `PASS` lines: the code on chain is `contract/posterior_registry.wasm`; each record read from the chain equals the committed record and was written before its resolution date |
+| `uv run python -m near_posterior.onchain` (network) | only `PASS` lines: the code on chain is `contract/posterior_registry.wasm`; each record read from the chain equals the committed record and was written before its resolution date; the account holds no full-access key |
+| `node onchain/near.mjs view brayan-posterior.testnet get 3` | the scoreboard of the other theses as stored on chain |
 | `node onchain/near.mjs view brayan-posterior.testnet get 1` | the 24-month record as stored on chain, with its block height |
 | `cd contract`, then `cargo build --release --target wasm32-unknown-unknown` with `RUSTFLAGS="-C target-cpu=mvp"` | a wasm build of the contract from source |
 

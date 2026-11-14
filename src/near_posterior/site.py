@@ -288,11 +288,23 @@ def chain_block(res: dict) -> str:
         f'{svg.esc(json.loads(c["record"])["resolution_date"])} - '
         f'<a href="https://{host}/txns/{svg.esc(c["tx"])}">transaction</a></li>'
         for c in sorted(com["commitments"], key=lambda c: c["h_months"]))
+    rows += "".join(
+        f'<li>{svg.esc(e["kind"])} - <a href="https://{host}/txns/{svg.esc(e["tx"])}">'
+        f"transaction</a></li>" for e in com.get("extras", []))
+    lock = ""
+    if "lock" in com:
+        lock = (f' Since <a href="https://{host}/txns/{svg.esc(com["lock"]["tx"])}">this '
+                f"transaction</a> the account holds no full-access key: its only key can call "
+                f"<code>resolve</code>, so nobody, the author included, can replace the code or "
+                f"the records.")
     return (f'<section class="chain">\n<h2>Written on NEAR, before the outcome</h2>\n'
-            f'<p>The registered forecasts are stored in the contract '
-            f'<a href="https://{host}/address/{acct}">{acct}</a> ({svg.esc(com["network"])}). '
-            f"No method can edit or delete them, and the contract refuses a resolution before "
-            f"its date.</p>\n<ul>{rows}</ul>\n{supply}"
+            f'<p>The registered forecasts, the scoreboard and the milestones are stored in the '
+            f'contract <a href="https://{host}/address/{acct}">{acct}</a> '
+            f'({svg.esc(com["network"])}). No method can edit or delete them.{lock}</p>\n'
+            f"<p>The contract refuses a resolution before its date. Once the date has passed, "
+            f"any NEAR account can write its own reading of the outcome next to the author's "
+            f"(<code>attest</code>): the author's word is one line among others.</p>\n"
+            f"<ul>{rows}</ul>\n{supply}"
             f'<p class="q">Check: <code>uv run python -m near_posterior.onchain</code></p>\n'
             f"</section>")
 

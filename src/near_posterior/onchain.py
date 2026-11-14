@@ -2,19 +2,22 @@
 
 `contract/` holds a NEAR contract with no dependency; `contract/posterior_registry.wasm` is the
 deployed build. `node onchain/near.mjs commit <account>` wrote one record per horizon on chain and
-`data/onchain/commitments.json` keeps each record with its transaction.
+`data/onchain/commitments.json` keeps each record with its transaction. `commit-extra` added the
+scoreboard of the other theses and the milestones, and `lock` replaced the full-access key of the
+contract account by a key that can only call `resolve`.
 
 Offline (`verify`): every committed record names the sha256 of the registered forecast and of the
 three PREREG files, and these hashes and the forecast numbers equal the files in this repository.
 Live (`python -m near_posterior.onchain`, network): the contract code on chain is the committed
-wasm, each record read back from the chain is the committed record, and it was written before its
-resolution date.
+wasm, each record read back from the chain is the committed record, it was written before its
+resolution date, and the contract account holds no full-access key.
 """
 
 import base64
 import datetime as dt
 import hashlib
 import json
+import math
 import sys
 import urllib.request
 
@@ -58,6 +61,20 @@ def offline_checks() -> list[tuple[bool, str]]:
               and r["k_star"] == f["k_star"] and r["resolution_date"] == f["resolution_date"])
         res.append((ok, f"on-chain record h = {c['h_months']} (index {c['index']}, tx {c['tx']}) "
                         "names the committed forecast and PREREG files"))
+    ms = json.loads((out.ROOT / "results" / "milestones.json").read_text(encoding="utf-8"))
+    for e in com.get("extras", []):
+        r = json.loads(e["record"])
+        if e["kind"] == "milestones":
+            ok = (r["t0"] == ms["t0"] and math.isclose(r["C0"], ms["C0"], rel_tol=1e-9)
+                  and [m["date"] for m in r["milestones"]] == [m["date"] for m in ms["milestones"]]
+                  and all(math.isclose(a["C_needed"], b["C_needed"], rel_tol=1e-9)
+                          for a, b in zip(r["milestones"], ms["milestones"])))
+            res.append((ok, f"on-chain milestones (index {e['index']}, tx {e['tx']}) equal "
+                            "results/milestones.json"))
+        else:
+            ok = r["type"] == e["kind"] and len(r["rows"]) > 0 and len(r["git_commit"]) == 40
+            res.append((ok, f"on-chain {e['kind']} (index {e['index']}, tx {e['tx']}) lists "
+                            f"{len(r['rows'])} rows and the commit they were computed at"))
     return res
 
 
@@ -72,6 +89,14 @@ def rpc(network: str, method: str, params: dict) -> dict:
     return j["result"]
 
 
+def read(net: str, acct: str, index: int) -> dict:
+    """Return record `index` as the contract's `get` gives it."""
+    q = rpc(net, "query", {"request_type": "call_function", "finality": "final", "account_id": acct,
+                           "method_name": "get",
+                           "args_base64": base64.b64encode(str(index).encode()).decode()})
+    return json.loads(bytes(q["result"]).decode("utf-8"))
+
+
 def live_checks() -> list[tuple[bool, str]]:
     """Return the checks of the records read back from the chain (network)."""
     com = json.loads(FILE.read_text(encoding="utf-8"))
@@ -80,16 +105,25 @@ def live_checks() -> list[tuple[bool, str]]:
     res = [(acc["code_hash"] == b58(hashlib.sha256(WASM.read_bytes()).digest()),
             f"code deployed on {acct} ({net}) is contract/posterior_registry.wasm")]
     for c in com["commitments"]:
-        q = rpc(net, "query", {"request_type": "call_function", "finality": "final", "account_id": acct,
-                               "method_name": "get",
-                               "args_base64": base64.b64encode(str(c["index"]).encode()).decode()})
-        got = json.loads(bytes(q["result"]).decode("utf-8"))
+        got = read(net, acct, c["index"])
         when = dt.datetime.fromtimestamp(got["block_timestamp_ns"] / 1e9, dt.timezone.utc)
         due = dt.date.fromisoformat(json.loads(c["record"])["resolution_date"])
         ok = got["record"] == json.loads(c["record"]) and when.date() < due
         res.append((ok, f"record h = {c['h_months']} read on chain equals the committed record, "
                         f"written at block {got['block_height']} on {when:%Y-%m-%d %H:%M} UTC, "
                         f"before its resolution date {due}"))
+    for e in com.get("extras", []):
+        got = read(net, acct, e["index"])
+        res.append((got["record"] == json.loads(e["record"]),
+                    f"{e['kind']} read on chain equals the committed record, written at block "
+                    f"{got['block_height']}"))
+    keys = rpc(net, "query", {"request_type": "view_access_key_list", "finality": "final",
+                              "account_id": acct})["keys"]
+    perms = [k["access_key"]["permission"] for k in keys]
+    ok = all(isinstance(p, dict) and p["FunctionCall"]["method_names"] == ["resolve"]
+             and p["FunctionCall"]["receiver_id"] == acct for p in perms)
+    res.append((ok, f"{acct} holds no full-access key: its {len(perms)} key can only call "
+                    "`resolve`, so the code and the records cannot be replaced"))
     return res
 
 

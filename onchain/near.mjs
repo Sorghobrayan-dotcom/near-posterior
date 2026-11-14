@@ -4,6 +4,9 @@
 //   node onchain/near.mjs create <account>         new testnet account, key in ~/.near-credentials
 //   node onchain/near.mjs deploy <account> <wasm>  deploy the registry contract
 //   node onchain/near.mjs commit <account>         commit the registered forecasts
+//   node onchain/near.mjs commit-extra <account>   commit the scoreboard and the milestones
+//   node onchain/near.mjs lock <account>           keep only a key that can call `resolve`
+//   node onchain/near.mjs selftest <account> <stranger> <wasm>  behaviour test on a spare account
 //   node onchain/near.mjs call <signer> <contract> <method> [args]
 //   node onchain/near.mjs view <account> <method> [args]
 import crypto from "node:crypto";
@@ -71,6 +74,11 @@ async function send(acct, receiver, actions) {
   return res;
 }
 const deployAction = (code) => Buffer.concat([u8(1), bytes(code)]);
+const pubKey = (pub) => Buffer.concat([u8(0), pub]);
+// AddKey with a function-call permission: no allowance limit, one receiver, the listed methods.
+const addCallKeyAction = (pub, receiver, methods) => Buffer.concat([u8(5), pubKey(pub), u64(0), u8(0), u8(0),
+  str(receiver), u32(methods.length), ...methods.map(str)]);
+const deleteKeyAction = (pub) => Buffer.concat([u8(6), pubKey(pub)]);
 const callAction = (m, args, gas = 30_000_000_000_000n) => Buffer.concat([u8(2), str(m), bytes(args), u64(gas), u128(0)]);
 
 async function view(acct, method, args = "") {
@@ -79,6 +87,11 @@ async function view(acct, method, args = "") {
   return Buffer.from(r.result).toString("utf8");
 }
 
+const csvLine = (l) => { const o = []; let c = "", q = false;
+  for (const ch of l) { if (ch === '"') q = !q; else if (ch === "," && !q) { o.push(c); c = ""; } else c += ch; }
+  o.push(c); return o; };
+const COMMITS = path.join(ROOT, "data", "onchain", "commitments.json");
+const REPO = "https://github.com/Sorghobrayan-dotcom/near-posterior";
 const sha = (f) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, f))).digest("hex");
 
 const [cmd, acct, ...rest] = process.argv.slice(2);
@@ -98,6 +111,13 @@ if (cmd === "create") {
 } else if (cmd === "deploy") {
   const res = await send(acct, acct, [deployAction(fs.readFileSync(rest[0]))]);
   console.log("deployed, tx", res.transaction.hash);
+  if (fs.existsSync(COMMITS)) {
+    const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
+    if (com.contract === acct && com.network === NET) {
+      com.code_sha256 = crypto.createHash("sha256").update(fs.readFileSync(rest[0])).digest("hex");
+      fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+    }
+  }
 } else if (cmd === "commit") {
   const reg = JSON.parse(fs.readFileSync(path.join(ROOT, "results", "registered_forecast.json"), "utf8"));
   const commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
@@ -120,6 +140,84 @@ if (cmd === "create") {
   const dir = path.join(ROOT, "data", "onchain");
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "commitments.json"), JSON.stringify(out, null, 2) + "\n");
+} else if (cmd === "commit-extra") {
+  const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
+  const reg = JSON.parse(fs.readFileSync(path.join(ROOT, "results", "registered_forecast.json"), "utf8"));
+  const ms = JSON.parse(fs.readFileSync(path.join(ROOT, "results", "milestones.json"), "utf8"));
+  const commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
+  const date = reg.forecasts["24"].resolution_date;
+  const due = Math.floor(Date.parse(date + "T00:00:00Z") / 1000);
+  const fwd = fs.readFileSync(path.join(ROOT, "results", "forward_claims.csv"), "utf8").trim().split(/\r?\n/).slice(1)
+    .map(csvLine).filter((r) => r[6] === "24").map((r) => ({ thesis: r[0], k: Number(r[3]), P: Number(r[7]) }));
+  const base = { project: "near-posterior", repo: REPO, git_commit: commit, h_months: 24, resolution_date: date };
+  const records = {
+    scoreboard: { ...base, type: "scoreboard",
+      note: "fee growth multiple k stated by each public NEAR thesis, and P = share of comparable protocols that reached it in 24 months",
+      rows: fwd, sha256: { "results/forward_claims.csv": sha("results/forward_claims.csv") } },
+    milestones: { ...base, type: "milestones", t0: ms.t0, C0: ms.C0,
+      note: "coverage C_90 needed at each date to be on the constant-growth line from C0 to 1; a yardstick, not a forecast",
+      milestones: ms.milestones.map((m) => ({ date: m.date, C_needed: m.C_needed })) },
+  };
+  com.extras = com.extras || [];
+  for (const [kind, rec] of Object.entries(records)) {
+    const record = JSON.stringify(rec);
+    const res = await send(acct, acct, [callAction("commit", Buffer.from(`${due}|${record}`))]);
+    const index = Number(Buffer.from(res.status.SuccessValue, "base64").toString());
+    com.extras.push({ kind, index, tx: res.transaction.hash, record });
+    console.log(`${kind} committed as index ${index}, tx ${res.transaction.hash}`);
+  }
+  fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+} else if (cmd === "lock") {
+  // One transaction: add a key that can only call `resolve` on this account, delete the full-access key.
+  const old = loadKey(acct);
+  const { publicKey, privateKey } = crypto.generateKeyPairSync("ed25519");
+  const pub = publicKey.export({ format: "der", type: "spki" }).subarray(-32);
+  const seed = privateKey.export({ format: "der", type: "pkcs8" }).subarray(-32);
+  const pk = "ed25519:" + b58enc(pub);
+  const next = credFile(acct).replace(/\.json$/, ".resolve-key.json");
+  fs.writeFileSync(next, JSON.stringify({ account_id: acct, public_key: pk,
+    private_key: "ed25519:" + b58enc(Buffer.concat([seed, pub])) }), { mode: 0o600 });
+  const res = await send(acct, acct, [addCallKeyAction(pub, acct, ["resolve"]), deleteKeyAction(old.pub)]);
+  fs.renameSync(credFile(acct), credFile(acct).replace(/\.json$/, ".deleted-full-access-key.json"));
+  fs.renameSync(next, credFile(acct));
+  console.log("locked, tx", res.transaction.hash, "remaining key", pk, "(function call: resolve)");
+  if (fs.existsSync(COMMITS)) {
+    const com = JSON.parse(fs.readFileSync(COMMITS, "utf8"));
+    if (com.contract === acct && com.network === NET) {
+      com.lock = { tx: res.transaction.hash, methods: ["resolve"] };
+      fs.writeFileSync(COMMITS, JSON.stringify(com, null, 2) + "\n");
+    }
+  }
+} else if (cmd === "selftest") {
+  const [stranger, wasm] = rest;
+  let failed = 0;
+  const say = (ok, text) => { if (!ok) failed++; console.log((ok ? "PASS " : "FAIL ") + text); };
+  const call = (who, method, args) => send(who, acct, [callAction(method, Buffer.from(args))]);
+  const val = (res) => Buffer.from(res.status.SuccessValue || "", "base64").toString();
+  const refused = async (text, who, method, args, why) => {
+    try { await call(who, method, args); say(false, text + " (it was accepted)"); }
+    catch (e) { say(String(e.message).includes(why), `${text}: "${why}"`); }
+  };
+  await send(acct, acct, [deployAction(fs.readFileSync(wasm))]);
+  const past = val(await call(acct, "commit", '1|{"t":"past"}'));
+  const future = val(await call(acct, "commit", '4102444800|{"t":"future"}'));
+  say(Number(future) === Number(past) + 1, `the owner commits two records (indexes ${past} and ${future})`);
+  await refused("a stranger cannot commit", stranger, "commit", '1|{"t":"x"}', "only the contract account can write");
+  await refused("the owner cannot resolve before the date", acct, "resolve", `${future}|{"outcome":1}`, "resolution date not reached");
+  await refused("nobody can attest before the date", stranger, "attest", `${future}|1`, "resolution date not reached");
+  await refused("an attestation is 0 or 1", stranger, "attest", `${past}|2`, "outcome must be 0 or 1");
+  await call(stranger, "attest", `${past}|0`);
+  await refused("one attestation per account", stranger, "attest", `${past}|1`, "already attested");
+  await refused("a stranger cannot resolve", stranger, "resolve", `${past}|{"outcome":0}`, "only the contract account can write");
+  await call(acct, "resolve", `${past}|{"outcome":1}`);
+  await refused("a record resolves once", acct, "resolve", `${past}|{"outcome":0}`, "already resolved");
+  const got = JSON.parse(await view(acct, "get", past));
+  say(got.record.t === "past" && got.outcome.value.outcome === 1, "get returns the record with the owner's outcome");
+  const att = JSON.parse(await view(acct, "attestations", past));
+  say(att.length === 1 && att[0].account === stranger && att[0].outcome === 0,
+    "attestations returns the stranger's dissenting reading, next to the owner's outcome");
+  say(JSON.parse(await view(acct, "get", future)).outcome === null, "the future record has no outcome");
+  process.exitCode = failed ? 1 : 0;
 } else if (cmd === "call") {
   const [contract, method, args = ""] = rest;
   const res = await send(acct, contract, [callAction(method, Buffer.from(args))]);

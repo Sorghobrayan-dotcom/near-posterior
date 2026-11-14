@@ -1,7 +1,7 @@
 {
   "network": "testnet",
   "contract": "brayan-posterior.testnet",
-  "code_sha256": "55d1c1c1a840dab36676d85b862fd5057f844657a337b1342c35909f87aa8daa",
+  "code_sha256": "126ec238014128a5d04aff32dabaa5b4a9d8d31ff132d530ddcbcf2fd3df8bde",
   "commitments": [
     {
       "h_months": 12,
@@ -24,5 +24,25 @@
       "block_hash": "A8kWVETqmuB9iWQLXkMyE1C7wW8U3kWHBcVnwvufJAeV",
       "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"229bf3f5f05f713b7ac93f8979e850072c1b5517\",\"question\":\"P(NEAR buybacks cover NEAR net issuance at the 36-month mark)\",\"h_months\":36,\"t0\":\"2026-11-11\",\"class\":\"R\",\"k_star\":5.90534453255,\"P\":0.0612573099415,\"interval\":[0.0144736842105,0.119736842105],\"resolution_date\":\"2029-11-11\",\"rule\":\"outcome = 1 if C_90 at t0 + h months >= 1, else 0; Brier = (P - outcome)^2\",\"sha256\":{\"results/registered_forecast.json\":\"ef0de918a1eaac95136614e2828a2f2e236e37db897953902ffc81b9d5f6cec3\",\"PREREG.md\":\"1f288ba679200639e30ccd13247c6ca6aa5a5abde7300b2e2c061e71ae05101e\",\"PREREG_2.md\":\"4848d6d37507d582577f1549dccb6059a63b1139d8670b22cd30b8925df47257\",\"PREREG_3.md\":\"450530662cc1521d00d9c7aa9fc15845a30e773c934cbec90773e44645008954\"}}"
     }
-  ]
+  ],
+  "extras": [
+    {
+      "kind": "scoreboard",
+      "index": 3,
+      "tx": "ECMKU62bcJh6v3yqJeBHYVWJF9itJ6ruH9k93dqzuB2Z",
+      "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"02084a493e2dd9584174016af5f321b5a22e6f6b\",\"h_months\":24,\"resolution_date\":\"2028-11-11\",\"type\":\"scoreboard\",\"note\":\"fee growth multiple k stated by each public NEAR thesis, and P = share of comparable protocols that reached it in 24 months\",\"rows\":[{\"thesis\":\"0xrard/near-investment-thesis\",\"k\":5.1,\"P\":0.0609898989899},{\"thesis\":\"0xrard/near-investment-thesis\",\"k\":3.3,\"P\":0.0730303030303},{\"thesis\":\"ervhint/tideline\",\"k\":4.93229562022,\"P\":0.0609898989899},{\"thesis\":\"ervhint/tideline\",\"k\":3.12914361049,\"P\":0.0730303030303},{\"thesis\":\"Topeseun/near-intents-investment-thesis\",\"k\":4.96391342338,\"P\":0.0609898989899},{\"thesis\":\"Raindess69/near-usage-thesis\",\"k\":5.85587291446,\"P\":0.0517777777778},{\"thesis\":\"HATWHY4041/near-intents-thesis\",\"k\":5.79823916713,\"P\":0.0517777777778},{\"thesis\":\"soldanoandrea/near-thesis\",\"k\":7.168,\"P\":0.0322087542088},{\"thesis\":\"soldanoandrea/near-thesis\",\"k\":4.545,\"P\":0.0623232323232},{\"thesis\":\"Apihpih96/near-intents-thesis\",\"k\":5.6,\"P\":0.0543838383838},{\"thesis\":\"EmekaManuel/nearquery\",\"k\":4.7,\"P\":0.0623232323232},{\"thesis\":\"bomanaps/-near-intents-thesis\",\"k\":1.6,\"P\":0.142251467051}],\"sha256\":{\"results/forward_claims.csv\":\"d76485fab18e1ff4bef46dee03da0a7ab24128ddf138c5ffdbb5e9414428cb17\"}}"
+    },
+    {
+      "kind": "milestones",
+      "index": 4,
+      "tx": "CSvtR9LSKAFkaqSUzwX6rx9vDaRWQSWZcvymFS8DBfgr",
+      "record": "{\"project\":\"near-posterior\",\"repo\":\"https://github.com/Sorghobrayan-dotcom/near-posterior\",\"git_commit\":\"02084a493e2dd9584174016af5f321b5a22e6f6b\",\"h_months\":24,\"resolution_date\":\"2028-11-11\",\"type\":\"milestones\",\"t0\":\"2026-11-11\",\"C0\":0.182264333929,\"note\":\"coverage C_90 needed at each date to be on the constant-growth line from C0 to 1; a yardstick, not a forecast\",\"milestones\":[{\"date\":\"2027-02-11\",\"C_needed\":0.225811510693},{\"date\":\"2027-05-11\",\"C_needed\":0.277815455998},{\"date\":\"2027-08-11\",\"C_needed\":0.34419201201},{\"date\":\"2027-11-11\",\"C_needed\":0.426427466773},{\"date\":\"2028-02-11\",\"C_needed\":0.528310879025},{\"date\":\"2028-05-11\",\"C_needed\":0.65149521934},{\"date\":\"2028-08-11\",\"C_needed\":0.807152537839},{\"date\":\"2028-11-11\",\"C_needed\":1}]}"
+    }
+  ],
+  "lock": {
+    "tx": "6YnRFvCnFDeTdf5fbM67VxdQiqqjYt4RCSQZd7n1N1L2",
+    "methods": [
+      "resolve"
+    ]
+  }
 }
