@@ -1107,3 +1107,18 @@ PASS brayan-posterior-live.testnet holds no full-access key: its 1 key can only 
   numbers of the last human push. `pages.yml` now also runs on `workflow_run` of `refresh`
   (completed, deploy only if it succeeded), so the page and its "Verdict today" follow the daily
   snapshot. Checked: the YAML parses; the first real run will be the next scheduled refresh.
+
+## 2026-11-14: a door for screening agents
+
+- `AGENTS.md` opened with the build rules ("Do tasks T1 to T9", "Do not push"), which a screening
+  agent reads first (Codex loads `AGENTS.md`). It now opens with "Screening and judging this
+  repository": the commands to run and what they print, the two snapshots, the build tolerance,
+  the submitted tag. The build rules follow, marked as used while building. `CLAUDE.md` points
+  Claude Code to the same section.
+
+```
+> uv run python -m near_posterior.verify
+62 lines, all PASS (exit 0)
+> uv run pytest -q
+141 passed in 117.83s (0:01:57)
+```
