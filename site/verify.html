@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check the forecasts on NEAR</title>
+<style>:root{--ink:#e6e8eb;--mid:#8b929b;--accent:#f97316;--line:#262a31;--bg:#0b0d10;
+--card:#14171c;--card2:#1b1f26;--near:#00ec97;--blue:#2f80ed}
+*{box-sizing:border-box}
+body{font-family:Inter,"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+max-width:1040px;margin:0 auto;padding:16px;color:var(--ink);background:var(--bg);
+line-height:1.6;font-size:15px}
+a{color:var(--blue)}
+header{background:linear-gradient(180deg,#12161b,#0e1115);border:1px solid var(--line);
+border-radius:14px;padding:28px;margin:8px 0 16px}
+header h1{color:#fff;font-weight:700;font-size:2em;line-height:1.2;margin:.25em 0 .6em;
+letter-spacing:-.01em}
+h2{font-size:1.15em;font-weight:650;margin:0 0 .7em;line-height:1.3;color:#fff}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px 22px;margin:14px 0}section svg{max-width:100%;height:auto;border-radius:8px}
+.kicker{color:var(--near);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.big{font-size:4em;font-weight:800;color:var(--accent);margin:.1em 0 0;line-height:1;
+font-variant-numeric:tabular-nums}.big+p strong{color:var(--near)}
+.tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
+.tiles div{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.tiles span{display:block;color:var(--mid);font-size:.75em;text-transform:uppercase;
+letter-spacing:.05em}.tiles b{display:block;font-size:1.6em;color:#fff;
+font-variant-numeric:tabular-nums}.tiles i{display:block;font-style:normal;color:var(--mid);
+font-size:.75em}.problem .tiles b{color:var(--accent)}
+ul.brief{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+ul.brief li{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+padding:12px 14px;font-size:.88em;color:#c9cdd3}ul.brief strong{display:block;color:var(--near);
+font-size:.78em;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.head,pre{font-family:Consolas,"SFMono-Regular",monospace;font-size:.8em;background:#0b0d10;
+color:#a7f3d0;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+.head{color:var(--mid);overflow-wrap:anywhere}
+.chain{border-left:3px solid var(--near)}
+.simgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sl{display:block;margin:0 0 14px}.sl span{display:flex;justify-content:space-between;gap:8px;
+font-size:.9em}.sl b{color:var(--near);font-variant-numeric:tabular-nums}
+.sl input{width:100%;accent-color:var(--near)}.sl input[type=number]{box-sizing:border-box;background:var(--bg);color:inherit;border:1px solid #2a2f37;border-radius:6px;padding:7px 9px;font:inherit}.sl i{color:var(--mid);font-size:.75em;font-style:normal}
+.hz label{margin-right:14px;font-size:.9em}
+.out{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:16px}
+.out span{color:var(--mid);font-size:.75em;text-transform:uppercase;letter-spacing:.05em}
+.out>b{display:block;font-size:3.2em;font-weight:800;color:var(--accent);line-height:1.1;
+font-variant-numeric:tabular-nums}.out em{color:#c9cdd3;font-style:normal}
+.bar{height:8px;background:#0b0d10;border-radius:4px;margin:10px 0;overflow:hidden}
+.bar div{height:100%;background:var(--accent)}
+.flow{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+counter-reset:s}.flow div{background:var(--card2);border:1px solid var(--line);
+border-top:3px solid var(--blue);border-radius:8px;padding:10px;font-size:.85em}
+.flow b{display:block;color:#fff}.flow span{color:#b4bac2}
+.flow div:nth-child(4){border-top-color:var(--near)}
+.punch{border-color:var(--accent)}
+code{font-size:.85em;background:var(--card2);color:#d1d5db;padding:1px 4px;border-radius:4px;
+overflow-wrap:anywhere}
+.q{font-size:.82em;color:var(--mid)}
+.tag{font-size:.62em;font-weight:600;color:#0b0d10;background:var(--mid);border-radius:3px;
+padding:1px 6px;vertical-align:middle;white-space:nowrap;text-transform:uppercase}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:.8em;width:100%;font-variant-numeric:tabular-nums}
+th{color:var(--mid);font-weight:600;text-transform:uppercase;font-size:.85em}
+td,th{border-bottom:1px solid var(--line);padding:6px 6px;text-align:right;vertical-align:top}
+tr:hover td{background:var(--card2)}
+td:first-child,th:first-child{text-align:left}.left{text-align:left}
+#explorer form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:.5em 0}
+#explorer input[type=range]{flex:1 1 200px;accent-color:var(--accent)}
+#ex-out{background:var(--card2);padding:10px;border-left:3px solid var(--accent);border-radius:6px}
+svg rect[fill="#ffffff"]{fill:#101317}svg [fill="#1f2933"]{fill:#e6e8eb}
+svg [stroke="#1f2933"]{stroke:#9aa1a9}svg [stroke="#d1d5db"]{stroke:#2a2f37}
+svg [fill="#d1d5db"]{fill:#3a4049}svg [fill="#f6d3c1"]{fill:#5b2a12}
+svg [stroke="#c2410c"]{stroke:#f97316}svg [fill="#c2410c"]{fill:#f97316}
+@media (max-width:520px){header{padding:18px 14px}header h1{font-size:1.5em}.big{font-size:3em}
+section{padding:14px}}.chk{list-style:none;padding:0;margin:0}.chk li{padding:9px 4px;border-bottom:1px solid #20242b;font-size:.9em}.chk b{display:inline-block;width:3.6em;font-variant-numeric:tabular-nums}.ok b{color:var(--near)}.ko b{color:var(--accent)}#go{background:var(--near);color:#0b0d10;border:0;border-radius:6px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}</style>
+</head>
+<body>
+<header>
+<p class="kicker">near-posterior - check it yourself - <a href="index.html">back to the page</a></p>
+<h1>Do not trust this repository: ask the chain</h1>
+<p>Your browser reads the NEAR contract <strong id="acct"></strong> through a public RPC node and compares what it finds with the files of this site. Nothing goes through a server of ours, and the same checks run offline with <code>uv run python -m near_posterior.onchain</code>.</p>
+<p><button id="go" type="button">Run the checks again</button></p>
+</header>
+<section>
+<h2>Checks</h2>
+<p id="sum"></p>
+<ul class="chk" id="checks"></ul>
+</section>
+<script>(function(){
+var RPCS={testnet:"https://rpc.testnet.fastnear.com",mainnet:"https://rpc.mainnet.fastnear.com"};
+var B58="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+var out=document.getElementById("checks"),sum=document.getElementById("sum");
+function b58(u){var n=0n,s="",i;for(i=0;i<u.length;i++){n=n*256n+BigInt(u[i]);}
+while(n>0n){s=B58[Number(n%58n)]+s;n=n/58n;}for(i=0;i<u.length&&u[i]===0;i++){s="1"+s;}return s;}
+function hex(u){var s="",i;for(i=0;i<u.length;i++){s+=(u[i]<16?"0":"")+u[i].toString(16);}return s;}
+async function sha(buf){return new Uint8Array(await crypto.subtle.digest("SHA-256",buf));}
+async function file(rel){var r=await fetch("../"+rel,{cache:"no-store"});
+if(!r.ok){throw new Error(rel+": "+r.status);}return r.arrayBuffer();}
+async function rpc(url,params){var r=await fetch(url,{method:"POST",
+headers:{"content-type":"application/json"},
+body:JSON.stringify({jsonrpc:"2.0",id:"v",method:"query",params:params})});
+var j=await r.json();if(j.error){throw new Error(JSON.stringify(j.error));}return j.result;}
+async function view(url,acct,method,args){var r=await rpc(url,{request_type:"call_function",
+finality:"final",account_id:acct,method_name:method,args_base64:btoa(args)});
+return new TextDecoder().decode(new Uint8Array(r.result));}
+var n=0,ko=0;
+function line(ok,text){n++;if(!ok){ko++;}var li=document.createElement("li"),b=document.createElement("b");
+li.className=ok?"ok":"ko";b.textContent=ok?"PASS":"FAIL";li.appendChild(b);
+li.appendChild(document.createTextNode(text));out.appendChild(li);}
+async function run(){out.textContent="";n=0;ko=0;sum.textContent="Reading the chain...";
+var com=JSON.parse(new TextDecoder().decode(await file("data/onchain/commitments.json")));
+var url=RPCS[com.network],acct=com.contract;
+document.getElementById("acct").textContent=acct+" ("+com.network+")";
+var acc=await rpc(url,{request_type:"view_account",finality:"final",account_id:acct});
+line(acc.code_hash===b58(await sha(await file("contract/posterior_registry.wasm"))),
+"The code running on "+acct+" is contract/posterior_registry.wasm of this repository (code hash "
++acc.code_hash+").");
+var keys=(await rpc(url,{request_type:"view_access_key_list",finality:"final",account_id:acct})).keys;
+var locked=keys.length>0&&keys.every(function(k){var p=k.access_key.permission;
+return p!=="FullAccess"&&p.FunctionCall&&p.FunctionCall.method_names.join()==="resolve";});
+line(locked,"The account holds no full-access key ("+keys.length+" key, limited to the method "
++"resolve): nobody, the author included, can replace the code or the records.");
+var known={},files={};
+com.commitments.forEach(function(c){known[c.index]={label:c.h_months+"-month forecast",record:c.record};});
+(com.extras||[]).forEach(function(e){known[e.index]={label:e.kind,record:e.record};});
+var count=Number(await view(url,acct,"count",""));
+line(count===Object.keys(known).length,"The contract holds "+count+" records, as listed in "
++"data/onchain/commitments.json.");
+for(var i=0;i<count;i++){var g=JSON.parse(await view(url,acct,"get",String(i))),k=known[i];
+var same=!!k&&JSON.stringify(g.record)===JSON.stringify(JSON.parse(k.record));
+var when=new Date(g.block_timestamp_ns/1e6),due=new Date(g.resolution_unix_s*1000);
+line(same&&when<due,(k?k.label:"record "+i)+(g.record.P===undefined?"":" (P = "+g.record.P+")")
++": on chain since "+when.toISOString().slice(0,16).replace("T"," ")+" UTC, block "
++g.block_height+", equal to the repository copy; resolves on "+due.toISOString().slice(0,10)+", "
++(g.outcome?"outcome written":"no outcome yet")+".");
+if(g.record.type===undefined&&g.record.sha256){for(var f in g.record.sha256){files[f]=g.record.sha256[f];}}}
+for(var f in files){line(hex(await sha(await file(f)))===files[f],
+f+" on this site has the sha256 written on chain ("+files[f].slice(0,12)+"...).");}
+sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")
++", read from "+url+" by your browser at "+new Date().toISOString().slice(0,19).replace("T"," ")+" UTC.";}
+document.getElementById("go").addEventListener("click",function(){run().catch(function(e){
+sum.textContent="Could not finish: "+e.message;});});
+run().catch(function(e){sum.textContent="Could not finish: "+e.message;});})();</script>
+</body>
+</html>

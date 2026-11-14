@@ -114,6 +114,7 @@ def compute(previous_history: str = "") -> dict:
     res["deviations"] = (out.ROOT / "DEVIATIONS.md").read_text(encoding="ascii")
     files["THESIS.md"] = thesis.render(res)
     files["site/index.html"] = site.render(res)
+    files["site/verify.html"] = site.verify_page()
     files.update(site.standalone(res))
     files["index.html"] = site.root_index()
     files["docs/DEMO_SCRIPT.md"] = material.demo_script(res)

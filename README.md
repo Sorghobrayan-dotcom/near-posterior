@@ -116,6 +116,7 @@ written for this project, [`brayan-posterior.testnet`](https://testnet.nearblock
 | Do | See |
 |---|---|
 | `uv run python -m near_posterior.onchain` (network) | only `PASS` lines: the code on chain is `contract/posterior_registry.wasm`; each record read from the chain equals the committed record and was written before its resolution date; the account holds no full-access key |
+| Open [`site/verify.html`](https://sorghobrayan-dotcom.github.io/near-posterior/site/verify.html) | the same checks run by your browser against a public RPC node: code hash, access keys, every record, the sha256 of the PREREG files |
 | `node onchain/near.mjs view brayan-posterior.testnet get 3` | the scoreboard of the other theses as stored on chain |
 | `node onchain/near.mjs view brayan-posterior.testnet get 1` | the 24-month record as stored on chain, with its block height |
 | `cd contract`, then `cargo build --release --target wasm32-unknown-unknown` with `RUSTFLAGS="-C target-cpu=mvp"` | a wasm build of the contract from source |

@@ -42,6 +42,14 @@ def test_inline_scripts_only_and_no_external_request():
     assert "@import" not in text and "url(" not in text
 
 
+def test_verify_page_regenerates_and_loads_no_external_resource():
+    text = (out.ROOT / "site" / "verify.html").read_text(encoding="ascii")
+    assert site.verify_page() == text and "\r" not in text
+    assert not re.search(r"""src\s*=\s*["']?(https?:)?//""", text, re.I)
+    assert not re.search(r"""<link[^>]*href\s*=\s*["']?(https?:)?//""", text, re.I)
+    assert 'href="verify.html"' in PAGE.read_text(encoding="ascii")
+
+
 def test_correction_block_has_its_tag_chart_and_three_numbers():
     text = PAGE.read_text(encoding="ascii")
     block = [s for s in re.findall(r"<section[^>]*>(.*?)</section>", text, re.S)

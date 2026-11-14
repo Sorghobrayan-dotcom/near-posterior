@@ -305,7 +305,8 @@ def chain_block(res: dict) -> str:
             f"any NEAR account can write its own reading of the outcome next to the author's "
             f"(<code>attest</code>): the author's word is one line among others.</p>\n"
             f"<ul>{rows}</ul>\n{supply}"
-            f'<p class="q">Check: <code>uv run python -m near_posterior.onchain</code></p>\n'
+            f'<p class="q">Check: <code>uv run python -m near_posterior.onchain</code>, or '
+            f'<a href="verify.html">run the same checks in your browser</a>.</p>\n'
             f"</section>")
 
 
@@ -668,6 +669,88 @@ def tables(res: dict) -> list[str]:
     ]
 
 
+VERIFY_JS = """(function(){
+var RPCS={testnet:"https://rpc.testnet.fastnear.com",mainnet:"https://rpc.mainnet.fastnear.com"};
+var B58="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+var out=document.getElementById("checks"),sum=document.getElementById("sum");
+function b58(u){var n=0n,s="",i;for(i=0;i<u.length;i++){n=n*256n+BigInt(u[i]);}
+while(n>0n){s=B58[Number(n%58n)]+s;n=n/58n;}for(i=0;i<u.length&&u[i]===0;i++){s="1"+s;}return s;}
+function hex(u){var s="",i;for(i=0;i<u.length;i++){s+=(u[i]<16?"0":"")+u[i].toString(16);}return s;}
+async function sha(buf){return new Uint8Array(await crypto.subtle.digest("SHA-256",buf));}
+async function file(rel){var r=await fetch("../"+rel,{cache:"no-store"});
+if(!r.ok){throw new Error(rel+": "+r.status);}return r.arrayBuffer();}
+async function rpc(url,params){var r=await fetch(url,{method:"POST",
+headers:{"content-type":"application/json"},
+body:JSON.stringify({jsonrpc:"2.0",id:"v",method:"query",params:params})});
+var j=await r.json();if(j.error){throw new Error(JSON.stringify(j.error));}return j.result;}
+async function view(url,acct,method,args){var r=await rpc(url,{request_type:"call_function",
+finality:"final",account_id:acct,method_name:method,args_base64:btoa(args)});
+return new TextDecoder().decode(new Uint8Array(r.result));}
+var n=0,ko=0;
+function line(ok,text){n++;if(!ok){ko++;}var li=document.createElement("li"),b=document.createElement("b");
+li.className=ok?"ok":"ko";b.textContent=ok?"PASS":"FAIL";li.appendChild(b);
+li.appendChild(document.createTextNode(text));out.appendChild(li);}
+async function run(){out.textContent="";n=0;ko=0;sum.textContent="Reading the chain...";
+var com=JSON.parse(new TextDecoder().decode(await file("data/onchain/commitments.json")));
+var url=RPCS[com.network],acct=com.contract;
+document.getElementById("acct").textContent=acct+" ("+com.network+")";
+var acc=await rpc(url,{request_type:"view_account",finality:"final",account_id:acct});
+line(acc.code_hash===b58(await sha(await file("contract/posterior_registry.wasm"))),
+"The code running on "+acct+" is contract/posterior_registry.wasm of this repository (code hash "
++acc.code_hash+").");
+var keys=(await rpc(url,{request_type:"view_access_key_list",finality:"final",account_id:acct})).keys;
+var locked=keys.length>0&&keys.every(function(k){var p=k.access_key.permission;
+return p!=="FullAccess"&&p.FunctionCall&&p.FunctionCall.method_names.join()==="resolve";});
+line(locked,"The account holds no full-access key ("+keys.length+" key, limited to the method "
++"resolve): nobody, the author included, can replace the code or the records.");
+var known={},files={};
+com.commitments.forEach(function(c){known[c.index]={label:c.h_months+"-month forecast",record:c.record};});
+(com.extras||[]).forEach(function(e){known[e.index]={label:e.kind,record:e.record};});
+var count=Number(await view(url,acct,"count",""));
+line(count===Object.keys(known).length,"The contract holds "+count+" records, as listed in "
++"data/onchain/commitments.json.");
+for(var i=0;i<count;i++){var g=JSON.parse(await view(url,acct,"get",String(i))),k=known[i];
+var same=!!k&&JSON.stringify(g.record)===JSON.stringify(JSON.parse(k.record));
+var when=new Date(g.block_timestamp_ns/1e6),due=new Date(g.resolution_unix_s*1000);
+line(same&&when<due,(k?k.label:"record "+i)+(g.record.P===undefined?"":" (P = "+g.record.P+")")
++": on chain since "+when.toISOString().slice(0,16).replace("T"," ")+" UTC, block "
++g.block_height+", equal to the repository copy; resolves on "+due.toISOString().slice(0,10)+", "
++(g.outcome?"outcome written":"no outcome yet")+".");
+if(g.record.type===undefined&&g.record.sha256){for(var f in g.record.sha256){files[f]=g.record.sha256[f];}}}
+for(var f in files){line(hex(await sha(await file(f)))===files[f],
+f+" on this site has the sha256 written on chain ("+files[f].slice(0,12)+"...).");}
+sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")
++", read from "+url+" by your browser at "+new Date().toISOString().slice(0,19).replace("T"," ")+" UTC.";}
+document.getElementById("go").addEventListener("click",function(){run().catch(function(e){
+sum.textContent="Could not finish: "+e.message;});});
+run().catch(function(e){sum.textContent="Could not finish: "+e.message;});})();"""
+
+
+def verify_page() -> str:
+    """Return site/verify.html: the checks of `near_posterior.onchain`, run by the reader's browser."""
+    extra = (".chk{list-style:none;padding:0;margin:0}.chk li{padding:9px 4px;"
+             "border-bottom:1px solid #20242b;font-size:.9em}.chk b{display:inline-block;"
+             "width:3.6em;font-variant-numeric:tabular-nums}.ok b{color:var(--near)}"
+             ".ko b{color:var(--accent)}#go{background:var(--near);color:#0b0d10;border:0;"
+             "border-radius:6px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}")
+    return "\n".join([
+        "<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        "<title>Check the forecasts on NEAR</title>", f"<style>{CSS}{extra}</style>", "</head>",
+        "<body>", "<header>",
+        '<p class="kicker">near-posterior - check it yourself - <a href="index.html">back to the '
+        "page</a></p>",
+        "<h1>Do not trust this repository: ask the chain</h1>",
+        '<p>Your browser reads the NEAR contract <strong id="acct"></strong> through a public RPC '
+        "node and compares what it finds with the files of this site. Nothing goes through a "
+        "server of ours, and the same checks run offline with "
+        "<code>uv run python -m near_posterior.onchain</code>.</p>",
+        '<p><button id="go" type="button">Run the checks again</button></p>',
+        "</header>", "<section>", "<h2>Checks</h2>", '<p id="sum"></p>',
+        '<ul class="chk" id="checks"></ul>', "</section>",
+        f"<script>{VERIFY_JS}</script>", "</body>", "</html>", ""])
+
+
 def root_index() -> str:
     """Return the root index.html: a redirect to site/ with a plain link, for GitHub Pages."""
     return "\n".join([
@@ -807,6 +890,7 @@ def main() -> None:
     """Rewrite site/index.html and the standalone charts from results/."""
     res = thesis.load_results()
     out.write_text(out.ROOT / "site" / "index.html", render(res))
+    out.write_text(out.ROOT / "site" / "verify.html", verify_page())
     for rel, text in standalone(res).items():
         out.write_text(out.ROOT / rel, text)
 
