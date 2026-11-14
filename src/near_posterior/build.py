@@ -109,6 +109,10 @@ def compute(previous_history: str = "") -> dict:
     if rpc_check.RPC_FILE.exists():
         rpc = json.loads(rpc_check.RPC_FILE.read_text(encoding="ascii"))
         files["results/rpc_supply.json"] = out.json_text(rpc_check.compare(snap, rpc))
+    if rpc_check.WALLET_FILE.exists():
+        wallet = json.loads(rpc_check.WALLET_FILE.read_text(encoding="ascii"))
+        files["results/onchain_coverage.json"] = out.json_text(
+            rpc_check.onchain_coverage(wallet, cov))
     res = thesis.parse({rel[len("results/"):]: text for rel, text in files.items()
                         if rel.startswith("results/")})
     res["deviations"] = (out.ROOT / "DEVIATIONS.md").read_text(encoding="ascii")

@@ -19,3 +19,17 @@ def test_compare_finds_the_matching_edge():
     assert res["issuance"]["end_of_day"]["rel_diff"] == 0.0
     assert res["issuance"]["end_of_day"]["r_rpc"] == pytest.approx(0.03)
     assert res["issuance"]["start_of_day"]["I_rpc"] == pytest.approx(30.0)
+
+
+def test_onchain_coverage_is_wallet_inflow_over_supply_growth():
+    wallet = {"rpc": "x", "fetched_at": "t", "account": "w", "edge": "end_of_day",
+              "t0": "2026-11-11", "window_days": 90, "days": {
+                  "2026-08-13": {"height": 1, "total_supply": str(1000 * 10**24),
+                                 "amount": str(5 * 10**24), "locked": "0"},
+                  "2026-11-11": {"height": 2, "total_supply": str(1010 * 10**24),
+                                 "amount": str(6 * 10**24), "locked": str(1 * 10**24)}}}
+    cov = {"daily": [{"date": "2026-11-10", "C_90": 0.5}, {"date": "2026-11-11", "C_90": 0.15}]}
+    res = rpc_check.onchain_coverage(wallet, cov)
+    assert res["coverage_onchain"] == pytest.approx(0.2)
+    assert res["C_90_model"] == 0.15 and res["gap"] == pytest.approx(0.05)
+    assert res["heights"] == [1, 2] and res["dB"] == pytest.approx(2.0)

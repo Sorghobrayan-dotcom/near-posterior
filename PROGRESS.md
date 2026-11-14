@@ -889,3 +889,32 @@ refresh: verify on the committed tree: 0 FAIL; uncommitted changes: none
 > uv run pytest -q
 125 passed in 191.92s
 ```
+
+## C1 - Coverage measured from the chain alone (done)
+
+- `fetch.py --rpc-wallet`: one-off read-only call to the archival RPC. Anchored at the registered
+  t0 (`results/registered_forecast.json`) and t0 - 90 days, `end_of_day` edge (the edge
+  `results/rpc_supply.json` reports as closest); for each block: height, timestamp, total supply,
+  and `amount` / `locked` of `buybacks.multisignature.near` from `view_account` at that height.
+  Stored in `data/rpc/buyback_wallet.json` (`data/rpc/supply.json` untouched).
+- `rpc_check.onchain_coverage`: (B(t0) - B(t0 - 90)) / (S(t0) - S(t0 - 90)), B = amount + locked,
+  next to the model's C_90 dated t0 in `results/coverage.json` -> `daily[]`; `build` writes
+  `results/onchain_coverage.json` offline (picked up by `verify` like every generated file).
+- Site: tile "Coverage read from the chain alone" at the top, one paragraph in the chain block with
+  the limits (net inflow, NEAR- not dollar-denominated, a buyback is not a burn). `verify.html`
+  reads the wallet balance live from mainnet. README bullet in a generated block `onchain`.
+- Measured: blocks 211225999 (end of 2026-08-13) and 224135609 (end of 2026-11-11, the same block
+  as `data/rpc/supply.json`); coverage_onchain 0.190 against C_90 0.182 (gap 0.008), inside the
+  15 to 25 percent sanity range (manual reading to 2026-11-14: about 19.2 percent).
+- The verify page script was run under node with a stubbed DOM against the public mainnet RPC
+  (live balance read); not run in a real browser.
+
+```
+> uv run python -m near_posterior.fetch --rpc-wallet
+2026-08-13 end_of_day: height 211225999
+2026-11-11 end_of_day: height 224135609
+> uv run python -m near_posterior.verify
+57 lines, all PASS
+> uv run pytest -q
+133 passed
+```

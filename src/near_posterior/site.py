@@ -342,6 +342,17 @@ def chain_block(res: dict) -> str:
                   f"that gives a net issuance of {i['I_rpc'] / 1e6:.2f} million NEAR "
                   f"({100 * i['r_rpc']:.2f}% a year), {100 * abs(i['rel_diff']):.2f}% away from "
                   f"the NearBlocks figure used in the model.</p>\n")
+    if "onchain_coverage" in res:
+        o = res["onchain_coverage"]
+        supply += (f"<p>Read from the chain alone, the buyback wallet <code>{svg.esc(o['account'])}"
+                   f"</code> gained {o['dB'] / 1e6:.2f} million NEAR between the end of "
+                   f"{o['days'][0]} and the end of {o['days'][1]} (blocks {o['heights'][0]} and "
+                   f"{o['heights'][1]}) while total supply grew {o['dS'] / 1e6:.2f} million NEAR: "
+                   f"a coverage of {100 * o['coverage_onchain']:.1f}%, against "
+                   f"{100 * o['C_90_model']:.1f}% for the model's C_90 on the same date. Limits: "
+                   f"it is the net inflow of NEAR into the wallet, so outflows or staking through "
+                   f"a pool would distort it; it counts NEAR, while C_90 weighs each day in "
+                   f"dollars; and a buyback is not a burn, the NEAR bought stays in a wallet.</p>\n")
     com = json.loads(path.read_text(encoding="utf-8"))
     host = "testnet.nearblocks.io" if com["network"] == "testnet" else "nearblocks.io"
     acct = svg.esc(com["contract"])
@@ -785,7 +796,18 @@ sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")
 +", read from "+url+" by your browser at "+new Date().toISOString().slice(0,19).replace("T"," ")+" UTC.";}
 document.getElementById("go").addEventListener("click",function(){run().catch(function(e){
 sum.textContent="Could not finish: "+e.message;});});
-run().catch(function(e){sum.textContent="Could not finish: "+e.message;});})();"""
+function near(y){return Number(BigInt(y)/1000000000000000000n)/1e6;}
+function fmt(x){return x.toLocaleString("en-US",{maximumFractionDigits:0});}
+async function wallet(){var w=document.getElementById("wallet");w.textContent="Reading the buyback wallet...";
+var st=JSON.parse(new TextDecoder().decode(await file("data/rpc/buyback_wallet.json"))),d=st.days[st.t0];
+var a=await rpc(RPCS.mainnet,{request_type:"view_account",finality:"final",account_id:st.account});
+w.textContent="The buyback wallet "+st.account+" holds "+fmt(near(a.amount)+near(a.locked))
++" NEAR now (mainnet block "+a.block_height+", read by your browser), against "
++fmt(near(d.amount)+near(d.locked))+" NEAR at block "+d.height+" (end of "+st.t0
++"), the reading behind the on-chain coverage of the page.";}
+run().catch(function(e){sum.textContent="Could not finish: "+e.message;});
+wallet().catch(function(e){document.getElementById("wallet").textContent="Could not read the "
++"buyback wallet: "+e.message;});})();"""
 
 
 def verify_page() -> str:
@@ -810,6 +832,8 @@ def verify_page() -> str:
         '<p><button id="go" type="button">Run the checks again</button></p>',
         "</header>", "<section>", "<h2>Checks</h2>", '<p id="sum"></p>',
         '<ul class="chk" id="checks"></ul>', "</section>",
+        "<section>", "<h2>Buyback wallet, live from mainnet</h2>", '<p id="wallet"></p>',
+        "</section>",
         f"<script>{VERIFY_JS}</script>", "</body>", "</html>", ""])
 
 
@@ -902,18 +926,24 @@ def render(res: dict) -> str:
              '</a> (secondary analyses)')
     def pc(x):
         return f"{100 * float(x):.1f}%"
-    tiles = [("Buybacks / new supply today", pc(w90["C"])),
-             ("Fee growth needed in 24 months", f"{f(h['k_star'], 2)}x"),
-             ("Comparable protocols", str(h["entities"])),
-             ("Base rate (registered)", pc(h["P"])),
-             ("Forecast stored on", "NEAR")]
+    tiles = [("Buybacks / new supply today", pc(w90["C"]), "")]
+    if "onchain_coverage" in res:
+        o = res["onchain_coverage"]
+        tiles.append(("Coverage read from the chain alone", pc(o["coverage_onchain"]),
+                      f"NEAR into the buyback wallet / new NEAR, {o['window_days']} days to "
+                      f"{o['t0']}, mainnet RPC"))
+    tiles += [("Fee growth needed in 24 months", f"{f(h['k_star'], 2)}x", ""),
+              ("Comparable protocols", str(h["entities"]), ""),
+              ("Base rate (registered)", pc(h["P"]), ""),
+              ("Forecast stored on", "NEAR", "")]
     top = [
         "<header>",
         '<p class="kicker">near-posterior - NEAR Buyback Coverage Forecast - thesis track - '
         'not financial advice</p>',
         "<h1>Will NEAR's buybacks offset its new supply 24 months from now?</h1>",
-        '<div class="tiles">' + "".join(f'<div><span>{svg.esc(a)}</span><b>{svg.esc(b)}</b></div>'
-                                        for a, b in tiles) + "</div>",
+        '<div class="tiles">' + "".join(f'<div><span>{svg.esc(a)}</span><b>{svg.esc(b)}</b>'
+                                        + (f"<i>{svg.esc(n)}</i>" if n else "") + "</div>"
+                                        for a, b, n in tiles) + "</div>",
         f'<p class="big">{pc(h["P"])}</p>',
         f"<p><strong>90% interval {pc(h['interval'][0])} to {pc(h['interval'][1])}</strong> - "
         f"share of "

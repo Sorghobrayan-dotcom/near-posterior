@@ -41,6 +41,9 @@ flowchart LR
   each quarter to be on the line to the target; the daily refresh says ahead or behind.
 - **The chain is a data source too.** NEAR supply is read from block headers on an archival
   RPC node and compared with the explorer figure (`results/rpc_supply.json`).
+<!-- BEGIN GENERATED onchain -->
+- **Coverage measured from the chain alone.** Mainnet RPC readings only (total supply from block headers, balance of `buybacks.multisignature.near` at blocks 211225999 and 224135609) give a coverage of 19.0% over the 90 days to 2026-11-11, against 18.2% for the model's dollar-weighted C_90 on the same date (`results/onchain_coverage.json`). It is the wallet's net NEAR inflow, and a buyback is not a burn.
+<!-- END GENERATED onchain -->
 - **Tested on the past.** Replayed on 1,659 past forecasts; it beats trend extrapolation, and
   the README says where it was still too optimistic. The page replays them, and the 24-month ones,
   next to what happened, protocol by protocol.

@@ -26,12 +26,23 @@ def blocks(res: dict) -> dict:
                     f"same origins); at 12 months, "
                     f"{thesis.pcal_text(m['near']['12'], '12', percent=True)} (tested on later "
                     f"origins).")
-    return {
+    parts = {
         "brief": "\n".join(f"- **{k}:** {v}" for k, v in thesis.brief(res)),
         "finding": finding,
         "headline": "```\n" + thesis.headline_line(res) + "\n```",
         "limits": "\n".join(f"- {t}" for t in thesis.limits(res)),
     }
+    if "onchain_coverage" in res:
+        o = res["onchain_coverage"]
+        parts["onchain"] = (
+            f"- **Coverage measured from the chain alone.** Mainnet RPC readings only (total "
+            f"supply from block headers, balance of `{o['account']}` at blocks "
+            f"{o['heights'][0]} and {o['heights'][1]}) give a coverage of "
+            f"{pc(o['coverage_onchain'])} over the {o['window_days']} days to {o['t0']}, against "
+            f"{pc(o['C_90_model'])} for the model's dollar-weighted C_90 on the same date "
+            f"(`results/onchain_coverage.json`). It is the wallet's net NEAR inflow, and a "
+            f"buyback is not a burn.")
+    return parts
 
 
 def fill(text: str, parts: dict) -> str:

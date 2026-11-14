@@ -54,10 +54,9 @@ RPC_OUT = RAW.parent / "rpc" / "supply.json"
 GENESIS_HEIGHT = 9820210
 
 
-def rpc_header(height: int | None = None) -> dict | None:
-    """Return the block header at height (latest final block if None), or None if no block."""
-    params = {"finality": "final"} if height is None else {"block_id": height}
-    body = json.dumps({"jsonrpc": "2.0", "id": "near-posterior", "method": "block",
+def rpc_call(method: str, params: dict) -> dict:
+    """Return the `result` of one JSON-RPC call to the archival node ({} if there is none)."""
+    body = json.dumps({"jsonrpc": "2.0", "id": "near-posterior", "method": method,
                        "params": params}).encode("ascii")
     req = urllib.request.Request(RPC, data=body, headers={
         "Content-Type": "application/json", "User-Agent": "near-posterior/0.1"})
@@ -66,12 +65,18 @@ def rpc_header(height: int | None = None) -> dict | None:
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
                 res = json.loads(resp.read())
-            return res.get("result", {}).get("header")
+            return res.get("result", {})
         except urllib.error.HTTPError as exc:
             if exc.code != 429:
                 raise
             time.sleep(10 * (attempt + 1))
     raise RuntimeError("RPC rate limit: 6 attempts failed")
+
+
+def rpc_header(height: int | None = None) -> dict | None:
+    """Return the block header at height (latest final block if None), or None if no block."""
+    params = {"finality": "final"} if height is None else {"block_id": height}
+    return rpc_call("block", params).get("header")
 
 
 def existing_header(height: int) -> dict:
@@ -121,9 +126,49 @@ def rpc_main(days: list[str]) -> None:
                        newline="\n")
 
 
+WALLET = "buybacks.multisignature.near"
+WALLET_OUT = RAW.parent / "rpc" / "buyback_wallet.json"
+WALLET_WINDOW_DAYS = 90
+REGISTERED = RAW.parents[1] / "results" / "registered_forecast.json"
+
+
+def rpc_wallet(t0: dt.date) -> dict:
+    """Return supply and buyback wallet balance at the end of t0 and of t0 - 90 days."""
+    top = rpc_header()
+    res = {"rpc": RPC, "account": WALLET, "edge": "end_of_day", "t0": t0.isoformat(),
+           "window_days": WALLET_WINDOW_DAYS,
+           "fetched_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+           "days": {}}
+    for day in (t0 - dt.timedelta(days=WALLET_WINDOW_DAYS), t0):
+        edge = day + dt.timedelta(days=1)
+        ts = int(dt.datetime(edge.year, edge.month, edge.day, tzinfo=dt.timezone.utc)
+                 .timestamp()) * 10**9
+        h = last_block_before(ts, top)
+        acc = rpc_call("query", {"request_type": "view_account", "block_id": h["height"],
+                                 "account_id": WALLET})
+        if "amount" not in acc:
+            raise RuntimeError(f"view_account {WALLET} at {h['height']}: no amount")
+        res["days"][day.isoformat()] = {"height": h["height"], "timestamp_ns": h["timestamp"],
+                                        "total_supply": h["total_supply"],
+                                        "amount": acc["amount"], "locked": acc["locked"]}
+        print(f"{day} end_of_day: height {h['height']}", flush=True)
+    return res
+
+
+def wallet_main() -> None:
+    """Write data/rpc/buyback_wallet.json, anchored at the registered t0."""
+    t0 = json.loads(REGISTERED.read_text(encoding="ascii"))["t0"]
+    res = rpc_wallet(dt.date.fromisoformat(t0))
+    WALLET_OUT.parent.mkdir(parents=True, exist_ok=True)
+    WALLET_OUT.write_text(json.dumps(res, indent=2, sort_keys=True) + "\n", encoding="ascii",
+                          newline="\n")
+
+
 if __name__ == "__main__":
     import sys
     if sys.argv[1:2] == ["--rpc-supply"]:
         rpc_main(sys.argv[2:])
+    elif sys.argv[1:2] == ["--rpc-wallet"]:
+        wallet_main()
     else:
         main()

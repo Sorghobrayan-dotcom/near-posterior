@@ -1,0 +1,24 @@
+{
+  "account": "buybacks.multisignature.near",
+  "days": {
+    "2026-08-13": {
+      "amount": "738795370466392349982573048083",
+      "height": 211225999,
+      "locked": "0",
+      "timestamp_ns": 1786665599922625615,
+      "total_supply": "1303521301815313617232533821467089"
+    },
+    "2026-11-11": {
+      "amount": "2249868714909366474265631069294",
+      "height": 224135609,
+      "locked": "0",
+      "timestamp_ns": 1794441599752706016,
+      "total_supply": "1311473431762787833076286255899939"
+    }
+  },
+  "edge": "end_of_day",
+  "fetched_at": "2026-11-14T03:32:17+00:00",
+  "rpc": "https://archival-rpc.mainnet.fastnear.com",
+  "t0": "2026-11-11",
+  "window_days": 90
+}

@@ -86,6 +86,10 @@ section{padding:14px}}.chk{list-style:none;padding:0;margin:0}.chk li{padding:9p
 <p id="sum"></p>
 <ul class="chk" id="checks"></ul>
 </section>
+<section>
+<h2>Buyback wallet, live from mainnet</h2>
+<p id="wallet"></p>
+</section>
 <script>(function(){
 var RPCS={testnet:"https://rpc.testnet.fastnear.com",mainnet:"https://rpc.mainnet.fastnear.com"};
 var B58="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
@@ -140,6 +144,17 @@ sum.textContent=(ko?ko+" of "+n+" checks failed":"All "+n+" checks passed")
 +", read from "+url+" by your browser at "+new Date().toISOString().slice(0,19).replace("T"," ")+" UTC.";}
 document.getElementById("go").addEventListener("click",function(){run().catch(function(e){
 sum.textContent="Could not finish: "+e.message;});});
-run().catch(function(e){sum.textContent="Could not finish: "+e.message;});})();</script>
+function near(y){return Number(BigInt(y)/1000000000000000000n)/1e6;}
+function fmt(x){return x.toLocaleString("en-US",{maximumFractionDigits:0});}
+async function wallet(){var w=document.getElementById("wallet");w.textContent="Reading the buyback wallet...";
+var st=JSON.parse(new TextDecoder().decode(await file("data/rpc/buyback_wallet.json"))),d=st.days[st.t0];
+var a=await rpc(RPCS.mainnet,{request_type:"view_account",finality:"final",account_id:st.account});
+w.textContent="The buyback wallet "+st.account+" holds "+fmt(near(a.amount)+near(a.locked))
++" NEAR now (mainnet block "+a.block_height+", read by your browser), against "
++fmt(near(d.amount)+near(d.locked))+" NEAR at block "+d.height+" (end of "+st.t0
++"), the reading behind the on-chain coverage of the page.";}
+run().catch(function(e){sum.textContent="Could not finish: "+e.message;});
+wallet().catch(function(e){document.getElementById("wallet").textContent="Could not read the "
++"buyback wallet: "+e.message;});})();</script>
 </body>
 </html>
