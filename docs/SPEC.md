@@ -148,7 +148,7 @@ model; table of the nearest analogs; dispersion of other theses' figures.
 - Data sources and why DefiLlama and NearBlocks were used instead of BigQuery or the Intents
   Explorer (no key, no cost, re-runnable by anyone).
 - Hackathon disclosure: code written in the window; AI coding assistance was used;
-  libraries; no other project submitted by the author.
+  libraries; the author's other submission, named as the rule on two submissions per person asks.
 - Limits (same list as THESIS section 8). No marketing.
 
 ## 10. CI
