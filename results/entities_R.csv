@@ -1,6 +1,6 @@
 h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_growth_origin
 12,aethir,Aethir,Developer Tools,4,0,0.373217970292,2025-11-01
-12,banana-gun,Banana Gun,Telegram Bot,14,0,0.942427673845,2024-04-01
+12,banana-gun,Banana Gun,Telegram Bot,13,0,0.942427673845,2024-04-01
 12,base-app,Base App,Wallets,5,0,0.259023274364,2025-11-01
 12,binance-staked-eth,Binance staked ETH,Liquid Staking,19,0,3.79453502301,2024-10-01
 12,binance-staked-sol,Binance Staked SOL,Liquid Staking,5,0,0.543333500343,2025-07-01
@@ -27,8 +27,8 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,liquid-collective,Liquid Collective,Liquid Staking,3,0,0.549481725962,2025-09-01
 12,looksrare,LooksRare,NFT Marketplace,3,0,0.0629423411419,2022-11-01
 12,maestro,Maestro,Telegram Bot,25,0,3.39905814663,2024-02-01
-12,metaplex,Metaplex,Launchpad,7,0,0.403970175839,2025-01-01
-12,meth-protocol,mETH Protocol,Liquid Staking,15,0,0.811597855496,2024-11-01
+12,metaplex,Metaplex,Launchpad,6,0,0.403970175839,2025-01-01
+12,meth-protocol,mETH Protocol,Liquid Staking,14,0,0.811597855496,2024-11-01
 12,mev-capital,MEV Capital,Risk Curators,2,0,0.0313361957375,2025-11-01
 12,nouns,Nouns,Services,7,0,0.628583639997,2022-12-01
 12,osmosis-dex,Osmosis DEX,Dexs,6,0,0.726954780846,2024-01-01
@@ -41,8 +41,8 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#apex-protocol,apex-protocol,Derivatives,1,0,0.125559846648,2025-11-01
 12,parent#astherus,astherus,Derivatives,3,0,1.91256501341,2025-07-01
 12,parent#balancer,balancer,Dexs,27,0,1.61055334353,2021-01-01
-12,parent#bancor,bancor,Dexs,7,0,0.13033712834,2021-10-01
-12,parent#benqi,benqi,Liquid Staking,3,0,0.887348627903,2025-01-01
+12,parent#bancor,bancor,Dexs,6,0,0.13033712834,2021-10-01
+12,parent#benqi,benqi,Liquid Staking,2,0,0.887348627903,2025-01-01
 12,parent#biswap,biswap,Dexs,3,0,0.106331440108,2022-09-01
 12,parent#bluefin,bluefin,Dexs,8,0,0.799582510938,2025-02-01
 12,parent#blur,blur,NFT Marketplace,4,0,0.689098984054,2024-02-01
@@ -59,7 +59,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#ethena,ethena,Basis Trading,6,2,6.38128616372,2024-11-01
 12,parent#ether-fi,ether-fi,Liquid Staking,6,0,1.14523049122,2025-05-01
 12,parent#euler,euler,Lending,6,0,0.873463456676,2025-06-01
-12,parent#farcaster,farcaster,Launchpad,7,0,3.58643209797,2025-05-01
+12,parent#farcaster,farcaster,Launchpad,6,0,3.58643209797,2025-05-01
 12,parent#fjord-foundry,fjord-foundry,Launchpad,3,0,0.01,2024-04-01
 12,parent#fluid,fluid,Lending,15,0,2.86154298318,2024-09-01
 12,parent#frax-finance,frax-finance,Liquid Staking,5,0,0.855702794028,2024-03-01
@@ -76,7 +76,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#liquity,liquity,CDP,7,0,0.22689765827,2022-11-01
 12,parent#lista-dao,lista-dao,Lending,1,0,0.386011567596,2025-11-01
 12,parent#maker,maker,CDP,18,0,3.35429621248,2021-03-01
-12,parent#maple-finance,maple-finance,Lending,3,0,4.75641325911,2025-01-01
+12,parent#maple-finance,maple-finance,Lending,2,0,0.238778867414,2022-12-01
 12,parent#marinade-finance,marinade-finance,Liquid Staking,12,0,1.39806157847,2024-12-01
 12,parent#metamask,metamask,Wallets,15,0,1.11984483832,2024-09-01
 12,parent#moonshot,moonshot,Trading App,1,0,0.114732698678,2025-05-01
@@ -84,22 +84,21 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#mux-protocol,mux-protocol,Derivatives,5,0,0.128369822884,2024-02-01
 12,parent#navi-protocol,navi-protocol,Lending,2,0,0.175930377522,2025-10-01
 12,parent#opensea,opensea,NFT Marketplace,5,5,54.3822632311,2021-04-01
-12,parent#optimism-foundation,optimism-foundation,Services,15,0,2.90448236432,2023-11-01
+12,parent#optimism-foundation,optimism-foundation,Services,14,0,2.90448236432,2023-11-01
 12,parent#orca,orca,Dexs,3,0,0.678218302088,2025-11-01
-12,parent#pancakeswap,pancakeswap,Dexs,20,0,4.00177972285,2023-06-01
+12,parent#pancakeswap,pancakeswap,Dexs,21,0,4.00177972285,2023-06-01
 12,parent#pangolin,pangolin,Dexs,5,0,0.0963515485876,2022-04-01
 12,parent#paxos,paxos,Stablecoin Issuer,6,3,27.1975976048,2022-03-01
 12,parent#pendle,pendle,Yield,11,0,1.0828134339,2024-06-01
-12,parent#phantom,phantom,Wallets,3,0,0.395947026616,2025-06-01
+12,parent#phantom,phantom,Wallets,4,0,0.395947026616,2025-06-01
 12,parent#pharaoh-exchange,pharaoh-exchange,Dexs,3,0,0.314263520157,2025-05-01
 12,parent#puffer-finance,puffer-finance,Liquid Restaking,1,0,0.11436889487,2025-02-01
 12,parent#pulsex,pulsex,Dexs,5,0,0.206440263686,2025-02-01
 12,parent#quickswap,quickswap,Dexs,14,0,0.335810837789,2022-09-01
-12,parent#radiant,radiant,Lending,1,0,0.011237977787,2024-02-01
 12,parent#raydium,raydium,Dexs,3,3,31.7400073472,2023-12-01
 12,parent#resolv,resolv,Basis Trading,2,0,0.01,2025-10-01
 12,parent#sanctum,sanctum,Liquid Staking,17,0,3.09697844525,2024-07-01
-12,parent#securitize,securitize,RWA,10,0,4.12295794455,2025-02-01
+12,parent#securitize,securitize,RWA,9,0,3.46879329959,2025-03-01
 12,parent#solv-protocol,solv-protocol,Bridge,2,0,0.668458299935,2025-10-01
 12,parent#sosovalue,sosovalue,Indexes,2,0,0.833869089424,2025-11-01
 12,parent#spark,spark,Lending,5,0,1.66472916973,2025-06-01
@@ -154,8 +153,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#aero-protocol,aero-protocol,Dexs,5,0,3.43972428617,2024-03-01
 24,parent#apeswap,apeswap,Dexs,3,0,0.0314233660622,2022-02-01
 24,parent#balancer,balancer,Dexs,27,0,1.9618692746,2023-02-01
-24,parent#bancor,bancor,Dexs,7,0,0.161252319799,2022-01-01
-24,parent#benqi,benqi,Liquid Staking,1,0,0.49744359975,2024-05-01
+24,parent#bancor,bancor,Dexs,6,0,0.161252319799,2022-01-01
 24,parent#blur,blur,NFT Marketplace,4,0,0.01,2024-05-01
 24,parent#bonkfun,bonkfun,Telegram Bot,6,0,1.46578582585,2024-11-01
 24,parent#camelot,camelot,Dexs,6,0,0.0324675484598,2024-02-01
@@ -183,12 +181,11 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#mux-protocol,mux-protocol,Derivatives,5,0,0.0131153671776,2024-02-01
 24,parent#opensea,opensea,NFT Marketplace,5,0,3.38828401414,2021-04-01
 24,parent#optimism-foundation,optimism-foundation,Services,10,0,0.883559175455,2024-01-01
-24,parent#pancakeswap,pancakeswap,Dexs,20,8,15.1016822186,2023-11-01
+24,parent#pancakeswap,pancakeswap,Dexs,21,8,15.1016822186,2023-11-01
 24,parent#pangolin,pangolin,Dexs,5,0,0.186690985931,2022-04-01
 24,parent#paxos,paxos,Stablecoin Issuer,6,0,1.64611061022,2022-03-01
 24,parent#pendle,pendle,Yield,2,0,0.45693804928,2024-06-01
 24,parent#quickswap,quickswap,Dexs,14,0,0.623956946494,2022-06-01
-24,parent#radiant,radiant,Lending,1,0,0.00558650647433,2024-02-01
 24,parent#raydium,raydium,Dexs,3,1,7.03565498065,2023-12-01
 24,parent#sanctum,sanctum,Liquid Staking,5,0,2.4014197953,2024-07-01
 24,parent#spiritswap,spiritswap,Dexs,3,0,0.00480774021859,2022-05-01
@@ -219,7 +216,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 36,parent#aave,aave,Lending,21,11,18.0723824346,2023-01-01
 36,parent#apeswap,apeswap,Dexs,3,0,0.0261947650102,2022-02-01
 36,parent#balancer,balancer,Dexs,27,0,0.848917582286,2022-11-01
-36,parent#bancor,bancor,Dexs,7,0,0.0477276821964,2022-04-01
+36,parent#bancor,bancor,Dexs,6,0,0.0449170114091,2022-03-01
 36,parent#biswap,biswap,Dexs,3,0,0.0124901591122,2022-09-01
 36,parent#compound-finance,compound-finance,Lending,10,0,0.772568329554,2020-08-01
 36,parent#curve-finance,curve-finance,Dexs,25,0,1.53736331609,2022-10-01
@@ -231,7 +228,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 36,parent#metamask,metamask,Wallets,2,0,1.31640777809,2023-10-01
 36,parent#opensea,opensea,NFT Marketplace,5,0,1.17451461339,2021-04-01
 36,parent#optimism-foundation,optimism-foundation,Services,4,0,0.200453147936,2023-05-01
-36,parent#pancakeswap,pancakeswap,Dexs,15,3,5.8225479928,2022-11-01
+36,parent#pancakeswap,pancakeswap,Dexs,16,3,5.8225479928,2022-11-01
 36,parent#pangolin,pangolin,Dexs,5,0,0.0168328698746,2022-03-01
 36,parent#paxos,paxos,Stablecoin Issuer,6,0,1.05118970493,2023-09-01
 36,parent#quickswap,quickswap,Dexs,14,0,1.34825593563,2022-09-01

@@ -1,6 +1,6 @@
 {
-  "P": 0.0361502347418,
-  "entities": 71,
+  "P": 0.0369220151829,
+  "entities": 69,
   "excluded": [
     "tether",
     "parent#maker",
@@ -15,10 +15,10 @@
   ],
   "h": 24,
   "interval": [
-    0.0103286384977,
-    0.0666666666667
+    0.0103519668737,
+    0.0676501035197
   ],
-  "k_star": 5.36510446732,
+  "k_star": 5.35754027946,
   "label": "post hoc (specified after the primary results; named, hand-picked list)",
-  "moments": 472
+  "moments": 470
 }
