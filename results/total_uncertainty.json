@@ -1,12 +1,12 @@
 {
-  "between_share": 0.241017751636,
+  "between_share": 0.249713700771,
   "groups": 72,
   "h": 24,
-  "k_star": 5.35754027946,
+  "k_star": 4.69685766869,
   "label": "tertiary (specified after the secondary results)",
-  "p5": 0.0100250626566,
-  "p50": 0.0440251572327,
-  "p95": 0.103703764758,
+  "p5": 0.011171415649,
+  "p50": 0.0493273542601,
+  "p95": 0.122222222222,
   "values": 144000,
   "weighting": "equal weight per specification; 2000 values each, same seed"
 }

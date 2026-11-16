@@ -1,9 +1,9 @@
 {
-  "F_near": 79030554.3333,
+  "F_near": 81836248.5,
   "choice": {
     "difference_interval": [
-      -0.0283757827192,
-      0.0169529500801
+      -0.0308855081474,
+      0.012019070077
     ],
     "horizon": 12,
     "lowest_crps": "A_60",
@@ -128,7 +128,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "convex-finance",
         "tau": "2022-11-01"
       },
@@ -257,12 +257,6 @@
         "b0_entities": 36,
         "entity": "debridge",
         "tau": "2024-07-01"
-      },
-      {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "ens",
-        "tau": "2021-11-01"
       },
       {
         "analog_entities": 3,
@@ -584,15 +578,9 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "nouns",
         "tau": "2022-11-01"
-      },
-      {
-        "analog_entities": 20,
-        "b0_entities": 14,
-        "entity": "nouns",
-        "tau": "2022-12-01"
       },
       {
         "analog_entities": 43,
@@ -680,7 +668,7 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#aave",
         "tau": "2022-11-01"
       },
@@ -779,6 +767,12 @@
         "b0_entities": 34,
         "entity": "parent#aero-protocol",
         "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 54,
+        "b0_entities": 36,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-08-01"
       },
       {
         "analog_entities": 59,
@@ -896,7 +890,7 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 11,
+        "b0_entities": 10,
         "entity": "parent#balancer",
         "tau": "2022-11-01"
       },
@@ -905,12 +899,6 @@
         "b0_entities": 13,
         "entity": "parent#balancer",
         "tau": "2022-12-01"
-      },
-      {
-        "analog_entities": 20,
-        "b0_entities": 14,
-        "entity": "parent#balancer",
-        "tau": "2023-01-01"
       },
       {
         "analog_entities": 25,
@@ -1081,6 +1069,12 @@
         "tau": "2021-02-01"
       },
       {
+        "analog_entities": 1,
+        "b0_entities": 1,
+        "entity": "parent#compound-finance",
+        "tau": "2021-09-01"
+      },
+      {
         "analog_entities": 5,
         "b0_entities": 3,
         "entity": "parent#compound-finance",
@@ -1154,7 +1148,7 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 11,
+        "b0_entities": 10,
         "entity": "parent#curve-finance",
         "tau": "2022-11-01"
       },
@@ -1283,12 +1277,6 @@
         "b0_entities": 36,
         "entity": "parent#fluid",
         "tau": "2024-08-01"
-      },
-      {
-        "analog_entities": 60,
-        "b0_entities": 37,
-        "entity": "parent#fluid",
-        "tau": "2024-09-01"
       },
       {
         "analog_entities": 76,
@@ -1525,12 +1513,6 @@
         "tau": "2025-05-01"
       },
       {
-        "analog_entities": 70,
-        "b0_entities": 38,
-        "entity": "parent#ktx.finance",
-        "tau": "2024-11-01"
-      },
-      {
         "analog_entities": 72,
         "b0_entities": 39,
         "entity": "parent#ktx.finance",
@@ -1579,18 +1561,6 @@
         "tau": "2024-06-01"
       },
       {
-        "analog_entities": 53,
-        "b0_entities": 36,
-        "entity": "parent#layerzero",
-        "tau": "2024-07-01"
-      },
-      {
-        "analog_entities": 82,
-        "b0_entities": 46,
-        "entity": "parent#lifinity",
-        "tau": "2025-02-01"
-      },
-      {
         "analog_entities": 10,
         "b0_entities": 6,
         "entity": "parent#liquity",
@@ -1616,7 +1586,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#liquity",
         "tau": "2022-11-01"
       },
@@ -1783,12 +1753,6 @@
         "tau": "2024-05-01"
       },
       {
-        "analog_entities": 52,
-        "b0_entities": 35,
-        "entity": "parent#mux-protocol",
-        "tau": "2024-06-01"
-      },
-      {
         "analog_entities": 1,
         "b0_entities": 0,
         "entity": "parent#opensea",
@@ -1874,7 +1838,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#pancakeswap",
         "tau": "2022-11-01"
       },
@@ -2011,6 +1975,12 @@
         "tau": "2022-07-01"
       },
       {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#paxos",
+        "tau": "2023-08-01"
+      },
+      {
         "analog_entities": 36,
         "b0_entities": 28,
         "entity": "parent#paxos",
@@ -2039,12 +2009,6 @@
         "b0_entities": 52,
         "entity": "parent#pharaoh-exchange",
         "tau": "2025-04-01"
-      },
-      {
-        "analog_entities": 111,
-        "b0_entities": 52,
-        "entity": "parent#pharaoh-exchange",
-        "tau": "2025-05-01"
       },
       {
         "analog_entities": 4,
@@ -2155,22 +2119,10 @@
         "tau": "2022-08-01"
       },
       {
-        "analog_entities": 50,
-        "b0_entities": 32,
-        "entity": "parent#stargate-finance",
-        "tau": "2024-04-01"
-      },
-      {
         "analog_entities": 52,
         "b0_entities": 34,
         "entity": "parent#stargate-finance",
         "tau": "2024-05-01"
-      },
-      {
-        "analog_entities": 52,
-        "b0_entities": 35,
-        "entity": "parent#stargate-finance",
-        "tau": "2024-06-01"
       },
       {
         "analog_entities": 103,
@@ -2305,14 +2257,8 @@
         "tau": "2024-06-01"
       },
       {
-        "analog_entities": 82,
-        "b0_entities": 46,
-        "entity": "parent#thena",
-        "tau": "2025-02-01"
-      },
-      {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#trader-joe",
         "tau": "2022-11-01"
       },
@@ -2405,12 +2351,6 @@
         "b0_entities": 52,
         "entity": "parent#trust-wallet",
         "tau": "2025-04-01"
-      },
-      {
-        "analog_entities": 111,
-        "b0_entities": 52,
-        "entity": "parent#trust-wallet",
-        "tau": "2025-05-01"
       },
       {
         "analog_entities": 0,
@@ -2806,7 +2746,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "convex-finance",
         "tau": "2023-11-01"
       },
@@ -2851,12 +2791,6 @@
         "b0_entities": 26,
         "entity": "debridge",
         "tau": "2024-07-01"
-      },
-      {
-        "analog_entities": 0,
-        "b0_entities": 0,
-        "entity": "ens",
-        "tau": "2021-11-01"
       },
       {
         "analog_entities": 0,
@@ -2974,7 +2908,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "maestro",
         "tau": "2023-11-01"
       },
@@ -3055,12 +2989,6 @@
         "b0_entities": 2,
         "entity": "nouns",
         "tau": "2022-11-01"
-      },
-      {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "nouns",
-        "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
@@ -3220,7 +3148,7 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#aave",
         "tau": "2023-11-01"
       },
@@ -3247,6 +3175,12 @@
         "b0_entities": 21,
         "entity": "parent#aero-protocol",
         "tau": "2024-05-01"
+      },
+      {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#aero-protocol",
+        "tau": "2024-08-01"
       },
       {
         "analog_entities": 36,
@@ -3372,12 +3306,6 @@
         "analog_entities": 3,
         "b0_entities": 2,
         "entity": "parent#balancer",
-        "tau": "2023-01-01"
-      },
-      {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "parent#balancer",
         "tau": "2023-02-01"
       },
       {
@@ -3475,6 +3403,12 @@
         "b0_entities": 0,
         "entity": "parent#compound-finance",
         "tau": "2021-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-09-01"
       },
       {
         "analog_entities": 0,
@@ -3604,7 +3538,7 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 11,
+        "b0_entities": 10,
         "entity": "parent#curve-finance",
         "tau": "2023-11-01"
       },
@@ -3655,12 +3589,6 @@
         "b0_entities": 27,
         "entity": "parent#fluid",
         "tau": "2024-08-01"
-      },
-      {
-        "analog_entities": 36,
-        "b0_entities": 28,
-        "entity": "parent#fluid",
-        "tau": "2024-09-01"
       },
       {
         "analog_entities": 28,
@@ -3760,7 +3688,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#gmx",
         "tau": "2023-11-01"
       },
@@ -3837,12 +3765,6 @@
         "tau": "2024-04-01"
       },
       {
-        "analog_entities": 39,
-        "b0_entities": 31,
-        "entity": "parent#ktx.finance",
-        "tau": "2024-11-01"
-      },
-      {
         "analog_entities": 26,
         "b0_entities": 17,
         "entity": "parent#layerzero",
@@ -3871,12 +3793,6 @@
         "b0_entities": 25,
         "entity": "parent#layerzero",
         "tau": "2024-06-01"
-      },
-      {
-        "analog_entities": 35,
-        "b0_entities": 26,
-        "entity": "parent#layerzero",
-        "tau": "2024-07-01"
       },
       {
         "analog_entities": 2,
@@ -4071,12 +3987,6 @@
         "tau": "2024-05-01"
       },
       {
-        "analog_entities": 35,
-        "b0_entities": 25,
-        "entity": "parent#mux-protocol",
-        "tau": "2024-06-01"
-      },
-      {
         "analog_entities": 0,
         "b0_entities": 0,
         "entity": "parent#opensea",
@@ -4210,7 +4120,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#pancakeswap",
         "tau": "2023-11-01"
       },
@@ -4273,6 +4183,12 @@
         "b0_entities": 0,
         "entity": "parent#paxos",
         "tau": "2022-07-01"
+      },
+      {
+        "analog_entities": 12,
+        "b0_entities": 8,
+        "entity": "parent#paxos",
+        "tau": "2023-08-01"
       },
       {
         "analog_entities": 13,
@@ -4353,22 +4269,10 @@
         "tau": "2022-08-01"
       },
       {
-        "analog_entities": 28,
-        "b0_entities": 20,
-        "entity": "parent#stargate-finance",
-        "tau": "2024-04-01"
-      },
-      {
         "analog_entities": 29,
         "b0_entities": 21,
         "entity": "parent#stargate-finance",
         "tau": "2024-05-01"
-      },
-      {
-        "analog_entities": 35,
-        "b0_entities": 25,
-        "entity": "parent#stargate-finance",
-        "tau": "2024-06-01"
       },
       {
         "analog_entities": 1,
@@ -4444,7 +4348,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 12,
+        "b0_entities": 11,
         "entity": "parent#synthetix",
         "tau": "2023-11-01"
       },
@@ -4710,257 +4614,257 @@
   },
   "scores": {
     "12": {
-      "candidates": 599,
-      "dropped": 446,
-      "entities": 40,
+      "candidates": 587,
+      "dropped": 436,
+      "entities": 39,
       "h": 12,
       "models": {
         "A_120": {
-          "brier_1": 0.154968228032,
+          "brier_1": 0.152898270787,
           "brier_1_interval": [
-            0.11204628913,
-            0.206008991237
+            0.108545462673,
+            0.201720002834
           ],
-          "brier_1_minus_B0": 0.00160324634812,
+          "brier_1_minus_B0": 0.000760110825608,
           "brier_1_minus_B0_interval": [
-            -0.00711301375601,
-            0.0114015961987
+            -0.00833462531755,
+            0.0110653787786
           ],
-          "brier_2": 0.0431141067538,
+          "brier_2": 0.0431843267108,
           "brier_2_interval": [
-            0.0189255070744,
-            0.0733850330688
+            0.0187897138348,
+            0.0738180748985
           ],
-          "brier_2_minus_B0": -0.0138134013158,
+          "brier_2_minus_B0": -0.0139032738234,
           "brier_2_minus_B0_interval": [
-            -0.0179788623754,
-            -0.00845282176826
+            -0.0181091481812,
+            -0.00860610323605
           ],
-          "brier_5": 0.00849900145243,
+          "brier_5": 0.00850487490802,
           "brier_5_interval": [
-            0.00235659259097,
-            0.0194768947188
+            0.00229027830362,
+            0.0198661492375
           ],
-          "brier_5_minus_B0": -0.0090685215359,
+          "brier_5_minus_B0": -0.00923419322761,
           "brier_5_minus_B0_interval": [
-            -0.0101829818673,
-            -0.00755657368663
+            -0.0103700261939,
+            -0.00766155763272
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0431141067538,
-              "crps": 0.782225912722,
-              "n": 153
+              "brier_2": 0.0431843267108,
+              "crps": 0.76756750378,
+              "n": 151
             }
           },
-          "cov_50": 0.601307189542,
-          "cov_90": 0.986928104575,
-          "crps": 0.782225912722,
+          "cov_50": 0.602649006623,
+          "cov_90": 0.986754966887,
+          "crps": 0.76756750378,
           "crps_interval": [
-            0.653064450768,
-            0.951293197661
+            0.64036128335,
+            0.93358124167
           ],
-          "crps_minus_B0": 0.00379363932843,
+          "crps_minus_B0": 0.00118712264071,
           "crps_minus_B0_interval": [
-            -0.0262715966464,
-            0.0324343975179
+            -0.0265980988329,
+            0.028646089203
           ],
           "pit": {
             "histogram": [
-              8,
+              7,
               14,
               24,
               18,
               23,
-              22,
-              13,
+              23,
+              11,
               13,
               16,
               2
             ],
-            "ks": 0.134477124183,
-            "n": 153
+            "ks": 0.143653421634,
+            "n": 151
           }
         },
         "A_30": {
-          "brier_1": 0.156615831518,
+          "brier_1": 0.153038999264,
           "brier_1_interval": [
-            0.115617965243,
-            0.204731847579
+            0.11113947894,
+            0.199600975876
           ],
-          "brier_1_minus_B0": 0.00325084983395,
+          "brier_1_minus_B0": 0.000900839302429,
           "brier_1_minus_B0_interval": [
-            -0.00547943390572,
-            0.0123722985566
+            -0.00771836334038,
+            0.00965130078085
           ],
-          "brier_2": 0.0483297022513,
+          "brier_2": 0.0479028697572,
           "brier_2_interval": [
-            0.0243707537155,
-            0.0782227272727
+            0.023468319379,
+            0.0775590760268
           ],
-          "brier_2_minus_B0": -0.0085978058183,
+          "brier_2_minus_B0": -0.00918473077706,
           "brier_2_minus_B0_interval": [
-            -0.012830493742,
-            -0.00378729585396
+            -0.0136891119254,
+            -0.00432976739417
           ],
-          "brier_5": 0.00872185911402,
+          "brier_5": 0.00855776306107,
           "brier_5_interval": [
-            0.00245229647383,
-            0.0191713686881
+            0.00226716555265,
+            0.019385620915
           ],
-          "brier_5_minus_B0": -0.00884566387432,
+          "brier_5_minus_B0": -0.00918130507456,
           "brier_5_minus_B0_interval": [
-            -0.0101109610073,
-            -0.0073683735607
+            -0.0103946818451,
+            -0.00769041792264
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0483297022513,
-              "crps": 0.789196242865,
-              "n": 153
+              "brier_2": 0.0479028697572,
+              "crps": 0.770947780704,
+              "n": 151
             }
           },
-          "cov_50": 0.562091503268,
-          "cov_90": 0.921568627451,
-          "crps": 0.789196242865,
+          "cov_50": 0.562913907285,
+          "cov_90": 0.927152317881,
+          "crps": 0.770947780704,
           "crps_interval": [
-            0.628302130929,
-            0.998492947752
+            0.609908012197,
+            0.978738616665
           ],
-          "crps_minus_B0": 0.0107639694709,
+          "crps_minus_B0": 0.00456739956404,
           "crps_minus_B0_interval": [
-            -0.0169442672314,
-            0.0424073955859
+            -0.0235173903631,
+            0.0358179203064
           ],
           "pit": {
             "histogram": [
-              18,
+              17,
               27,
               13,
               23,
-              20,
-              15,
+              21,
+              14,
               9,
-              11,
+              10,
               11,
               6
             ],
-            "ks": 0.185620915033,
-            "n": 153
+            "ks": 0.188520971302,
+            "n": 151
           }
         },
         "A_60": {
-          "brier_1": 0.151911764706,
+          "brier_1": 0.149536423841,
           "brier_1_interval": [
-            0.107679540462,
-            0.203892647059
+            0.10422647106,
+            0.19861327767
           ],
-          "brier_1_minus_B0": -0.00145321697796,
+          "brier_1_minus_B0": -0.00260173612068,
           "brier_1_minus_B0_interval": [
-            -0.011883253705,
-            0.0104985335681
+            -0.0130702724785,
+            0.00954738071286
           ],
-          "brier_2": 0.0449782135076,
+          "brier_2": 0.0447369389257,
           "brier_2_interval": [
-            0.0203936786787,
-            0.0753988483437
+            0.0198640488181,
+            0.0754249950699
           ],
-          "brier_2_minus_B0": -0.0119492945619,
+          "brier_2_minus_B0": -0.0123506616086,
           "brier_2_minus_B0_interval": [
-            -0.0164620637965,
-            -0.00637641454417
+            -0.0168526108659,
+            -0.00688142661231
           ],
-          "brier_5": 0.00819535221496,
+          "brier_5": 0.00805739514349,
           "brier_5_interval": [
-            0.00177059294752,
-            0.0194702221607
+            0.00163477790267,
+            0.0197592994106
           ],
-          "brier_5_minus_B0": -0.00937217077337,
+          "brier_5_minus_B0": -0.00968167299214,
           "brier_5_minus_B0_interval": [
-            -0.010776713409,
-            -0.00748849127648
+            -0.0110273612821,
+            -0.00770843754165
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0449782135076,
-              "crps": 0.772167715242,
-              "n": 153
+              "brier_2": 0.0447369389257,
+              "crps": 0.756772376709,
+              "n": 151
             }
           },
-          "cov_50": 0.56862745098,
-          "cov_90": 0.967320261438,
-          "crps": 0.772167715242,
+          "cov_50": 0.569536423841,
+          "cov_90": 0.973509933775,
+          "crps": 0.756772376709,
           "crps_interval": [
-            0.63080932986,
-            0.950456589635
+            0.620747598266,
+            0.932977485985
           ],
-          "crps_minus_B0": -0.00626455815183,
+          "crps_minus_B0": -0.00960800443112,
           "crps_minus_B0_interval": [
-            -0.0283757827192,
-            0.0169529500801
+            -0.0308855081474,
+            0.012019070077
           ],
           "pit": {
             "histogram": [
-              14,
+              13,
               22,
               12,
               13,
               29,
-              19,
-              14,
+              20,
+              12,
               14,
               11,
               5
             ],
-            "ks": 0.142810457516,
-            "n": 153
+            "ks": 0.148565121413,
+            "n": 151
           }
         },
         "B0": {
-          "brier_1": 0.153364981684,
+          "brier_1": 0.152138159962,
           "brier_1_interval": [
-            0.117581426482,
-            0.195323749543
+            0.116196892485,
+            0.192263864355
           ],
-          "brier_2": 0.0569275080696,
+          "brier_2": 0.0570876005342,
           "brier_2_interval": [
-            0.0367212180693,
-            0.0826350586212
+            0.0365606922765,
+            0.0827623071931
           ],
-          "brier_5": 0.0175675229883,
+          "brier_5": 0.0177390681356,
           "brier_5_interval": [
-            0.0124234785099,
-            0.0269836059179
+            0.012553256,
+            0.0274460931207
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0569275080696,
-              "crps": 0.778432273394,
-              "n": 153
+              "brier_2": 0.0570876005342,
+              "crps": 0.76638038114,
+              "n": 151
             }
           },
-          "cov_50": 0.653594771242,
-          "cov_90": 0.947712418301,
-          "crps": 0.778432273394,
+          "cov_50": 0.655629139073,
+          "cov_90": 0.953642384106,
+          "crps": 0.76638038114,
           "crps_interval": [
-            0.639958380301,
-            0.965446904851
+            0.627904798619,
+            0.949369666426
           ],
           "pit": {
             "histogram": [
-              12,
+              11,
               24,
-              13,
-              17,
+              12,
+              18,
               20,
-              22,
-              17,
-              21,
+              24,
+              15,
+              20,
               7,
               0
             ],
-            "ks": 0.174010041363,
-            "n": 153
+            "ks": 0.177522981301,
+            "n": 151
           }
         },
         "B1": {
@@ -4969,122 +4873,122 @@
             0.25,
             0.25
           ],
-          "brier_1_minus_B0": 0.0966350183162,
+          "brier_1_minus_B0": 0.0978618400383,
           "brier_1_minus_B0_interval": [
-            0.054676250457,
-            0.132418573518
+            0.0577361356446,
+            0.133803107515
           ],
-          "brier_2": 0.127443363101,
+          "brier_2": 0.127128819941,
           "brier_2_interval": [
-            0.112830711497,
-            0.142975265776
+            0.112824693694,
+            0.144136435676
           ],
-          "brier_2_minus_B0": 0.070515855031,
+          "brier_2_minus_B0": 0.0700412194068,
           "brier_2_minus_B0_interval": [
-            0.0554148546596,
-            0.0844865045666
+            0.0544393490796,
+            0.084983325444
           ],
-          "brier_5": 0.0418627323749,
+          "brier_5": 0.0413563872105,
           "brier_5_interval": [
-            0.0316430587956,
-            0.0531751183294
+            0.0312295006793,
+            0.0529041711502
           ],
-          "brier_5_minus_B0": 0.0242952093865,
+          "brier_5_minus_B0": 0.0236173190748,
           "brier_5_minus_B0_interval": [
-            0.0162973321662,
-            0.0328262927925
+            0.0157367440064,
+            0.0322420301339
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.127443363101,
-              "crps": 1.03534964063,
-              "n": 153
+              "brier_2": 0.127128819941,
+              "crps": 1.02906447953,
+              "n": 151
             }
           },
-          "cov_50": 0.464052287582,
-          "cov_90": 0.901960784314,
-          "crps": 1.03534964063,
+          "cov_50": 0.46357615894,
+          "cov_90": 0.900662251656,
+          "crps": 1.02906447953,
           "crps_interval": [
-            0.831570437609,
-            1.27892972917
+            0.822140841609,
+            1.2804273996
           ],
-          "crps_minus_B0": 0.256917367239,
+          "crps_minus_B0": 0.262684098395,
           "crps_minus_B0_interval": [
-            0.156439105987,
-            0.356521621791
+            0.155187300825,
+            0.366456909436
           ],
           "pit": {
             "histogram": [
               29,
-              34,
+              33,
               28,
-              19,
+              20,
+              17,
               18,
-              19,
               2,
               3,
               1,
               0
             ],
-            "ks": 0.364211303958,
-            "n": 153
+            "ks": 0.363691890895,
+            "n": 151
           }
         },
         "B2": {
-          "brier_1": 0.454133248911,
+          "brier_1": 0.451016831,
           "brier_1_interval": [
-            0.386421543254,
-            0.525754863014
+            0.381129791142,
+            0.524085040677
           ],
-          "brier_1_minus_B0": 0.300768267227,
+          "brier_1_minus_B0": 0.298878671038,
           "brier_1_minus_B0_interval": [
-            0.201344289277,
-            0.397950325314
+            0.200528127564,
+            0.39724829815
           ],
-          "brier_2": 0.377588943562,
+          "brier_2": 0.366998555411,
           "brier_2_interval": [
-            0.315018121714,
-            0.444623488569
+            0.306650800444,
+            0.433637155328
           ],
-          "brier_2_minus_B0": 0.320661435492,
+          "brier_2_minus_B0": 0.309910954877,
           "brier_2_minus_B0_interval": [
-            0.255892189594,
-            0.393582828126
+            0.244642997472,
+            0.383016760803
           ],
-          "brier_5": 0.215471582808,
+          "brier_5": 0.203824128917,
           "brier_5_interval": [
-            0.160364347607,
-            0.276705246502
+            0.150554360468,
+            0.264732722956
           ],
-          "brier_5_minus_B0": 0.19790405982,
+          "brier_5_minus_B0": 0.186085060781,
           "brier_5_minus_B0_interval": [
-            0.145612808098,
-            0.25778111981
+            0.135791261679,
+            0.2428383201
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.377588943562,
-              "crps": 1.89573662796,
-              "n": 153
+              "brier_2": 0.366998555411,
+              "crps": 1.82812345595,
+              "n": 151
             }
           },
-          "cov_50": 0.137254901961,
-          "cov_90": 0.686274509804,
-          "crps": 1.89573662796,
+          "cov_50": 0.145695364238,
+          "cov_90": 0.695364238411,
+          "crps": 1.82812345595,
           "crps_interval": [
-            1.5873132068,
-            2.24757549727
+            1.50746374231,
+            2.1874246005
           ],
-          "crps_minus_B0": 1.11730435456,
+          "crps_minus_B0": 1.06174307481,
           "crps_minus_B0_interval": [
-            0.858946421584,
-            1.41706053934
+            0.807933803185,
+            1.35549760048
           ],
           "pit": {
             "histogram": [
-              85,
-              39,
-              12,
+              83,
+              38,
+              13,
               9,
               2,
               2,
@@ -5093,17 +4997,17 @@
               0,
               0
             ],
-            "ks": 0.618203924304,
-            "n": 153
+            "ks": 0.609070911276,
+            "n": 151
           }
         }
       },
-      "scored": 153,
+      "scored": 151,
       "sufficient": true
     },
     "24": {
-      "candidates": 336,
-      "dropped": 336,
+      "candidates": 330,
+      "dropped": 330,
       "entities": 0,
       "h": 24,
       "models": {},
