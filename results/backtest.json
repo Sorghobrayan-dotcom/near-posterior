@@ -1,9 +1,9 @@
 {
-  "F_near": 81598000.8333,
+  "F_near": 82609403.6667,
   "choice": {
     "difference_interval": [
-      -0.0329708044881,
-      0.0113394305423
+      -0.0284710073197,
+      0.0139661731797
     ],
     "horizon": 12,
     "lowest_crps": "A_60",
@@ -38,7 +38,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "banana-gun",
         "tau": "2025-01-01"
       },
@@ -92,7 +92,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "binance-staked-eth",
         "tau": "2025-01-01"
       },
@@ -127,26 +127,32 @@
         "tau": "2025-05-01"
       },
       {
+        "analog_entities": 14,
+        "b0_entities": 9,
+        "entity": "convex-finance",
+        "tau": "2022-09-01"
+      },
+      {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "convex-finance",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "convex-finance",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "convex-finance",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "convex-finance",
         "tau": "2023-02-01"
       },
@@ -314,25 +320,25 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "ens",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "ens",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "ens",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 19,
-        "b0_entities": 13,
+        "b0_entities": 14,
         "entity": "ens",
         "tau": "2022-12-01"
       },
@@ -374,7 +380,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "gamma",
         "tau": "2025-01-01"
       },
@@ -404,7 +410,7 @@
       },
       {
         "analog_entities": 37,
-        "b0_entities": 29,
+        "b0_entities": 30,
         "entity": "maestro",
         "tau": "2023-10-01"
       },
@@ -494,7 +500,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "maestro",
         "tau": "2025-01-01"
       },
@@ -524,7 +530,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "metaplex",
         "tau": "2025-01-01"
       },
@@ -548,7 +554,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "meth-protocol",
         "tau": "2025-01-01"
       },
@@ -578,7 +584,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "nouns",
         "tau": "2022-11-01"
       },
@@ -728,13 +734,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#aave",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#aave",
         "tau": "2023-10-01"
       },
@@ -878,33 +884,27 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#balancer",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#balancer",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#balancer",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 19,
-        "b0_entities": 13,
+        "b0_entities": 14,
         "entity": "parent#balancer",
         "tau": "2022-12-01"
-      },
-      {
-        "analog_entities": 25,
-        "b0_entities": 16,
-        "entity": "parent#balancer",
-        "tau": "2023-02-01"
       },
       {
         "analog_entities": 27,
@@ -914,7 +914,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#benqi",
         "tau": "2025-01-01"
       },
@@ -950,7 +950,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#bonkfun",
         "tau": "2025-01-01"
       },
@@ -1010,7 +1010,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#camelot",
         "tau": "2025-01-01"
       },
@@ -1067,6 +1067,12 @@
         "b0_entities": 0,
         "entity": "parent#compound-finance",
         "tau": "2021-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-03-01"
       },
       {
         "analog_entities": 1,
@@ -1136,19 +1142,19 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#curve-finance",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#curve-finance",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#curve-finance",
         "tau": "2022-11-01"
       },
@@ -1190,13 +1196,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#curve-finance",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#curve-finance",
         "tau": "2023-10-01"
       },
@@ -1280,7 +1286,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#fluid",
         "tau": "2025-01-01"
       },
@@ -1340,19 +1346,19 @@
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#gmx",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#gmx",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#gmx",
         "tau": "2023-02-01"
       },
@@ -1394,13 +1400,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#gmx",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#gmx",
         "tau": "2023-10-01"
       },
@@ -1479,12 +1485,18 @@
       {
         "analog_entities": 50,
         "b0_entities": 32,
+        "entity": "parent#jito",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 32,
         "entity": "parent#jupiter",
         "tau": "2024-04-01"
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#kamino-finance",
         "tau": "2025-01-01"
       },
@@ -1520,7 +1532,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#ktx.finance",
         "tau": "2025-01-01"
       },
@@ -1574,19 +1586,19 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#liquity",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#liquity",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#liquity",
         "tau": "2022-11-01"
       },
@@ -1802,7 +1814,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "parent#optimism-foundation",
         "tau": "2025-01-01"
       },
@@ -1826,37 +1838,37 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#pancakeswap",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#pancakeswap",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#pancakeswap",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#pancakeswap",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#pancakeswap",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#pancakeswap",
         "tau": "2023-02-01"
       },
@@ -1898,13 +1910,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#pancakeswap",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#pancakeswap",
         "tau": "2023-10-01"
       },
@@ -1975,8 +1987,14 @@
         "tau": "2022-07-01"
       },
       {
+        "analog_entities": 35,
+        "b0_entities": 27,
+        "entity": "parent#paxos",
+        "tau": "2023-08-01"
+      },
+      {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#paxos",
         "tau": "2023-09-01"
       },
@@ -2054,7 +2072,7 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#quickswap",
         "tau": "2022-09-01"
       },
@@ -2078,7 +2096,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#sanctum",
         "tau": "2025-01-01"
       },
@@ -2156,13 +2174,13 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#sushi",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#sushi",
         "tau": "2022-10-01"
       },
@@ -2192,13 +2210,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#synthetix",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#synthetix",
         "tau": "2023-10-01"
       },
@@ -2252,7 +2270,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#trader-joe",
         "tau": "2022-11-01"
       },
@@ -2276,7 +2294,7 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#trader-joe",
         "tau": "2023-09-01"
       },
@@ -2372,7 +2390,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#venus-finance",
         "tau": "2025-01-01"
       },
@@ -2498,7 +2516,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "rocket-pool",
         "tau": "2025-01-01"
       },
@@ -2618,7 +2636,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "wigoswap",
         "tau": "2025-01-01"
       }
@@ -2626,13 +2644,13 @@
     "24": [
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "banana-gun",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "banana-gun",
         "tau": "2024-10-01"
       },
@@ -2650,13 +2668,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "binance-staked-eth",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "binance-staked-eth",
         "tau": "2024-10-01"
       },
@@ -2665,6 +2683,12 @@
         "b0_entities": 31,
         "entity": "binance-staked-eth",
         "tau": "2024-11-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "convex-finance",
+        "tau": "2022-09-01"
       },
       {
         "analog_entities": 3,
@@ -2728,37 +2752,37 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "convex-finance",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "convex-finance",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "convex-finance",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "convex-finance",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "convex-finance",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "convex-finance",
         "tau": "2024-02-01"
       },
@@ -2884,43 +2908,43 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "gamma",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "gamma",
         "tau": "2024-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "maestro",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "maestro",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "maestro",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "maestro",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "maestro",
         "tau": "2024-02-01"
       },
@@ -2962,13 +2986,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "maestro",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "maestro",
         "tau": "2024-10-01"
       },
@@ -2986,13 +3010,13 @@
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "osmosis-dex",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "osmosis-dex",
         "tau": "2024-02-01"
       },
@@ -3178,13 +3202,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#aero-protocol",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#aero-protocol",
         "tau": "2024-10-01"
       },
@@ -3297,12 +3321,6 @@
         "tau": "2022-12-01"
       },
       {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "parent#balancer",
-        "tau": "2023-02-01"
-      },
-      {
         "analog_entities": 5,
         "b0_entities": 3,
         "entity": "parent#balancer",
@@ -3322,7 +3340,7 @@
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#camelot",
         "tau": "2024-02-01"
       },
@@ -3397,6 +3415,12 @@
         "b0_entities": 0,
         "entity": "parent#compound-finance",
         "tau": "2021-02-01"
+      },
+      {
+        "analog_entities": 0,
+        "b0_entities": 0,
+        "entity": "parent#compound-finance",
+        "tau": "2021-03-01"
       },
       {
         "analog_entities": 0,
@@ -3520,19 +3544,19 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#curve-finance",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#curve-finance",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#curve-finance",
         "tau": "2023-11-01"
       },
@@ -3670,37 +3694,37 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#gmx",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#gmx",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#gmx",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#gmx",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#gmx",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#gmx",
         "tau": "2024-02-01"
       },
@@ -3742,7 +3766,7 @@
       },
       {
         "analog_entities": 35,
-        "b0_entities": 27,
+        "b0_entities": 28,
         "entity": "parent#gmx",
         "tau": "2024-09-01"
       },
@@ -3755,12 +3779,18 @@
       {
         "analog_entities": 28,
         "b0_entities": 20,
+        "entity": "parent#jito",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
         "entity": "parent#jupiter",
         "tau": "2024-04-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#layerzero",
         "tau": "2024-02-01"
       },
@@ -3952,13 +3982,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#metamask",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#mux-protocol",
         "tau": "2024-02-01"
       },
@@ -4012,7 +4042,7 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "parent#optimism-foundation",
         "tau": "2024-10-01"
       },
@@ -4102,37 +4132,37 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#pancakeswap",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#pancakeswap",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#pancakeswap",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#pancakeswap",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#pancakeswap",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#pancakeswap",
         "tau": "2024-02-01"
       },
@@ -4179,8 +4209,14 @@
         "tau": "2022-07-01"
       },
       {
-        "analog_entities": 13,
+        "analog_entities": 12,
         "b0_entities": 8,
+        "entity": "parent#paxos",
+        "tau": "2023-08-01"
+      },
+      {
+        "analog_entities": 13,
+        "b0_entities": 9,
         "entity": "parent#paxos",
         "tau": "2023-09-01"
       },
@@ -4240,7 +4276,7 @@
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#raydium",
         "tau": "2024-02-01"
       },
@@ -4324,37 +4360,37 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#synthetix",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#synthetix",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#synthetix",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#synthetix",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#synthetix",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#synthetix",
         "tau": "2024-02-01"
       },
@@ -4408,25 +4444,25 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#trader-joe",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#trader-joe",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#trader-joe",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#trader-joe",
         "tau": "2024-02-01"
       },
@@ -4546,13 +4582,13 @@
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "rocket-pool",
         "tau": "2024-09-01"
       },
       {
         "analog_entities": 36,
-        "b0_entities": 28,
+        "b0_entities": 29,
         "entity": "rocket-pool",
         "tau": "2024-10-01"
       },
@@ -4570,19 +4606,19 @@
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "thorchain-dex",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "thorchain-dex",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "thorchain-dex",
         "tau": "2024-02-01"
       },
@@ -4602,8 +4638,8 @@
   },
   "scores": {
     "12": {
-      "candidates": 586,
-      "dropped": 435,
+      "candidates": 589,
+      "dropped": 438,
       "entities": 39,
       "h": 12,
       "models": {
@@ -4613,30 +4649,30 @@
             0.108545462673,
             0.201720002834
           ],
-          "brier_1_minus_B0": 0.000250676023794,
+          "brier_1_minus_B0": 0.00111063267505,
           "brier_1_minus_B0_interval": [
-            -0.00911529376739,
-            0.0108351767212
+            -0.00777832721049,
+            0.0112286453974
           ],
           "brier_2": 0.0431843267108,
           "brier_2_interval": [
             0.0187897138348,
             0.0738180748985
           ],
-          "brier_2_minus_B0": -0.0143770522339,
+          "brier_2_minus_B0": -0.013524771096,
           "brier_2_minus_B0_interval": [
-            -0.0186607237437,
-            -0.00900454183025
+            -0.0176677936187,
+            -0.00830774434306
           ],
           "brier_5": 0.00850487490802,
           "brier_5_interval": [
             0.00229027830362,
             0.0198661492375
           ],
-          "brier_5_minus_B0": -0.00947397970761,
+          "brier_5_minus_B0": -0.00883308928466,
           "brier_5_minus_B0_interval": [
-            -0.0106249926697,
-            -0.00787232232636
+            -0.00994162149045,
+            -0.00730929278269
           ],
           "by_year": {
             "2025": {
@@ -4652,10 +4688,10 @@
             0.64036128335,
             0.93358124167
           ],
-          "crps_minus_B0": -0.000202961640518,
+          "crps_minus_B0": 0.00330449594119,
           "crps_minus_B0_interval": [
-            -0.0287129521528,
-            0.0280231434345
+            -0.0240126393348,
+            0.0303249524697
           ],
           "pit": {
             "histogram": [
@@ -4680,30 +4716,30 @@
             0.11113947894,
             0.199600975876
           ],
-          "brier_1_minus_B0": 0.000391404500615,
+          "brier_1_minus_B0": 0.00125136115187,
           "brier_1_minus_B0_interval": [
-            -0.0083041264671,
-            0.00954128374672
+            -0.00722310943497,
+            0.00990097194127
           ],
           "brier_2": 0.0479028697572,
           "brier_2_interval": [
             0.023468319379,
             0.0775590760268
           ],
-          "brier_2_minus_B0": -0.00965850918756,
+          "brier_2_minus_B0": -0.00880622804963,
           "brier_2_minus_B0_interval": [
-            -0.0142473846975,
-            -0.00472599235664
+            -0.0132475620899,
+            -0.00406032971119
           ],
           "brier_5": 0.00855776306107,
           "brier_5_interval": [
             0.00226716555265,
             0.019385620915
           ],
-          "brier_5_minus_B0": -0.00942109155456,
+          "brier_5_minus_B0": -0.0087802011316,
           "brier_5_minus_B0_interval": [
-            -0.0106478866409,
-            -0.00792571850931
+            -0.00997318215505,
+            -0.00733485902419
           ],
           "by_year": {
             "2025": {
@@ -4719,10 +4755,10 @@
             0.609908012197,
             0.978738616665
           ],
-          "crps_minus_B0": 0.00317731528282,
+          "crps_minus_B0": 0.00668477286452,
           "crps_minus_B0_interval": [
-            -0.0245098284221,
-            0.0337994416966
+            -0.0217812503993,
+            0.0385447935377
           ],
           "pit": {
             "histogram": [
@@ -4747,30 +4783,30 @@
             0.10422647106,
             0.19861327767
           ],
-          "brier_1_minus_B0": -0.00311117092249,
+          "brier_1_minus_B0": -0.00225121427123,
           "brier_1_minus_B0_interval": [
-            -0.0138867815248,
-            0.00935235239312
+            -0.0125409094629,
+            0.00970864529922
           ],
           "brier_2": 0.0447369389257,
           "brier_2_interval": [
             0.0198640488181,
             0.0754249950699
           ],
-          "brier_2_minus_B0": -0.0128244400191,
+          "brier_2_minus_B0": -0.0119721588811,
           "brier_2_minus_B0_interval": [
-            -0.0174152829469,
-            -0.00724253413321
+            -0.016401590039,
+            -0.00658985206485
           ],
           "brier_5": 0.00805739514349,
           "brier_5_interval": [
             0.00163477790267,
             0.0197592994106
           ],
-          "brier_5_minus_B0": -0.00992145947215,
+          "brier_5_minus_B0": -0.00928056904919,
           "brier_5_minus_B0_interval": [
-            -0.0112825741821,
-            -0.00792129983296
+            -0.0106015109849,
+            -0.00735307038562
           ],
           "by_year": {
             "2025": {
@@ -4786,10 +4822,10 @@
             0.620747598266,
             0.932977485985
           ],
-          "crps_minus_B0": -0.0109980887123,
+          "crps_minus_B0": -0.00749063113064,
           "crps_minus_B0_interval": [
-            -0.0329708044881,
-            0.0113394305423
+            -0.0284710073197,
+            0.0139661731797
           ],
           "pit": {
             "histogram": [
@@ -4809,34 +4845,34 @@
           }
         },
         "B0": {
-          "brier_1": 0.152647594764,
+          "brier_1": 0.151787638112,
           "brier_1_interval": [
-            0.117036863192,
-            0.192395218831
+            0.115616227485,
+            0.192176578873
           ],
-          "brier_2": 0.0575613789447,
+          "brier_2": 0.0567090978068,
           "brier_2_interval": [
-            0.0371358268658,
-            0.0831052914764
+            0.0361001908487,
+            0.0824892182087
           ],
-          "brier_5": 0.0179788546156,
+          "brier_5": 0.0173379641927,
           "brier_5_interval": [
-            0.0128054227413,
-            0.0276598672658
+            0.0121307301382,
+            0.027089153427
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0575613789447,
-              "crps": 0.767770465421,
+              "brier_2": 0.0567090978068,
+              "crps": 0.764263007839,
               "n": 151
             }
           },
-          "cov_50": 0.668874172185,
+          "cov_50": 0.655629139073,
           "cov_90": 0.953642384106,
-          "crps": 0.767770465421,
+          "crps": 0.764263007839,
           "crps_interval": [
-            0.628855111555,
-            0.951572169211
+            0.626217454549,
+            0.946626205483
           ],
           "pit": {
             "histogram": [
@@ -4844,14 +4880,14 @@
               24,
               12,
               18,
-              22,
-              22,
-              16,
-              19,
+              20,
+              24,
+              15,
+              20,
               7,
               0
             ],
-            "ks": 0.178864362924,
+            "ks": 0.176442055694,
             "n": 151
           }
         },
@@ -4861,30 +4897,30 @@
             0.25,
             0.25
           ],
-          "brier_1_minus_B0": 0.0973524052365,
+          "brier_1_minus_B0": 0.0982123618877,
           "brier_1_minus_B0_interval": [
-            0.0576047811692,
-            0.132963136808
+            0.0578234211269,
+            0.134383772515
           ],
           "brier_2": 0.127128819941,
           "brier_2_interval": [
             0.112824693694,
             0.144136435676
           ],
-          "brier_2_minus_B0": 0.0695674409963,
+          "brier_2_minus_B0": 0.0704197221342,
           "brier_2_minus_B0_interval": [
-            0.0541254099196,
-            0.0844092734722
+            0.0546796996452,
+            0.0854367018719
           ],
           "brier_5": 0.0413563872105,
           "brier_5_interval": [
             0.0312295006793,
             0.0529041711502
           ],
-          "brier_5_minus_B0": 0.0233775325948,
+          "brier_5_minus_B0": 0.0240184230178,
           "brier_5_minus_B0_interval": [
-            0.0155185574472,
-            0.032014464155
+            0.0161347922375,
+            0.0326165564815
           ],
           "by_year": {
             "2025": {
@@ -4900,10 +4936,10 @@
             0.822140841609,
             1.2804273996
           ],
-          "crps_minus_B0": 0.261294014114,
+          "crps_minus_B0": 0.264801471696,
           "crps_minus_B0_interval": [
-            0.154473674111,
-            0.36410172121
+            0.157033770825,
+            0.368877039156
           ],
           "pit": {
             "histogram": [
@@ -4928,30 +4964,30 @@
             0.381129791142,
             0.524085040677
           ],
-          "brier_1_minus_B0": 0.298369236236,
+          "brier_1_minus_B0": 0.299229192887,
           "brier_1_minus_B0_interval": [
-            0.200355908469,
-            0.39651360892
+            0.200643898645,
+            0.397755679905
           ],
           "brier_2": 0.366998555411,
           "brier_2_interval": [
             0.306650800444,
             0.433637155328
           ],
-          "brier_2_minus_B0": 0.309437176466,
+          "brier_2_minus_B0": 0.310289457604,
           "brier_2_minus_B0_interval": [
-            0.244196687122,
-            0.382437625851
+            0.244936550727,
+            0.383480130629
           ],
           "brier_5": 0.203824128917,
           "brier_5_interval": [
             0.150554360468,
             0.264732722956
           ],
-          "brier_5_minus_B0": 0.185845274301,
+          "brier_5_minus_B0": 0.186486164724,
           "brier_5_minus_B0_interval": [
-            0.13553974586,
-            0.242617764047
+            0.136214887269,
+            0.24320683675
           ],
           "by_year": {
             "2025": {
@@ -4967,10 +5003,10 @@
             1.50746374231,
             2.1874246005
           ],
-          "crps_minus_B0": 1.06035299053,
+          "crps_minus_B0": 1.06386044811,
           "crps_minus_B0_interval": [
-            0.806127996708,
-            1.35364464315
+            0.809125671849,
+            1.35814354928
           ],
           "pit": {
             "histogram": [
@@ -4994,8 +5030,8 @@
       "sufficient": true
     },
     "24": {
-      "candidates": 329,
-      "dropped": 329,
+      "candidates": 332,
+      "dropped": 332,
       "entities": 0,
       "h": 24,
       "models": {},

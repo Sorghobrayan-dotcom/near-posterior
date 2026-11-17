@@ -1,57 +1,57 @@
 {
   "D": "2026-11-11",
-  "F_near": 81598000.8333,
+  "F_near": 82609403.6667,
   "classes": {
     "R": {
       "12": {
-        "entities": 131,
-        "moments": 948
+        "entities": 130,
+        "moments": 946
       },
       "24": {
         "entities": 70,
-        "moments": 513
+        "moments": 515
       },
       "36": {
         "entities": 38,
-        "moments": 302
+        "moments": 305
       }
     },
     "R_all_ages": {
       "12": {
-        "entities": 134,
-        "moments": 1167
+        "entities": 133,
+        "moments": 1166
       },
       "24": {
         "entities": 71,
-        "moments": 610
+        "moments": 613
       },
       "36": {
         "entities": 39,
-        "moments": 333
+        "moments": 337
       }
     },
     "R_strict": {
       "12": {
-        "entities": 97,
+        "entities": 96,
         "moments": 569
       },
       "24": {
         "entities": 54,
-        "moments": 325
+        "moments": 328
       },
       "36": {
         "entities": 30,
-        "moments": 187
+        "moments": 190
       }
     },
     "R_trading": {
       "12": {
         "entities": 55,
-        "moments": 416
+        "moments": 415
       },
       "24": {
         "entities": 35,
-        "moments": 263
+        "moments": 262
       },
       "36": {
         "entities": 20,
