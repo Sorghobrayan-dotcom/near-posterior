@@ -1004,8 +1004,8 @@
     }
   },
   "S2": {
-    "candidates": 330,
-    "dropped": 228,
+    "candidates": 329,
+    "dropped": 227,
     "entities": 31,
     "h": 24,
     "models": {

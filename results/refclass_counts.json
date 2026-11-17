@@ -1,6 +1,6 @@
 {
   "D": "2026-11-11",
-  "F_near": 81836248.5,
+  "F_near": 81598000.8333,
   "classes": {
     "R": {
       "12": {
@@ -9,11 +9,11 @@
       },
       "24": {
         "entities": 70,
-        "moments": 514
+        "moments": 513
       },
       "36": {
         "entities": 38,
-        "moments": 303
+        "moments": 302
       }
     },
     "R_all_ages": {
@@ -23,25 +23,25 @@
       },
       "24": {
         "entities": 71,
-        "moments": 611
+        "moments": 610
       },
       "36": {
         "entities": 39,
-        "moments": 334
+        "moments": 333
       }
     },
     "R_strict": {
       "12": {
         "entities": 97,
-        "moments": 567
+        "moments": 569
       },
       "24": {
         "entities": 54,
-        "moments": 326
+        "moments": 325
       },
       "36": {
         "entities": 30,
-        "moments": 188
+        "moments": 187
       }
     },
     "R_trading": {
