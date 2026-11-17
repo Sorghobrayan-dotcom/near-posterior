@@ -389,6 +389,14 @@ def chain_block(res: dict) -> str:
                    f": C_90 {f(now['C_90_event'], 4)} on {lv['event_day']} against "
                    f"{f(now['C_90_anchor'], 4)} on {lv['anchor_day']}, outcome {now['outcome']} "
                    f"(not the on-chain resolution; recent days may be revised)")
+        if "resolution" in com.get("live", {}):
+            rs = com["live"]["resolution"]
+            r = json.loads(rs["record"])
+            reading = (f'resolved on chain (<a href="https://{host}/txns/{svg.esc(rs["tx"])}">'
+                       f"transaction</a>) from the snapshot fetched "
+                       f"{svg.esc(r['snapshot_fetched_at'])}: C_90 {f(r['C_90_event'], 4)} on "
+                       f"{r['event_day']} against {f(r['C_90_anchor'], 4)} on {r['anchor_day']}, "
+                       f"outcome {r['outcome']}, Brier score {f(r['brier'], 3)}")
         supply += (f"<p>A short forecast that resolves during judging, {svg.esc(lv['label'])}: "
                    f"will C_90 on {lv['event_day']} be at least C_90 on {lv['anchor_day']}, the "
                    f"last day known when it was frozen? P = {f(lv['P'])}: the share of past "

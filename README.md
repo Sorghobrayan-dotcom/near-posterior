@@ -13,7 +13,7 @@ advice.
 - **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); `uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: `PASS` lines for the contract's code hash, each record read back from the chain equal to the repository copy, and its only key limited to `resolve`).
 - **Two limits:** the headline number holds price and issuance at today's values, and either can move the odds both ways (see the lever table); replayed on past data the method was too optimistic, so the real odds are more likely lower than higher. Everything written on chain is on NEAR testnet, not mainnet.
 - **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-16 today) are refreshed every day, hence small differences between them.
-- **Resolves during judging:** a short forecast sits on a second locked contract, [`brayan-posterior-live.testnet`](https://testnet.nearblocks.io/address/brayan-posterior-live.testnet), due 2026-11-17. After that date the author writes the outcome next to it and any NEAR account can add its own reading with `attest`.
+- **Resolved during judging:** the short forecast on the second locked contract, [`brayan-posterior-live.testnet`](https://testnet.nearblocks.io/address/brayan-posterior-live.testnet), was resolved on chain ([transaction](https://testnet.nearblocks.io/txns/45JKadSBFgdhTQbeXeWGYLdw3VUKQmnGm1u6D1wjoFki)): C_90 0.2236 on 2026-11-15 against 0.1851 on 2026-11-12, outcome 1, Brier score 0.136 for P = 0.632. Any NEAR account can add its own reading with `attest`.
 <!-- END GENERATED judges -->
 
 ## In 30 seconds

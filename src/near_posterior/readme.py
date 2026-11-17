@@ -66,7 +66,18 @@ def blocks(res: dict) -> dict:
         lv = res["live"]
         com = json.loads(onchain.FILE.read_text(encoding="utf-8")) if onchain.FILE.exists() else {}
         acct = com.get("live", {}).get("contract")
-        if acct:
+        resolution = com.get("live", {}).get("resolution")
+        if resolution:
+            r = json.loads(resolution["record"])
+            parts["judges"] += (
+                f"\n- **Resolved during judging:** the short forecast on the second locked "
+                f"contract, [`{acct}`](https://testnet.nearblocks.io/address/{acct}), was "
+                f"resolved on chain ([transaction](https://testnet.nearblocks.io/txns/"
+                f"{resolution['tx']})): C_90 {thesis.f(r['C_90_event'], 4)} on {r['event_day']} "
+                f"against {thesis.f(r['C_90_anchor'], 4)} on {r['anchor_day']}, outcome "
+                f"{r['outcome']}, Brier score {thesis.f(r['brier'], 3)} for P = "
+                f"{thesis.f(lv['P'])}. Any NEAR account can add its own reading with `attest`.")
+        elif acct:
             parts["judges"] += (
                 f"\n- **Resolves during judging:** a short forecast sits on a second locked "
                 f"contract, [`{acct}`](https://testnet.nearblocks.io/address/{acct}), due "
