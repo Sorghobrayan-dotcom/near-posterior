@@ -111,6 +111,15 @@ def live_live(com: dict) -> list[tuple[bool, str]]:
     keys = rpc(net, "query", {"request_type": "view_access_key_list", "finality": "final",
                               "account_id": acct})["keys"]
     perms = [k["access_key"]["permission"] for k in keys]
+    resolved = []
+    if "resolution" in lv:
+        mine, lo = json.loads(lv["resolution"]["record"]), got["outcome"]
+        at = dt.datetime.fromtimestamp(lo["block_timestamp_ns"] / 1e9, dt.timezone.utc) if lo else None
+        resolved = [(bool(lo) and lo["value"] == mine and at >= due,
+                     f"live forecast resolved on {acct}"
+                     + (f" on {at:%Y-%m-%d %H:%M} UTC" if at else "")
+                     + f": outcome {mine['outcome']}, Brier score {mine['brier']:.3f}, equal to the "
+                     f"committed resolution")]
     return [
         (acc["code_hash"] == b58(hashlib.sha256(WASM.read_bytes()).digest()),
          f"code deployed on {acct} ({net}) is contract/posterior_registry.wasm"),
@@ -122,7 +131,7 @@ def live_live(com: dict) -> list[tuple[bool, str]]:
                                 == ["resolve"] and p["FunctionCall"]["receiver_id"] == acct
                                 for p in perms),
          f"{acct} holds no full-access key: its {len(perms)} key can only call `resolve`"),
-    ]
+    ] + resolved
 
 
 def rpc(network: str, method: str, params: dict) -> dict:

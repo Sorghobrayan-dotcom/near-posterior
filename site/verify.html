@@ -155,6 +155,12 @@ var lw=new Date(lg.block_timestamp_ns/1e6),ld=new Date(lg.resolution_unix_s*1000
 line(JSON.stringify(lg.record)===JSON.stringify(lr)&&lw<ld,"Short forecast (P = "+lr.P+", "+lr.question
 +"): on chain since "+lw.toISOString().slice(0,16).replace("T"," ")+" UTC, equal to the repository copy; due "
 +ld.toISOString().slice(0,16).replace("T"," ")+" UTC, "+(lg.outcome?"outcome written":"no outcome yet")+".");
+if(L.resolution){var lv=JSON.parse(L.resolution.record),lo=lg.outcome;
+line(!!lo&&JSON.stringify(lo.value)===JSON.stringify(lv)&&new Date(lo.block_timestamp_ns/1e6)>=ld,
+"Short forecast resolved on chain"+(lo?" on "+new Date(lo.block_timestamp_ns/1e6).toISOString().slice(0,16)
+.replace("T"," ")+" UTC":"")+": outcome "+lv.outcome+" (C_90 "+lv.C_90_event.toFixed(4)+" on "+lv.event_day
++" against "+lv.C_90_anchor.toFixed(4)+" on "+lv.anchor_day+"), Brier score "+lv.brier.toFixed(3)
++", equal to the repository copy.");}
 for(var g2 in lr.sha256){files[g2]=lr.sha256[g2];}}
 for(var f in files){line(hex(await sha(await file(f)))===files[f],
 f+" on this site has the sha256 written on chain ("+files[f].slice(0,12)+"...).");}
