@@ -58,6 +58,10 @@
       "methods": [
         "resolve"
       ]
+    },
+    "resolution": {
+      "tx": "45JKadSBFgdhTQbeXeWGYLdw3VUKQmnGm1u6D1wjoFki",
+      "record": "{\"outcome\":1,\"C_90_event\":0.223603915735,\"C_90_anchor\":0.1851006865,\"event_day\":\"2026-11-15\",\"anchor_day\":\"2026-11-12\",\"snapshot_fetched_at\":\"2026-11-17T12:44:38+00:00\",\"brier\":0.1357340720224709,\"git_commit\":\"a656a633afffa6545a47692ec88cdc115454e57e\"}"
     }
   }
 }
