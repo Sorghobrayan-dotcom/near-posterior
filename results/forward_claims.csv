@@ -1,37 +1,37 @@
 thesis,file,line,k,quantity,horizon_stated,h,P,P_lo,P_hi,entities,condition
-0xrard/near-investment-thesis,THESIS.md,81,5.1,daily Intents volume,,12,0.0555473937827,0.0272885692739,0.0866636304872,130,"2.5 percent issuance, 16 bps gross take, 32.6 percent capture"
-0xrard/near-investment-thesis,THESIS.md,81,5.1,daily Intents volume,,24,0.061033717835,0.025675170068,0.103065069506,70,"2.5 percent issuance, 16 bps gross take, 32.6 percent capture"
+0xrard/near-investment-thesis,THESIS.md,81,5.1,daily Intents volume,,12,0.0559779937345,0.0276783863651,0.0869334837529,129,"2.5 percent issuance, 16 bps gross take, 32.6 percent capture"
+0xrard/near-investment-thesis,THESIS.md,81,5.1,daily Intents volume,,24,0.0619182644702,0.026889984097,0.102353872236,69,"2.5 percent issuance, 16 bps gross take, 32.6 percent capture"
 0xrard/near-investment-thesis,THESIS.md,81,5.1,daily Intents volume,,36,0.0706406166932,0.0233918128655,0.128688197767,38,"2.5 percent issuance, 16 bps gross take, 32.6 percent capture"
-0xrard/near-investment-thesis,THESIS.md,81,3.3,daily Intents volume,,12,0.0686690218742,0.0399332105093,0.100382257814,130,"1.6 percent issuance (HSP-029 target), same take and capture"
-0xrard/near-investment-thesis,THESIS.md,81,3.3,daily Intents volume,,24,0.0733732623484,0.0357023809524,0.117437888199,70,"1.6 percent issuance (HSP-029 target), same take and capture"
+0xrard/near-investment-thesis,THESIS.md,81,3.3,daily Intents volume,,12,0.0692013398732,0.0399036802511,0.10035096904,129,"1.6 percent issuance (HSP-029 target), same take and capture"
+0xrard/near-investment-thesis,THESIS.md,81,3.3,daily Intents volume,,24,0.0744366429622,0.036231884058,0.117013757614,69,"1.6 percent issuance (HSP-029 target), same take and capture"
 0xrard/near-investment-thesis,THESIS.md,81,3.3,daily Intents volume,,36,0.130631977671,0.0512709330144,0.218216706539,38,"1.6 percent issuance (HSP-029 target), same take and capture"
-ervhint/tideline,data/published/thesis.json,425,4.93229562022,monthly Intents volume,,12,0.0555473937827,0.0272885692739,0.0866636304872,130,"issuance 2.5 percent, all revenue spent on buybacks"
-ervhint/tideline,data/published/thesis.json,425,4.93229562022,monthly Intents volume,,24,0.061033717835,0.025675170068,0.103065069506,70,"issuance 2.5 percent, all revenue spent on buybacks"
+ervhint/tideline,data/published/thesis.json,425,4.93229562022,monthly Intents volume,,12,0.0559779937345,0.0276783863651,0.0869334837529,129,"issuance 2.5 percent, all revenue spent on buybacks"
+ervhint/tideline,data/published/thesis.json,425,4.93229562022,monthly Intents volume,,24,0.0619182644702,0.026889984097,0.102353872236,69,"issuance 2.5 percent, all revenue spent on buybacks"
 ervhint/tideline,data/published/thesis.json,425,4.93229562022,monthly Intents volume,,36,0.0732987772461,0.0248538011696,0.132509303562,38,"issuance 2.5 percent, all revenue spent on buybacks"
-ervhint/tideline,data/published/thesis.json,424,3.12914361049,monthly Intents volume,,12,0.0694626726678,0.0405656388653,0.101019581861,130,"issuance 1.6 percent (HSP-029), all revenue spent on buybacks"
-ervhint/tideline,data/published/thesis.json,424,3.12914361049,monthly Intents volume,,24,0.0733732623484,0.0357023809524,0.117437888199,70,"issuance 1.6 percent (HSP-029), all revenue spent on buybacks"
+ervhint/tideline,data/published/thesis.json,424,3.12914361049,monthly Intents volume,,12,0.0700011429986,0.0407003533974,0.101128101832,129,"issuance 1.6 percent (HSP-029), all revenue spent on buybacks"
+ervhint/tideline,data/published/thesis.json,424,3.12914361049,monthly Intents volume,,24,0.0744366429622,0.036231884058,0.117013757614,69,"issuance 1.6 percent (HSP-029), all revenue spent on buybacks"
 ervhint/tideline,data/published/thesis.json,424,3.12914361049,monthly Intents volume,,36,0.13538343966,0.0526315789474,0.224348750665,38,"issuance 1.6 percent (HSP-029), all revenue spent on buybacks"
-Topeseun/near-intents-investment-thesis,data/processed/metrics.json,138,4.96391342338,retained revenue,,12,0.0555473937827,0.0272885692739,0.0866636304872,130,"issuance = 2.5 percent max inflation x total supply, price 3.52"
-Topeseun/near-intents-investment-thesis,data/processed/metrics.json,138,4.96391342338,retained revenue,,24,0.061033717835,0.025675170068,0.103065069506,70,"issuance = 2.5 percent max inflation x total supply, price 3.52"
+Topeseun/near-intents-investment-thesis,data/processed/metrics.json,138,4.96391342338,retained revenue,,12,0.0559779937345,0.0276783863651,0.0869334837529,129,"issuance = 2.5 percent max inflation x total supply, price 3.52"
+Topeseun/near-intents-investment-thesis,data/processed/metrics.json,138,4.96391342338,retained revenue,,24,0.0619182644702,0.026889984097,0.102353872236,69,"issuance = 2.5 percent max inflation x total supply, price 3.52"
 Topeseun/near-intents-investment-thesis,data/processed/metrics.json,138,4.96391342338,retained revenue,,36,0.0721026049973,0.0248538011696,0.131313131313,38,"issuance = 2.5 percent max inflation x total supply, price 3.52"
-Raindess69/near-usage-thesis,docs/metrics.json,65,5.85587291446,buyback and burn capture (30-day window),,12,0.0525254157607,0.0246240034475,0.0832975602829,130,gross minted NEAR over 2026-10-03 to 2026-11-01
-Raindess69/near-usage-thesis,docs/metrics.json,65,5.85587291446,buyback and burn capture (30-day window),,24,0.0502676722863,0.0180593019817,0.0887300354925,70,gross minted NEAR over 2026-10-03 to 2026-11-01
+Raindess69/near-usage-thesis,docs/metrics.json,65,5.85587291446,buyback and burn capture (30-day window),,12,0.0529325895263,0.0252069749676,0.0837111588822,129,gross minted NEAR over 2026-10-03 to 2026-11-01
+Raindess69/near-usage-thesis,docs/metrics.json,65,5.85587291446,buyback and burn capture (30-day window),,24,0.050996189276,0.0190068863084,0.0880922375251,69,gross minted NEAR over 2026-10-03 to 2026-11-01
 Raindess69/near-usage-thesis,docs/metrics.json,65,5.85587291446,buyback and burn capture (30-day window),,36,0.0599415204678,0.0131578947368,0.118421052632,38,gross minted NEAR over 2026-10-03 to 2026-11-01
-HATWHY4041/near-intents-thesis,data/snapshot.json,77,5.79823916713,daily Intents volume,,12,0.0525254157607,0.0246240034475,0.0832975602829,130,365-day issuance at the CoinGecko price
-HATWHY4041/near-intents-thesis,data/snapshot.json,77,5.79823916713,daily Intents volume,,24,0.0502676722863,0.0180593019817,0.0887300354925,70,365-day issuance at the CoinGecko price
+HATWHY4041/near-intents-thesis,data/snapshot.json,77,5.79823916713,daily Intents volume,,12,0.0529325895263,0.0252069749676,0.0837111588822,129,365-day issuance at the CoinGecko price
+HATWHY4041/near-intents-thesis,data/snapshot.json,77,5.79823916713,daily Intents volume,,24,0.050996189276,0.0190068863084,0.0880922375251,69,365-day issuance at the CoinGecko price
 HATWHY4041/near-intents-thesis,data/snapshot.json,77,5.79823916713,daily Intents volume,,36,0.0615862573099,0.0148026315789,0.118421052632,38,365-day issuance at the CoinGecko price
-soldanoandrea/near-thesis,thesis/NUMBERS.md,7,7.168,multiple to net zero (quantity not stated in the file read),,12,0.0440659340659,0.0177655677656,0.0730183150183,130,issuance 2.49 percent
-soldanoandrea/near-thesis,thesis/NUMBERS.md,7,7.168,multiple to net zero (quantity not stated in the file read),,24,0.0305875973578,0.00621118012422,0.0630171053929,70,issuance 2.49 percent
+soldanoandrea/near-thesis,thesis/NUMBERS.md,7,7.168,multiple to net zero (quantity not stated in the file read),,12,0.044407530454,0.0180878552972,0.0731063122924,129,issuance 2.49 percent
+soldanoandrea/near-thesis,thesis/NUMBERS.md,7,7.168,multiple to net zero (quantity not stated in the file read),,24,0.0310308958702,0.00724637681159,0.0602464468249,69,issuance 2.49 percent
 soldanoandrea/near-thesis,thesis/NUMBERS.md,7,7.168,multiple to net zero (quantity not stated in the file read),,36,0.0531632110579,0.0107655502392,0.108187134503,38,issuance 2.49 percent
-soldanoandrea/near-thesis,thesis/NUMBERS.md,27,4.545,multiple to net zero (quantity not stated in the file read),,12,0.0565507382643,0.0283428953825,0.0880613291227,130,issuance 1.59 percent
-soldanoandrea/near-thesis,thesis/NUMBERS.md,27,4.545,multiple to net zero (quantity not stated in the file read),,24,0.0624622892635,0.0273680124224,0.104847973972,70,issuance 1.59 percent
+soldanoandrea/near-thesis,thesis/NUMBERS.md,27,4.545,multiple to net zero (quantity not stated in the file read),,12,0.0569891160803,0.0285540261697,0.0879417405655,129,issuance 1.59 percent
+soldanoandrea/near-thesis,thesis/NUMBERS.md,27,4.545,multiple to net zero (quantity not stated in the file read),,24,0.0633675398326,0.027992468569,0.104513907642,69,issuance 1.59 percent
 soldanoandrea/near-thesis,thesis/NUMBERS.md,27,4.545,multiple to net zero (quantity not stated in the file read),,36,0.0747607655502,0.0263157894737,0.136363636364,38,issuance 1.59 percent
-Apihpih96/near-intents-thesis,FINDINGS.md,20,5.6,buybacks,,12,0.0525254157607,0.0246240034475,0.0832975602829,130,2.5 percent maximum issuance at today's price
-Apihpih96/near-intents-thesis,FINDINGS.md,20,5.6,buybacks,,24,0.0529296066253,0.0202215320911,0.092864389234,70,2.5 percent maximum issuance at today's price
+Apihpih96/near-intents-thesis,FINDINGS.md,20,5.6,buybacks,,12,0.0529325895263,0.0252069749676,0.0837111588822,129,2.5 percent maximum issuance at today's price
+Apihpih96/near-intents-thesis,FINDINGS.md,20,5.6,buybacks,,24,0.0536967023735,0.0208427851292,0.091529615627,69,2.5 percent maximum issuance at today's price
 Apihpih96/near-intents-thesis,FINDINGS.md,20,5.6,buybacks,,36,0.0648757309942,0.0180921052632,0.121527777778,38,2.5 percent maximum issuance at today's price
-EmekaManuel/nearquery,THESIS.md,38,4.7,captured revenue (volume at constant take rate),,12,0.0558818419432,0.027675661934,0.0870813329893,130,"captured revenue above 2 percent of market cap for 90 days: a yield target, not coverage of issuance"
-EmekaManuel/nearquery,THESIS.md,38,4.7,captured revenue (volume at constant take rate),,24,0.0624622892635,0.0273680124224,0.104847973972,70,"captured revenue above 2 percent of market cap for 90 days: a yield target, not coverage of issuance"
+EmekaManuel/nearquery,THESIS.md,38,4.7,captured revenue (volume at constant take rate),,12,0.0563150345164,0.0280488576532,0.087260507506,129,"captured revenue above 2 percent of market cap for 90 days: a yield target, not coverage of issuance"
+EmekaManuel/nearquery,THESIS.md,38,4.7,captured revenue (volume at constant take rate),,24,0.0633675398326,0.027992468569,0.104513907642,69,"captured revenue above 2 percent of market cap for 90 days: a yield target, not coverage of issuance"
 EmekaManuel/nearquery,THESIS.md,38,4.7,captured revenue (volume at constant take rate),,36,0.0747607655502,0.0263157894737,0.136363636364,38,"captured revenue above 2 percent of market cap for 90 days: a yield target, not coverage of issuance"
-bomanaps/-near-intents-thesis,THESIS.md,30,1.6,Intents volume,,12,0.120986325066,0.0862414577728,0.159899517714,130,"contract-enforced take of 5 bps or more, issuance floor 1.6 percent"
-bomanaps/-near-intents-thesis,THESIS.md,30,1.6,Intents volume,,24,0.141177677395,0.0862809456589,0.199624292167,70,"contract-enforced take of 5 bps or more, issuance floor 1.6 percent"
+bomanaps/-near-intents-thesis,THESIS.md,30,1.6,Intents volume,,12,0.121924203555,0.0862897063186,0.159172353367,129,"contract-enforced take of 5 bps or more, issuance floor 1.6 percent"
+bomanaps/-near-intents-thesis,THESIS.md,30,1.6,Intents volume,,24,0.143223730691,0.0897059823185,0.200174289479,69,"contract-enforced take of 5 bps or more, issuance floor 1.6 percent"
 bomanaps/-near-intents-thesis,THESIS.md,30,1.6,Intents volume,,36,0.182565789474,0.0789473684211,0.287828947368,38,"contract-enforced take of 5 bps or more, issuance floor 1.6 percent"

@@ -13,7 +13,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,courtyard,Courtyard,Physical TCG,1,0,0.961910466661,2025-11-01
 12,cowswap,CoWSwap,DEX Aggregator,4,0,2.41691729561,2025-02-01
 12,debridge,deBridge,Bridge,1,0,0.278992010224,2024-07-01
-12,dex-screener,DEX Screener,Coins Tracker,3,0,0.407982270457,2025-05-01
+12,dex-screener,DEX Screener,Coins Tracker,2,0,0.189098756668,2025-04-01
 12,eigencloud,EigenCloud,Restaking,5,0,0.149064926587,2025-07-01
 12,ens,ENS,Domains,13,0,0.818911883172,2021-12-01
 12,euler-dao,Euler DAO,Risk Curators,4,0,0.0253751742135,2025-08-01
@@ -33,7 +33,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,nouns,Nouns,Services,6,0,0.508021501654,2022-11-01
 12,osmosis-dex,Osmosis DEX,Dexs,6,0,0.726954780846,2024-01-01
 12,padre,Padre,Telegram Bot,1,0,0.01,2025-10-01
-12,parent#aave,aave,Lending,23,0,4.83072484124,2023-07-01
+12,parent#aave,aave,Lending,23,1,4.83072484124,2023-07-01
 12,parent#abracadabra,abracadabra,CDP,1,0,0.127148749922,2022-06-01
 12,parent#aero-protocol,aero-protocol,Dexs,7,1,13.9122385915,2024-03-01
 12,parent#apeswap,apeswap,Dexs,3,0,0.0519253165277,2022-02-01
@@ -51,7 +51,6 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 12,parent#chainlink,chainlink,Services,2,0,1.49622438006,2025-10-01
 12,parent#compound-finance,compound-finance,Lending,12,5,9.51864804929,2020-08-01
 12,parent#curve-finance,curve-finance,Dexs,25,0,3.94604553869,2022-10-01
-12,parent#desk,desk,Derivatives,1,0,0.112035855239,2024-06-01
 12,parent#dodo,dodo,Dexs,9,0,3.12418618328,2024-11-01
 12,parent#drift,drift,Derivatives,9,0,0.80209389819,2025-04-01
 12,parent#dydx,dydx,Derivatives,7,0,0.590406655953,2024-12-01
@@ -155,7 +154,6 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 24,parent#cetus,cetus,Dexs,1,0,0.154665287736,2024-11-01
 24,parent#compound-finance,compound-finance,Lending,12,0,1.09344643747,2020-08-01
 24,parent#curve-finance,curve-finance,Dexs,25,0,2.91028251143,2021-12-01
-24,parent#desk,desk,Derivatives,1,0,0.01,2024-06-01
 24,parent#dodo,dodo,Dexs,1,0,0.0814997500358,2024-11-01
 24,parent#dydx,dydx,Derivatives,3,0,0.0969546295968,2024-11-01
 24,parent#ethena,ethena,Basis Trading,3,0,2.30821519452,2024-11-01
@@ -216,7 +214,7 @@ h,entity_id,name,category,moments,successes_at_k_star,largest_growth,largest_gro
 36,parent#gmx,gmx,Derivatives,18,0,1.27396174279,2022-07-01
 36,parent#layerzero,layerzero,Bridge,3,0,0.0794823361247,2023-11-01
 36,parent#liquity,liquity,CDP,6,0,0.10881386982,2022-11-01
-36,parent#maker,maker,CDP,18,7,12.0957238815,2022-08-01
+36,parent#maker,maker,CDP,18,8,12.0957238815,2022-08-01
 36,parent#maple-finance,maple-finance,Lending,2,0,3.97643031413,2022-12-01
 36,parent#metamask,metamask,Wallets,2,0,1.31640777809,2023-10-01
 36,parent#opensea,opensea,NFT Marketplace,5,0,1.17451461339,2021-04-01
