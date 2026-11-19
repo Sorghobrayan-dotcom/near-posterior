@@ -4,7 +4,7 @@ Generated from `results/` by `uv run python -m near_posterior.build`. Lead with 
 
 Post 1 (231 characters):
 
-> Built at NEAR HACKATHON: 9 NEAR theses say Intents fees must grow 1.6x to 7.2x for buybacks to offset new supply. How often did protocols of that size do it? 3% to 14% of the time. NEAR today: 4.9x, 6%. @NEARProtocol #NEARHackathon
+> Built at NEAR HACKATHON: 9 NEAR theses say Intents fees must grow 1.6x to 7.2x for buybacks to offset new supply. How often did protocols of that size do it? 3% to 14% of the time. NEAR today: 5.3x, 6%. @NEARProtocol #NEARHackathon
 
 Post 2 (reply):
 
