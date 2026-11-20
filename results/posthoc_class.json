@@ -1,5 +1,5 @@
 {
-  "P": 0.0362554112554,
+  "P": 0.0407647907648,
   "entities": 66,
   "excluded": [
     "tether",
@@ -15,10 +15,10 @@
   ],
   "h": 24,
   "interval": [
-    0.010101010101,
-    0.0696428571429
+    0.0126262626263,
+    0.0761183261183
   ],
-  "k_star": 5.2502946623,
+  "k_star": 5.14502806142,
   "label": "post hoc (specified after the primary results; named, hand-picked list)",
-  "moments": 461
+  "moments": 463
 }

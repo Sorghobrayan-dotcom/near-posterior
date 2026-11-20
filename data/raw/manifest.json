@@ -1,30 +1,30 @@
 {
-  "fetched_at": "2026-11-19T15:57:02+00:00",
+  "fetched_at": "2026-11-20T15:40:18+00:00",
   "files": {
     "intents_volume": {
       "url": "https://api.llama.fi/summary/dexs/near-intents?dataType=dailyVolume",
-      "sha256": "994484df426e145783544cb9d7db9be4dd5501bf98db3eb629c44ff4cc8a78b5",
-      "bytes": 51089
+      "sha256": "252582130ee8c799ee3e6b5a4d8d08e9eeb1ccaad0be0ceb85361be65e486c9c",
+      "bytes": 51160
     },
     "intents_fees": {
       "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyFees",
-      "sha256": "ce66f12681b831bdcfbc7b71ecc9a0edc734e33bbc4146e76655b46a29642f9d",
-      "bytes": 39534
+      "sha256": "ed44a5094c29f9ca27fe4d93535ae7d1148a5b89a494ce89dc1f0d60de6c8fe2",
+      "bytes": 39606
     },
     "intents_revenue": {
       "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyRevenue",
-      "sha256": "8ee83f1922b95db596fc4f4ea9512599ff73d389a4d6e0323cc91ff469e60e71",
-      "bytes": 37096
+      "sha256": "e7fbbb29307545563f1589f539106efd653eeed42567f50b10afade7d8af10f3",
+      "bytes": 37165
     },
     "intents_holders_revenue": {
       "url": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyHoldersRevenue",
-      "sha256": "b62793b5f49f3b288b61f3c69d2b1ef575680d9c021f9636b3b45bad90d140ac",
-      "bytes": 36903
+      "sha256": "8dcd76bcfe1564e46aff482182f206b2fd208b23c00df0ec604aa9faed32f507",
+      "bytes": 36973
     },
     "nearblocks_charts": {
       "url": "https://api.nearblocks.io/v1/charts",
-      "sha256": "67793e865a7f6c9d854de474768816ada91771946e7256ed6b4065d049e098ec",
-      "bytes": 1548065
+      "sha256": "5cc3b179b3a2692b92d3d0bda4b2ced8553eece31a112454785429d15ab9f793",
+      "bytes": 1548737
     }
   }
 }
