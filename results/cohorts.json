@@ -1,41 +1,41 @@
 {
   "blocks": 107,
   "h": 24,
-  "k_star": 5.14502806142,
+  "k_star": 4.93581462286,
   "label": "secondary (specified after the primary results)",
   "leave_one_year_out": {
     "2020": {
-      "P": 0.0514210427254,
-      "entities": 69,
-      "moments": 509
+      "P": 0.0481229448301,
+      "entities": 68,
+      "moments": 503
     },
     "2021": {
-      "P": 0.0699468423733,
-      "entities": 68,
-      "moments": 457
+      "P": 0.0672594818117,
+      "entities": 67,
+      "moments": 450
     },
     "2022": {
-      "P": 0.0637768817204,
-      "entities": 62,
-      "moments": 370
+      "P": 0.0594630096679,
+      "entities": 61,
+      "moments": 367
     },
     "2023": {
-      "P": 0.0473015873016,
-      "entities": 70,
-      "moments": 412
+      "P": 0.0442321768409,
+      "entities": 69,
+      "moments": 407
     },
     "2024": {
-      "P": 0.111431052608,
+      "P": 0.110772291079,
       "entities": 39,
-      "moments": 316
+      "moments": 313
     }
   },
   "two_stage_bootstrap": {
     "interval": [
-      0.0201071993943,
-      0.145856481481
+      0.0179458898944,
+      0.136893781785
     ],
-    "mean_block_share": 0.0606697819315,
+    "mean_block_share": 0.0583333333333,
     "note": "indicative only (few cohorts)"
   },
   "years": [

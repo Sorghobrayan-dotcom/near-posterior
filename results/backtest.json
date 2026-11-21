@@ -1,9 +1,9 @@
 {
-  "F_near": 82202221.8333,
+  "F_near": 83296767.6111,
   "choice": {
     "difference_interval": [
-      -0.0306268369392,
-      0.0123211267865
+      -0.0340859435689,
+      0.0128471054808
     ],
     "horizon": 12,
     "lowest_crps": "A_60",
@@ -38,13 +38,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "banana-gun",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "banana-gun",
         "tau": "2025-02-01"
       },
@@ -92,13 +92,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "binance-staked-eth",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 82,
-        "b0_entities": 45,
+        "b0_entities": 44,
         "entity": "binance-staked-eth",
         "tau": "2025-02-01"
       },
@@ -128,37 +128,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "convex-finance",
         "tau": "2022-09-01"
       },
       {
+        "analog_entities": 17,
+        "b0_entities": 10,
+        "entity": "convex-finance",
+        "tau": "2022-10-01"
+      },
+      {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "convex-finance",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "convex-finance",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "convex-finance",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "convex-finance",
         "tau": "2023-02-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "convex-finance",
         "tau": "2023-03-01"
       },
@@ -248,7 +254,7 @@
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "cowswap",
         "tau": "2025-02-01"
       },
@@ -320,25 +326,25 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "ens",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "ens",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "ens",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 19,
-        "b0_entities": 13,
+        "b0_entities": 14,
         "entity": "ens",
         "tau": "2022-12-01"
       },
@@ -380,13 +386,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "gamma",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "gamma",
         "tau": "2025-02-01"
       },
@@ -500,13 +506,13 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "maestro",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 82,
-        "b0_entities": 45,
+        "b0_entities": 44,
         "entity": "maestro",
         "tau": "2025-02-01"
       },
@@ -530,13 +536,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "metaplex",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "metaplex",
         "tau": "2025-02-01"
       },
@@ -554,13 +560,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "meth-protocol",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "meth-protocol",
         "tau": "2025-02-01"
       },
@@ -584,7 +590,7 @@
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "nouns",
         "tau": "2022-11-01"
       },
@@ -698,7 +704,7 @@
       },
       {
         "analog_entities": 27,
-        "b0_entities": 19,
+        "b0_entities": 18,
         "entity": "parent#aave",
         "tau": "2023-03-01"
       },
@@ -884,49 +890,43 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#balancer",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#balancer",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#balancer",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 19,
-        "b0_entities": 13,
+        "b0_entities": 14,
         "entity": "parent#balancer",
         "tau": "2022-12-01"
       },
       {
-        "analog_entities": 25,
-        "b0_entities": 16,
-        "entity": "parent#balancer",
-        "tau": "2023-02-01"
-      },
-      {
         "analog_entities": 27,
-        "b0_entities": 19,
+        "b0_entities": 18,
         "entity": "parent#balancer",
         "tau": "2023-03-01"
       },
       {
         "analog_entities": 75,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#benqi",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 82,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#benqi",
         "tau": "2025-02-01"
       },
@@ -943,12 +943,6 @@
         "tau": "2024-04-01"
       },
       {
-        "analog_entities": 52,
-        "b0_entities": 34,
-        "entity": "parent#blur",
-        "tau": "2024-05-01"
-      },
-      {
         "analog_entities": 72,
         "b0_entities": 39,
         "entity": "parent#bonkfun",
@@ -956,13 +950,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#bonkfun",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#bonkfun",
         "tau": "2025-02-01"
       },
@@ -1016,7 +1010,7 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#camelot",
         "tau": "2025-01-01"
       },
@@ -1148,25 +1142,25 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#curve-finance",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#curve-finance",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#curve-finance",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 19,
+        "b0_entities": 18,
         "entity": "parent#curve-finance",
         "tau": "2023-03-01"
       },
@@ -1217,12 +1211,6 @@
         "b0_entities": 31,
         "entity": "parent#curve-finance",
         "tau": "2023-11-01"
-      },
-      {
-        "analog_entities": 53,
-        "b0_entities": 35,
-        "entity": "parent#desk",
-        "tau": "2024-06-01"
       },
       {
         "analog_entities": 70,
@@ -1292,13 +1280,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#fluid",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#fluid",
         "tau": "2025-02-01"
       },
@@ -1352,25 +1340,25 @@
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#gmx",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#gmx",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#gmx",
         "tau": "2023-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#gmx",
         "tau": "2023-03-01"
       },
@@ -1491,18 +1479,24 @@
       {
         "analog_entities": 50,
         "b0_entities": 32,
+        "entity": "parent#jito",
+        "tau": "2024-04-01"
+      },
+      {
+        "analog_entities": 50,
+        "b0_entities": 32,
         "entity": "parent#jupiter",
         "tau": "2024-04-01"
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#kamino-finance",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#kamino-finance",
         "tau": "2025-02-01"
       },
@@ -1532,13 +1526,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#ktx.finance",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#ktx.finance",
         "tau": "2025-02-01"
       },
@@ -1586,19 +1580,19 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#liquity",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#liquity",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#liquity",
         "tau": "2022-11-01"
       },
@@ -1741,12 +1735,6 @@
         "tau": "2024-09-01"
       },
       {
-        "analog_entities": 46,
-        "b0_entities": 32,
-        "entity": "parent#mux-protocol",
-        "tau": "2024-02-01"
-      },
-      {
         "analog_entities": 48,
         "b0_entities": 32,
         "entity": "parent#mux-protocol",
@@ -1814,13 +1802,13 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "parent#optimism-foundation",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 82,
-        "b0_entities": 45,
+        "b0_entities": 44,
         "entity": "parent#optimism-foundation",
         "tau": "2025-02-01"
       },
@@ -1838,43 +1826,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#pancakeswap",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#pancakeswap",
         "tau": "2022-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#pancakeswap",
         "tau": "2022-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#pancakeswap",
         "tau": "2022-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#pancakeswap",
         "tau": "2023-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#pancakeswap",
         "tau": "2023-02-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#pancakeswap",
         "tau": "2023-03-01"
       },
@@ -1958,12 +1946,6 @@
       },
       {
         "analog_entities": 6,
-        "b0_entities": 4,
-        "entity": "parent#paxos",
-        "tau": "2022-03-01"
-      },
-      {
-        "analog_entities": 6,
         "b0_entities": 5,
         "entity": "parent#paxos",
         "tau": "2022-04-01"
@@ -2000,7 +1982,7 @@
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#pendle",
         "tau": "2025-02-01"
       },
@@ -2071,12 +2053,6 @@
         "tau": "2022-08-01"
       },
       {
-        "analog_entities": 13,
-        "b0_entities": 7,
-        "entity": "parent#quickswap",
-        "tau": "2022-09-01"
-      },
-      {
         "analog_entities": 46,
         "b0_entities": 32,
         "entity": "parent#raydium",
@@ -2096,13 +2072,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#sanctum",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#sanctum",
         "tau": "2025-02-01"
       },
@@ -2174,13 +2150,13 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#sushi",
         "tau": "2022-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#sushi",
         "tau": "2022-10-01"
       },
@@ -2269,12 +2245,6 @@
         "tau": "2024-06-01"
       },
       {
-        "analog_entities": 18,
-        "b0_entities": 11,
-        "entity": "parent#trader-joe",
-        "tau": "2022-11-01"
-      },
-      {
         "analog_entities": 34,
         "b0_entities": 25,
         "entity": "parent#trader-joe",
@@ -2348,7 +2318,7 @@
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#trust-wallet",
         "tau": "2025-02-01"
       },
@@ -2390,13 +2360,13 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "parent#venus-finance",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "parent#venus-finance",
         "tau": "2025-02-01"
       },
@@ -2516,13 +2486,13 @@
       },
       {
         "analog_entities": 75,
-        "b0_entities": 41,
+        "b0_entities": 40,
         "entity": "rocket-pool",
         "tau": "2025-01-01"
       },
       {
         "analog_entities": 82,
-        "b0_entities": 45,
+        "b0_entities": 44,
         "entity": "rocket-pool",
         "tau": "2025-02-01"
       },
@@ -2606,7 +2576,7 @@
       },
       {
         "analog_entities": 83,
-        "b0_entities": 46,
+        "b0_entities": 45,
         "entity": "uniswap-labs",
         "tau": "2025-02-01"
       },
@@ -2636,7 +2606,7 @@
       },
       {
         "analog_entities": 76,
-        "b0_entities": 42,
+        "b0_entities": 41,
         "entity": "wigoswap",
         "tau": "2025-01-01"
       }
@@ -2689,6 +2659,12 @@
         "b0_entities": 2,
         "entity": "convex-finance",
         "tau": "2022-09-01"
+      },
+      {
+        "analog_entities": 2,
+        "b0_entities": 2,
+        "entity": "convex-finance",
+        "tau": "2022-10-01"
       },
       {
         "analog_entities": 3,
@@ -2752,43 +2728,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "convex-finance",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "convex-finance",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "convex-finance",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "convex-finance",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "convex-finance",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "convex-finance",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "convex-finance",
         "tau": "2024-03-01"
       },
@@ -2890,7 +2866,7 @@
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "gains-network",
         "tau": "2024-03-01"
       },
@@ -2920,37 +2896,37 @@
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "maestro",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "maestro",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "maestro",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "maestro",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "maestro",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "maestro",
         "tau": "2024-03-01"
       },
@@ -3010,19 +2986,19 @@
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "osmosis-dex",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "osmosis-dex",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "osmosis-dex",
         "tau": "2024-03-01"
       },
@@ -3178,7 +3154,7 @@
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#aero-protocol",
         "tau": "2024-03-01"
       },
@@ -3321,12 +3297,6 @@
         "tau": "2022-12-01"
       },
       {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "parent#balancer",
-        "tau": "2023-02-01"
-      },
-      {
         "analog_entities": 5,
         "b0_entities": 3,
         "entity": "parent#balancer",
@@ -3339,20 +3309,14 @@
         "tau": "2024-04-01"
       },
       {
-        "analog_entities": 29,
-        "b0_entities": 21,
-        "entity": "parent#blur",
-        "tau": "2024-05-01"
-      },
-      {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#camelot",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#camelot",
         "tau": "2024-03-01"
       },
@@ -3550,27 +3514,21 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 7,
+        "b0_entities": 8,
         "entity": "parent#curve-finance",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 16,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#curve-finance",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 10,
+        "b0_entities": 11,
         "entity": "parent#curve-finance",
         "tau": "2023-11-01"
-      },
-      {
-        "analog_entities": 35,
-        "b0_entities": 25,
-        "entity": "parent#desk",
-        "tau": "2024-06-01"
       },
       {
         "analog_entities": 39,
@@ -3616,7 +3574,7 @@
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#frax-finance",
         "tau": "2024-03-01"
       },
@@ -3700,43 +3658,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#gmx",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#gmx",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#gmx",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#gmx",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#gmx",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#gmx",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#gmx",
         "tau": "2024-03-01"
       },
@@ -3778,9 +3736,15 @@
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#jito",
         "tau": "2024-03-01"
+      },
+      {
+        "analog_entities": 28,
+        "b0_entities": 20,
+        "entity": "parent#jito",
+        "tau": "2024-04-01"
       },
       {
         "analog_entities": 28,
@@ -3790,13 +3754,13 @@
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#layerzero",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#layerzero",
         "tau": "2024-03-01"
       },
@@ -3987,14 +3951,8 @@
         "tau": "2024-09-01"
       },
       {
-        "analog_entities": 26,
-        "b0_entities": 17,
-        "entity": "parent#mux-protocol",
-        "tau": "2024-02-01"
-      },
-      {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#mux-protocol",
         "tau": "2024-03-01"
       },
@@ -4132,43 +4090,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#pancakeswap",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#pancakeswap",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#pancakeswap",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#pancakeswap",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#pancakeswap",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#pancakeswap",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#pancakeswap",
         "tau": "2024-03-01"
       },
@@ -4177,12 +4135,6 @@
         "b0_entities": 20,
         "entity": "parent#pancakeswap",
         "tau": "2024-04-01"
-      },
-      {
-        "analog_entities": 0,
-        "b0_entities": 0,
-        "entity": "parent#paxos",
-        "tau": "2022-03-01"
       },
       {
         "analog_entities": 1,
@@ -4216,7 +4168,7 @@
       },
       {
         "analog_entities": 13,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#paxos",
         "tau": "2023-09-01"
       },
@@ -4269,14 +4221,8 @@
         "tau": "2022-08-01"
       },
       {
-        "analog_entities": 2,
-        "b0_entities": 2,
-        "entity": "parent#quickswap",
-        "tau": "2022-09-01"
-      },
-      {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#raydium",
         "tau": "2024-02-01"
       },
@@ -4360,43 +4306,43 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#synthetix",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 17,
-        "b0_entities": 9,
+        "b0_entities": 10,
         "entity": "parent#synthetix",
         "tau": "2023-10-01"
       },
       {
         "analog_entities": 18,
-        "b0_entities": 11,
+        "b0_entities": 12,
         "entity": "parent#synthetix",
         "tau": "2023-11-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#synthetix",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#synthetix",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#synthetix",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#synthetix",
         "tau": "2024-03-01"
       },
@@ -4419,12 +4365,6 @@
         "tau": "2024-06-01"
       },
       {
-        "analog_entities": 3,
-        "b0_entities": 2,
-        "entity": "parent#trader-joe",
-        "tau": "2022-11-01"
-      },
-      {
         "analog_entities": 9,
         "b0_entities": 6,
         "entity": "parent#trader-joe",
@@ -4444,31 +4384,31 @@
       },
       {
         "analog_entities": 14,
-        "b0_entities": 8,
+        "b0_entities": 9,
         "entity": "parent#trader-joe",
         "tau": "2023-09-01"
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "parent#trader-joe",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "parent#trader-joe",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 26,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "parent#trader-joe",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 28,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "parent#trader-joe",
         "tau": "2024-03-01"
       },
@@ -4606,25 +4546,25 @@
       },
       {
         "analog_entities": 20,
-        "b0_entities": 14,
+        "b0_entities": 15,
         "entity": "thorchain-dex",
         "tau": "2023-12-01"
       },
       {
         "analog_entities": 21,
-        "b0_entities": 15,
+        "b0_entities": 16,
         "entity": "thorchain-dex",
         "tau": "2024-01-01"
       },
       {
         "analog_entities": 25,
-        "b0_entities": 17,
+        "b0_entities": 18,
         "entity": "thorchain-dex",
         "tau": "2024-02-01"
       },
       {
         "analog_entities": 27,
-        "b0_entities": 20,
+        "b0_entities": 19,
         "entity": "thorchain-dex",
         "tau": "2024-03-01"
       },
@@ -4638,66 +4578,66 @@
   },
   "scores": {
     "12": {
-      "candidates": 589,
-      "dropped": 438,
+      "candidates": 583,
+      "dropped": 433,
       "entities": 39,
       "h": 12,
       "models": {
         "A_120": {
-          "brier_1": 0.152898270787,
+          "brier_1": 0.153472685185,
           "brier_1_interval": [
-            0.108545462673,
-            0.201720002834
+            0.108868596941,
+            0.202862605407
           ],
-          "brier_1_minus_B0": 0.00100699258872,
+          "brier_1_minus_B0": 0.000173886583971,
           "brier_1_minus_B0_interval": [
-            -0.00794548459508,
-            0.0112094791102
+            -0.0093256941872,
+            0.0110099772632
           ],
-          "brier_2": 0.0431843267108,
+          "brier_2": 0.0433384259259,
           "brier_2_interval": [
-            0.0187897138348,
-            0.0738180748985
+            0.0187892340875,
+            0.074073660644
           ],
-          "brier_2_minus_B0": -0.013641420581,
+          "brier_2_minus_B0": -0.0141191288884,
           "brier_2_minus_B0_interval": [
-            -0.0177999905613,
-            -0.00839249604608
+            -0.0183944604483,
+            -0.00875441574034
           ],
-          "brier_5": 0.00850487490802,
+          "brier_5": 0.00853888888889,
           "brier_5_interval": [
-            0.00229027830362,
-            0.0198661492375
+            0.00228019244735,
+            0.0200037899419
           ],
-          "brier_5_minus_B0": -0.00910806331488,
+          "brier_5_minus_B0": -0.00887947525871,
           "brier_5_minus_B0_interval": [
-            -0.0102353917686,
-            -0.00755068569104
+            -0.00999847379297,
+            -0.00733362185501
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0431843267108,
-              "crps": 0.76756750378,
-              "n": 151
+              "brier_2": 0.0433384259259,
+              "crps": 0.767753722956,
+              "n": 150
             }
           },
-          "cov_50": 0.602649006623,
-          "cov_90": 0.986754966887,
-          "crps": 0.76756750378,
+          "cov_50": 0.6,
+          "cov_90": 0.986666666667,
+          "crps": 0.767753722956,
           "crps_interval": [
-            0.64036128335,
-            0.93358124167
+            0.640321413858,
+            0.934487127545
           ],
-          "crps_minus_B0": 0.00150731040662,
+          "crps_minus_B0": 0.000857426890834,
           "crps_minus_B0_interval": [
-            -0.0262462250922,
-            0.0289663522129
+            -0.0291532961471,
+            0.0306048316371
           ],
           "pit": {
             "histogram": [
               7,
               14,
-              24,
+              23,
               18,
               23,
               23,
@@ -4706,64 +4646,64 @@
               16,
               2
             ],
-            "ks": 0.143653421634,
-            "n": 151
+            "ks": 0.141666666667,
+            "n": 150
           }
         },
         "A_30": {
-          "brier_1": 0.153038999264,
+          "brier_1": 0.153318518519,
           "brier_1_interval": [
-            0.11113947894,
-            0.199600975876
+            0.111140041732,
+            0.200282168459
           ],
-          "brier_1_minus_B0": 0.00114772106554,
+          "brier_1_minus_B0": 1.97199173039e-05,
           "brier_1_minus_B0_interval": [
-            -0.00739303086697,
-            0.00989553670415
+            -0.00895671252749,
+            0.00940274438651
           ],
-          "brier_2": 0.0479028697572,
+          "brier_2": 0.0479555555556,
           "brier_2_interval": [
-            0.023468319379,
-            0.0775590760268
+            0.0233635398418,
+            0.0778433095556
           ],
-          "brier_2_minus_B0": -0.00892287753461,
+          "brier_2_minus_B0": -0.00950199925876,
           "brier_2_minus_B0_interval": [
-            -0.0133885020561,
-            -0.00414952818027
+            -0.0140505648072,
+            -0.00459666356897
           ],
-          "brier_5": 0.00855776306107,
+          "brier_5": 0.00858518518519,
           "brier_5_interval": [
-            0.00226716555265,
-            0.019385620915
+            0.00225191625192,
+            0.0194599485341
           ],
-          "brier_5_minus_B0": -0.00905517516183,
+          "brier_5_minus_B0": -0.00883317896242,
           "brier_5_minus_B0_interval": [
-            -0.0102627277942,
-            -0.00756782121183
+            -0.010032777831,
+            -0.0073678592257
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0479028697572,
-              "crps": 0.770947780704,
-              "n": 151
+              "brier_2": 0.0479555555556,
+              "crps": 0.769436176406,
+              "n": 150
             }
           },
-          "cov_50": 0.562913907285,
-          "cov_90": 0.927152317881,
-          "crps": 0.770947780704,
+          "cov_50": 0.566666666667,
+          "cov_90": 0.926666666667,
+          "crps": 0.769436176406,
           "crps_interval": [
-            0.609908012197,
-            0.978738616665
+            0.609389564025,
+            0.978617673444
           ],
-          "crps_minus_B0": 0.00488758732996,
+          "crps_minus_B0": 0.00253988034098,
           "crps_minus_B0_interval": [
-            -0.0231319110744,
-            0.0360689817807
+            -0.023390838507,
+            0.0315796551691
           ],
           "pit": {
             "histogram": [
               17,
-              27,
+              26,
               13,
               23,
               21,
@@ -4773,64 +4713,64 @@
               11,
               6
             ],
-            "ks": 0.188520971302,
-            "n": 151
+            "ks": 0.186666666667,
+            "n": 150
           }
         },
         "A_60": {
-          "brier_1": 0.149536423841,
+          "brier_1": 0.150116666667,
           "brier_1_interval": [
-            0.10422647106,
-            0.19861327767
+            0.104649929719,
+            0.199781163194
           ],
-          "brier_1_minus_B0": -0.00235485435756,
+          "brier_1_minus_B0": -0.00318213193455,
           "brier_1_minus_B0_interval": [
-            -0.0127037678175,
-            0.00963849789412
+            -0.0141583266265,
+            0.00937483496805
           ],
-          "brier_2": 0.0447369389257,
+          "brier_2": 0.0449166666667,
           "brier_2_interval": [
-            0.0198640488181,
-            0.0754249950699
+            0.0198814927733,
+            0.0759237842009
           ],
-          "brier_2_minus_B0": -0.0120888083661,
+          "brier_2_minus_B0": -0.0125408881477,
           "brier_2_minus_B0_interval": [
-            -0.0165437076125,
-            -0.00668603834551
+            -0.0171179501316,
+            -0.0069582723986
           ],
-          "brier_5": 0.00805739514349,
+          "brier_5": 0.00809444444444,
           "brier_5_interval": [
-            0.00163477790267,
-            0.0197592994106
+            0.00162547931115,
+            0.0197813143323
           ],
-          "brier_5_minus_B0": -0.00955554307941,
+          "brier_5_minus_B0": -0.00932391970316,
           "brier_5_minus_B0_interval": [
-            -0.0108932443269,
-            -0.00759659398684
+            -0.0106573527094,
+            -0.00739439029249
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0447369389257,
-              "crps": 0.756772376709,
-              "n": 151
+              "brier_2": 0.0449166666667,
+              "crps": 0.755992866646,
+              "n": 150
             }
           },
-          "cov_50": 0.569536423841,
-          "cov_90": 0.973509933775,
-          "crps": 0.756772376709,
+          "cov_50": 0.573333333333,
+          "cov_90": 0.973333333333,
+          "crps": 0.755992866646,
           "crps_interval": [
-            0.620747598266,
-            0.932977485985
+            0.619528064951,
+            0.933094531341
           ],
-          "crps_minus_B0": -0.0092878166652,
+          "crps_minus_B0": -0.0109034294189,
           "crps_minus_B0_interval": [
-            -0.0306268369392,
-            0.0123211267865
+            -0.0340859435689,
+            0.0128471054808
           ],
           "pit": {
             "histogram": [
               13,
-              22,
+              21,
               12,
               13,
               29,
@@ -4840,55 +4780,55 @@
               11,
               5
             ],
-            "ks": 0.148565121413,
-            "n": 151
+            "ks": 0.146666666667,
+            "n": 150
           }
         },
         "B0": {
-          "brier_1": 0.151891278199,
+          "brier_1": 0.153298798601,
           "brier_1_interval": [
-            0.115788150099,
-            0.192202118724
+            0.11776689924,
+            0.192992433289
           ],
-          "brier_2": 0.0568257472918,
+          "brier_2": 0.0574575548143,
           "brier_2_interval": [
-            0.0362421594538,
-            0.0825732919742
+            0.0368434109772,
+            0.0831337155191
           ],
-          "brier_5": 0.0176129382229,
+          "brier_5": 0.0174183641476,
           "brier_5_interval": [
-            0.0124205288402,
-            0.0273337615476
+            0.0121781127516,
+            0.0272158510305
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.0568257472918,
-              "crps": 0.766060193374,
-              "n": 151
+              "brier_2": 0.0574575548143,
+              "crps": 0.766896296065,
+              "n": 150
             }
           },
-          "cov_50": 0.655629139073,
-          "cov_90": 0.953642384106,
-          "crps": 0.766060193374,
+          "cov_50": 0.66,
+          "cov_90": 0.953333333333,
+          "crps": 0.766896296065,
           "crps_interval": [
-            0.627551024633,
-            0.949044378047
+            0.626819957498,
+            0.952729853098
           ],
           "pit": {
             "histogram": [
               11,
               24,
-              12,
-              18,
-              21,
-              23,
-              15,
+              14,
+              17,
               20,
+              25,
+              13,
+              19,
               7,
               0
             ],
-            "ks": 0.176776075624,
-            "n": 151
+            "ks": 0.178398427487,
+            "n": 150
           }
         },
         "B1": {
@@ -4897,53 +4837,53 @@
             0.25,
             0.25
           ],
-          "brier_1_minus_B0": 0.0981087218014,
+          "brier_1_minus_B0": 0.0967012013988,
           "brier_1_minus_B0_interval": [
-            0.057797881276,
-            0.134211849901
+            0.0570075667106,
+            0.13223310076
           ],
-          "brier_2": 0.127128819941,
+          "brier_2": 0.12736890888,
           "brier_2_interval": [
-            0.112824693694,
-            0.144136435676
+            0.112971051286,
+            0.144344055793
           ],
-          "brier_2_minus_B0": 0.0703030726492,
+          "brier_2_minus_B0": 0.0699113540657,
           "brier_2_minus_B0_interval": [
-            0.0546057433853,
-            0.0852995514663
+            0.0542937558731,
+            0.084893204892
           ],
-          "brier_5": 0.0413563872105,
+          "brier_5": 0.0415453782742,
           "brier_5_interval": [
-            0.0312295006793,
-            0.0529041711502
+            0.0313245011026,
+            0.0531222499672
           ],
-          "brier_5_minus_B0": 0.0237434489876,
+          "brier_5_minus_B0": 0.0241270141266,
           "brier_5_minus_B0_interval": [
-            0.0158579368835,
-            0.0323576155271
+            0.0162167155183,
+            0.0327273076628
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.127128819941,
-              "crps": 1.02906447953,
-              "n": 151
+              "brier_2": 0.12736890888,
+              "crps": 1.02559424557,
+              "n": 150
             }
           },
-          "cov_50": 0.46357615894,
-          "cov_90": 0.900662251656,
-          "crps": 1.02906447953,
+          "cov_50": 0.466666666667,
+          "cov_90": 0.906666666667,
+          "crps": 1.02559424557,
           "crps_interval": [
-            0.822140841609,
-            1.2804273996
+            0.819549003003,
+            1.27909733482
           ],
-          "crps_minus_B0": 0.263004286161,
+          "crps_minus_B0": 0.258697949501,
           "crps_minus_B0_interval": [
-            0.155570058818,
-            0.366772238666
+            0.156658942367,
+            0.357008029819
           ],
           "pit": {
             "histogram": [
-              29,
+              28,
               33,
               28,
               20,
@@ -4954,63 +4894,63 @@
               1,
               0
             ],
-            "ks": 0.363691890895,
-            "n": 151
+            "ks": 0.363426990232,
+            "n": 150
           }
         },
         "B2": {
-          "brier_1": 0.451016831,
+          "brier_1": 0.449596917031,
           "brier_1_interval": [
-            0.381129791142,
-            0.524085040677
+            0.380188443497,
+            0.522455848876
           ],
-          "brier_1_minus_B0": 0.299125552801,
+          "brier_1_minus_B0": 0.296298118429,
           "brier_1_minus_B0_interval": [
-            0.200609904435,
-            0.397605498298
+            0.199424607083,
+            0.394669482758
           ],
-          "brier_2": 0.366998555411,
+          "brier_2": 0.36665559351,
           "brier_2_interval": [
-            0.306650800444,
-            0.433637155328
+            0.305965291082,
+            0.43382848938
           ],
-          "brier_2_minus_B0": 0.310172808119,
+          "brier_2_minus_B0": 0.309198038696,
           "brier_2_minus_B0_interval": [
-            0.24485394068,
-            0.383337259202
+            0.243638159122,
+            0.382742415287
           ],
-          "brier_5": 0.203824128917,
+          "brier_5": 0.204227629493,
           "brier_5_interval": [
-            0.150554360468,
-            0.264732722956
+            0.15060686345,
+            0.265726000404
           ],
-          "brier_5_minus_B0": 0.186211190694,
+          "brier_5_minus_B0": 0.186809265346,
           "brier_5_minus_B0_interval": [
-            0.135924359741,
-            0.242954260244
+            0.136190836116,
+            0.243804674594
           ],
           "by_year": {
             "2025": {
-              "brier_2": 0.366998555411,
-              "crps": 1.82812345595,
-              "n": 151
+              "brier_2": 0.36665559351,
+              "crps": 1.82231277204,
+              "n": 150
             }
           },
-          "cov_50": 0.145695364238,
-          "cov_90": 0.695364238411,
-          "crps": 1.82812345595,
+          "cov_50": 0.146666666667,
+          "cov_90": 0.7,
+          "crps": 1.82231277204,
           "crps_interval": [
-            1.50746374231,
-            2.1874246005
+            1.50202661809,
+            2.18038163072
           ],
-          "crps_minus_B0": 1.06206326258,
+          "crps_minus_B0": 1.05541647597,
           "crps_minus_B0_interval": [
-            0.808281025409,
-            1.35574534885
+            0.805250967745,
+            1.35092041976
           ],
           "pit": {
             "histogram": [
-              83,
+              82,
               38,
               13,
               9,
@@ -5021,17 +4961,17 @@
               0,
               0
             ],
-            "ks": 0.609070911276,
-            "n": 151
+            "ks": 0.607746407964,
+            "n": 150
           }
         }
       },
-      "scored": 151,
+      "scored": 150,
       "sufficient": true
     },
     "24": {
-      "candidates": 332,
-      "dropped": 332,
+      "candidates": 327,
+      "dropped": 327,
       "entities": 0,
       "h": 24,
       "models": {},

@@ -12,7 +12,7 @@ advice.
 - **No install:** [the page](https://sorghobrayan-dotcom.github.io/near-posterior/site/), [today's verdict read live from NEAR mainnet and the on-chain checks, run by your browser](https://sorghobrayan-dotcom.github.io/near-posterior/site/verify.html), [the contract `brayan-posterior.testnet`](https://testnet.nearblocks.io/address/brayan-posterior.testnet).
 - **Three commands:** `uv sync` (installs `numpy` and `pytest` into `.venv`); `uv run python -m near_posterior.verify` (rebuilds everything offline, one line per check, every line starts with `PASS`); `uv run python -m near_posterior.onchain` (read-only: `PASS` lines for the contract's code hash, each record read back from the chain equal to the repository copy, and its only key limited to `resolve`).
 - **Two limits:** the headline number holds price and issuance at today's values, and either can move the odds both ways (see the lever table); replayed on past data the method was too optimistic, so the real odds are more likely lower than higher. Everything written on chain is on NEAR testnet, not mainnet.
-- **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-19 today) are refreshed every day, hence small differences between them.
+- **Two snapshots:** "registered" numbers (t0 = 2026-11-11) are the ones written on chain and never recomputed; "daily" numbers (t0 = 2026-11-20 today) are refreshed every day, hence small differences between them.
 - **Resolved during judging:** the short forecast on the second locked contract, [`brayan-posterior-live.testnet`](https://testnet.nearblocks.io/address/brayan-posterior-live.testnet), was resolved on chain ([transaction](https://testnet.nearblocks.io/txns/45JKadSBFgdhTQbeXeWGYLdw3VUKQmnGm1u6D1wjoFki)): C_90 0.2236 on 2026-11-15 against 0.1851 on 2026-11-12, outcome 1, Brier score 0.136 for P = 0.632. Any NEAR account can add its own reading with `attest`.
 <!-- END GENERATED judges -->
 
@@ -20,12 +20,12 @@ advice.
 
 <!-- BEGIN GENERATED brief -->
 - **The question:** NEAR spends part of the NEAR Intents fees on buying back NEAR. In 24 months from now, will these buybacks absorb all the new NEAR that the protocol issues?
-- **Today:** they absorb 20.4% of it (dollar value, last 90 days to 2026-11-19).
-- **The bar:** to absorb all of it, NEAR Intents fees must grow 5.15x in 24 months, from $82.2M to $422.9M a year, with price, issuance and the share of fees spent on buybacks unchanged.
-- **The odds:** 6.5%, about 1 chance in 15: the share of 70 DeFi protocols that once had NEAR Intents' size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.
+- **Today:** they absorb 21.3% of it (dollar value, last 90 days to 2026-11-20).
+- **The bar:** to absorb all of it, NEAR Intents fees must grow 4.94x in 24 months, from $83.3M to $411.1M a year, with price, issuance and the share of fees spent on buybacks unchanged.
+- **The odds:** 6.2%, about 1 chance in 16: the share of 69 DeFi protocols that once had NEAR Intents' size and age and then grew that much in 24 months. Replayed on 201 past 24-month forecasts, this method was too optimistic (fee doubling forecast 25.3%, seen 3.1%), so the real odds are more likely lower than higher.
 - **For an investor:** On base rates the buyback very likely does not offset dilution by the 24-month mark: net supply growth stays the base case. A case for NEAR should not rest on buybacks creating scarcity within this horizon.
-- **What could change it:** governance, more than market growth: all fees to buybacks 17.0%, issuance cut to a quarter 17.2%, both 37.6%; the best cell of the lever table is 53.5%.
-- **What would prove this wrong:** annualised NEAR Intents fees above $422.9M at today's price and issuance. `history.csv` records the odds at every daily snapshot.
+- **What could change it:** governance, more than market growth: all fees to buybacks 16.7%, issuance cut to a quarter 17.1%, both 38.0%; the best cell of the lever table is 54.7%.
+- **What would prove this wrong:** annualised NEAR Intents fees above $411.1M at today's price and issuance. `history.csv` records the odds at every daily snapshot.
 - **Locked in advance:** the forecasts are written on NEAR (contract `brayan-posterior.testnet`), cannot be edited, and resolve on 2028-11-11; one command rebuilds every number from the committed data.
 <!-- END GENERATED brief -->
 
@@ -69,7 +69,7 @@ flowchart LR
 ## In detail
 
 <!-- BEGIN GENERATED finding -->
-**Finding:** on the snapshot of 2026-11-19, buybacks cover 20.4% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 5.15x in 24 months. Among 70 comparable DefiLlama protocols, the share that did so is **6.5%** (90% interval 2.8% to 10.7%): buybacks are unlikely to cover issuance at the 24-month mark. Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), how often outcomes at this forecast level happened before: at 24 months, none of the past forecasts reached this level: 0 of 201 past 24-month forecasts, from 0 of 51 protocols, origins 2024; exact one-sided 95 percent upper bound 5.7% with protocols as units; bootstrap interval 0.0% to 0.0% (fitted on the same origins); at 12 months, 0.5% (9 of 1659 past 12-month forecasts, from 4 of 188 protocols, origins 2023, 2024, 2025; exact one-sided 95 percent upper bound 4.8% with protocols as units; bootstrap interval 0.1% to 1.1%) (tested on later origins).
+**Finding:** on the snapshot of 2026-11-20, buybacks cover 21.3% of NEAR's net issuance; to cover it at the 24-month mark NEAR Intents fees must grow 4.94x in 24 months. Among 69 comparable DefiLlama protocols, the share that did so is **6.2%** (90% interval 2.7% to 10.2%): buybacks are unlikely to cover issuance at the 24-month mark. Corrected for past over-forecasting (tertiary analysis, `PREREG_3.md`), how often outcomes at this forecast level happened before: at 24 months, none of the past forecasts reached this level: 0 of 201 past 24-month forecasts, from 0 of 51 protocols, origins 2024; exact one-sided 95 percent upper bound 5.7% with protocols as units; bootstrap interval 0.0% to 0.0% (fitted on the same origins); at 12 months, 0.5% (9 of 1659 past 12-month forecasts, from 4 of 188 protocols, origins 2023, 2024, 2025; exact one-sided 95 percent upper bound 4.8% with protocols as units; bootstrap interval 0.1% to 1.1%) (tested on later origins).
 <!-- END GENERATED finding -->
 
 ![How often comparable protocols grew fees k-fold in 24 months](site/img/exceedance.svg)
@@ -98,7 +98,7 @@ complete day):
 
 <!-- BEGIN GENERATED headline -->
 ```
-P(buybacks cover NEAR net issuance at the 24-month mark) = 0.065 (90% interval 0.028 to 0.107), model B0, class R, 70 entities, snapshot t0 = 2026-11-19: buybacks are unlikely to cover issuance at the 24-month mark
+P(buybacks cover NEAR net issuance at the 24-month mark) = 0.062 (90% interval 0.027 to 0.102), model B0, class R, 69 entities, snapshot t0 = 2026-11-20: buybacks are unlikely to cover issuance at the 24-month mark
 ```
 <!-- END GENERATED headline -->
 
@@ -224,7 +224,7 @@ daily workflow adds `--commit`). The reference panel is not refetched;
 - Dead fill uses the panel end D: an entity silent for more than 30 days before D is filled with zeros, so a backtest pool outcome can use knowledge of D rather than of its tau.
 - Class R selects protocols at a high point of their fees (scale band around NEAR Intents' current fees), so part of the typical decline in the class is regression to the mean.
 - Few independent market cycles: the class R origins at h = 24 run from 2020 to 2024, and one market regime can dominate the class.
-- Class R mixes fee types (trading fees, interest, staking yield). Restricted to trading-type categories (R_trading, 35 entities) the primary probability is 0.067 (0.015 to 0.129), against 0.065 for R.
+- Class R mixes fee types (trading fees, interest, staking yield). Restricted to trading-type categories (R_trading, 34 entities) the primary probability is 0.064 (0.015 to 0.123), against 0.062 for R.
 <!-- END GENERATED limits -->
 
 ## Hackathon disclosure
